@@ -290,6 +290,9 @@ small { color: var(--muted); }
 
 .featured-carousel {
   position: relative;
+  width: min(100%, calc(100vw - 48px));
+  max-width: 100%;
+  margin-inline: auto;
   border: 2px solid var(--line);
   border-radius: 18px;
   overflow: hidden;
@@ -444,5 +447,9 @@ small { color: var(--muted); }
   .carousel-track {
     aspect-ratio: 16 / 9;
     min-height: 280px;
+  }
+
+  .featured-carousel {
+    width: min(100%, calc(100vw - 24px));
   }
 }
