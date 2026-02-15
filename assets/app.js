@@ -49,7 +49,7 @@ function header(active = '') {
 }
 
 function footer() {
-  return `<footer class="footer">PnP Launchpad is manually curated from creator-submitted project links. All submissions require approval before publication.</footer>`;
+  return `<footer class="footer">Copyright 2026 by <a href="mailto:help@pnpfinder.com">Martin Gonzalvez</a>.<br />If you find this site helpful, why not buy me a coffee? <a href="https://ko-fi.com/marting" target="_blank" rel="noreferrer noopener"><span aria-hidden="true">☕</span> Buy me a coffee</a>.</footer>`;
 }
 
 function personLink(type, name, customSlug) {
