@@ -16,7 +16,7 @@
         const projects = PNPL.enrichProjects(data);
         const now = new Date();
         const live = projects
-          .filter((p) => PNPL.projectStatus(p, now) === 'live')
+          .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
           .sort(PNPL.byEndAsc);
 
         el.innerHTML = `

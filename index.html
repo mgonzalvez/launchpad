@@ -24,7 +24,7 @@
         const now = new Date();
         const issues = [...data.issues].sort(PNPL.byWeekDesc).slice(0, 6);
         const live = projects
-          .filter((p) => PNPL.projectStatus(p, now) === 'live')
+          .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
           .sort(PNPL.byEndAsc);
         const upcoming = projects
           .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')

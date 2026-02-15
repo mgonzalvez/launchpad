@@ -68,3 +68,4 @@ collections:
               - { label: Designer, name: designer, widget: string, required: false }
               - { label: Publisher, name: publisher, widget: string, required: false }
               - { label: Promo Details, name: promoDetails, widget: text, required: false }
+              - { label: Promo / Limited-time sale, name: isPromo, widget: boolean, required: false, default: false }

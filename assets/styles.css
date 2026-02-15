@@ -165,6 +165,14 @@ main {
   border-color: #92afd8;
 }
 
+.badge.promo {
+  background: #ffe7f3;
+  color: #8b1b53;
+  border-color: #d69ab8;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
 .badge.archived { background: #f3e2cf; color: #7a3d17; }
 
 .issue-list {

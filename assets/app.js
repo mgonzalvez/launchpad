@@ -66,6 +66,7 @@ function projectStatus(p, now = new Date()) {
   const end = new Date(p.endDate);
   if (launch > now) return 'upcoming';
   if (end < now) return 'archived';
+  if (p.isPromo) return 'promo';
   return 'live';
 }
 
@@ -75,6 +76,9 @@ function statusBadge(status) {
   }
   if (status === 'upcoming') {
     return `<a class="badge-link" href="${withBase('upcoming.html')}"><span class="badge upcoming">Upcoming</span></a>`;
+  }
+  if (status === 'promo') {
+    return `<span class="badge promo">PROMO</span>`;
   }
   return `<span class="badge archived">Archived</span>`;
 }

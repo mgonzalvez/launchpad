@@ -134,7 +134,8 @@
       "primaryUrl": "https://itch.io/s/180328/-birthday-sale-",
       "designer": "Raoul Schaupp",
       "publisher": "Raoul Schaupp",
-      "promoDetails": "One-week promo sale shared directly by creator."
+      "promoDetails": "One-week promo sale shared directly by creator.",
+      "isPromo": true
     },
     {
       "slug": "essence-the-grim-expeditions",
