@@ -102,6 +102,21 @@ function projectCard(p) {
   `;
 }
 
+function projectTile(p) {
+  const status = projectStatus(p, new Date());
+  return `
+    <article class="tile">
+      <a class="tile-image-link" href="${p.primaryUrl}" target="_blank" rel="noreferrer">
+        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
+      </a>
+      <div class="tile-body">
+        ${statusBadge(status)}
+        <h4><a href="${p.primaryUrl}" target="_blank" rel="noreferrer">${p.title}</a></h4>
+      </div>
+    </article>
+  `;
+}
+
 function issueCard(issue) {
   return `
     <article class="issue-item">
@@ -154,6 +169,7 @@ window.PNPL = {
   footer,
   projectStatus,
   projectCard,
+  projectTile,
   issueCard,
   loadContent,
   byWeekDesc,

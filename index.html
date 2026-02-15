@@ -19,40 +19,146 @@
       (async () => {
         const el = document.getElementById('app');
         try {
-        const data = await PNPL.loadContent();
-        const projects = PNPL.enrichProjects(data);
-        const now = new Date();
-        const issues = [...data.issues].sort(PNPL.byWeekDesc).slice(0, 6);
-        const live = projects
-          .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
-          .sort(PNPL.byEndAsc);
-        const upcoming = projects
-          .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
-          .sort((a, b) => new Date(a.launchDate) - new Date(b.launchDate));
+          const data = await PNPL.loadContent();
+          const projects = PNPL.enrichProjects(data);
+          const now = new Date();
+          const issues = [...data.issues].sort(PNPL.byWeekDesc).slice(0, 6);
+          const liveAndPromo = projects
+            .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
+            .sort(PNPL.byEndAsc);
+          const featured = [...liveAndPromo].sort(() => Math.random() - 0.5);
+          const upcoming = projects
+            .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
+            .sort((a, b) => new Date(a.launchDate) - new Date(b.launchDate));
 
-        el.innerHTML = `
-          ${PNPL.header('Home')}
-          <main>
-            <section class="hero">
-              <h1>PnP Launchpad</h1>
-              <p>Weekly curated stories for paid Print-and-Play projects from the PnP community. Big project art leads each card so creators can showcase their games at a glance.</p>
-              <a class="cta" href="submit.html">Submit your project for review</a>
-            </section>
-            <section>
-              <h2>Projects Live Right Now</h2>
-              ${live.length ? `<div class="grid featured">${live.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No projects are live right now.</p>'}
-            </section>
-            <section>
-              <h2>Upcoming Projects</h2>
-              ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
-            </section>
-            <section>
-              <h2>This Week</h2>
-              <div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>
-            </section>
-          </main>
-          ${PNPL.footer()}
-        `;
+          const slides = featured.map((p, idx) => {
+            const status = PNPL.projectStatus(p, now);
+            const badge = status === 'promo'
+              ? '<span class="badge promo">PROMO</span>'
+              : '<span class="badge live-now">LIVE NOW</span>';
+            return `
+              <article class="carousel-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
+                <a href="${p.primaryUrl}" target="_blank" rel="noreferrer">
+                  <img src="${PNPL.withBase(p.image)}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}" />
+                </a>
+                <div class="carousel-overlay">
+                  ${badge}
+                  <h2>${p.title}</h2>
+                  <p>${p.summary}</p>
+                </div>
+              </article>
+            `;
+          }).join('');
+
+          const dots = featured.map((_, idx) => (
+            `<button type="button" aria-label="Go to featured slide ${idx + 1}" class="${idx === 0 ? 'active' : ''}" data-index="${idx}"></button>`
+          )).join('');
+
+          el.innerHTML = `
+            ${PNPL.header('Home')}
+            <main>
+              <section class="hero">
+                <h1>PnP Launchpad</h1>
+                <p>Discover paid Print-and-Play projects through a visual weekly digest. Featured projects rotate automatically and link straight to campaign pages.</p>
+                <a class="cta" href="submit.html">Submit your project for review</a>
+              </section>
+
+              <section class="home-stage">
+                ${featured.length ? `
+                  <div class="featured-carousel" id="featured-carousel">
+                    <div class="carousel-track">${slides}</div>
+                    ${featured.length > 1 ? `
+                      <div class="carousel-controls">
+                        <button type="button" id="carousel-prev" aria-label="Previous featured project">&#8249;</button>
+                        <button type="button" id="carousel-next" aria-label="Next featured project">&#8250;</button>
+                      </div>
+                      <div class="carousel-dots" id="carousel-dots">${dots}</div>
+                    ` : ''}
+                  </div>
+                ` : '<p>No live or promo projects are available for featured rotation right now.</p>'}
+
+                <div class="live-strip">
+                  <h3>Live Now + Promo</h3>
+                  ${liveAndPromo.length ? `<div class="tile-row">${liveAndPromo.map((p) => PNPL.projectTile(p)).join('')}</div>` : '<p>No active projects are listed right now.</p>'}
+                </div>
+              </section>
+
+              <section>
+                <h2>Upcoming Projects</h2>
+                ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
+              </section>
+
+              <section>
+                <h2>This Week</h2>
+                <div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>
+              </section>
+            </main>
+            ${PNPL.footer()}
+          `;
+
+          const carousel = document.getElementById('featured-carousel');
+          if (carousel && featured.length > 1) {
+            const slideEls = Array.from(carousel.querySelectorAll('.carousel-slide'));
+            const dotEls = Array.from(carousel.querySelectorAll('.carousel-dots button'));
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let current = 0;
+            let timer = null;
+            let pausedByTouch = false;
+
+            const renderActive = () => {
+              slideEls.forEach((s, i) => s.classList.toggle('active', i === current));
+              dotEls.forEach((d, i) => d.classList.toggle('active', i === current));
+            };
+
+            const goTo = (index) => {
+              current = (index + slideEls.length) % slideEls.length;
+              renderActive();
+            };
+
+            const start = () => {
+              if (timer) clearInterval(timer);
+              timer = setInterval(() => goTo(current + 1), 5000);
+            };
+
+            const stop = () => {
+              if (timer) clearInterval(timer);
+              timer = null;
+            };
+
+            prevBtn?.addEventListener('click', () => {
+              goTo(current - 1);
+              start();
+            });
+
+            nextBtn?.addEventListener('click', () => {
+              goTo(current + 1);
+              start();
+            });
+
+            dotEls.forEach((dot) => {
+              dot.addEventListener('click', () => {
+                goTo(Number(dot.dataset.index || 0));
+                start();
+              });
+            });
+
+            carousel.addEventListener('touchstart', () => {
+              pausedByTouch = true;
+              stop();
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', () => {
+              if (pausedByTouch) {
+                setTimeout(() => {
+                  pausedByTouch = false;
+                  start();
+                }, 3500);
+              }
+            }, { passive: true });
+
+            start();
+          }
         } catch (err) {
           el.innerHTML = '<main><p>Could not load site data. Please refresh or redeploy latest files.</p></main>';
           console.error(err);

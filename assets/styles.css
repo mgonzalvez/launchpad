@@ -281,3 +281,168 @@ small { color: var(--muted); }
 .profile-hero {
   border-left: 8px solid var(--accent-2);
 }
+
+.home-stage {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.featured-carousel {
+  position: relative;
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 0 #dfd2b2;
+  background: #0f2630;
+}
+
+.carousel-track {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  min-height: 360px;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 420ms ease;
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-overlay {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  background: linear-gradient(180deg, rgba(7, 15, 20, 0.08) 0%, rgba(7, 15, 20, 0.88) 60%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.carousel-overlay h2 {
+  margin: 0 0 4px;
+  font-size: clamp(1.1rem, 2.1vw, 1.7rem);
+}
+
+.carousel-overlay p {
+  margin: 0;
+  color: #f4f4f4;
+  font-size: 0.95rem;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-controls button {
+  pointer-events: auto;
+  border: 1px solid #ffffff66;
+  background: #00000055;
+  color: #fff;
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.carousel-dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: #ffffff77;
+}
+
+.carousel-dots button.active {
+  background: #fff;
+}
+
+.live-strip h3 {
+  margin: 0 0 10px;
+}
+
+.tile-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(210px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.tile {
+  min-width: 210px;
+  border: 2px solid var(--line);
+  border-radius: 13px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.tile img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.tile-body {
+  padding: 10px;
+}
+
+.tile-body h4 {
+  margin: 8px 0 0;
+  font-size: 0.98rem;
+}
+
+.tile-body h4 a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .carousel-track {
+    aspect-ratio: 16 / 9;
+    min-height: 280px;
+  }
+}
