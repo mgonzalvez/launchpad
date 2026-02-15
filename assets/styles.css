@@ -92,6 +92,50 @@ a:hover { color: #8f3209; }
   border-color: #95bea7;
 }
 
+.tools-menu {
+  position: relative;
+}
+
+.tools-menu summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 0.95rem;
+}
+
+.tools-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.tools-list {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 210px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+  z-index: 20;
+}
+
+.tools-list a {
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.tools-list a:hover {
+  background: #f0e7ce;
+}
+
 main {
   max-width: 1180px;
   margin: 0 auto;

@@ -43,6 +43,14 @@ function header(active = '') {
         </h1>
         <nav class="nav" aria-label="Primary">
           ${links.map(([href, label]) => `<a href="${withBase(href)}"${label === active ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
+          <details class="tools-menu">
+            <summary>Tools</summary>
+            <div class="tools-list">
+              <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
+              <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
+              <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
+            </div>
+          </details>
         </nav>
       </div>
     </header>
