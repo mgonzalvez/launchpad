@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Weekly curated digest of paid print-and-play projects." />
     <title>PnP Launchpad | New PnP Projects Weekly</title>
+    <script>
+      if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
+        window.location.replace(`${window.location.pathname}/${window.location.search}${window.location.hash}`);
+      }
+    </script>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -13,6 +18,7 @@
     <script>
       (async () => {
         const el = document.getElementById('app');
+        try {
         const data = await PNPL.loadContent();
         const projects = PNPL.enrichProjects(data);
         const now = new Date();
@@ -40,6 +46,10 @@
           </main>
           ${PNPL.footer()}
         `;
+        } catch (err) {
+          el.innerHTML = '<main><p>Could not load site data. Please refresh or redeploy latest files.</p></main>';
+          console.error(err);
+        }
       })();
     </script>
   </body>
