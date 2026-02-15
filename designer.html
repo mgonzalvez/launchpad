@@ -38,7 +38,7 @@
             </section>
             <section>
               <h2>Projects on PnP Launchpad</h2>
-              ${related.length ? `<div class="grid featured">${related.map((p) => PNPL.projectCard(p, new Date(p.endDate) < new Date())).join('')}</div>` : '<p>No projects listed for this designer yet.</p>'}
+              ${related.length ? `<div class="grid featured">${related.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No projects listed for this designer yet.</p>'}
             </section>
           </main>
           ${PNPL.footer()}

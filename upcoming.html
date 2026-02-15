@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Archive | PnP Launchpad</title>
+    <title>Upcoming Projects | PnP Launchpad</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -15,18 +15,18 @@
         const data = await PNPL.loadContent();
         const projects = PNPL.enrichProjects(data);
         const now = new Date();
-        const archived = projects
-          .filter((p) => new Date(p.endDate) < now)
-          .sort((a, b) => new Date(b.endDate) - new Date(a.endDate));
+        const upcoming = projects
+          .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
+          .sort((a, b) => new Date(a.launchDate) - new Date(b.launchDate));
 
         el.innerHTML = `
-          ${PNPL.header('Archive')}
+          ${PNPL.header('Upcoming')}
           <main>
             <section class="hero">
-              <h1>Archive</h1>
-              <p>Completed projects automatically appear here after their campaign end date.</p>
+              <h1>Upcoming Projects</h1>
+              <p>Projects that have been announced and are not live yet.</p>
             </section>
-            ${archived.length ? `<div class="grid">${archived.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No archived projects yet.</p>'}
+            ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
           </main>
           ${PNPL.footer()}
         `;

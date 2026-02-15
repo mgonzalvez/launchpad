@@ -25,6 +25,8 @@ function slugify(value = '') {
 function header(active = '') {
   const links = [
     ['', 'Home'],
+    ['live.html', 'Live Now'],
+    ['upcoming.html', 'Upcoming'],
     ['issues.html', 'This Week'],
     ['archive.html', 'Archive'],
     ['submit.html', 'Submit a Project'],
@@ -59,12 +61,31 @@ function personLink(type, name, customSlug) {
   return `<a class="person-link" href="${href}">${name}</a>`;
 }
 
-function projectCard(p, archived) {
+function projectStatus(p, now = new Date()) {
+  const launch = new Date(p.launchDate);
+  const end = new Date(p.endDate);
+  if (launch > now) return 'upcoming';
+  if (end < now) return 'archived';
+  return 'live';
+}
+
+function statusBadge(status) {
+  if (status === 'live') {
+    return `<a class="badge-link" href="${withBase('live.html')}"><span class="badge live-now">LIVE NOW</span></a>`;
+  }
+  if (status === 'upcoming') {
+    return `<a class="badge-link" href="${withBase('upcoming.html')}"><span class="badge upcoming">Upcoming</span></a>`;
+  }
+  return `<span class="badge archived">Archived</span>`;
+}
+
+function projectCard(p) {
+  const status = projectStatus(p, new Date());
   return `
     <article class="card">
       <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       <div class="card-body">
-        <span class="badge ${archived ? 'archived' : 'live'}">${archived ? 'Archived' : 'Live / Upcoming'}</span>
+        ${statusBadge(status)}
         <span class="badge">${p.platform}</span>
         <h3>${p.title}</h3>
         <p>${p.summary}</p>
@@ -127,6 +148,7 @@ function enrichProjects(data) {
 window.PNPL = {
   header,
   footer,
+  projectStatus,
   projectCard,
   issueCard,
   loadContent,

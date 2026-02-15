@@ -145,7 +145,26 @@ main {
   border: 1px solid var(--line);
 }
 
-.badge.live { background: #def0dc; color: #1a5339; }
+.badge-link {
+  text-decoration: none;
+}
+
+.badge.live-now {
+  background: #c32020;
+  color: #fff;
+  border-color: #8d1313;
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  box-shadow: 0 2px 0 #8d1313;
+}
+
+.badge.upcoming {
+  background: #e0ebff;
+  color: #1c4578;
+  border-color: #92afd8;
+}
+
 .badge.archived { background: #f3e2cf; color: #7a3d17; }
 
 .issue-list {
