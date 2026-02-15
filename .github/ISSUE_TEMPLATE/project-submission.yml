@@ -1,0 +1,81 @@
+name: Project submission
+description: Submit a paid Print-and-Play project for possible inclusion in PnP Launchpad.
+title: "[Submission]: "
+labels: ["submission", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting. All entries are reviewed manually before publication.
+  - type: input
+    id: title
+    attributes:
+      label: Project title
+      placeholder: Red Dungeon
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Kickstarter
+        - Gamefound
+    validations:
+      required: true
+  - type: input
+    id: launch_date
+    attributes:
+      label: Launch date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: end_date
+    attributes:
+      label: End date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: primary_url
+    attributes:
+      label: Primary URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: image_url
+    attributes:
+      label: Image URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: designer
+    attributes:
+      label: Designer
+      placeholder: Designer name
+    validations:
+      required: false
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher
+      placeholder: Publisher name
+    validations:
+      required: false
+  - type: textarea
+    id: summary
+    attributes:
+      label: Short summary
+      description: 1-3 sentences describing the project.
+    validations:
+      required: true
+  - type: textarea
+    id: promo
+    attributes:
+      label: Promo details
+      description: Discount, freebie, launch reminder, or other promo context.
+    validations:
+      required: false

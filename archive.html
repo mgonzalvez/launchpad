@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Archive | PnP Launchpad</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/assets/app.js"></script>
+    <script>
+      (async () => {
+        const el = document.getElementById('app');
+        const data = await PNPL.loadContent();
+        const now = new Date();
+        const archived = data.projects
+          .filter((p) => new Date(p.endDate) < now)
+          .sort((a, b) => new Date(b.endDate) - new Date(a.endDate));
+
+        el.innerHTML = `
+          ${PNPL.header('Archive')}
+          <main>
+            <section class="hero">
+              <h1>Archive</h1>
+              <p>Completed projects automatically appear here after their campaign end date.</p>
+            </section>
+            ${archived.length ? `<div class="grid">${archived.map((p) => PNPL.projectCard(p, true)).join('')}</div>` : '<p>No archived projects yet.</p>'}
+          </main>
+          ${PNPL.footer()}
+        `;
+      })();
+    </script>
+  </body>
+</html>
