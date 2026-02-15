@@ -27,6 +27,7 @@ function header(active = '') {
     ['', 'Home'],
     ['live.html', 'Live Now'],
     ['upcoming.html', 'Upcoming'],
+    ['blog.html', 'Blog'],
     ['archive.html', 'Ended'],
     ['submit.html', 'Submit a Project']
   ];
