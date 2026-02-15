@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
 :root {
   --bg: #f0ecd9;
   --ink: #1e1d17;
@@ -13,12 +15,21 @@
 
 body {
   margin: 0;
-  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 12% 4%, #fff7d9 0%, transparent 35%),
     radial-gradient(circle at 88% 10%, #d9efe8 0%, transparent 34%),
     linear-gradient(180deg, #f5efdd 0%, #ece2c7 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+.brand {
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.01em;
 }
 
 a { color: var(--accent); }
