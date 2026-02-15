@@ -13,6 +13,15 @@ function withBase(path = '') {
   return clean ? `${basePath}/${clean}` : `${basePath}/`;
 }
 
+function slugify(value = '') {
+  return String(value)
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function header(active = '') {
   const links = [
     ['', 'Home'],
@@ -43,6 +52,13 @@ function footer() {
   return `<footer class="footer">PnP Launchpad is manually curated from creator-submitted project links. All submissions require approval before publication.</footer>`;
 }
 
+function personLink(type, name, customSlug) {
+  if (!name) return '';
+  const slug = customSlug || slugify(name);
+  const href = withBase(`${type}.html?slug=${encodeURIComponent(slug)}`);
+  return `<a class="person-link" href="${href}">${name}</a>`;
+}
+
 function projectCard(p, archived) {
   return `
     <article class="card">
@@ -53,8 +69,8 @@ function projectCard(p, archived) {
         <h3>${p.title}</h3>
         <p>${p.summary}</p>
         <p class="meta">Launch: ${fmt.format(new Date(p.launchDate))} | End: ${fmt.format(new Date(p.endDate))}</p>
-        ${p.designer ? `<p class="meta">Designer: ${p.designer}</p>` : ''}
-        ${p.publisher ? `<p class="meta">Publisher: ${p.publisher}</p>` : ''}
+        ${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}
+        ${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}
         <a href="${p.primaryUrl}" target="_blank" rel="noreferrer">View project</a>
       </div>
     </article>
@@ -86,6 +102,28 @@ function byEndAsc(a, b) {
   return new Date(a.endDate).getTime() - new Date(b.endDate).getTime();
 }
 
+function byLaunchDesc(a, b) {
+  return new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime();
+}
+
+function enrichProjects(data) {
+  const designers = data.designers || [];
+  const publishers = data.publishers || [];
+
+  const designerByName = new Map(designers.map((d) => [String(d.name || '').toLowerCase(), d]));
+  const publisherByName = new Map(publishers.map((p) => [String(p.name || '').toLowerCase(), p]));
+
+  return data.projects.map((project) => {
+    const d = project.designer ? designerByName.get(String(project.designer).toLowerCase()) : null;
+    const p = project.publisher ? publisherByName.get(String(project.publisher).toLowerCase()) : null;
+    return {
+      ...project,
+      designerSlug: d?.slug || (project.designer ? slugify(project.designer) : ''),
+      publisherSlug: p?.slug || (project.publisher ? slugify(project.publisher) : '')
+    };
+  });
+}
+
 window.PNPL = {
   header,
   footer,
@@ -93,5 +131,9 @@ window.PNPL = {
   issueCard,
   loadContent,
   byWeekDesc,
-  byEndAsc
+  byEndAsc,
+  byLaunchDesc,
+  withBase,
+  slugify,
+  enrichProjects
 };

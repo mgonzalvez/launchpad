@@ -240,3 +240,17 @@ small { color: var(--muted); }
   .form-grid { grid-template-columns: 1fr; }
   .card img { min-height: 220px; }
 }
+
+.person-link {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.person-link:hover {
+  color: #144154;
+}
+
+.profile-hero {
+  border-left: 8px solid var(--accent-2);
+}

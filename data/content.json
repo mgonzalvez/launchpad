@@ -66,5 +66,57 @@
       "publisher": "Rolling Rhino Games",
       "promoDetails": "Promoted as a launch notification page for early supporters."
     }
+  ],
+  "designers": [
+    {
+      "slug": "krzysiek-pietrzak",
+      "name": "Krzysiek Pietrzak",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "martin-melbardis",
+      "name": "Martin Melbardis",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "radek-ignatow",
+      "name": "Radek Ignatow",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "martin-van-rossum",
+      "name": "Martin van Rossum",
+      "bggUrl": "",
+      "bio": ""
+    }
+  ],
+  "publishers": [
+    {
+      "slug": "time-to-dice",
+      "name": "Time to Dice",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "martin-melbardis",
+      "name": "Martin Melbardis",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "radek-ignatow",
+      "name": "Radek Ignatow",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rolling-rhino-games",
+      "name": "Rolling Rhino Games",
+      "bggUrl": "",
+      "bio": ""
+    }
   ]
 }

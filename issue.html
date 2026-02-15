@@ -13,6 +13,7 @@
       (async () => {
         const el = document.getElementById('app');
         const data = await PNPL.loadContent();
+        const projectsData = PNPL.enrichProjects(data);
         const params = new URLSearchParams(window.location.search);
         const slug = params.get('slug') || '';
         const issue = data.issues.find((i) => i.slug === slug);
@@ -23,7 +24,7 @@
         }
 
         const now = new Date();
-        const projects = data.projects
+        const projects = projectsData
           .filter((p) => p.issue === slug)
           .sort((a, b) => new Date(b.launchDate) - new Date(a.launchDate));
 

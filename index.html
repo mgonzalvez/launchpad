@@ -14,9 +14,10 @@
       (async () => {
         const el = document.getElementById('app');
         const data = await PNPL.loadContent();
+        const projects = PNPL.enrichProjects(data);
         const now = new Date();
         const issues = [...data.issues].sort(PNPL.byWeekDesc).slice(0, 6);
-        const live = data.projects
+        const live = projects
           .filter((p) => new Date(p.endDate) >= now)
           .sort(PNPL.byEndAsc);
 
