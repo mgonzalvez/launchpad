@@ -56,7 +56,7 @@ function personLink(type, name, customSlug) {
   if (!name) return '';
   const slug = customSlug || slugify(name);
   const href = withBase(`${type}.html?slug=${encodeURIComponent(slug)}`);
-  return `<a class="person-link" href="${href}">${name}</a>`;
+  return `<a class="person-link" href="${href}" target="_blank" rel="noreferrer noopener">${name}</a>`;
 }
 
 function projectStatus(p, now = new Date()) {
@@ -84,17 +84,19 @@ function statusBadge(status) {
 function projectCard(p) {
   const status = projectStatus(p, new Date());
   return `
-    <article class="card">
-      <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
+    <article class="card card-click" data-url="${p.primaryUrl}">
+      <a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">
+        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
+      </a>
       <div class="card-body">
         ${statusBadge(status)}
         <span class="badge">${p.platform}</span>
-        <h3>${p.title}</h3>
+        <h3><a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
         <p>${p.summary}</p>
         <p class="meta">Launch: ${fmt.format(new Date(p.launchDate))} | End: ${fmt.format(new Date(p.endDate))}</p>
         ${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}
         ${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}
-        <a href="${p.primaryUrl}" target="_blank" rel="noreferrer">View project</a>
+        <a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">View project</a>
       </div>
     </article>
   `;
@@ -103,13 +105,13 @@ function projectCard(p) {
 function projectTile(p) {
   const status = projectStatus(p, new Date());
   return `
-    <article class="tile">
-      <a class="tile-image-link" href="${p.primaryUrl}" target="_blank" rel="noreferrer">
+    <article class="tile tile-click" data-url="${p.primaryUrl}">
+      <a class="tile-image-link" href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       </a>
       <div class="tile-body">
         ${statusBadge(status)}
-        <h4><a href="${p.primaryUrl}" target="_blank" rel="noreferrer">${p.title}</a></h4>
+        <h4><a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h4>
       </div>
     </article>
   `;
@@ -118,10 +120,10 @@ function projectTile(p) {
 function issueCard(issue) {
   return `
     <article class="issue-item">
-      <h3><a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}">${issue.title}</a></h3>
+      <h3><a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}" target="_blank" rel="noreferrer noopener">${issue.title}</a></h3>
       <p class="meta">${fmt.format(new Date(issue.weekStart))} to ${fmt.format(new Date(issue.weekEnd))}</p>
       <p>${issue.intro}</p>
-      <a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}">View this week</a>
+      <a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}" target="_blank" rel="noreferrer noopener">View this week</a>
     </article>
   `;
 }
@@ -162,6 +164,30 @@ function enrichProjects(data) {
   });
 }
 
+function initContentLinkBehavior() {
+  if (window.__pnplContentBehaviorInitialized) return;
+  window.__pnplContentBehaviorInitialized = true;
+
+  document.addEventListener('click', (event) => {
+    const card = event.target.closest('.card.card-click, .tile.tile-click');
+    if (!card) return;
+    if (event.target.closest('a,button,input,textarea,select,label')) return;
+    const url = card.getAttribute('data-url');
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+}
+
+function setMainLinksNewTab(root = document) {
+  const anchors = root.querySelectorAll('main a');
+  anchors.forEach((a) => {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noreferrer noopener');
+  });
+}
+
+initContentLinkBehavior();
+
 window.PNPL = {
   header,
   footer,
@@ -175,5 +201,6 @@ window.PNPL = {
   byLaunchDesc,
   withBase,
   slugify,
-  enrichProjects
+  enrichProjects,
+  setMainLinksNewTab
 };

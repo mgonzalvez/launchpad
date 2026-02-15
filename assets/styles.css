@@ -495,3 +495,19 @@ small { color: var(--muted); }
     width: min(100%, calc(100vw - 24px));
   }
 }
+
+.card.card-click,
+.tile.tile-click {
+  cursor: pointer;
+}
+
+.card.card-click h3 a,
+.tile.tile-click h4 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.card.card-click h3 a:hover,
+.tile.tile-click h4 a:hover {
+  text-decoration: underline;
+}
