@@ -150,6 +150,20 @@
       "designer": "Florian Fiedler",
       "publisher": "Florian Fiedler",
       "promoDetails": "Gamefound listing shared with campaign overview in thread."
+    },
+    {
+      "slug": "almighty-the-godliest-god-game",
+      "title": "Almighty \u26a1\ufe0f The Godliest God Game",
+      "summary": "A competitive god-game experience with a dedicated print-and-play reward tier for backers.",
+      "image": "https://cf.geekdo-images.com/ZAQzUeNiRNmWJqA0uU3RCQ__original/img/xqKKoQxQjwuRPI33bZHxFnYH7rg=/0x0/filters:format(png)/pic9033470.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-10",
+      "endDate": "2026-03-05",
+      "primaryUrl": "https://www.kickstarter.com/projects/malachi-rempen/almighty/description",
+      "designer": "Malachi Rempen",
+      "publisher": "Malachi Rempen",
+      "promoDetails": "$5 print-and-play pledge/reward is available."
     }
   ],
   "designers": [
@@ -212,6 +226,12 @@
       "name": "Florian Fiedler",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/165788/florian-fiedler",
       "bio": "I'm a graphic designer and illustrator by profession, and a passionate creator with a love for games that offer high replayability, short to medium playtimes, and multiple strategic avenues to explore. My favorite games include Magic: The Gathering, Lost Ruins of Arnak, DotA, and Chess&mdash;all of which share that balance of depth and strategy that I admire."
+    },
+    {
+      "slug": "malachi-rempen",
+      "name": "Malachi Rempen",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/102087/malachi-ray-rempen",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -272,6 +292,12 @@
     {
       "slug": "florian-fiedler",
       "name": "Florian Fiedler",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "malachi-rempen",
+      "name": "Malachi Rempen",
       "bggUrl": "",
       "bio": ""
     }
