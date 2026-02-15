@@ -50,3 +50,17 @@ Required project fields:
 ## Decap auth note
 
 For production Decap on GitHub Pages, configure GitHub OAuth (or a Decap-compatible auth provider).
+
+## BGG profile auto-fill script
+
+You can auto-fill designer/publisher BGG profile URLs and short write-ups:
+
+```bash
+python3 scripts/fetch_bgg_profiles.py --dry-run
+python3 scripts/fetch_bgg_profiles.py --write
+```
+
+Options:
+
+- `--force` refetches entries even if `bggUrl`/`bio` already exist.
+- `--path` lets you target a different JSON file.
