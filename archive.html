@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="shortcut icon" href="assets/logo.svg" />
     <title>Ended | PnP Launchpad</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
@@ -16,8 +18,8 @@
         const projects = PNPL.enrichProjects(data);
         const now = new Date();
         const archived = projects
-          .filter((p) => new Date(p.endDate) < now)
-          .sort((a, b) => new Date(b.endDate) - new Date(a.endDate));
+          .filter((p) => PNPL.projectStatus(p, now) === 'archived')
+          .sort((a, b) => PNPL.parseDate(b.endDate) - PNPL.parseDate(a.endDate));
 
         el.innerHTML = `
           ${PNPL.header('Ended')}

@@ -22,6 +22,19 @@ function slugify(value = '') {
     .replace(/^-+|-+$/g, '');
 }
 
+function parseDate(value) {
+  if (typeof value === 'string') {
+    const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (m) {
+      const y = Number(m[1]);
+      const mo = Number(m[2]) - 1;
+      const d = Number(m[3]);
+      return new Date(y, mo, d, 12, 0, 0, 0);
+    }
+  }
+  return new Date(value);
+}
+
 function header(active = '') {
   const links = [
     ['', 'Home'],
@@ -69,8 +82,8 @@ function personLink(type, name, customSlug) {
 }
 
 function projectStatus(p, now = new Date()) {
-  const launch = new Date(p.launchDate);
-  const end = new Date(p.endDate);
+  const launch = parseDate(p.launchDate);
+  const end = parseDate(p.endDate);
   if (launch > now) return 'upcoming';
   if (end < now) return 'archived';
   if (p.isPromo) return 'promo';
@@ -102,7 +115,7 @@ function projectCard(p) {
         <span class="badge">${p.platform}</span>
         <h3><a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
         <p>${p.summary}</p>
-        <p class="meta">Launch: ${fmt.format(new Date(p.launchDate))} | End: ${fmt.format(new Date(p.endDate))}</p>
+        <p class="meta">Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}</p>
         ${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}
         ${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}
         <a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">View project</a>
@@ -130,7 +143,7 @@ function issueCard(issue) {
   return `
     <article class="issue-item">
       <h3><a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}" target="_blank" rel="noreferrer noopener">${issue.title}</a></h3>
-      <p class="meta">${fmt.format(new Date(issue.weekStart))} to ${fmt.format(new Date(issue.weekEnd))}</p>
+      <p class="meta">${fmt.format(parseDate(issue.weekStart))} to ${fmt.format(parseDate(issue.weekEnd))}</p>
       <p>${issue.intro}</p>
       <a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}" target="_blank" rel="noreferrer noopener">View this week</a>
     </article>
@@ -144,15 +157,15 @@ async function loadContent() {
 }
 
 function byWeekDesc(a, b) {
-  return new Date(b.weekStart).getTime() - new Date(a.weekStart).getTime();
+  return parseDate(b.weekStart).getTime() - parseDate(a.weekStart).getTime();
 }
 
 function byEndAsc(a, b) {
-  return new Date(a.endDate).getTime() - new Date(b.endDate).getTime();
+  return parseDate(a.endDate).getTime() - parseDate(b.endDate).getTime();
 }
 
 function byLaunchDesc(a, b) {
-  return new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime();
+  return parseDate(b.launchDate).getTime() - parseDate(a.launchDate).getTime();
 }
 
 function enrichProjects(data) {
@@ -208,6 +221,7 @@ window.PNPL = {
   byWeekDesc,
   byEndAsc,
   byLaunchDesc,
+  parseDate,
   withBase,
   slugify,
   enrichProjects,

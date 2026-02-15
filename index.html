@@ -30,7 +30,7 @@
           const featured = [...liveAndPromo].sort(() => Math.random() - 0.5);
           const upcoming = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
-            .sort((a, b) => new Date(a.launchDate) - new Date(b.launchDate));
+            .sort((a, b) => PNPL.parseDate(a.launchDate) - PNPL.parseDate(b.launchDate));
 
           const slides = featured.map((p, idx) => {
             const status = PNPL.projectStatus(p, now);

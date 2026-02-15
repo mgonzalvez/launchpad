@@ -28,7 +28,7 @@
         const now = new Date();
         const projects = projectsData
           .filter((p) => p.issue === slug)
-          .sort((a, b) => new Date(b.launchDate) - new Date(a.launchDate));
+          .sort((a, b) => PNPL.parseDate(b.launchDate) - PNPL.parseDate(a.launchDate));
 
         el.innerHTML = `
           ${PNPL.header('This Week')}
@@ -36,7 +36,7 @@
             <section class="hero">
               <h1>${issue.title}</h1>
               <p>${issue.intro}</p>
-              <p class="meta">Week window: ${new Date(issue.weekStart).toLocaleDateString('en-US')} to ${new Date(issue.weekEnd).toLocaleDateString('en-US')}</p>
+              <p class="meta">Week window: ${PNPL.parseDate(issue.weekStart).toLocaleDateString('en-US')} to ${PNPL.parseDate(issue.weekEnd).toLocaleDateString('en-US')}</p>
             </section>
             ${projects.length ? `<div class="grid featured">${projects.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No projects assigned to this issue yet.</p>'}
           </main>
