@@ -65,6 +65,90 @@
       "designer": "Martin van Rossum",
       "publisher": "Rolling Rhino Games",
       "promoDetails": "Promoted as a launch notification page for early supporters."
+    },
+    {
+      "slug": "orman-roll-and-plant",
+      "title": "ORMAN: A Roll & Plant Print and Play Game",
+      "summary": "A nature-themed roll-and-write style print-and-play project focused on planting strategy and quick turns.",
+      "image": "/uploads/01.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-13",
+      "endDate": "2026-03-14",
+      "primaryUrl": "https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game",
+      "designer": "Keepers of Fun",
+      "publisher": "Keepers of Fun",
+      "promoDetails": "Shared in this week's creator thread."
+    },
+    {
+      "slug": "beastward-monster-hunt-rpg-boardgame",
+      "title": "Beastward: Monster Hunt RPG Boardgame",
+      "summary": "A fantasy monster-hunting campaign project with RPG progression and boardgame structure.",
+      "image": "/uploads/04.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-13",
+      "endDate": "2026-03-15",
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/beastward-monster-hunt-rpg-boardgame?ref=1q7wvl",
+      "designer": "Nuka Zombee Games",
+      "publisher": "Nuka Zombee Games",
+      "promoDetails": "Campaign highlighted with launch traction in the weekly thread."
+    },
+    {
+      "slug": "one-card-dungeon-hells-door",
+      "title": "One Card Dungeon - Hell's Door",
+      "summary": "An expansion-focused entry in the One Card Dungeon line designed for compact print-and-play sessions.",
+      "image": "/uploads/01.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-12",
+      "endDate": "2026-03-13",
+      "primaryUrl": "https://www.kickstarter.com/projects/littlerocketgames/one-card-dungeon-hells-door",
+      "designer": "Little Rocket Games",
+      "publisher": "Little Rocket Games",
+      "promoDetails": "Posted as a weekly project update for One Card Dungeon fans."
+    },
+    {
+      "slug": "dice-horde",
+      "title": "Dice Horde",
+      "summary": "A dice-driven tower defense experience built for minimal setup and fast tactical decisions.",
+      "image": "/uploads/04.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-12",
+      "endDate": "2026-03-14",
+      "primaryUrl": "https://www.kickstarter.com/projects/twoacornsgames/dice-horde",
+      "designer": "Two Acorns Games",
+      "publisher": "Two Acorns Games",
+      "promoDetails": "Presented as a challenge-forward tower defense campaign."
+    },
+    {
+      "slug": "birthday-sale",
+      "title": "Birthday Sale (Grim World / The Promise)",
+      "summary": "A limited-time Itch sale featuring discounted print-and-play titles including Grim World and The Promise.",
+      "image": "/uploads/03.png",
+      "issue": "2026-02-09",
+      "platform": "Itch.io",
+      "launchDate": "2026-02-13",
+      "endDate": "2026-02-20",
+      "primaryUrl": "https://itch.io/s/180328/-birthday-sale-",
+      "designer": "Raoul Schaupp",
+      "publisher": "Raoul Schaupp",
+      "promoDetails": "One-week promo sale shared directly by creator."
+    },
+    {
+      "slug": "essence-the-grim-expeditions",
+      "title": "Essence: The Grim Expeditions",
+      "summary": "A tactical legacy-style dice crawler where players manage essence and class synergies across linked campaigns.",
+      "image": "/uploads/01.png",
+      "issue": "2026-02-09",
+      "platform": "Gamefound",
+      "launchDate": "2026-02-14",
+      "endDate": "2026-03-21",
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/essence-the-grim-expeditions",
+      "designer": "Florian Fiedler",
+      "publisher": "Florian Fiedler",
+      "promoDetails": "Gamefound listing shared with campaign overview in thread."
     }
   ],
   "designers": [
@@ -91,6 +175,42 @@
       "name": "Martin van Rossum",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "keepers-of-fun",
+      "name": "Keepers of Fun",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nuka-zombee-games",
+      "name": "Nuka Zombee Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "little-rocket-games",
+      "name": "Little Rocket Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "two-acorns-games",
+      "name": "Two Acorns Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "raoul-schaupp",
+      "name": "Raoul Schaupp",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-fiedler",
+      "name": "Florian Fiedler",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -115,6 +235,42 @@
     {
       "slug": "rolling-rhino-games",
       "name": "Rolling Rhino Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "keepers-of-fun",
+      "name": "Keepers of Fun",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nuka-zombee-games",
+      "name": "Nuka Zombee Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "little-rocket-games",
+      "name": "Little Rocket Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "two-acorns-games",
+      "name": "Two Acorns Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "raoul-schaupp",
+      "name": "Raoul Schaupp",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-fiedler",
+      "name": "Florian Fiedler",
       "bggUrl": "",
       "bio": ""
     }

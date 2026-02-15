@@ -31,6 +31,26 @@ collections:
               - { label: Intro, name: intro, widget: text }
               - { label: Cover Image, name: coverImage, widget: image, required: false }
 
+          - label: Designers
+            name: designers
+            widget: list
+            summary: "{{fields.slug}} | {{fields.name}}"
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: BGG URL, name: bggUrl, widget: string, required: false }
+              - { label: BGG Write-up, name: bio, widget: text, required: false }
+
+          - label: Publishers
+            name: publishers
+            widget: list
+            summary: "{{fields.slug}} | {{fields.name}}"
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: BGG URL, name: bggUrl, widget: string, required: false }
+              - { label: BGG Write-up, name: bio, widget: text, required: false }
+
           - label: Projects
             name: projects
             widget: list
@@ -41,7 +61,7 @@ collections:
               - { label: Short Summary, name: summary, widget: text }
               - { label: Image, name: image, widget: image }
               - { label: Issue Slug, name: issue, widget: string }
-              - { label: Platform, name: platform, widget: select, options: ["Kickstarter", "Gamefound"] }
+              - { label: Platform, name: platform, widget: select, options: ["Kickstarter", "Gamefound", "Itch.io"] }
               - { label: Launch Date, name: launchDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
               - { label: End Date, name: endDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
               - { label: Primary URL, name: primaryUrl, widget: string }
