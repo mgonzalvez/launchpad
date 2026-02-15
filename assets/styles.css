@@ -556,3 +556,24 @@ small { color: var(--muted); }
   max-width: 980px;
   margin: 0 auto;
 }
+
+.blog-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  background: #111;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-collage img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .blog-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
