@@ -27,10 +27,8 @@ function header(active = '') {
     ['', 'Home'],
     ['live.html', 'Live Now'],
     ['upcoming.html', 'Upcoming'],
-    ['issues.html', 'This Week'],
-    ['archive.html', 'Archive'],
-    ['submit.html', 'Submit a Project'],
-    ['admin/', 'Admin Login']
+    ['archive.html', 'Ended'],
+    ['submit.html', 'Submit a Project']
   ];
 
   return `
@@ -80,7 +78,7 @@ function statusBadge(status) {
   if (status === 'promo') {
     return `<span class="badge promo">PROMO</span>`;
   }
-  return `<span class="badge archived">Archived</span>`;
+  return `<span class="badge archived">Ended</span>`;
 }
 
 function projectCard(p) {

@@ -15,83 +15,24 @@
             <a href="index.html">Home</a>
             <a href="live.html">Live Now</a>
             <a href="upcoming.html">Upcoming</a>
-            <a href="issues.html">This Week</a>
-            <a href="archive.html">Archive</a>
+            <a href="archive.html">Ended</a>
             <a href="submit.html" aria-current="page">Submit a Project</a>
-            <a href="admin/">Admin Login</a>
           </nav>
         </div>
       </header>
       <main>
         <section class="hero">
           <h1>Submit a Project</h1>
-          <p>Creator submissions are reviewed manually before publication. This form creates a pre-filled GitHub issue for editorial review.</p>
-        </section>
-
-        <section class="form-panel">
-          <form id="submit-form" class="form-grid">
-            <label>Title *<input name="title" required /></label>
-            <label>Platform *
-              <select name="platform" required>
-                <option>Kickstarter</option>
-                <option>Gamefound</option>
-              </select>
-            </label>
-            <label class="full">Short summary *<textarea name="summary" rows="4" required></textarea></label>
-            <label>Launch date *<input type="date" name="launchDate" required /></label>
-            <label>End date *<input type="date" name="endDate" required /></label>
-            <label class="full">Primary URL *<input type="url" name="primaryUrl" placeholder="https://..." required /></label>
-            <label>Designer<input name="designer" /></label>
-            <label>Publisher<input name="publisher" /></label>
-            <label class="full">Image URL *<input type="url" name="imageUrl" placeholder="https://..." required /></label>
-            <label class="full">Promo details<textarea name="promoDetails" rows="3"></textarea></label>
-            <div class="full"><button type="submit">Create Submission Draft</button></div>
-            <small class="full">This opens a pre-filled issue in a new tab for editorial review.</small>
-          </form>
+          <p>Project additions are managed through the Weekly Promotion Thread in the Print and Play Hideaway Facebook Group.</p>
+          <a class="cta" href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer">Open Print and Play Hideaway Group</a>
         </section>
       </main>
       <footer class="footer">PnP Launchpad is manually curated from creator-submitted project links. All submissions require approval before publication.</footer>
     </div>
 
     <script>
-      const form = document.getElementById('submit-form');
-      form?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const data = new FormData(form);
-        const title = String(data.get('title') || '').trim();
-        const platform = String(data.get('platform') || '').trim();
-        const summary = String(data.get('summary') || '').trim();
-        const launchDate = String(data.get('launchDate') || '').trim();
-        const endDate = String(data.get('endDate') || '').trim();
-        const primaryUrl = String(data.get('primaryUrl') || '').trim();
-        const designer = String(data.get('designer') || '').trim();
-        const publisher = String(data.get('publisher') || '').trim();
-        const imageUrl = String(data.get('imageUrl') || '').trim();
-        const promoDetails = String(data.get('promoDetails') || '').trim();
-
-        const issueTitle = `[Submission] ${title}`;
-        const body = [
-          `## Project Submission`,
-          ``,
-          `- **Title:** ${title}`,
-          `- **Platform:** ${platform}`,
-          `- **Launch date:** ${launchDate}`,
-          `- **End date:** ${endDate}`,
-          `- **Primary URL:** ${primaryUrl}`,
-          `- **Image URL:** ${imageUrl}`,
-          `- **Designer:** ${designer || 'N/A'}`,
-          `- **Publisher:** ${publisher || 'N/A'}`,
-          ``,
-          `### Short Summary`,
-          summary,
-          ``,
-          `### Promo Details`,
-          promoDetails || 'N/A'
-        ].join('\n');
-
-        const repoPath = 'mgonzalvez/launchpad';
-        const url = `https://github.com/${repoPath}/issues/new?labels=submission&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(body)}`;
-        window.open(url, '_blank', 'noopener,noreferrer');
+      window.addEventListener('load', () => {
+        alert('To submit your project, post it in the Weekly Promotion Thread in the Featured section of the Print and Play Hideaway Facebook Group (https://www.facebook.com/groups/pnphideaway). The group admins will handle adding approved projects to PnP Launchpad.');
       });
     </script>
   </body>

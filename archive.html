@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Archive | PnP Launchpad</title>
+    <title>Ended | PnP Launchpad</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -20,11 +20,11 @@
           .sort((a, b) => new Date(b.endDate) - new Date(a.endDate));
 
         el.innerHTML = `
-          ${PNPL.header('Archive')}
+          ${PNPL.header('Ended')}
           <main>
             <section class="hero">
-              <h1>Archive</h1>
-              <p>Completed projects automatically appear here after their campaign end date.</p>
+              <h1>Ended Projects</h1>
+              <p>Projects automatically move here after their campaign or promo end date.</p>
             </section>
             ${archived.length ? `<div class="grid">${archived.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No archived projects yet.</p>'}
           </main>
