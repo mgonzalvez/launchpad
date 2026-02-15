@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Weekly Issues | PnP Launchpad</title>
+    <title>This Week | PnP Launchpad</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -16,11 +16,11 @@
         const issues = [...data.issues].sort(PNPL.byWeekDesc);
 
         el.innerHTML = `
-          ${PNPL.header('Issues')}
+          ${PNPL.header('This Week')}
           <main>
             <section class="hero">
-              <h1>Weekly Issues</h1>
-              <p>Browse all curated weekly digests.</p>
+              <h1>PnP Projects This Week</h1>
+              <p>Browse curated weekly digests and jump into featured projects.</p>
             </section>
             <div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>
           </main>

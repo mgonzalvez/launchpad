@@ -16,16 +16,21 @@ function withBase(path = '') {
 function header(active = '') {
   const links = [
     ['', 'Home'],
-    ['issues.html', 'Issues'],
+    ['issues.html', 'This Week'],
     ['archive.html', 'Archive'],
     ['submit.html', 'Submit a Project'],
-    ['admin/', 'Editor Login']
+    ['admin/', 'Admin Login']
   ];
 
   return `
     <header class="site-header">
       <div class="inner">
-        <h1 class="brand"><a href="${withBase('')}">PnP Launchpad</a></h1>
+        <h1 class="brand">
+          <a class="brand-link" href="${withBase('')}">
+            <img class="brand-logo" src="${withBase('assets/logo.svg')}" alt="PnP Launchpad logo" />
+            <span>PnP Launchpad</span>
+          </a>
+        </h1>
         <nav class="nav" aria-label="Primary">
           ${links.map(([href, label]) => `<a href="${withBase(href)}"${label === active ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
         </nav>
@@ -62,7 +67,7 @@ function issueCard(issue) {
       <h3><a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}">${issue.title}</a></h3>
       <p class="meta">${fmt.format(new Date(issue.weekStart))} to ${fmt.format(new Date(issue.weekEnd))}</p>
       <p>${issue.intro}</p>
-      <a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}">Open issue</a>
+      <a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}">View this week</a>
     </article>
   `;
 }

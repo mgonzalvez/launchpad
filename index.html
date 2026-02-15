@@ -25,15 +25,15 @@
           <main>
             <section class="hero">
               <h1>PnP Launchpad</h1>
-              <p>Weekly curated stories for paid Print-and-Play projects from the PnP community. Each project includes art, key details, credits, and direct links to support creators.</p>
+              <p>Weekly curated stories for paid Print-and-Play projects from the PnP community. Big project art leads each card so creators can showcase their games at a glance.</p>
               <a class="cta" href="submit.html">Submit your project for review</a>
             </section>
             <section>
               <h2>Live and Upcoming Projects</h2>
-              ${live.length ? `<div class="grid">${live.map((p) => PNPL.projectCard(p, false)).join('')}</div>` : '<p>No active projects right now. Check back after the next weekly issue.</p>'}
+              ${live.length ? `<div class="grid featured">${live.map((p) => PNPL.projectCard(p, false)).join('')}</div>` : '<p>No active projects right now. Check back after the next weekly issue.</p>'}
             </section>
             <section>
-              <h2>Weekly Issues</h2>
+              <h2>This Week</h2>
               <div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>
             </section>
           </main>

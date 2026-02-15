@@ -18,7 +18,7 @@
         const issue = data.issues.find((i) => i.slug === slug);
 
         if (!issue) {
-          el.innerHTML = `${PNPL.header('Issues')}<main><p>Issue not found.</p></main>${PNPL.footer()}`;
+          el.innerHTML = `${PNPL.header('This Week')}<main><p>Issue not found.</p></main>${PNPL.footer()}`;
           return;
         }
 
@@ -28,14 +28,14 @@
           .sort((a, b) => new Date(b.launchDate) - new Date(a.launchDate));
 
         el.innerHTML = `
-          ${PNPL.header('Issues')}
+          ${PNPL.header('This Week')}
           <main>
             <section class="hero">
               <h1>${issue.title}</h1>
               <p>${issue.intro}</p>
               <p class="meta">Week window: ${new Date(issue.weekStart).toLocaleDateString('en-US')} to ${new Date(issue.weekEnd).toLocaleDateString('en-US')}</p>
             </section>
-            ${projects.length ? `<div class="grid">${projects.map((p) => PNPL.projectCard(p, new Date(p.endDate) < now)).join('')}</div>` : '<p>No projects assigned to this issue yet.</p>'}
+            ${projects.length ? `<div class="grid featured">${projects.map((p) => PNPL.projectCard(p, new Date(p.endDate) < now)).join('')}</div>` : '<p>No projects assigned to this issue yet.</p>'}
           </main>
           ${PNPL.footer()}
         `;
