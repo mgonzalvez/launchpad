@@ -79,7 +79,13 @@
 
                 <div class="live-strip">
                   <h3>Live Now + Promo</h3>
-                  ${liveAndPromo.length ? `<div class="tile-row">${liveAndPromo.map((p) => PNPL.projectTile(p)).join('')}</div>` : '<p>No active projects are listed right now.</p>'}
+                  ${liveAndPromo.length ? `
+                    <div class="tile-strip-wrap">
+                      <button type="button" class="tile-handle" id="tile-prev" aria-label="Scroll live projects left">&#8249;</button>
+                      <div class="tile-row" id="tile-row">${liveAndPromo.map((p) => PNPL.projectTile(p)).join('')}</div>
+                      <button type="button" class="tile-handle" id="tile-next" aria-label="Scroll live projects right">&#8250;</button>
+                    </div>
+                  ` : '<p>No active projects are listed right now.</p>'}
                 </div>
               </section>
 
@@ -158,6 +164,34 @@
             }, { passive: true });
 
             start();
+          }
+
+          const tileRow = document.getElementById('tile-row');
+          const tilePrev = document.getElementById('tile-prev');
+          const tileNext = document.getElementById('tile-next');
+          if (tileRow && tilePrev && tileNext) {
+            const step = () => {
+              const tile = tileRow.querySelector('.tile');
+              return tile ? (tile.getBoundingClientRect().width + 12) : 240;
+            };
+
+            const updateHandles = () => {
+              const maxLeft = tileRow.scrollWidth - tileRow.clientWidth;
+              tilePrev.disabled = tileRow.scrollLeft <= 0;
+              tileNext.disabled = tileRow.scrollLeft >= (maxLeft - 1);
+            };
+
+            tilePrev.addEventListener('click', () => {
+              tileRow.scrollBy({ left: -step() * 2, behavior: 'smooth' });
+            });
+
+            tileNext.addEventListener('click', () => {
+              tileRow.scrollBy({ left: step() * 2, behavior: 'smooth' });
+            });
+
+            tileRow.addEventListener('scroll', updateHandles, { passive: true });
+            window.addEventListener('resize', updateHandles);
+            updateHandles();
           }
         } catch (err) {
           el.innerHTML = '<main><p>Could not load site data. Please refresh or redeploy latest files.</p></main>';
