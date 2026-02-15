@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">PnP Launchpad weekly project collage</title>
+  <desc id="desc">Collage of featured print-and-play projects for February 8 to 15, 2026.</desc>
+  <defs>
+    <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="#121212"/>
+
+  <image href="https://cf.geekdo-images.com/IJc_ITmnznlytEvbkRyC5A__original/img/zm_WRlPyIrzqzsF24Ko4IqeUHrM=/0x0/filters:format(jpeg)/pic9244143.jpg" x="0" y="0" width="400" height="340" preserveAspectRatio="xMidYMid slice"/>
+  <image href="https://cf.geekdo-images.com/XNc9Ak6Ix7dH0YZ0CO8atQ__original/img/ZPVA4DVo1t8obL0amz78lEZypjk=/0x0/filters:format(jpeg)/pic9366637.jpg" x="400" y="0" width="400" height="340" preserveAspectRatio="xMidYMid slice"/>
+  <image href="https://cf.geekdo-images.com/4OLqhcfrLAt09gjl_dq10w__original/img/XhTIw9BgJbz72JZ6mjbSSzKGz1w=/0x0/filters:format(png)/pic9331606.png" x="800" y="0" width="400" height="340" preserveAspectRatio="xMidYMid slice"/>
+
+  <image href="https://cf.geekdo-images.com/nLh85hxuSmY-tlOe2vFt6Q__original/img/6z-bl-EXHajuoXpZpsJOiv43dqU=/0x0/filters:format(png)/pic8807429.png" x="0" y="340" width="400" height="340" preserveAspectRatio="xMidYMid slice"/>
+  <image href="https://cf.geekdo-images.com/tkg17D8m3kPNt-lX7vGD3A__original/img/HrUQ9Z0r_e7LxoQZQdSbhGmze1s=/0x0/filters:format(png)/pic9393462.png" x="400" y="340" width="400" height="340" preserveAspectRatio="xMidYMid slice"/>
+  <image href="https://cf.geekdo-images.com/SFUdXWsOMZOObMPC_axNdg__original/img/Rtbe5p9f1Ioz6KzW4hlyeWel49M=/0x0/filters:format(png)/pic9407633.png" x="800" y="340" width="400" height="340" preserveAspectRatio="xMidYMid slice"/>
+
+  <rect width="1200" height="680" fill="url(#overlay)"/>
+
+  <g transform="translate(48,558)">
+    <rect x="0" y="0" width="650" height="90" rx="12" fill="#101820" fill-opacity="0.78"/>
+    <text x="26" y="40" fill="#fff" font-family="Baloo 2, Trebuchet MS, sans-serif" font-size="36" font-weight="700">PnP Launchpad Weekly Roundup</text>
+    <text x="26" y="68" fill="#f3e6c2" font-family="Source Sans 3, Trebuchet MS, sans-serif" font-size="24">Feb 8-15, 2026</text>
+  </g>
+</svg>

@@ -522,3 +522,37 @@ small { color: var(--muted); }
 .tile.tile-click h4 a:hover {
   text-decoration: underline;
 }
+
+.blog-feed {
+  display: grid;
+  gap: 18px;
+}
+
+.blog-post-card {
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 8px 0 #dfd2b2;
+}
+
+.blog-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-post-body {
+  padding: 16px 18px 18px;
+}
+
+.blog-post-body h1,
+.blog-post-body h2 {
+  margin: 6px 0 10px;
+}
+
+.blog-post-full {
+  max-width: 980px;
+  margin: 0 auto;
+}
