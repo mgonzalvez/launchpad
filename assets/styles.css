@@ -560,14 +560,19 @@ small { color: var(--muted); }
 .blog-collage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, clamp(90px, 14vw, 145px));
   gap: 4px;
   background: #111;
   border-bottom: 1px solid var(--line);
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .blog-collage img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -575,5 +580,6 @@ small { color: var(--muted); }
 @media (max-width: 760px) {
   .blog-collage {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, clamp(88px, 26vw, 135px));
   }
 }
