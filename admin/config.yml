@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: mgonzalvez/launchpad
+  branch: main
+
+site_url: https://mgonzalvez.github.io/launchpad
+
+media_folder: uploads
+public_folder: /uploads
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: content
+    label: Site Content
+    files:
+      - file: data/content.json
+        label: Issues and Projects
+        name: content_data
+        format: json
+        fields:
+          - label: Issues
+            name: issues
+            widget: list
+            summary: "{{fields.slug}} | {{fields.title}}"
+            fields:
+              - { label: Slug, name: slug, widget: string, hint: "Example: 2026-02-09" }
+              - { label: Title, name: title, widget: string }
+              - { label: Week Start, name: weekStart, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: Week End, name: weekEnd, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Cover Image, name: coverImage, widget: image, required: false }
+
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.slug}} | {{fields.title}}"
+            fields:
+              - { label: Slug, name: slug, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Short Summary, name: summary, widget: text }
+              - { label: Image, name: image, widget: image }
+              - { label: Issue Slug, name: issue, widget: string }
+              - { label: Platform, name: platform, widget: select, options: ["Kickstarter", "Gamefound"] }
+              - { label: Launch Date, name: launchDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: End Date, name: endDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: Primary URL, name: primaryUrl, widget: string }
+              - { label: Designer, name: designer, widget: string, required: false }
+              - { label: Publisher, name: publisher, widget: string, required: false }
+              - { label: Promo Details, name: promoDetails, widget: text, required: false }

@@ -1,0 +1,70 @@
+{
+  "issues": [
+    {
+      "slug": "2026-02-09",
+      "title": "Weekly Issue: Feb 9-14, 2026",
+      "weekStart": "2026-02-09",
+      "weekEnd": "2026-02-14",
+      "intro": "A curated roundup of paid Print-and-Play projects shared by creators in the community this week.",
+      "coverImage": "/uploads/01.png"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "red-dungeon",
+      "title": "Red Dungeon",
+      "summary": "A standard-deck print-and-play dungeon crawler where players rebel against cursed-mine guards in a compact card-driven system.",
+      "image": "/uploads/05.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-09",
+      "endDate": "2026-03-09",
+      "primaryUrl": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
+      "designer": "Krzysiek Pietrzak",
+      "publisher": "Time to Dice",
+      "promoDetails": "Campaign is live. Uses a standard deck of 52 cards."
+    },
+    {
+      "slug": "fliegerkorps",
+      "title": "Fliegerkorps",
+      "summary": "A solo PnP wargame focused on air-corps command decisions with included sheets and card content for WWII-themed operations.",
+      "image": "/uploads/04.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-10",
+      "endDate": "2026-03-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
+      "designer": "Martin Melbardis",
+      "publisher": "Martin Melbardis",
+      "promoDetails": "Includes printable game sheets and card assets."
+    },
+    {
+      "slug": "king",
+      "title": "KING",
+      "summary": "An advanced flip-and-write project aimed at players who enjoy deeper strategy and layered scoring puzzles.",
+      "image": "/uploads/01.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-14",
+      "endDate": "2026-03-15",
+      "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/king-0",
+      "designer": "Radek Ignatow",
+      "publisher": "Radek Ignatow",
+      "promoDetails": "Project announced as coming soon in the weekly thread."
+    },
+    {
+      "slug": "cat-saga",
+      "title": "Cat Saga",
+      "summary": "A co-op story-driven print-and-play adventure where group choices shape narrative outcomes across sessions.",
+      "image": "/uploads/02.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-12",
+      "endDate": "2026-03-20",
+      "primaryUrl": "https://www.kickstarter.com/projects/rollingrhinogames/catsaga",
+      "designer": "Martin van Rossum",
+      "publisher": "Rolling Rhino Games",
+      "promoDetails": "Promoted as a launch notification page for early supporters."
+    }
+  ]
+}

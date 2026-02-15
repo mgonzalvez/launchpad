@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Weekly curated digest of paid print-and-play projects." />
+    <title>PnP Launchpad | New PnP Projects Weekly</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/assets/app.js"></script>
+    <script>
+      (async () => {
+        const el = document.getElementById('app');
+        const data = await PNPL.loadContent();
+        const now = new Date();
+        const issues = [...data.issues].sort(PNPL.byWeekDesc).slice(0, 6);
+        const live = data.projects
+          .filter((p) => new Date(p.endDate) >= now)
+          .sort(PNPL.byEndAsc);
+
+        el.innerHTML = `
+          ${PNPL.header('Home')}
+          <main>
+            <section class="hero">
+              <h1>PnP Launchpad</h1>
+              <p>Weekly curated stories for paid Print-and-Play projects from the PnP community. Each project includes art, key details, credits, and direct links to support creators.</p>
+              <a class="cta" href="/submit.html">Submit your project for review</a>
+            </section>
+            <section>
+              <h2>Live and Upcoming Projects</h2>
+              ${live.length ? `<div class="grid">${live.map((p) => PNPL.projectCard(p, false)).join('')}</div>` : '<p>No active projects right now. Check back after the next weekly issue.</p>'}
+            </section>
+            <section>
+              <h2>Weekly Issues</h2>
+              <div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>
+            </section>
+          </main>
+          ${PNPL.footer()}
+        `;
+      })();
+    </script>
+  </body>
+</html>

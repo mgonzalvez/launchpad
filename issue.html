@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Issue | PnP Launchpad</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/assets/app.js"></script>
+    <script>
+      (async () => {
+        const el = document.getElementById('app');
+        const data = await PNPL.loadContent();
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug') || '';
+        const issue = data.issues.find((i) => i.slug === slug);
+
+        if (!issue) {
+          el.innerHTML = `${PNPL.header('Issues')}<main><p>Issue not found.</p></main>${PNPL.footer()}`;
+          return;
+        }
+
+        const now = new Date();
+        const projects = data.projects
+          .filter((p) => p.issue === slug)
+          .sort((a, b) => new Date(b.launchDate) - new Date(a.launchDate));
+
+        el.innerHTML = `
+          ${PNPL.header('Issues')}
+          <main>
+            <section class="hero">
+              <h1>${issue.title}</h1>
+              <p>${issue.intro}</p>
+              <p class="meta">Week window: ${new Date(issue.weekStart).toLocaleDateString('en-US')} to ${new Date(issue.weekEnd).toLocaleDateString('en-US')}</p>
+            </section>
+            ${projects.length ? `<div class="grid">${projects.map((p) => PNPL.projectCard(p, new Date(p.endDate) < now)).join('')}</div>` : '<p>No projects assigned to this issue yet.</p>'}
+          </main>
+          ${PNPL.footer()}
+        `;
+      })();
+    </script>
+  </body>
+</html>
