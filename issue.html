@@ -14,31 +14,13 @@
     <script>
       (async () => {
         const el = document.getElementById('app');
-        const data = await PNPL.loadContent();
-        const projectsData = PNPL.enrichProjects(data);
-        const params = new URLSearchParams(window.location.search);
-        const slug = params.get('slug') || '';
-        const issue = data.issues.find((i) => i.slug === slug);
-
-        if (!issue) {
-          el.innerHTML = `${PNPL.header('This Week')}<main><p>Issue not found.</p></main>${PNPL.footer()}`;
-          return;
-        }
-
-        const now = new Date();
-        const projects = projectsData
-          .filter((p) => p.issue === slug)
-          .sort((a, b) => PNPL.parseDate(b.launchDate) - PNPL.parseDate(a.launchDate));
-
         el.innerHTML = `
           ${PNPL.header('This Week')}
           <main>
             <section class="hero">
-              <h1>${issue.title}</h1>
-              <p>${issue.intro}</p>
-              <p class="meta">Week window: ${PNPL.parseDate(issue.weekStart).toLocaleDateString('en-US')} to ${PNPL.parseDate(issue.weekEnd).toLocaleDateString('en-US')}</p>
+              <h1>Issue View Retired</h1>
+              <p>Issue-specific pages are no longer used. Browse projects using Live Now, Upcoming, Preview, and Ended.</p>
             </section>
-            ${projects.length ? `<div class="grid featured">${projects.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No projects assigned to this issue yet.</p>'}
           </main>
           ${PNPL.footer()}
         `;

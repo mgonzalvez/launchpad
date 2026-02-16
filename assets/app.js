@@ -340,21 +340,17 @@ function byArchivePriority(a, b) {
 function enrichProjects(data) {
   const designers = data.designers || [];
   const publishers = data.publishers || [];
-  const issues = data.issues || [];
 
   const designerByName = new Map(designers.map((d) => [String(d.name || '').toLowerCase(), d]));
   const publisherByName = new Map(publishers.map((p) => [String(p.name || '').toLowerCase(), p]));
-  const issueBySlug = new Map(issues.map((i) => [String(i.slug || ''), i]));
 
   return data.projects.map((project) => {
     const d = project.designer ? designerByName.get(String(project.designer).toLowerCase()) : null;
     const p = project.publisher ? publisherByName.get(String(project.publisher).toLowerCase()) : null;
-    const issue = project.issue ? issueBySlug.get(String(project.issue)) : null;
     return {
       ...project,
       designerSlug: d?.slug || (project.designer ? slugify(project.designer) : ''),
-      publisherSlug: p?.slug || (project.publisher ? slugify(project.publisher) : ''),
-      issueWeekStart: issue?.weekStart || ''
+      publisherSlug: p?.slug || (project.publisher ? slugify(project.publisher) : '')
     };
   });
 }

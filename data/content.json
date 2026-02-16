@@ -1,21 +1,10 @@
 {
-  "issues": [
-    {
-      "slug": "2026-02-09",
-      "title": "PnP Projects This Week",
-      "weekStart": "2026-02-09",
-      "weekEnd": "2026-02-14",
-      "intro": "A curated roundup of paid Print-and-Play projects shared by creators in the community this week.",
-      "coverImage": "/uploads/01.png"
-    }
-  ],
   "projects": [
     {
       "slug": "red-dungeon",
       "title": "Red Dungeon",
       "summary": "A standard-deck print-and-play dungeon crawler where players rebel against cursed-mine guards in a compact card-driven system.",
       "image": "https://cf.geekdo-images.com/IJc_ITmnznlytEvbkRyC5A__original/img/zm_WRlPyIrzqzsF24Ko4IqeUHrM=/0x0/filters:format(jpeg)/pic9244143.jpg",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-06",
       "endDate": "2026-02-28",
@@ -29,7 +18,6 @@
       "title": "Fliegerkorps",
       "summary": "A solo PnP wargame focused on air-corps command decisions with included sheets and card content for WWII-themed operations.",
       "image": "https://cf.geekdo-images.com/XNc9Ak6Ix7dH0YZ0CO8atQ__original/img/ZPVA4DVo1t8obL0amz78lEZypjk=/0x0/filters:format(jpeg)/pic9366637.jpg",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-04",
       "endDate": "2026-02-20",
@@ -43,7 +31,6 @@
       "title": "KING",
       "summary": "An advanced flip-and-write project aimed at players who enjoy deeper strategy and layered scoring puzzles.",
       "image": "https://cf.geekdo-images.com/4OLqhcfrLAt09gjl_dq10w__original/img/XhTIw9BgJbz72JZ6mjbSSzKGz1w=/0x0/filters:format(png)/pic9331606.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-03-03",
       "endDate": "2026-03-15",
@@ -57,7 +44,6 @@
       "title": "Cat Saga",
       "summary": "A co-op story-driven print-and-play adventure where group choices shape narrative outcomes across sessions.",
       "image": "https://cf.geekdo-images.com/nLh85hxuSmY-tlOe2vFt6Q__original/img/6z-bl-EXHajuoXpZpsJOiv43dqU=/0x0/filters:format(png)/pic8807429.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-03-01",
       "endDate": "2026-03-20",
@@ -71,7 +57,6 @@
       "title": "ORMAN: A Roll & Plant Print and Play Game",
       "summary": "A nature-themed roll-and-write style print-and-play project focused on planting strategy and quick turns.",
       "image": "https://cf.geekdo-images.com/v1n_cSgHJ-nEOotgF87kPg__original/img/QSzIvDPEHHWfN8PA_GVKrQOfC3Y=/0x0/filters:format(png)/pic9237914.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-01-31",
       "endDate": "2026-02-28",
@@ -85,7 +70,6 @@
       "title": "Beastward: Monster Hunt RPG Boardgame",
       "summary": "A fantasy monster-hunting campaign project with RPG progression and boardgame structure.",
       "image": "https://cf.geekdo-images.com/tkg17D8m3kPNt-lX7vGD3A__original/img/HrUQ9Z0r_e7LxoQZQdSbhGmze1s=/0x0/filters:format(png)/pic9393462.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-08",
       "endDate": "2026-03-10",
@@ -99,7 +83,6 @@
       "title": "One Card Dungeon - Hell's Door",
       "summary": "An expansion-focused entry in the One Card Dungeon line designed for compact print-and-play sessions.",
       "image": "https://cf.geekdo-images.com/gdiamVY9Htui0ev9qNXHsg__original/img/wDEFwLKaBaPl-kk8eR5kf39ozYE=/0x0/filters:format(jpeg)/pic9331790.jpg",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-04",
       "endDate": "2026-03-06",
@@ -113,7 +96,6 @@
       "title": "Dice Horde",
       "summary": "A dice-driven tower defense experience built for minimal setup and fast tactical decisions.",
       "image": "https://cf.geekdo-images.com/RI65YpqKmDaTyDbZfsUc9Q__original/img/b0U7zPRy1KKFiXbfbONlxHlIPBM=/0x0/filters:format(jpeg)/pic9369051.jpg",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-24",
       "endDate": "2026-03-06",
@@ -127,7 +109,6 @@
       "title": "Birthday Sale (Grim World / The Promise)",
       "summary": "A limited-time Itch sale featuring discounted print-and-play titles including Grim World and The Promise.",
       "image": "https://cf.geekdo-images.com/exsmoRIq8fsZyLq_9bc1Tw__original/img/cmR82F6jciQ0ZTIrBm6SRPI6cPk=/0x0/filters:format(png)/pic8282141.png",
-      "issue": "2026-02-09",
       "platform": "Itch.io",
       "launchDate": "2026-02-13",
       "endDate": "2026-02-20",
@@ -142,7 +123,6 @@
       "title": "Essence: The Grim Expeditions",
       "summary": "A tactical legacy-style dice crawler where players manage essence and class synergies across linked campaigns.",
       "image": "https://cf.geekdo-images.com/SFUdXWsOMZOObMPC_axNdg__original/img/Rtbe5p9f1Ioz6KzW4hlyeWel49M=/0x0/filters:format(png)/pic9407633.png",
-      "issue": "2026-02-09",
       "platform": "Gamefound",
       "launchDate": "2026-02-17",
       "endDate": "2026-03-17",
@@ -156,7 +136,6 @@
       "title": "Almighty ⚡️ The Godliest God Game",
       "summary": "A competitive god-game experience with a dedicated print-and-play reward tier for backers.",
       "image": "https://cf.geekdo-images.com/ZAQzUeNiRNmWJqA0uU3RCQ__original/img/xqKKoQxQjwuRPI33bZHxFnYH7rg=/0x0/filters:format(png)/pic9033470.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-10",
       "endDate": "2026-03-05",
@@ -170,7 +149,6 @@
       "title": "Logic & Lore 2nd Edition & Expansion",
       "summary": "A revised edition and expansion bundle that adds more tactical cardplay and content to the Logic & Lore system, including a $10 print-and-play pledge tier.",
       "image": "https://cf.geekdo-images.com/lrHAQv_mccR-gulDoHxaJA__original/img/YciAtUa8J2DkWhR8hYFi9nlNrHk=/0x0/filters:format(png)/pic8003054.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-03",
       "endDate": "2026-02-24",
@@ -184,7 +162,6 @@
       "title": "The Black Dahlia Case - Murder Mystery Game",
       "summary": "A murder mystery game inspired by the Black Dahlia case with a $12 print-and-play basic pledge tier.",
       "image": "/uploads/black_dahlia.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2026-02-02",
       "endDate": "2026-03-04",
@@ -198,7 +175,6 @@
       "title": "Rolling Pirates",
       "summary": "Treasure Hunt - An adventure roll-and-write game with free navigation in print-and-play format.",
       "image": "/uploads/rolling_pirates.jpg",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "2025-05-20",
       "endDate": "2025-06-19",
@@ -214,7 +190,6 @@
       "title": "Hidden Realms: The Mummy's Tomb",
       "summary": "Hidden Realms: The Mummy's Tomb is a single-page, print-and-play, roll-and-write dungeon crawl inspired by classic D&D maps. Draw polyomino shapes to map a new dungeon every game. Uncover treasure in the form of coins, keys, and magic items. Face deadly guardians, like oozes, skeletons, zombies, golems, mimics, and the Mummy itself. Plan carefully, because defeating it is not for the faint of heart. Are you up for the challenge?",
       "image": "https://cf.geekdo-images.com/3WTQ3Yzrhd9kXqYTOCw8dQ__original/img/6kP9jqHmYoPlBcO5AIeC_xDdUeM=/0x0/filters:format(png)/pic9407757.png",
-      "issue": "2026-02-09",
       "platform": "Gamefound",
       "launchDate": "",
       "endDate": "",
@@ -229,7 +204,6 @@
       "title": "Flipping Fortune",
       "summary": "A quirky push-your-luck tarot card game with some deckbuilding. Print & Play.",
       "image": "/uploads/flipping_fortune.jpg",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "",
       "endDate": "",
@@ -243,13 +217,26 @@
       "title": "Bravery",
       "summary": "A card-based survival game about surviving in the wilderness.",
       "image": "/uploads/bravery.png",
-      "issue": "2026-02-09",
       "platform": "Kickstarter",
       "launchDate": "",
       "endDate": "",
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/bravery",
       "designer": "Radek Ignatow",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "byteshift",
+      "title": "BYTE: SHIFT",
+      "summary": "BYTE:SHIFT is a competitive hacking game where one or two players design the most effective routines by drafting modular elements onto their floppy disks.",
+      "image": "/uploads/byte_shift.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/byte-shift-competitive-hacking-game-dpnp",
+      "publisher": "Beaverlicious Games",
+      "designer": "Robin Metz",
       "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
@@ -349,6 +336,12 @@
       "name": "Georg Fischer",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "robin-metz",
+      "name": "Robin Metz",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/145351/robin-metz",
+      "bio": "Indie board game designer from Germany. Creator of Rotation Rumble."
     }
   ],
   "publishers": [
@@ -441,6 +434,12 @@
       "name": "Tabletop for World",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "beaverlicious-games",
+      "name": "Beaverlicious Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/52961/beaverlicious",
+      "bio": "Beaverlicious is an indie card and tabletop game studio based in Frankfurt, Germany. Run by a small team of two people and one clever cat, Beaverlicious focuses on creating extremely small, cartridge-format games that fit in your pocket."
     }
   ]
 }

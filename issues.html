@@ -15,16 +15,16 @@
       (async () => {
         const el = document.getElementById('app');
         const data = await PNPL.loadContent();
-        const issues = [...data.issues].sort(PNPL.byWeekDesc);
+        const issues = Array.isArray(data.issues) ? [...data.issues].sort(PNPL.byWeekDesc) : [];
 
         el.innerHTML = `
           ${PNPL.header('This Week')}
           <main>
             <section class="hero">
               <h1>PnP Projects This Week</h1>
-              <p>Browse curated weekly digests and jump into featured projects.</p>
+              <p>Issue-based grouping has been retired. Browse projects by status from the main navigation.</p>
             </section>
-            <div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>
+            ${issues.length ? `<div class="issue-list">${issues.map(PNPL.issueCard).join('')}</div>` : '<p>No issue data is currently published.</p>'}
           </main>
           ${PNPL.footer()}
         `;
