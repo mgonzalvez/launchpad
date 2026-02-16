@@ -178,6 +178,20 @@
       "designer": "Jason Hager",
       "publisher": "Weird Giraffe Games",
       "promoDetails": "$10 print-and-play pledge tier is available."
+    },
+    {
+      "slug": "the-black-dahlia-case-murder-mystery-game",
+      "title": "The Black Dahlia Case - Murder Mystery Game",
+      "summary": "A murder mystery game inspired by the Black Dahlia case with a $12 print-and-play basic pledge tier.",
+      "image": "/uploads/black_dahlia.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-02",
+      "endDate": "2026-03-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/paulbamberger/the-black-dahlia-case",
+      "designer": "Paul Bamberger",
+      "publisher": "Paul Bamberger",
+      "promoDetails": "$12 print-and-play basic pledge tier is available."
     }
   ],
   "designers": [
@@ -252,6 +266,12 @@
       "name": "Jason Hager",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/88080/jason-hager",
       "bio": "Illustrator and game designer. Half of the game design duo of Durdle Games."
+    },
+    {
+      "slug": "paul-bamberger",
+      "name": "Paul Bamberger",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -324,6 +344,12 @@
     {
       "slug": "weird-giraffe-games",
       "name": "Weird Giraffe Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "paul-bamberger",
+      "name": "Paul Bamberger",
       "bggUrl": "",
       "bio": ""
     }
