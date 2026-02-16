@@ -208,6 +208,21 @@
       "promoDetails": "Late pledge is available.",
       "isLatePledge": true,
       "latePledgeUrl": "https://www.kickstarter.com/projects/rollnwrite/rolling-pirates"
+    },
+    {
+      "slug": "hidden-realms-the-mummys-tomb",
+      "title": "Hidden Realms: The Mummy's Tomb",
+      "summary": "Hidden Realms: The Mummy's Tomb is a single-page, print-and-play, roll-and-write dungeon crawl inspired by classic D&D maps. Draw polyomino shapes to map a new dungeon every game. Uncover treasure in the form of coins, keys, and magic items. Face deadly guardians, like oozes, skeletons, zombies, golems, mimics, and the Mummy itself. Plan carefully, because defeating it is not for the faint of heart. Are you up for the challenge?",
+      "image": "https://cf.geekdo-images.com/3WTQ3Yzrhd9kXqYTOCw8dQ__original/img/6kP9jqHmYoPlBcO5AIeC_xDdUeM=/0x0/filters:format(png)/pic9407757.png",
+      "issue": "2026-02-09",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/tabletop-for-world/hidden-realms-the-mummys-tomb",
+      "designer": "Spiros Kallos",
+      "publisher": "Tabletop for World",
+      "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
   "designers": [
@@ -294,6 +309,12 @@
       "name": "Sébastien Brégeon",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "spiros-kallos",
+      "name": "Spiros Kallos",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -378,6 +399,12 @@
     {
       "slug": "rollnwrite",
       "name": "Rollnwrite",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "tabletop-for-world",
+      "name": "Tabletop for World",
       "bggUrl": "",
       "bio": ""
     }
