@@ -1,4 +1,5 @@
 const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
+const WATCHLIST_STORAGE_KEY = 'pnpl_watchlist_v1';
 const basePath = (() => {
   if (window.location.hostname.endsWith('github.io')) {
     const first = window.location.pathname.split('/').filter(Boolean)[0];
@@ -52,6 +53,7 @@ function header(active = '') {
     ['preview.html', 'Preview'],
     ['blog.html', 'Blog'],
     ['archive.html', 'Ended'],
+    ['watchlist.html', 'Watchlist'],
     ['submit.html', 'Submit a Project']
   ];
 
@@ -140,6 +142,104 @@ function countdownChip(status, p, now = new Date()) {
   return '';
 }
 
+function readWatchlist() {
+  try {
+    const raw = window.localStorage.getItem(WATCHLIST_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    const unique = [];
+    const seen = new Set();
+    parsed.forEach((item) => {
+      const slug = String(item || '').trim();
+      if (!slug || seen.has(slug)) return;
+      seen.add(slug);
+      unique.push(slug);
+    });
+    return unique;
+  } catch (_err) {
+    return [];
+  }
+}
+
+function writeWatchlist(slugs) {
+  try {
+    window.localStorage.setItem(WATCHLIST_STORAGE_KEY, JSON.stringify(slugs));
+  } catch (_err) {
+    // no-op when storage is unavailable
+  }
+}
+
+function getWatchlistSlugs() {
+  return readWatchlist();
+}
+
+function isWatchlisted(slug) {
+  if (!slug) return false;
+  return readWatchlist().includes(String(slug));
+}
+
+function clearWatchlist() {
+  writeWatchlist([]);
+}
+
+function toggleWatchlist(slug) {
+  const normalized = String(slug || '').trim();
+  if (!normalized) return false;
+  const slugs = readWatchlist();
+  const idx = slugs.indexOf(normalized);
+  if (idx >= 0) {
+    slugs.splice(idx, 1);
+    writeWatchlist(slugs);
+    return false;
+  }
+  slugs.push(normalized);
+  writeWatchlist(slugs);
+  return true;
+}
+
+function watchButton(project, compact = false) {
+  const slug = String(project?.slug || '').trim();
+  if (!slug) return '';
+  const active = isWatchlisted(slug);
+  const label = active ? 'Remove from watchlist' : 'Save to watchlist';
+  return `
+    <button
+      type="button"
+      class="watch-btn${compact ? ' compact' : ''}${active ? ' active' : ''}"
+      data-watch-slug="${slug}"
+      data-watch-title="${String(project?.title || '').replace(/"/g, '&quot;')}"
+      aria-pressed="${active ? 'true' : 'false'}"
+      aria-label="${label}"
+      title="${label}"
+    >
+      <span aria-hidden="true">${active ? '♥' : '♡'}</span>
+      <span>${active ? 'Saved' : 'Save'}</span>
+    </button>
+  `;
+}
+
+function applyWatchState(button, active) {
+  button.classList.toggle('active', Boolean(active));
+  button.setAttribute('aria-pressed', active ? 'true' : 'false');
+  const label = active ? 'Remove from watchlist' : 'Save to watchlist';
+  button.setAttribute('aria-label', label);
+  button.setAttribute('title', label);
+  const symbol = button.querySelector('span[aria-hidden="true"]');
+  const text = button.querySelector('span:not([aria-hidden])');
+  if (symbol) symbol.textContent = active ? '♥' : '♡';
+  if (text) text.textContent = active ? 'Saved' : 'Save';
+}
+
+function refreshWatchButtons(slug = '') {
+  const slugs = new Set(readWatchlist());
+  const selector = slug ? `button[data-watch-slug="${slug}"]` : 'button[data-watch-slug]';
+  document.querySelectorAll(selector).forEach((button) => {
+    const buttonSlug = String(button.getAttribute('data-watch-slug') || '');
+    applyWatchState(button, slugs.has(buttonSlug));
+  });
+}
+
 function projectCard(p) {
   const now = new Date();
   const status = projectStatus(p, now);
@@ -153,8 +253,13 @@ function projectCard(p) {
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       </a>
       <div class="card-body">
-        ${statusBadge(status, p)}
-        <span class="badge">${p.platform}</span>
+        <div class="card-top-row">
+          <div>
+            ${statusBadge(status, p)}
+            <span class="badge">${p.platform}</span>
+          </div>
+          ${watchButton(p)}
+        </div>
         ${countdownChip(status, p, now)}
         <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
         <p>${p.summary}</p>
@@ -179,7 +284,10 @@ function projectTile(p) {
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       </a>
       <div class="tile-body">
-        ${statusBadge(status, p)}
+        <div class="tile-top-row">
+          ${statusBadge(status, p)}
+          ${watchButton(p, true)}
+        </div>
         ${countdownChip(status, p, now)}
         <h4><a href="${tileUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h4>
       </div>
@@ -256,12 +364,26 @@ function initContentLinkBehavior() {
   window.__pnplContentBehaviorInitialized = true;
 
   document.addEventListener('click', (event) => {
+    const watchBtn = event.target.closest('button[data-watch-slug]');
+    if (watchBtn) {
+      event.preventDefault();
+      const slug = String(watchBtn.getAttribute('data-watch-slug') || '');
+      toggleWatchlist(slug);
+      refreshWatchButtons(slug);
+      return;
+    }
+
     const card = event.target.closest('.card.card-click, .tile.tile-click');
     if (!card) return;
     if (event.target.closest('a,button,input,textarea,select,label')) return;
     const url = card.getAttribute('data-url');
     if (!url) return;
     window.open(url, '_blank', 'noopener,noreferrer');
+  });
+
+  window.addEventListener('storage', (event) => {
+    if (event.key !== WATCHLIST_STORAGE_KEY) return;
+    refreshWatchButtons();
   });
 }
 
@@ -291,5 +413,8 @@ window.PNPL = {
   withBase,
   slugify,
   enrichProjects,
-  setMainLinksNewTab
+  setMainLinksNewTab,
+  getWatchlistSlugs,
+  clearWatchlist,
+  refreshWatchButtons
 };
