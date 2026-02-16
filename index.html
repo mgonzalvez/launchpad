@@ -31,6 +31,9 @@
           const upcoming = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
             .sort((a, b) => PNPL.parseDate(a.launchDate) - PNPL.parseDate(b.launchDate));
+          const preview = projects
+            .filter((p) => PNPL.projectStatus(p, now) === 'preview')
+            .sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
 
           const slides = featured.map((p, idx) => {
             const status = PNPL.projectStatus(p, now);
@@ -93,6 +96,12 @@
               <section>
                 <h2>Upcoming Projects</h2>
                 ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
+              </section>
+
+              <section>
+                <h2>Preview Projects</h2>
+                <p class="meta">These projects are in preview mode and have not announced launch/end dates yet.</p>
+                ${preview.length ? `<div class="grid">${preview.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
               </section>
             </main>
             ${PNPL.footer()}

@@ -35,11 +35,16 @@ function parseDate(value) {
   return new Date(value);
 }
 
+function hasIsoDate(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
 function header(active = '') {
   const links = [
     ['', 'Home'],
     ['live.html', 'Live Now'],
     ['upcoming.html', 'Upcoming'],
+    ['preview.html', 'Preview'],
     ['blog.html', 'Blog'],
     ['archive.html', 'Ended'],
     ['submit.html', 'Submit a Project']
@@ -82,6 +87,9 @@ function personLink(type, name, customSlug) {
 }
 
 function projectStatus(p, now = new Date()) {
+  const isPreview = Boolean(p.isPreview) || (!hasIsoDate(p.launchDate) && !hasIsoDate(p.endDate));
+  if (isPreview) return 'preview';
+
   const launch = parseDate(p.launchDate);
   const end = parseDate(p.endDate);
   const hasLatePledge = Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl);
@@ -101,6 +109,9 @@ function statusBadge(status, p = null) {
   if (status === 'promo') {
     return `<span class="badge promo">PROMO</span>`;
   }
+  if (status === 'preview') {
+    return `<span class="badge preview">PREVIEW</span>`;
+  }
   if (status === 'late-pledge') {
     const lpUrl = p?.latePledgeUrl ? String(p.latePledgeUrl) : withBase('archive.html');
     return `<a class="badge-link" href="${lpUrl}" target="_blank" rel="noreferrer noopener"><span class="badge late-pledge">LATE PLEDGE</span></a>`;
@@ -111,6 +122,9 @@ function statusBadge(status, p = null) {
 function projectCard(p) {
   const status = projectStatus(p, new Date());
   const cardUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
+  const dateMeta = status === 'preview'
+    ? 'Launch: TBA | End: TBA'
+    : `Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}`;
   return `
     <article class="card card-click" data-url="${cardUrl}">
       <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">
@@ -121,8 +135,9 @@ function projectCard(p) {
         <span class="badge">${p.platform}</span>
         <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
         <p>${p.summary}</p>
-        <p class="meta">Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}</p>
+        <p class="meta">${dateMeta}</p>
         ${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}
+        ${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}
         ${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}
         ${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}
         <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : 'View project'}</a>
@@ -169,10 +184,16 @@ function byWeekDesc(a, b) {
 }
 
 function byEndAsc(a, b) {
+  if (!hasIsoDate(a.endDate) && !hasIsoDate(b.endDate)) return 0;
+  if (!hasIsoDate(a.endDate)) return 1;
+  if (!hasIsoDate(b.endDate)) return -1;
   return parseDate(a.endDate).getTime() - parseDate(b.endDate).getTime();
 }
 
 function byLaunchDesc(a, b) {
+  if (!hasIsoDate(a.launchDate) && !hasIsoDate(b.launchDate)) return 0;
+  if (!hasIsoDate(a.launchDate)) return 1;
+  if (!hasIsoDate(b.launchDate)) return -1;
   return parseDate(b.launchDate).getTime() - parseDate(a.launchDate).getTime();
 }
 

@@ -17,6 +17,7 @@
             <a href="index.html">Home</a>
             <a href="live.html">Live Now</a>
             <a href="upcoming.html">Upcoming</a>
+            <a href="preview.html">Preview</a>
             <a href="blog.html">Blog</a>
             <a href="archive.html">Ended</a>
             <a href="submit.html" aria-current="page">Submit a Project</a>
@@ -35,6 +36,7 @@
         <section class="hero">
           <h1>Submit a Project</h1>
           <p>Fill out this form to submit your project for Launchpad review. Submissions are reviewed by admin before publishing.</p>
+          <p class="meta">Required fields: email, project title, project URL, designer, project summary, and either image URL or image upload. Start/end dates are required unless you choose Preview mode.</p>
         </section>
 
         <section id="submit-confirmation" class="notice success" hidden>
@@ -51,72 +53,89 @@
 
             <div class="form-grid">
               <label>
-                <span>Your email</span>
+                <span>Your email (Required)</span>
                 <input type="email" name="submitter_email" autocomplete="email" required />
               </label>
 
               <label>
-                <span>Project title</span>
+                <span>Project title (Required)</span>
                 <input type="text" name="project_title" required />
               </label>
 
               <label class="wide">
-                <span>Project URL</span>
+                <span>Project URL (Required)</span>
                 <input type="url" name="project_url" placeholder="https://..." required />
               </label>
 
               <label>
-                <span>Start date</span>
-                <input type="date" name="start_date" required />
+                <span>Submission type (Required)</span>
+                <select name="submission_type" required>
+                  <option value="">Select one</option>
+                  <option value="Crowdfunding project">Crowdfunding project</option>
+                  <option value="Limited-time promotion">Limited-time promotion</option>
+                </select>
               </label>
 
               <label>
-                <span>End date</span>
-                <input type="date" name="end_date" required />
+                <span>Preview listing?</span>
+                <select name="is_preview">
+                  <option value="No" selected>No</option>
+                  <option value="Yes">Yes (dates TBD)</option>
+                </select>
               </label>
 
               <label>
-                <span>Designer</span>
+                <span>Start date (Required unless Preview = Yes)</span>
+                <input type="date" name="start_date" />
+              </label>
+
+              <label>
+                <span>End date (Required unless Preview = Yes)</span>
+                <input type="date" name="end_date" />
+              </label>
+
+              <label>
+                <span>Designer (Required)</span>
                 <input type="text" name="designer" required />
               </label>
 
               <label>
-                <span>Publisher</span>
-                <input type="text" name="publisher" required />
+                <span>Publisher (Optional)</span>
+                <input type="text" name="publisher" />
               </label>
 
               <label>
-                <span>Late pledge available?</span>
-                <select name="late_pledge_available" required>
-                  <option value="">Select one</option>
+                <span>Late pledge available? (Optional)</span>
+                <select name="late_pledge_available">
+                  <option value="">Not specified</option>
                   <option value="No">No</option>
                   <option value="Yes">Yes</option>
                 </select>
               </label>
 
               <label class="wide">
-                <span>Late pledge URL (if available)</span>
+                <span>Late pledge URL (Optional)</span>
                 <input type="url" name="late_pledge_url" placeholder="https://..." />
               </label>
 
               <label class="wide">
-                <span>Project summary</span>
+                <span>Project summary (Required)</span>
                 <textarea name="project_summary" rows="5" required></textarea>
               </label>
 
               <label class="wide">
-                <span>Image URL (direct public PNG/JPG/JPEG link)</span>
+                <span>Image URL (Required unless image upload is provided)</span>
                 <input type="url" name="image_url" placeholder="https://example.com/image.png" />
                 <small>Must be a direct public image URL. Private cloud links are not accepted.</small>
               </label>
 
               <label class="wide">
-                <span>Or upload image (PNG/JPG, max 5MB)</span>
+                <span>Or upload image (Required unless image URL is provided)</span>
                 <input type="file" name="image_file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
               </label>
             </div>
 
-            <p class="form-note">Provide either a valid direct image URL or upload a PNG/JPG file (max 5MB).</p>
+            <p class="form-note">Provide either a valid direct image URL or upload a PNG/JPG file (max 5MB). If this is a Preview listing, start/end dates can be left blank.</p>
 
             <div id="form-error" class="notice error" hidden></div>
 
@@ -151,6 +170,7 @@
         const imageFileInput = form.querySelector('input[name="image_file"]');
         const startDateInput = form.querySelector('input[name="start_date"]');
         const endDateInput = form.querySelector('input[name="end_date"]');
+        const isPreviewInput = form.querySelector('select[name="is_preview"]');
         const latePledgeAvailableInput = form.querySelector('select[name="late_pledge_available"]');
         const latePledgeUrlInput = form.querySelector('input[name="late_pledge_url"]');
 
@@ -187,6 +207,12 @@
 
           if (!form.reportValidity()) {
             setError('Please fill all required fields with valid values.');
+            return false;
+          }
+
+          const isPreview = String(isPreviewInput.value || 'No') === 'Yes';
+          if (!isPreview && (!startDateInput.value || !endDateInput.value)) {
+            setError('Start and end dates are required unless Preview is set to Yes.');
             return false;
           }
 

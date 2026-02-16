@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="shortcut icon" href="assets/logo.svg" />
+    <title>Preview Projects | PnP Launchpad</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="assets/app.js"></script>
+    <script>
+      (async () => {
+        const el = document.getElementById('app');
+        const data = await PNPL.loadContent();
+        const projects = PNPL.enrichProjects(data);
+        const now = new Date();
+        const preview = projects
+          .filter((p) => PNPL.projectStatus(p, now) === 'preview')
+          .sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
+
+        el.innerHTML = `
+          ${PNPL.header('Preview')}
+          <main>
+            <section class="hero">
+              <h1>Preview Projects</h1>
+              <p>Projects in preview mode can be showcased before launch and end dates are announced.</p>
+            </section>
+            ${preview.length ? `<div class="grid">${preview.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
+          </main>
+          ${PNPL.footer()}
+        `;
+      })();
+    </script>
+  </body>
+</html>
