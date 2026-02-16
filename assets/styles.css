@@ -212,6 +212,7 @@ main {
   letter-spacing: 0.03em;
   padding: 6px 12px;
   box-shadow: 0 2px 0 #8d1313;
+  animation: pulse-live 1.8s infinite ease-in-out;
 }
 
 .badge.upcoming {
@@ -234,6 +235,7 @@ main {
   border-color: #9dbfe0;
   font-size: 0.82rem;
   letter-spacing: 0.03em;
+  animation: shimmer-preview 2.8s infinite linear;
 }
 
 .badge.late-pledge {
@@ -242,9 +244,61 @@ main {
   border-color: #b4a0de;
   font-size: 0.82rem;
   letter-spacing: 0.03em;
+  animation: pulse-late 2.2s infinite ease-in-out;
 }
 
 .badge.archived { background: #f3e2cf; color: #7a3d17; }
+
+.countdown-chip {
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+}
+
+.countdown-chip.live {
+  background: #ffe8e8;
+  color: #7d1f1f;
+  border-color: #d6a3a3;
+}
+
+.countdown-chip.upcoming {
+  background: #e6f1ff;
+  color: #204e7f;
+  border-color: #9dbbe0;
+}
+
+.countdown-chip.preview {
+  background: #eaf6ff;
+  color: #24546f;
+  border-color: #a7cadf;
+}
+
+.countdown-chip.ended {
+  background: #f4e7d8;
+  color: #7b4c25;
+  border-color: #d3b08a;
+}
+
+@keyframes pulse-live {
+  0%, 100% { transform: translateY(0); box-shadow: 0 2px 0 #8d1313; }
+  50% { transform: translateY(-1px); box-shadow: 0 3px 8px #c3202050; }
+}
+
+@keyframes pulse-late {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes shimmer-preview {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.08); }
+  100% { filter: brightness(1); }
+}
 
 .issue-list {
   display: grid;
@@ -480,6 +534,10 @@ small { color: var(--muted); }
 .live-strip {
   width: min(100%, calc(100vw - 48px));
   max-width: 100%;
+}
+
+.just-added-strip h3 {
+  color: var(--accent-2);
 }
 
 .tile-strip-wrap {

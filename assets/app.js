@@ -39,6 +39,11 @@ function hasIsoDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 
+function dayDiff(from, to) {
+  const msPerDay = 24 * 60 * 60 * 1000;
+  return Math.ceil((to.getTime() - from.getTime()) / msPerDay);
+}
+
 function header(active = '') {
   const links = [
     ['', 'Home'],
@@ -119,8 +124,25 @@ function statusBadge(status, p = null) {
   return `<span class="badge archived">Ended</span>`;
 }
 
+function countdownChip(status, p, now = new Date()) {
+  if (status === 'preview') return '<span class="countdown-chip preview">Dates TBA</span>';
+  if (status === 'upcoming' && hasIsoDate(p.launchDate)) {
+    const days = dayDiff(now, parseDate(p.launchDate));
+    if (days <= 0) return '<span class="countdown-chip upcoming">Launching soon</span>';
+    return `<span class="countdown-chip upcoming">Launches in ${days}d</span>`;
+  }
+  if (['live', 'promo', 'late-pledge'].includes(status) && hasIsoDate(p.endDate)) {
+    const days = dayDiff(now, parseDate(p.endDate));
+    if (days < 0) return '<span class="countdown-chip ended">Ended</span>';
+    if (days === 0) return '<span class="countdown-chip live">Ends today</span>';
+    return `<span class="countdown-chip live">Ends in ${days}d</span>`;
+  }
+  return '';
+}
+
 function projectCard(p) {
-  const status = projectStatus(p, new Date());
+  const now = new Date();
+  const status = projectStatus(p, now);
   const cardUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
   const dateMeta = status === 'preview'
     ? 'Launch: TBA | End: TBA'
@@ -133,6 +155,7 @@ function projectCard(p) {
       <div class="card-body">
         ${statusBadge(status, p)}
         <span class="badge">${p.platform}</span>
+        ${countdownChip(status, p, now)}
         <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
         <p>${p.summary}</p>
         <p class="meta">${dateMeta}</p>
@@ -147,7 +170,8 @@ function projectCard(p) {
 }
 
 function projectTile(p) {
-  const status = projectStatus(p, new Date());
+  const now = new Date();
+  const status = projectStatus(p, now);
   const tileUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
@@ -156,6 +180,7 @@ function projectTile(p) {
       </a>
       <div class="tile-body">
         ${statusBadge(status, p)}
+        ${countdownChip(status, p, now)}
         <h4><a href="${tileUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h4>
       </div>
     </article>
@@ -207,17 +232,21 @@ function byArchivePriority(a, b) {
 function enrichProjects(data) {
   const designers = data.designers || [];
   const publishers = data.publishers || [];
+  const issues = data.issues || [];
 
   const designerByName = new Map(designers.map((d) => [String(d.name || '').toLowerCase(), d]));
   const publisherByName = new Map(publishers.map((p) => [String(p.name || '').toLowerCase(), p]));
+  const issueBySlug = new Map(issues.map((i) => [String(i.slug || ''), i]));
 
   return data.projects.map((project) => {
     const d = project.designer ? designerByName.get(String(project.designer).toLowerCase()) : null;
     const p = project.publisher ? publisherByName.get(String(project.publisher).toLowerCase()) : null;
+    const issue = project.issue ? issueBySlug.get(String(project.issue)) : null;
     return {
       ...project,
       designerSlug: d?.slug || (project.designer ? slugify(project.designer) : ''),
-      publisherSlug: p?.slug || (project.publisher ? slugify(project.publisher) : '')
+      publisherSlug: p?.slug || (project.publisher ? slugify(project.publisher) : ''),
+      issueWeekStart: issue?.weekStart || ''
     };
   });
 }
