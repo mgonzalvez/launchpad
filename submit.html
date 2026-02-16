@@ -34,17 +34,190 @@
       <main>
         <section class="hero">
           <h1>Submit a Project</h1>
-          <p>Project additions are managed through the Weekly Promotion Thread in the Print and Play Hideaway Facebook Group.</p>
-          <a class="cta" href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer">Open Print and Play Hideaway Group</a>
+          <p>Fill out this form to submit your project for Launchpad review. Submissions are reviewed by admin before publishing.</p>
+        </section>
+
+        <section id="submit-confirmation" class="notice success" hidden>
+          <h2>Submission Confirmed</h2>
+          <p>Your submission was received and will be posted after admin approval, which may take a few hours.</p>
+          <p>For extra exposure, share your project in the Weekly Promotion Post in the <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Print and Play Hideaway Facebook Group</a>.</p>
+        </section>
+
+        <section class="form-panel">
+          <form id="project-submit-form" class="submission-form" action="https://formsubmit.co/mgonzalvez@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+            <input type="hidden" name="_subject" value="Launchpad submission" />
+            <input type="hidden" name="_next" id="next-url" value="" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="form-grid">
+              <label>
+                <span>Your email</span>
+                <input type="email" name="submitter_email" autocomplete="email" required />
+              </label>
+
+              <label>
+                <span>Project title</span>
+                <input type="text" name="project_title" required />
+              </label>
+
+              <label class="wide">
+                <span>Project URL</span>
+                <input type="url" name="project_url" placeholder="https://..." required />
+              </label>
+
+              <label>
+                <span>Start date</span>
+                <input type="date" name="start_date" required />
+              </label>
+
+              <label>
+                <span>End date</span>
+                <input type="date" name="end_date" required />
+              </label>
+
+              <label>
+                <span>Designer</span>
+                <input type="text" name="designer" required />
+              </label>
+
+              <label>
+                <span>Publisher</span>
+                <input type="text" name="publisher" required />
+              </label>
+
+              <label class="wide">
+                <span>Project summary</span>
+                <textarea name="project_summary" rows="5" required></textarea>
+              </label>
+
+              <label class="wide">
+                <span>Image URL (direct public PNG/JPG/JPEG link)</span>
+                <input type="url" name="image_url" placeholder="https://example.com/image.png" />
+                <small>Must be a direct public image URL. Private cloud links are not accepted.</small>
+              </label>
+
+              <label class="wide">
+                <span>Or upload image (PNG/JPG, max 5MB)</span>
+                <input type="file" name="image_file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+              </label>
+            </div>
+
+            <p class="form-note">Provide either a valid direct image URL or upload a PNG/JPG file (max 5MB).</p>
+
+            <div id="form-error" class="notice error" hidden></div>
+
+            <button type="submit" class="cta" id="submit-btn">Submit Project</button>
+          </form>
+        </section>
+
+        <section class="hero" style="margin-top: 16px;">
+          <p>For more exposure, also share your project in the Weekly Promotion Post in the <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Print and Play Hideaway Facebook Group</a>.</p>
         </section>
       </main>
       <footer class="footer">Copyright 2026 by <a href="mailto:help@pnpfinder.com">Martin Gonzalvez</a>.<br />If you find this site helpful, why not buy me a coffee? <a href="https://ko-fi.com/marting" target="_blank" rel="noreferrer noopener"><span aria-hidden="true">☕</span> Buy me a coffee</a>.</footer>
     </div>
 
     <script>
-      window.addEventListener('load', () => {
-        alert('To submit your project, post it in the Weekly Promotion Thread in the Featured section of the Print and Play Hideaway Facebook Group (https://www.facebook.com/groups/pnphideaway). The group admins will handle adding approved projects to PnP Launchpad.');
-      });
+      (function () {
+        const form = document.querySelector('#project-submit-form');
+        const errorEl = document.querySelector('#form-error');
+        const confirmation = document.querySelector('#submit-confirmation');
+        const submitBtn = document.querySelector('#submit-btn');
+        const nextUrl = document.querySelector('#next-url');
+        if (!form || !errorEl || !confirmation || !submitBtn || !nextUrl) return;
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('submitted') === '1') {
+          confirmation.hidden = false;
+        }
+
+        nextUrl.value = `${window.location.origin}${window.location.pathname}?submitted=1`;
+
+        const imageUrlInput = form.querySelector('input[name="image_url"]');
+        const imageFileInput = form.querySelector('input[name="image_file"]');
+        const startDateInput = form.querySelector('input[name="start_date"]');
+        const endDateInput = form.querySelector('input[name="end_date"]');
+
+        const blockedHosts = [
+          'drive.google.com',
+          'docs.google.com',
+          'dropbox.com',
+          'onedrive.live.com',
+          'icloud.com',
+          'mega.nz',
+          'facebook.com'
+        ];
+
+        function setError(message) {
+          errorEl.textContent = message;
+          errorEl.hidden = !message;
+        }
+
+        function isDirectImageUrl(value) {
+          try {
+            const u = new URL(value);
+            if (!/^https?:$/i.test(u.protocol)) return false;
+            const host = u.hostname.toLowerCase();
+            if (blockedHosts.some((h) => host === h || host.endsWith(`.${h}`))) return false;
+            if (/\/s\/[0-9]+\//i.test(u.pathname)) return false;
+            return /\.(png|jpe?g)$/i.test(u.pathname);
+          } catch {
+            return false;
+          }
+        }
+
+        function validateForm() {
+          setError('');
+
+          if (!form.reportValidity()) {
+            setError('Please fill all required fields with valid values.');
+            return false;
+          }
+
+          if (startDateInput.value && endDateInput.value && endDateInput.value < startDateInput.value) {
+            setError('End date must be on or after start date.');
+            return false;
+          }
+
+          const imageUrl = String(imageUrlInput.value || '').trim();
+          const file = imageFileInput.files && imageFileInput.files[0] ? imageFileInput.files[0] : null;
+
+          if (!imageUrl && !file) {
+            setError('Please provide either an image URL or upload a PNG/JPG image.');
+            return false;
+          }
+
+          if (file) {
+            const isAllowedType = ['image/png', 'image/jpeg'].includes(file.type);
+            const isAllowedName = /\.(png|jpe?g)$/i.test(file.name);
+            if (!isAllowedType && !isAllowedName) {
+              setError('Uploaded image must be PNG or JPG/JPEG.');
+              return false;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+              setError('Uploaded image must be 5MB or smaller.');
+              return false;
+            }
+          }
+
+          if (imageUrl && !isDirectImageUrl(imageUrl) && !file) {
+            setError('Image URL is not a direct public PNG/JPG/JPEG link. Please upload a PNG/JPG image (max 5MB).');
+            return false;
+          }
+
+          return true;
+        }
+
+        form.addEventListener('submit', (event) => {
+          if (!validateForm()) {
+            event.preventDefault();
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting...';
+        });
+      })();
     </script>
   </body>
 </html>
