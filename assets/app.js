@@ -240,7 +240,8 @@ function refreshWatchButtons(slug = '') {
   });
 }
 
-function projectCard(p) {
+function projectCard(p, options = {}) {
+  const compact = Boolean(options.compact);
   const now = new Date();
   const status = projectStatus(p, now);
   const cardUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
@@ -248,7 +249,7 @@ function projectCard(p) {
     ? 'Launch: TBA | End: TBA'
     : `Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}`;
   return `
-    <article class="card card-click" data-url="${cardUrl}">
+    <article class="card card-click${compact ? ' compact' : ''}" data-url="${cardUrl}">
       <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       </a>
@@ -258,16 +259,16 @@ function projectCard(p) {
             ${statusBadge(status, p)}
             <span class="badge">${p.platform}</span>
           </div>
-          ${watchButton(p)}
+          ${watchButton(p, compact)}
         </div>
         ${countdownChip(status, p, now)}
         <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
-        <p>${p.summary}</p>
+        ${compact ? '' : `<p>${p.summary}</p>`}
         <p class="meta">${dateMeta}</p>
-        ${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}
-        ${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}
-        ${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}
-        ${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}
+        ${compact ? '' : `${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}`}
+        ${compact ? '' : `${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}`}
+        ${compact ? '' : `${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}`}
+        ${compact ? '' : `${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}`}
         <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : 'View project'}</a>
       </div>
     </article>

@@ -34,6 +34,9 @@
           const preview = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'preview')
             .sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
+          const homeRowLimit = 4;
+          const upcomingHome = upcoming.slice(0, homeRowLimit);
+          const previewHome = preview.slice(0, homeRowLimit);
 
           const slides = featured.map((p, idx) => {
             const status = PNPL.projectStatus(p, now);
@@ -94,14 +97,20 @@
               </section>
 
               <section>
-                <h2>Upcoming Projects</h2>
-                ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
+                <div class="section-head">
+                  <h2>Upcoming Projects</h2>
+                  <a class="more-link" href="${PNPL.withBase('upcoming.html')}" target="_blank" rel="noreferrer noopener">More upcoming</a>
+                </div>
+                ${upcomingHome.length ? `<div class="home-compact-row">${upcomingHome.map((p) => PNPL.projectCard(p, { compact: true })).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
               </section>
 
               <section>
-                <h2>Preview Projects</h2>
+                <div class="section-head">
+                  <h2>Preview Projects</h2>
+                  <a class="more-link" href="${PNPL.withBase('preview.html')}" target="_blank" rel="noreferrer noopener">More preview</a>
+                </div>
                 <p class="meta">These projects are in preview mode and have not announced launch/end dates yet.</p>
-                ${preview.length ? `<div class="grid">${preview.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
+                ${previewHome.length ? `<div class="home-compact-row">${previewHome.map((p) => PNPL.projectCard(p, { compact: true })).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
               </section>
             </main>
             ${PNPL.footer()}
