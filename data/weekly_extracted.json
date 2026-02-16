@@ -1,0 +1,546 @@
+{
+  "input_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+  "counts": {
+    "source_records": 18,
+    "unique_source_urls": 16,
+    "all_urls_seen": 43,
+    "unique_all_urls": 25
+  },
+  "source_records": [
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Nezih Savi",
+      "url": "https://www.kickstarter.com/.../orman-a-roll-and-plant...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Florian Fiedler",
+      "url": "https://gamefound.com/.../essence-the-grim-expeditions",
+      "url_quality": "truncated",
+      "platform": "Gamefound",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Radek Ignat\u00f3w",
+      "url": "https://www.kickstarter.com/projects/radek-ignatow/king-0",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Nazareno Properzi",
+      "url": "https://www.kickstarter.com/.../one-card-dungeon-hells-door",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Edward Bell",
+      "url": "https://www.kickstarter.com/.../pocket-puffins-lost-in...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Mike Petty",
+      "url": "https://mikepettygames.etsy.com/listing/4454645684",
+      "url_quality": "full",
+      "platform": "Etsy",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Martin van Rossum",
+      "url": "https://www.kickstarter.com/pro.../rollingrhinogames/catsaga",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Guillermina Rivas",
+      "url": "https://infiniteinitegames.itch.io/pirate-primates-chess...?",
+      "url_quality": "truncated",
+      "platform": "Itch.io",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://drive.google.com/.../1PmDrhiyL5caebHsj-Ed.../view...",
+      "url_quality": "truncated",
+      "platform": "Google Drive",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://youtu.be/T2w9FbfdWH8?si=co-Q24GA0WFGe2ZR",
+      "url_quality": "full",
+      "platform": "YouTube",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://youtu.be/DBIV6GYHgz8?si=-yp3QwHOvlhfj4JO",
+      "url_quality": "full",
+      "platform": "YouTube",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Ra Oul Schaupp",
+      "url": "https://itch.io/j/180328/-/birthday-sale-",
+      "url_quality": "full",
+      "platform": "Itch.io",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Krzysiek Pietrzak (start of next post visible)",
+      "url": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Two Acorns Games",
+      "url": "https://www.kickstarter.com/pro.../twoacornsgames/dice-horde",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Time to Dice: simulation board games",
+      "url": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Martin Melbardis",
+      "url": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Nuka Zombee Games",
+      "url": "https://www.kickstarter.com/.../beastward-monster-hunt...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "05.png",
+      "creator": "Krzysiek Pietrzak",
+      "url": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `05.png`"
+    }
+  ],
+  "unique_source_urls": [
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Nezih Savi",
+      "url": "https://www.kickstarter.com/.../orman-a-roll-and-plant...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Florian Fiedler",
+      "url": "https://gamefound.com/.../essence-the-grim-expeditions",
+      "url_quality": "truncated",
+      "platform": "Gamefound",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Radek Ignat\u00f3w",
+      "url": "https://www.kickstarter.com/projects/radek-ignatow/king-0",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Nazareno Properzi",
+      "url": "https://www.kickstarter.com/.../one-card-dungeon-hells-door",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Edward Bell",
+      "url": "https://www.kickstarter.com/.../pocket-puffins-lost-in...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Mike Petty",
+      "url": "https://mikepettygames.etsy.com/listing/4454645684",
+      "url_quality": "full",
+      "platform": "Etsy",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Martin van Rossum",
+      "url": "https://www.kickstarter.com/pro.../rollingrhinogames/catsaga",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Guillermina Rivas",
+      "url": "https://infiniteinitegames.itch.io/pirate-primates-chess...?",
+      "url_quality": "truncated",
+      "platform": "Itch.io",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://drive.google.com/.../1PmDrhiyL5caebHsj-Ed.../view...",
+      "url_quality": "truncated",
+      "platform": "Google Drive",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://youtu.be/T2w9FbfdWH8?si=co-Q24GA0WFGe2ZR",
+      "url_quality": "full",
+      "platform": "YouTube",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://youtu.be/DBIV6GYHgz8?si=-yp3QwHOvlhfj4JO",
+      "url_quality": "full",
+      "platform": "YouTube",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Ra Oul Schaupp",
+      "url": "https://itch.io/j/180328/-/birthday-sale-",
+      "url_quality": "full",
+      "platform": "Itch.io",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Krzysiek Pietrzak (start of next post visible)",
+      "url": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Two Acorns Games",
+      "url": "https://www.kickstarter.com/pro.../twoacornsgames/dice-horde",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Martin Melbardis",
+      "url": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Nuka Zombee Games",
+      "url": "https://www.kickstarter.com/.../beastward-monster-hunt...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    }
+  ],
+  "unique_all_urls": [
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Nezih Savi",
+      "url": "https://www.kickstarter.com/.../orman-a-roll-and-plant...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Florian Fiedler",
+      "url": "https://gamefound.com/.../essence-the-grim-expeditions",
+      "url_quality": "truncated",
+      "platform": "Gamefound",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Radek Ignat\u00f3w",
+      "url": "https://www.kickstarter.com/projects/radek-ignatow/king-0",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "01.png",
+      "creator": "Nazareno Properzi",
+      "url": "https://www.kickstarter.com/.../one-card-dungeon-hells-door",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `01.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Edward Bell",
+      "url": "https://www.kickstarter.com/.../pocket-puffins-lost-in...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Mike Petty",
+      "url": "https://mikepettygames.etsy.com/listing/4454645684",
+      "url_quality": "full",
+      "platform": "Etsy",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "02.png",
+      "creator": "Martin van Rossum",
+      "url": "https://www.kickstarter.com/pro.../rollingrhinogames/catsaga",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `02.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Guillermina Rivas",
+      "url": "https://infiniteinitegames.itch.io/pirate-primates-chess...?",
+      "url_quality": "truncated",
+      "platform": "Itch.io",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://drive.google.com/.../1PmDrhiyL5caebHsj-Ed.../view...",
+      "url_quality": "truncated",
+      "platform": "Google Drive",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://youtu.be/T2w9FbfdWH8?si=co-Q24GA0WFGe2ZR",
+      "url_quality": "full",
+      "platform": "YouTube",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Tony Fairbanks",
+      "url": "https://youtu.be/DBIV6GYHgz8?si=-yp3QwHOvlhfj4JO",
+      "url_quality": "full",
+      "platform": "YouTube",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Ra Oul Schaupp",
+      "url": "https://itch.io/j/180328/-/birthday-sale-",
+      "url_quality": "full",
+      "platform": "Itch.io",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "03.png",
+      "creator": "Krzysiek Pietrzak (start of next post visible)",
+      "url": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `03.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Two Acorns Games",
+      "url": "https://www.kickstarter.com/pro.../twoacornsgames/dice-horde",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Martin Melbardis",
+      "url": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "04.png",
+      "creator": "Nuka Zombee Games",
+      "url": "https://www.kickstarter.com/.../beastward-monster-hunt...",
+      "url_quality": "truncated",
+      "platform": "Kickstarter",
+      "section": "Screenshot `04.png`"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://www.kickstarter.com/projects/rollingrhinogames/catsaga",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://www.kickstarter.com/projects/twoacornsgames/dice-horde",
+      "url_quality": "full",
+      "platform": "Kickstarter",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://infinitefinitegames.itch.io/pirate-primates-chess",
+      "url_quality": "full",
+      "platform": "Itch.io",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://www.kickstarter.com/projects/<creator>/pocket-puffins-lost-in-space",
+      "url_quality": "template",
+      "platform": "Kickstarter",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://www.kickstarter.com/projects/<creator>/beastward-monster-hunt-rpg-boardgame",
+      "url_quality": "template",
+      "platform": "Kickstarter",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://www.kickstarter.com/projects/<creator>/one-card-dungeon-hells-door",
+      "url_quality": "template",
+      "platform": "Kickstarter",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://www.kickstarter.com/projects/<creator>/orman-a-roll-and-plant-print-and-play-game",
+      "url_quality": "template",
+      "platform": "Kickstarter",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://gamefound.com/projects/<creator>/essence-the-grim-expeditions",
+      "url_quality": "template",
+      "platform": "Gamefound",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    },
+    {
+      "source_file": "Feb. 9-14, 2026/extracted_text_and_urls.md",
+      "screenshot": "",
+      "creator": "",
+      "url": "https://drive.google.com/file/d/1PmDrhiyL5caebHsj-Ed.../view",
+      "url_quality": "truncated",
+      "platform": "Google Drive",
+      "section": "Second Pass: Normalized/Resolved URL Candidates"
+    }
+  ]
+}

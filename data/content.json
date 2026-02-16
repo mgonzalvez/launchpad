@@ -153,7 +153,7 @@
     },
     {
       "slug": "almighty-the-godliest-god-game",
-      "title": "Almighty \u26a1\ufe0f The Godliest God Game",
+      "title": "Almighty ⚡️ The Godliest God Game",
       "summary": "A competitive god-game experience with a dedicated print-and-play reward tier for backers.",
       "image": "https://cf.geekdo-images.com/ZAQzUeNiRNmWJqA0uU3RCQ__original/img/xqKKoQxQjwuRPI33bZHxFnYH7rg=/0x0/filters:format(png)/pic9033470.png",
       "issue": "2026-02-09",
@@ -164,6 +164,20 @@
       "designer": "Malachi Rempen",
       "publisher": "Malachi Rempen",
       "promoDetails": "$5 print-and-play pledge/reward is available."
+    },
+    {
+      "slug": "logic-and-lore-2nd-edition-expansion",
+      "title": "Logic & Lore 2nd Edition & Expansion",
+      "summary": "A revised edition and expansion bundle that adds more tactical cardplay and content to the Logic & Lore system, including a $10 print-and-play pledge tier.",
+      "image": "https://cf.geekdo-images.com/lrHAQv_mccR-gulDoHxaJA__original/img/YciAtUa8J2DkWhR8hYFi9nlNrHk=/0x0/filters:format(png)/pic8003054.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-03",
+      "endDate": "2026-02-24",
+      "primaryUrl": "https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description",
+      "designer": "Jason Hager",
+      "publisher": "Weird Giraffe Games",
+      "promoDetails": "$10 print-and-play pledge tier is available."
     }
   ],
   "designers": [
@@ -232,6 +246,12 @@
       "name": "Malachi Rempen",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/102087/malachi-ray-rempen",
       "bio": ""
+    },
+    {
+      "slug": "jason-hager",
+      "name": "Jason Hager",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -298,6 +318,12 @@
     {
       "slug": "malachi-rempen",
       "name": "Malachi Rempen",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "weird-giraffe-games",
+      "name": "Weird Giraffe Games",
       "bggUrl": "",
       "bio": ""
     }
