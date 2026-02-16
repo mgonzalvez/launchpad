@@ -223,6 +223,20 @@
       "designer": "Spiros Kallos",
       "publisher": "Tabletop for World",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "flipping-fortune",
+      "title": "Flipping Fortune",
+      "summary": "A quirky push-your-luck tarot card game with some deckbuilding. Print & Play.",
+      "image": "/uploads/flipping_fortune.jpg",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/herrgoldberg/flipping-fortune",
+      "designer": "Georg Fischer",
+      "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
   "designers": [
@@ -313,6 +327,12 @@
     {
       "slug": "spiros-kallos",
       "name": "Spiros Kallos",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "georg-fischer",
+      "name": "Georg Fischer",
       "bggUrl": "",
       "bio": ""
     }
