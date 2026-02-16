@@ -192,6 +192,22 @@
       "designer": "Paul Bamberger",
       "publisher": "Paul Bamberger",
       "promoDetails": "$12 print-and-play basic pledge tier is available."
+    },
+    {
+      "slug": "rolling-pirates",
+      "title": "Rolling Pirates",
+      "summary": "Treasure Hunt - An adventure roll-and-write game with free navigation in print-and-play format.",
+      "image": "/uploads/rolling_pirates.jpg",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "2025-05-20",
+      "endDate": "2025-06-19",
+      "primaryUrl": "https://www.kickstarter.com/projects/rollnwrite/rolling-pirates",
+      "designer": "Sébastien Brégeon",
+      "publisher": "Rollnwrite",
+      "promoDetails": "Late pledge is available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/rollnwrite/rolling-pirates"
     }
   ],
   "designers": [
@@ -272,6 +288,12 @@
       "name": "Paul Bamberger",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "sebastien-bregeon",
+      "name": "Sébastien Brégeon",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -350,6 +372,12 @@
     {
       "slug": "paul-bamberger",
       "name": "Paul Bamberger",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rollnwrite",
+      "name": "Rollnwrite",
       "bggUrl": "",
       "bio": ""
     }
