@@ -228,6 +228,14 @@ main {
   letter-spacing: 0.03em;
 }
 
+.badge.late-pledge {
+  background: #efe7ff;
+  color: #52308b;
+  border-color: #b4a0de;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
 .badge.archived { background: #f3e2cf; color: #7a3d17; }
 
 .issue-list {

@@ -85,6 +85,20 @@
                 <input type="text" name="publisher" required />
               </label>
 
+              <label>
+                <span>Late pledge available?</span>
+                <select name="late_pledge_available" required>
+                  <option value="">Select one</option>
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </label>
+
+              <label class="wide">
+                <span>Late pledge URL (if available)</span>
+                <input type="url" name="late_pledge_url" placeholder="https://..." />
+              </label>
+
               <label class="wide">
                 <span>Project summary</span>
                 <textarea name="project_summary" rows="5" required></textarea>
@@ -137,6 +151,8 @@
         const imageFileInput = form.querySelector('input[name="image_file"]');
         const startDateInput = form.querySelector('input[name="start_date"]');
         const endDateInput = form.querySelector('input[name="end_date"]');
+        const latePledgeAvailableInput = form.querySelector('select[name="late_pledge_available"]');
+        const latePledgeUrlInput = form.querySelector('input[name="late_pledge_url"]');
 
         const blockedHosts = [
           'drive.google.com',
@@ -176,6 +192,13 @@
 
           if (startDateInput.value && endDateInput.value && endDateInput.value < startDateInput.value) {
             setError('End date must be on or after start date.');
+            return false;
+          }
+
+          const latePledgeAvailable = String(latePledgeAvailableInput.value || '');
+          const latePledgeUrl = String(latePledgeUrlInput.value || '').trim();
+          if (latePledgeAvailable === 'Yes' && !latePledgeUrl) {
+            setError('Please provide a late pledge URL when late pledge is marked as available.');
             return false;
           }
 

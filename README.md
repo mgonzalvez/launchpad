@@ -64,3 +64,17 @@ Options:
 
 - `--force` refetches entries even if `bggUrl`/`bio` already exist.
 - `--path` lets you target a different JSON file.
+
+## Weekly extraction helper
+
+To avoid doing large manual extraction work in chat context, convert weekly markdown notes into structured data:
+
+```bash
+python3 scripts/extract_weekly_data.py
+python3 scripts/extract_weekly_data.py --input "Feb. 9-14, 2026/extracted_text_and_urls.md" --csv data/weekly_extracted.csv
+```
+
+Outputs:
+
+- `data/weekly_extracted.json` (default)
+- optional CSV when `--csv` is provided

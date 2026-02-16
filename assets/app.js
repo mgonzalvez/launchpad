@@ -84,13 +84,14 @@ function personLink(type, name, customSlug) {
 function projectStatus(p, now = new Date()) {
   const launch = parseDate(p.launchDate);
   const end = parseDate(p.endDate);
+  const hasLatePledge = Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl);
   if (launch > now) return 'upcoming';
-  if (end < now) return 'archived';
+  if (end < now) return hasLatePledge ? 'late-pledge' : 'archived';
   if (p.isPromo) return 'promo';
   return 'live';
 }
 
-function statusBadge(status) {
+function statusBadge(status, p = null) {
   if (status === 'live') {
     return `<a class="badge-link" href="${withBase('live.html')}"><span class="badge live-now">LIVE NOW</span></a>`;
   }
@@ -100,25 +101,31 @@ function statusBadge(status) {
   if (status === 'promo') {
     return `<span class="badge promo">PROMO</span>`;
   }
+  if (status === 'late-pledge') {
+    const lpUrl = p?.latePledgeUrl ? String(p.latePledgeUrl) : withBase('archive.html');
+    return `<a class="badge-link" href="${lpUrl}" target="_blank" rel="noreferrer noopener"><span class="badge late-pledge">LATE PLEDGE</span></a>`;
+  }
   return `<span class="badge archived">Ended</span>`;
 }
 
 function projectCard(p) {
   const status = projectStatus(p, new Date());
+  const cardUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
   return `
-    <article class="card card-click" data-url="${p.primaryUrl}">
-      <a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">
+    <article class="card card-click" data-url="${cardUrl}">
+      <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       </a>
       <div class="card-body">
-        ${statusBadge(status)}
+        ${statusBadge(status, p)}
         <span class="badge">${p.platform}</span>
-        <h3><a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
+        <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
         <p>${p.summary}</p>
         <p class="meta">Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}</p>
+        ${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}
         ${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}
         ${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}
-        <a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">View project</a>
+        <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : 'View project'}</a>
       </div>
     </article>
   `;
@@ -126,14 +133,15 @@ function projectCard(p) {
 
 function projectTile(p) {
   const status = projectStatus(p, new Date());
+  const tileUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
   return `
-    <article class="tile tile-click" data-url="${p.primaryUrl}">
-      <a class="tile-image-link" href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">
+    <article class="tile tile-click" data-url="${tileUrl}">
+      <a class="tile-image-link" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
       </a>
       <div class="tile-body">
-        ${statusBadge(status)}
-        <h4><a href="${p.primaryUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h4>
+        ${statusBadge(status, p)}
+        <h4><a href="${tileUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h4>
       </div>
     </article>
   `;
@@ -166,6 +174,13 @@ function byEndAsc(a, b) {
 
 function byLaunchDesc(a, b) {
   return parseDate(b.launchDate).getTime() - parseDate(a.launchDate).getTime();
+}
+
+function byArchivePriority(a, b) {
+  const rank = (p) => (projectStatus(p, new Date()) === 'late-pledge' ? 0 : 1);
+  const rankDiff = rank(a) - rank(b);
+  if (rankDiff !== 0) return rankDiff;
+  return parseDate(b.endDate).getTime() - parseDate(a.endDate).getTime();
 }
 
 function enrichProjects(data) {
@@ -221,6 +236,7 @@ window.PNPL = {
   byWeekDesc,
   byEndAsc,
   byLaunchDesc,
+  byArchivePriority,
   parseDate,
   withBase,
   slugify,
