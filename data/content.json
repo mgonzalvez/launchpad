@@ -237,6 +237,20 @@
       "primaryUrl": "https://www.kickstarter.com/projects/herrgoldberg/flipping-fortune",
       "designer": "Georg Fischer",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "bravery",
+      "title": "Bravery",
+      "summary": "A card-based survival game about surviving in the wilderness.",
+      "image": "/uploads/bravery.png",
+      "issue": "2026-02-09",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/bravery",
+      "designer": "Radek Ignatow",
+      "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
   "designers": [
