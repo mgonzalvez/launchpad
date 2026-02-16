@@ -34,18 +34,6 @@
           const preview = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'preview')
             .sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
-          const recencyWindowDays = 14;
-          const justAdded = projects
-            .map((p) => {
-              const sourceDate = p.addedDate || p.issueWeekStart || p.launchDate || '';
-              const parsed = PNPL.parseDate(sourceDate);
-              const valid = !Number.isNaN(parsed.getTime());
-              const ageDays = valid ? Math.floor((now.getTime() - parsed.getTime()) / (24 * 60 * 60 * 1000)) : Number.POSITIVE_INFINITY;
-              return { project: p, ageDays };
-            })
-            .filter((entry) => entry.ageDays >= 0 && entry.ageDays <= recencyWindowDays)
-            .sort((a, b) => a.ageDays - b.ageDays)
-            .map((entry) => entry.project);
 
           const slides = featured.map((p, idx) => {
             const status = PNPL.projectStatus(p, now);
@@ -94,7 +82,7 @@
                 ` : '<p>No live or promo projects are available for featured rotation right now.</p>'}
 
                 <div class="live-strip">
-                  <h3>Live Now + Promo</h3>
+                  <h3>Live Now</h3>
                   ${liveAndPromo.length ? `
                     <div class="tile-strip-wrap">
                       <button type="button" class="tile-handle" id="tile-prev" aria-label="Scroll live projects left">&#8249;</button>
@@ -102,17 +90,6 @@
                       <button type="button" class="tile-handle" id="tile-next" aria-label="Scroll live projects right">&#8250;</button>
                     </div>
                   ` : '<p>No active projects are listed right now.</p>'}
-                </div>
-
-                <div class="live-strip just-added-strip">
-                  <h3>Just Added</h3>
-                  ${justAdded.length ? `
-                    <div class="tile-strip-wrap">
-                      <button type="button" class="tile-handle" id="just-added-prev" aria-label="Scroll just added projects left">&#8249;</button>
-                      <div class="tile-row" id="just-added-row">${justAdded.map((p) => PNPL.projectTile(p)).join('')}</div>
-                      <button type="button" class="tile-handle" id="just-added-next" aria-label="Scroll just added projects right">&#8250;</button>
-                    </div>
-                  ` : '<p>No new project entries in the past 14 days.</p>'}
                 </div>
               </section>
 
@@ -225,7 +202,6 @@
           };
 
           bindTileRowControls('tile-row', 'tile-prev', 'tile-next');
-          bindTileRowControls('just-added-row', 'just-added-prev', 'just-added-next');
         } catch (err) {
           el.innerHTML = '<main><p>Could not load site data. Please refresh or redeploy latest files.</p></main>';
           console.error(err);
