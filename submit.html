@@ -152,6 +152,10 @@
 
     <script>
       (function () {
+        // Optional: set this to your deployed Google Apps Script Web App URL
+        // to also log submissions into Google Sheets.
+        const GOOGLE_SHEETS_WEBHOOK_URL = '';
+
         const form = document.querySelector('#project-submit-form');
         const errorEl = document.querySelector('#form-error');
         const confirmation = document.querySelector('#submit-confirmation');
@@ -200,6 +204,42 @@
           } catch {
             return false;
           }
+        }
+
+        function boolText(value) {
+          return value ? 'Yes' : 'No';
+        }
+
+        async function postToGoogleSheets() {
+          if (!GOOGLE_SHEETS_WEBHOOK_URL) return;
+
+          const imageFile = imageFileInput.files && imageFileInput.files[0] ? imageFileInput.files[0] : null;
+          const payload = {
+            submitted_at: new Date().toISOString(),
+            submitter_email: String(form.querySelector('input[name="submitter_email"]').value || '').trim(),
+            project_title: String(form.querySelector('input[name="project_title"]').value || '').trim(),
+            project_url: String(form.querySelector('input[name="project_url"]').value || '').trim(),
+            submission_type: String(form.querySelector('select[name="submission_type"]').value || '').trim(),
+            is_preview: String(isPreviewInput.value || 'No'),
+            start_date: String(startDateInput.value || '').trim(),
+            end_date: String(endDateInput.value || '').trim(),
+            designer: String(form.querySelector('input[name="designer"]').value || '').trim(),
+            publisher: String(form.querySelector('input[name="publisher"]').value || '').trim(),
+            late_pledge_available: String(latePledgeAvailableInput.value || '').trim(),
+            late_pledge_url: String(latePledgeUrlInput.value || '').trim(),
+            project_summary: String(form.querySelector('textarea[name="project_summary"]').value || '').trim(),
+            image_url: String(imageUrlInput.value || '').trim(),
+            image_uploaded: boolText(Boolean(imageFile)),
+            image_file_name: imageFile ? imageFile.name : ''
+          };
+
+          // Best-effort logging; do not block email submit if this fails.
+          await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            mode: 'no-cors'
+          });
         }
 
         function validateForm() {
@@ -257,14 +297,23 @@
           return true;
         }
 
-        form.addEventListener('submit', (event) => {
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
           if (!validateForm()) {
-            event.preventDefault();
             return;
           }
 
           submitBtn.disabled = true;
           submitBtn.textContent = 'Submitting...';
+
+          try {
+            await postToGoogleSheets();
+          } catch (_) {
+            // Ignore logging failures and continue with email submission.
+          }
+
+          form.submit();
         });
       })();
     </script>
