@@ -20,6 +20,8 @@
         const live = projects
           .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
           .sort(PNPL.byEndAsc);
+        const justLaunched = live.filter((p) => PNPL.projectIsJustLaunched(p, now));
+        const standardLive = live.filter((p) => !PNPL.projectIsJustLaunched(p, now));
 
         el.innerHTML = `
           ${PNPL.header('Live Now')}
@@ -28,7 +30,14 @@
               <h1>Projects Live Right Now</h1>
               <p>Campaigns currently active and accepting backers.</p>
             </section>
-            ${live.length ? `<div class="grid featured">${live.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No projects are live right now.</p>'}
+            ${justLaunched.length ? `
+              <section class="launch-alert">
+                <h2>Just Launched Today</h2>
+                <p>Freshly launched campaigns get priority placement here for the day.</p>
+                <div class="grid featured">${justLaunched.map((p) => PNPL.projectCard(p)).join('')}</div>
+              </section>
+            ` : ''}
+            ${standardLive.length ? `<div class="grid featured">${standardLive.map((p) => PNPL.projectCard(p)).join('')}</div>` : (justLaunched.length ? '' : '<p>No projects are live right now.</p>')}
           </main>
           ${PNPL.footer()}
         `;
