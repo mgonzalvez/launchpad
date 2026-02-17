@@ -1,78 +1,81 @@
-# PnP Launchpad (No Build / No npm)
+# PnP Launchpad
 
-PnP Launchpad is a plain static HTML/CSS/JS site for curated paid Print-and-Play project listings.
+Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview, and late-pledge projects.
 
-## Stack
+## Current Status
 
-- Static files only (no build step)
-- Decap CMS at `/admin/`
-- JSON data source at `data/content.json`
-- GitHub Pages deployment via Actions
+- No build step, no npm.
+- Data-driven from `data/content.json`.
+- Blog is organized under `blog/` (`blog/index.html` is the blog landing page).
+- Designed for GitHub Pages-style static hosting.
 
-## Structure
+## Core Features
 
-- `index.html` - homepage (live/upcoming/preview highlights)
-- `archive.html` - auto-archived projects (client-side by end date)
-- `submit.html` - creator submission form (prefilled GitHub issue)
-- `assets/styles.css` - theme and layout
-- `assets/app.js` - shared rendering utilities
-- `data/content.json` - all projects + designer/publisher profiles
-- `admin/config.yml` - Decap configuration
+- Automatic project status from dates:
+  - `Live Now`
+  - `Upcoming`
+  - `Preview` (no dates)
+  - `Ended`
+  - `Late Pledge`
+- `Just Launched` treatment:
+  - Launch-day badge (`JUST LAUNCHED`)
+  - Temporary launch spotlight on `index.html` and `live.html`
+  - Automatically expires after launch day
+- Homepage:
+  - Featured carousel
+  - Live rail
+  - Compact single-row Upcoming and Preview sections with `More` links
+- Local watchlist:
+  - Save/remove projects via `localStorage`
+  - Dedicated `watchlist.html`
+- Blog:
+  - Main feed at `blog/index.html`
+  - Individual posts in `blog/`
+  - Dynamic "days left" counters in launch/roundup posts
+- Submit flow:
+  - `submit.html` includes required-field validation
+  - Supports image URL or image upload
+  - Includes preview and late-pledge options
 
-## Editing content
+## Project Structure
 
-1. Open `/admin/`.
-2. Edit `Site Content`.
-3. Add/update projects and profiles in `data/content.json`.
-4. Save and publish.
+- `index.html` - homepage
+- `live.html` - live projects
+- `upcoming.html` - upcoming projects
+- `preview.html` - preview projects
+- `archive.html` - ended and late-pledge projects
+- `watchlist.html` - local saved projects
+- `submit.html` - project submission form
+- `blog/index.html` - blog landing page
+- `blog/*.html` - blog posts
+- `designer.html` - designer profile page
+- `publisher.html` - publisher profile page
+- `assets/app.js` - shared logic/rendering
+- `assets/styles.css` - styling
+- `data/content.json` - projects + designer/publisher profiles
+- `uploads/` - local image assets
+- `scripts/` - optional helper scripts for extraction/profile updates
 
-Required project fields:
+## Editing Content
 
+Update `data/content.json` directly:
+
+- Add/edit projects in `projects[]`
+- Add/edit people in `designers[]` and `publishers[]`
+
+Important project fields:
+
+- `slug`
 - `title`
 - `summary`
 - `image`
+- `platform`
 - `launchDate`
 - `endDate`
 - `primaryUrl`
+- Optional: `isPreview`, `isPromo`, `isLatePledge`, `latePledgeUrl`, `designer`, `publisher`, `imagePosition`
 
-## GitHub setup
+## Notes
 
-1. Push repo to GitHub.
-2. Replace `OWNER/REPO` in:
-   - `admin/config.yml`
-   - `submit.html`
-   - `.github/ISSUE_TEMPLATE/config.yml`
-3. In repo Settings > Pages, set source to GitHub Actions.
-4. Ensure Issues are enabled.
-
-## Decap auth note
-
-For production Decap on GitHub Pages, configure GitHub OAuth (or a Decap-compatible auth provider).
-
-## BGG profile auto-fill script
-
-You can auto-fill designer/publisher BGG profile URLs and short write-ups:
-
-```bash
-python3 scripts/fetch_bgg_profiles.py --dry-run
-python3 scripts/fetch_bgg_profiles.py --write
-```
-
-Options:
-
-- `--force` refetches entries even if `bggUrl`/`bio` already exist.
-- `--path` lets you target a different JSON file.
-
-## Weekly extraction helper
-
-To avoid doing large manual extraction work in chat context, convert weekly markdown notes into structured data:
-
-```bash
-python3 scripts/extract_weekly_data.py
-python3 scripts/extract_weekly_data.py --input "Feb. 9-14, 2026/extracted_text_and_urls.md" --csv data/weekly_extracted.csv
-```
-
-Outputs:
-
-- `data/weekly_extracted.json` (default)
-- optional CSV when `--csv` is provided
+- Blog nav uses `/blog/` (folder index), not `blog.html`.
+- Date logic is day-based (start/end of local day) for status transitions.
