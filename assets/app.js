@@ -404,7 +404,8 @@ function applySmartImageFit(root = document) {
       const imageRatio = img.naturalWidth / img.naturalHeight;
       // Prefer full-bleed coverage; only fall back to contain for extreme aspect mismatches.
       const ratioDelta = Math.abs(imageRatio - frameRatio) / frameRatio;
-      const shouldContain = ratioDelta > 0.72;
+      const isCarouselImage = Boolean(img.closest('.carousel-slide'));
+      const shouldContain = isCarouselImage ? true : (ratioDelta > 0.72);
       const frameEl = img.closest('.smart-image-frame');
       const preferredPos = String(img.getAttribute('data-img-pos') || '').trim();
 
