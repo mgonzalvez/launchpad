@@ -46,6 +46,18 @@ function dayDiff(from, to) {
   return Math.ceil((to.getTime() - from.getTime()) / msPerDay);
 }
 
+function atDayStart(value) {
+  const d = new Date(value);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+function atDayEnd(value) {
+  const d = new Date(value);
+  d.setHours(23, 59, 59, 999);
+  return d;
+}
+
 function isSameLocalDay(a, b) {
   return a.getFullYear() === b.getFullYear()
     && a.getMonth() === b.getMonth()
@@ -104,8 +116,8 @@ function projectStatus(p, now = new Date()) {
   const isPreview = Boolean(p.isPreview) || (!hasIsoDate(p.launchDate) && !hasIsoDate(p.endDate));
   if (isPreview) return 'preview';
 
-  const launch = parseDate(p.launchDate);
-  const end = parseDate(p.endDate);
+  const launch = atDayStart(parseDate(p.launchDate));
+  const end = atDayEnd(parseDate(p.endDate));
   const hasLatePledge = Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl);
   if (launch > now) return 'upcoming';
   if (end < now) return hasLatePledge ? 'late-pledge' : 'archived';
@@ -117,7 +129,7 @@ function projectIsJustLaunched(p, now = new Date()) {
   const status = projectStatus(p, now);
   if (!['live', 'promo'].includes(status)) return false;
   if (!hasIsoDate(p.launchDate)) return false;
-  return isSameLocalDay(parseDate(p.launchDate), now);
+  return isSameLocalDay(atDayStart(parseDate(p.launchDate)), now);
 }
 
 function statusBadge(status, p = null, now = new Date()) {
