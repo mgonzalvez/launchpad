@@ -250,7 +250,7 @@ function projectCard(p, options = {}) {
     : `Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}`;
   return `
     <article class="card card-click${compact ? ' compact' : ''}" data-url="${cardUrl}">
-      <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">
+      <a class="smart-image-frame" href="${cardUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit />
       </a>
       <div class="card-body">
@@ -281,7 +281,7 @@ function projectTile(p) {
   const tileUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
-      <a class="tile-image-link" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
+      <a class="tile-image-link smart-image-frame" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit />
       </a>
       <div class="tile-body">
@@ -404,10 +404,27 @@ function applySmartImageFit(root = document) {
       const imageRatio = img.naturalWidth / img.naturalHeight;
       const ratioDelta = Math.abs(imageRatio - frameRatio) / frameRatio;
       const shouldContain = ratioDelta > 0.28;
+      const frameEl = img.closest('.smart-image-frame');
 
       img.style.setProperty('--img-fit', shouldContain ? 'contain' : 'cover');
       img.style.setProperty('--img-pos', shouldContain ? 'center center' : 'center top');
       img.classList.toggle('smart-contain', shouldContain);
+
+      if (frameEl) {
+        let backdrop = frameEl.querySelector('.smart-image-backdrop');
+        if (!backdrop) {
+          backdrop = document.createElement('span');
+          backdrop.className = 'smart-image-backdrop';
+          frameEl.prepend(backdrop);
+        }
+        if (shouldContain) {
+          const url = img.currentSrc || img.src;
+          backdrop.style.backgroundImage = `url("${url}")`;
+          frameEl.classList.add('has-backdrop');
+        } else {
+          frameEl.classList.remove('has-backdrop');
+        }
+      }
     };
 
     if (img.complete) {

@@ -205,6 +205,8 @@ main {
   background:
     radial-gradient(circle at 20% 20%, #fff8ea 0%, #f0e6d0 55%, #e6dbc2 100%);
   transition: object-fit 160ms ease, object-position 160ms ease;
+  position: relative;
+  z-index: 2;
 }
 
 .card-body { padding: 16px; }
@@ -498,6 +500,8 @@ small { color: var(--muted); }
   display: block;
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-slide img {
@@ -508,6 +512,8 @@ small { color: var(--muted); }
   display: block;
   background:
     radial-gradient(circle at 20% 20%, #fff8ea 0%, #f0e6d0 55%, #e6dbc2 100%);
+  position: relative;
+  z-index: 2;
 }
 
 .carousel-overlay {
@@ -661,6 +667,29 @@ small { color: var(--muted); }
   display: block;
   background:
     radial-gradient(circle at 20% 20%, #fff8ea 0%, #f0e6d0 55%, #e6dbc2 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.smart-image-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.smart-image-backdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-position: center center;
+  background-size: cover;
+  transform: scale(1.1);
+  filter: blur(20px) saturate(1.08);
+  transition: opacity 180ms ease;
+  z-index: 1;
+}
+
+.smart-image-frame.has-backdrop .smart-image-backdrop {
+  opacity: 0.95;
 }
 
 .tile-body {
