@@ -267,6 +267,21 @@
       "designer": "Edward Bell",
       "publisher": "Red Stache Games",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "the-daily-weather-a-different-challenge-every-day",
+      "title": "The Daily Weather - A different challenge every day",
+      "summary": "Challenge yourself daily to create the perfect forecast using each day's unique conditions in this pocket-sized solo game. Only $10!",
+      "image": "https://cf.geekdo-images.com/TYP2tsFMX7Ynw47mnSvfmQ__original/img/iTPLnLbG3OtsgHvf46LqQX33AWI=/0x0/filters:format(png)/pic9200581.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-03",
+      "endDate": "2026-02-14",
+      "primaryUrl": "https://www.kickstarter.com/projects/239309591/the-daily-weather/",
+      "designer": "Jason Tagmire",
+      "publisher": "Button Shy",
+      "promoDetails": "$10 print-and-play campaign with late pledge available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/239309591/the-daily-weather/description"
     }
   ],
   "designers": [
@@ -377,6 +392,12 @@
       "name": "Edward Bell",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "jason-tagmire",
+      "name": "Jason Tagmire",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/26997/jason-tagmire",
+      "bio": "Designer of Pixel Lincoln."
     }
   ],
   "publishers": [
@@ -481,6 +502,12 @@
       "name": "Red Stache Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "button-shy",
+      "name": "Button Shy",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/26991/button-shy",
+      "bio": "Button Shy is a small board game publisher led by Jason Tagmire, supported by family and friends in South Jersey. They focus on portable wallet games (typically 18 cards or fewer) packaged in durable bi-fold wallets. Popular titles include Sprawlopolis, Circle the Wagons, Avignon: A Clash of Popes, Pretense, and Pentaquark. Each wallet game is hand-assembled, and they release a new wallet game every month, usually through Kickstarter and their Patreon Board Game of the Month Club."
     }
   ]
 }
