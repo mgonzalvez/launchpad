@@ -402,8 +402,9 @@ function applySmartImageFit(root = document) {
 
       const frameRatio = frame.width / frame.height;
       const imageRatio = img.naturalWidth / img.naturalHeight;
+      // Prefer full-bleed coverage; only fall back to contain for extreme aspect mismatches.
       const ratioDelta = Math.abs(imageRatio - frameRatio) / frameRatio;
-      const shouldContain = ratioDelta > 0.28;
+      const shouldContain = ratioDelta > 0.72;
       const frameEl = img.closest('.smart-image-frame');
 
       img.style.setProperty('--img-fit', shouldContain ? 'contain' : 'cover');
