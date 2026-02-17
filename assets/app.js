@@ -1,5 +1,6 @@
 const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
 const WATCHLIST_STORAGE_KEY = 'pnpl_watchlist_v1';
+const IMAGE_TONE_CACHE = new Map();
 const basePath = (() => {
   if (window.location.hostname.endsWith('github.io')) {
     const first = window.location.pathname.split('/').filter(Boolean)[0];
@@ -392,6 +393,36 @@ function setMainLinksNewTab(root = document) {
   });
 }
 
+function estimateImageTone(img) {
+  const src = img.currentSrc || img.src || '';
+  if (src && IMAGE_TONE_CACHE.has(src)) return IMAGE_TONE_CACHE.get(src);
+  try {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) return '';
+    const w = 8;
+    const h = 8;
+    canvas.width = w;
+    canvas.height = h;
+    ctx.drawImage(img, 0, 0, w, h);
+    const data = ctx.getImageData(0, 0, w, h).data;
+    let r = 0;
+    let g = 0;
+    let b = 0;
+    const px = w * h;
+    for (let i = 0; i < data.length; i += 4) {
+      r += data[i];
+      g += data[i + 1];
+      b += data[i + 2];
+    }
+    const tone = `rgb(${Math.round(r / px)}, ${Math.round(g / px)}, ${Math.round(b / px)})`;
+    if (src) IMAGE_TONE_CACHE.set(src, tone);
+    return tone;
+  } catch (_err) {
+    return '';
+  }
+}
+
 function applySmartImageFit(root = document) {
   const images = root.querySelectorAll('img[data-smart-fit]');
   images.forEach((img) => {
@@ -426,6 +457,11 @@ function applySmartImageFit(root = document) {
           frameEl.classList.add('has-backdrop');
         } else {
           frameEl.classList.remove('has-backdrop');
+        }
+
+        if (isCarouselImage) {
+          const tone = estimateImageTone(img);
+          frameEl.style.backgroundColor = tone || '#2a2a2a';
         }
       }
     };

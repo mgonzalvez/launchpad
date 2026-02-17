@@ -510,8 +510,7 @@ small { color: var(--muted); }
   object-fit: var(--img-fit, cover);
   object-position: var(--img-pos, center top);
   display: block;
-  background:
-    radial-gradient(circle at 20% 20%, #fff8ea 0%, #f0e6d0 55%, #e6dbc2 100%);
+  background: transparent;
   position: relative;
   z-index: 2;
 }
@@ -525,6 +524,7 @@ small { color: var(--muted); }
   color: #fff;
   border-radius: 12px;
   padding: 14px 16px;
+  z-index: 4;
 }
 
 .carousel-overlay h2 {
@@ -547,12 +547,14 @@ small { color: var(--muted); }
   display: flex;
   justify-content: space-between;
   pointer-events: none;
+  z-index: 6;
 }
 
 .carousel-controls button {
   pointer-events: auto;
-  border: 1px solid #ffffff66;
-  background: #00000055;
+  border: 1px solid #ffffff88;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(3px);
   color: #fff;
   border-radius: 999px;
   width: 38px;
@@ -570,6 +572,7 @@ small { color: var(--muted); }
   display: flex;
   justify-content: center;
   gap: 6px;
+  z-index: 6;
 }
 
 .carousel-dots button {
@@ -674,6 +677,7 @@ small { color: var(--muted); }
 .smart-image-frame {
   position: relative;
   overflow: hidden;
+  background: #2a2a2a;
 }
 
 .smart-image-backdrop {
@@ -689,7 +693,7 @@ small { color: var(--muted); }
 }
 
 .smart-image-frame.has-backdrop .smart-image-backdrop {
-  opacity: 0.95;
+  opacity: 1;
 }
 
 .tile-body {
