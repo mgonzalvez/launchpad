@@ -52,7 +52,7 @@
             return `
               <article class="carousel-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
                 <a class="smart-image-frame" href="${p.primaryUrl}" target="_blank" rel="noreferrer">
-                  <img src="${PNPL.withBase(p.image)}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}" crossorigin="anonymous" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
+                  <img src="${PNPL.withBase(p.image)}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
                 </a>
                 <div class="carousel-overlay">
                   ${badge}
