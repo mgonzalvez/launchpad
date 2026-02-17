@@ -24,7 +24,8 @@
       "primaryUrl": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
       "designer": "Martin Melbardis",
       "publisher": "Martin Melbardis",
-      "promoDetails": "Includes printable game sheets and card assets."
+      "promoDetails": "Includes printable game sheets and card assets.",
+      "imagePosition": "center 85%"
     },
     {
       "slug": "king",

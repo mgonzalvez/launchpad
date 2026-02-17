@@ -251,7 +251,7 @@ function projectCard(p, options = {}) {
   return `
     <article class="card card-click${compact ? ' compact' : ''}" data-url="${cardUrl}">
       <a class="smart-image-frame" href="${cardUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit />
+        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
       <div class="card-body">
         <div class="card-top-row">
@@ -282,7 +282,7 @@ function projectTile(p) {
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
       <a class="tile-image-link smart-image-frame" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit />
+        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
       <div class="tile-body">
         <div class="tile-top-row">
@@ -406,9 +406,10 @@ function applySmartImageFit(root = document) {
       const ratioDelta = Math.abs(imageRatio - frameRatio) / frameRatio;
       const shouldContain = ratioDelta > 0.72;
       const frameEl = img.closest('.smart-image-frame');
+      const preferredPos = String(img.getAttribute('data-img-pos') || '').trim();
 
       img.style.setProperty('--img-fit', shouldContain ? 'contain' : 'cover');
-      img.style.setProperty('--img-pos', shouldContain ? 'center center' : 'center top');
+      img.style.setProperty('--img-pos', shouldContain ? 'center center' : (preferredPos || 'center top'));
       img.classList.toggle('smart-contain', shouldContain);
 
       if (frameEl) {
