@@ -251,7 +251,7 @@ function projectCard(p, options = {}) {
   return `
     <article class="card card-click${compact ? ' compact' : ''}" data-url="${cardUrl}">
       <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
+        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit />
       </a>
       <div class="card-body">
         <div class="card-top-row">
@@ -282,7 +282,7 @@ function projectTile(p) {
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
       <a class="tile-image-link" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" />
+        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit />
       </a>
       <div class="tile-body">
         <div class="tile-top-row">
@@ -392,7 +392,55 @@ function setMainLinksNewTab(root = document) {
   });
 }
 
+function applySmartImageFit(root = document) {
+  const images = root.querySelectorAll('img[data-smart-fit]');
+  images.forEach((img) => {
+    const updateFit = () => {
+      if (!img.naturalWidth || !img.naturalHeight) return;
+      const frame = img.getBoundingClientRect();
+      if (!frame.width || !frame.height) return;
+
+      const frameRatio = frame.width / frame.height;
+      const imageRatio = img.naturalWidth / img.naturalHeight;
+      const ratioDelta = Math.abs(imageRatio - frameRatio) / frameRatio;
+      const shouldContain = ratioDelta > 0.28;
+
+      img.style.setProperty('--img-fit', shouldContain ? 'contain' : 'cover');
+      img.style.setProperty('--img-pos', shouldContain ? 'center center' : 'center top');
+      img.classList.toggle('smart-contain', shouldContain);
+    };
+
+    if (img.complete) {
+      updateFit();
+    } else if (!img.dataset.smartFitBound) {
+      img.dataset.smartFitBound = '1';
+      img.addEventListener('load', updateFit, { once: true });
+      img.addEventListener('error', () => {}, { once: true });
+    }
+  });
+}
+
+function initSmartImageFitObserver() {
+  if (window.__pnplSmartFitInitialized) return;
+  window.__pnplSmartFitInitialized = true;
+
+  const rerun = () => applySmartImageFit(document);
+  rerun();
+
+  const observer = new MutationObserver(() => rerun());
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(rerun, 120);
+  });
+}
+
 initContentLinkBehavior();
+initSmartImageFitObserver();
 
 window.PNPL = {
   header,
@@ -411,6 +459,7 @@ window.PNPL = {
   slugify,
   enrichProjects,
   setMainLinksNewTab,
+  applySmartImageFit,
   getWatchlistSlugs,
   clearWatchlist,
   refreshWatchButtons

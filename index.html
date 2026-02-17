@@ -46,7 +46,7 @@
             return `
               <article class="carousel-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
                 <a href="${p.primaryUrl}" target="_blank" rel="noreferrer">
-                  <img src="${PNPL.withBase(p.image)}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}" />
+                  <img src="${PNPL.withBase(p.image)}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}" data-smart-fit />
                 </a>
                 <div class="carousel-overlay">
                   ${badge}
