@@ -46,6 +46,12 @@ function dayDiff(from, to) {
   return Math.ceil((to.getTime() - from.getTime()) / msPerDay);
 }
 
+function isSameLocalDay(a, b) {
+  return a.getFullYear() === b.getFullYear()
+    && a.getMonth() === b.getMonth()
+    && a.getDate() === b.getDate();
+}
+
 function header(active = '') {
   const links = [
     ['', 'Home'],
@@ -107,15 +113,25 @@ function projectStatus(p, now = new Date()) {
   return 'live';
 }
 
-function statusBadge(status, p = null) {
+function projectIsJustLaunched(p, now = new Date()) {
+  const status = projectStatus(p, now);
+  if (!['live', 'promo'].includes(status)) return false;
+  if (!hasIsoDate(p.launchDate)) return false;
+  return isSameLocalDay(parseDate(p.launchDate), now);
+}
+
+function statusBadge(status, p = null, now = new Date()) {
+  const launchBadge = (p && projectIsJustLaunched(p, now))
+    ? '<span class="badge just-launched">JUST LAUNCHED</span>'
+    : '';
   if (status === 'live') {
-    return `<a class="badge-link" href="${withBase('live.html')}"><span class="badge live-now">LIVE NOW</span></a>`;
+    return `${launchBadge}<a class="badge-link" href="${withBase('live.html')}"><span class="badge live-now">LIVE NOW</span></a>`;
   }
   if (status === 'upcoming') {
     return `<a class="badge-link" href="${withBase('upcoming.html')}"><span class="badge upcoming">Upcoming</span></a>`;
   }
   if (status === 'promo') {
-    return `<span class="badge promo">PROMO</span>`;
+    return `${launchBadge}<span class="badge promo">PROMO</span>`;
   }
   if (status === 'preview') {
     return `<span class="badge preview">PREVIEW</span>`;
@@ -257,7 +273,7 @@ function projectCard(p, options = {}) {
       <div class="card-body">
         <div class="card-top-row">
           <div>
-            ${statusBadge(status, p)}
+            ${statusBadge(status, p, now)}
             <span class="badge">${p.platform}</span>
           </div>
           ${watchButton(p, compact)}
@@ -287,7 +303,7 @@ function projectTile(p) {
       </a>
       <div class="tile-body">
         <div class="tile-top-row">
-          ${statusBadge(status, p)}
+          ${statusBadge(status, p, now)}
           ${watchButton(p, true)}
         </div>
         ${countdownChip(status, p, now)}
@@ -502,6 +518,7 @@ window.PNPL = {
   header,
   footer,
   projectStatus,
+  projectIsJustLaunched,
   projectCard,
   projectTile,
   issueCard,

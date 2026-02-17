@@ -300,6 +300,15 @@ main {
 
 .badge.archived { background: #f3e2cf; color: #7a3d17; }
 
+.badge.just-launched {
+  background: #ffe48f;
+  color: #6d3200;
+  border-color: #d39f31;
+  letter-spacing: 0.03em;
+  box-shadow: 0 0 0 2px #fff1c4 inset, 0 0 10px #e9b83c66;
+  animation: pulse-launch 1.7s infinite ease-in-out;
+}
+
 .countdown-chip {
   display: inline-block;
   margin-top: 8px;
@@ -349,6 +358,11 @@ main {
   0% { filter: brightness(1); }
   50% { filter: brightness(1.08); }
   100% { filter: brightness(1); }
+}
+
+@keyframes pulse-launch {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 
 .issue-list {
@@ -463,6 +477,25 @@ small { color: var(--muted); }
   gap: 18px;
   margin-bottom: 24px;
   justify-items: center;
+}
+
+.launch-alert {
+  border: 2px solid #d8b352;
+  background: linear-gradient(135deg, #fff8de 0%, #ffeeb7 52%, #fff4ca 100%);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 0 #d8c489;
+}
+
+.launch-alert h2 {
+  margin: 0 0 6px;
+  color: #7b3b09;
+}
+
+.launch-alert p {
+  margin: 0 0 12px;
+  color: #7a6544;
 }
 
 .featured-carousel {

@@ -26,8 +26,14 @@
           const now = new Date();
           const liveAndPromo = projects
             .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
-            .sort(PNPL.byEndAsc);
-          const featured = [...liveAndPromo].sort(() => Math.random() - 0.5);
+            .sort((a, b) => {
+              const launchDiff = Number(PNPL.projectIsJustLaunched(b, now)) - Number(PNPL.projectIsJustLaunched(a, now));
+              if (launchDiff !== 0) return launchDiff;
+              return PNPL.byEndAsc(a, b);
+            });
+          const justLaunched = liveAndPromo.filter((p) => PNPL.projectIsJustLaunched(p, now));
+          const nonLaunchFeatured = liveAndPromo.filter((p) => !PNPL.projectIsJustLaunched(p, now)).sort(() => Math.random() - 0.5);
+          const featured = [...justLaunched, ...nonLaunchFeatured];
           const upcoming = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
             .sort((a, b) => PNPL.parseDate(a.launchDate) - PNPL.parseDate(b.launchDate));
@@ -69,6 +75,14 @@
                 <p>Welcome to PnP Launchpad, your connection to what's hot and fresh in print and play game projects! Discover the latest print and play game crowdfunding projects and promotions. Click on any image or tile to learn more. Bookmark this site and check it often for the latest print and play games. Brought to you by the hardworking team at <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Martin's Print and Play Hideaway</a>.</p>
                 <a class="cta" href="submit.html" target="_blank" rel="noreferrer noopener">Submit your project for review</a>
               </section>
+
+              ${justLaunched.length ? `
+                <section class="launch-alert">
+                  <h2>Just Launched Today</h2>
+                  <p>Fresh campaign drop. This one just went live and early backing momentum matters.</p>
+                  <div class="grid featured">${justLaunched.map((p) => PNPL.projectCard(p)).join('')}</div>
+                </section>
+              ` : ''}
 
               <section class="home-stage">
                 ${featured.length ? `
