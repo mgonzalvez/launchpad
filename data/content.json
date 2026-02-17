@@ -252,6 +252,20 @@
       "designer": "Robin Metz",
       "publisher": "Beaverlicious Games",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "pocket-puffins-lost-in-space",
+      "title": "Pocket Puffins: Lost in Space",
+      "summary": "Pocket Puffins Lost in Space is an 18 card solo and replayable space puzzle that fits in your pocket.",
+      "image": "/uploads/pocket_puffins.png",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/pocket-puffins/pocket-puffins-lost-in-space-18-card-solo-space-puzzle",
+      "designer": "Edward Bell",
+      "publisher": "Red Stache Games",
+      "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
   "designers": [
@@ -356,6 +370,12 @@
       "name": "Robin Metz",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/145351/robin-metz",
       "bio": "Indie board game designer from Germany. Creator of Rotation Rumble."
+    },
+    {
+      "slug": "edward-bell",
+      "name": "Edward Bell",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -454,6 +474,12 @@
       "name": "Beaverlicious Games",
       "bggUrl": "https://boardgamegeek.com/boardgamepublisher/52961/beaverlicious",
       "bio": "Beaverlicious is an indie card and tabletop game studio based in Frankfurt, Germany. Run by a small team of two people and one clever cat, Beaverlicious focuses on creating extremely small, cartridge-format games that fit in your pocket."
+    },
+    {
+      "slug": "red-stache-games",
+      "name": "Red Stache Games",
+      "bggUrl": "",
+      "bio": ""
     }
   ]
 }
