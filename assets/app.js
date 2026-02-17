@@ -70,7 +70,7 @@ function header(active = '') {
     ['live.html', 'Live Now'],
     ['upcoming.html', 'Upcoming'],
     ['preview.html', 'Preview'],
-    ['blog.html', 'Blog'],
+    ['blog/', 'Blog'],
     ['archive.html', 'Ended'],
     ['watchlist.html', 'Watchlist'],
     ['submit.html', 'Submit a Project']
