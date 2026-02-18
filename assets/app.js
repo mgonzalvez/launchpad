@@ -77,6 +77,9 @@ function header(active = '') {
   ];
 
   return `
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"15b3fbb1839542c9a2d8c7e4bf6df634"}'></script>
+    <!-- End Cloudflare Web Analytics -->
     <header class="site-header">
       <div class="inner">
         <h1 class="brand">
