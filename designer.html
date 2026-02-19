@@ -27,7 +27,7 @@
         }
 
         const related = projects
-          .filter((p) => p.designerSlug === person.slug)
+          .filter((p) => (Array.isArray(p.designerSlugs) ? p.designerSlugs.includes(person.slug) : p.designerSlug === person.slug))
           .sort(PNPL.byLaunchDesc);
 
         el.innerHTML = `

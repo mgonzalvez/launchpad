@@ -293,6 +293,11 @@
       "endDate": "2026-03-20",
       "primaryUrl": "https://www.kickstarter.com/projects/flatoutgames/forage-honeypot/description",
       "designer": "Molly Johnson, Robert Melvin, Shawn Stankewich",
+      "designers": [
+        "Molly Johnson",
+        "Robert Melvin",
+        "Shawn Stankewich"
+      ],
       "publisher": "Flatout Games",
       "promoDetails": "$10 print-and-play files tier includes both games."
     }
@@ -421,20 +426,20 @@
     {
       "slug": "molly-johnson",
       "name": "Molly Johnson",
-      "bggUrl": "",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/116182/molly-johnson",
       "bio": ""
     },
     {
       "slug": "robert-melvin",
       "name": "Robert Melvin",
-      "bggUrl": "",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/116181/robert-melvin",
       "bio": ""
     },
     {
       "slug": "shawn-stankewich",
       "name": "Shawn Stankewich",
-      "bggUrl": "",
-      "bio": ""
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/116180/shawn-stankewich",
+      "bio": "Shawn Stankewich is a founding member of Flatout Games, based in Seattle, WA, and active in Playtest Northwest and the Seattle Board Game Designers group. He co-designs modern strategy titles and co-hosts the Flatout at the Table podcast on board game mechanics."
     }
   ],
   "publishers": [

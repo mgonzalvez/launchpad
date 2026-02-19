@@ -120,7 +120,6 @@ function footer() {
 
 function personLink(type, name, customSlug) {
   if (!name) return '';
-  if (String(name).includes(',')) return escapeHtml(name);
   const slug = customSlug || slugify(name);
   const href = withBase(`${type}.html?slug=${encodeURIComponent(slug)}`);
   return `<a class="person-link" href="${href}" target="_blank" rel="noreferrer noopener">${escapeHtml(name)}</a>`;
@@ -288,6 +287,9 @@ function projectCard(p, options = {}) {
   const now = new Date();
   const status = projectStatus(p, now);
   const cardUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
+  const designerLinks = Array.isArray(p.designerItems) && p.designerItems.length
+    ? p.designerItems.map((d) => personLink('designer', d.name, d.slug)).join(', ')
+    : (p.designer ? personLink('designer', p.designer, p.designerSlug) : '');
   const dateMeta = status === 'preview'
     ? 'Launch: TBA | End: TBA'
     : `Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}`;
@@ -310,7 +312,7 @@ function projectCard(p, options = {}) {
         <p class="meta">${dateMeta}</p>
         ${compact ? '' : `${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}`}
         ${compact ? '' : `${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}`}
-        ${compact ? '' : `${p.designer ? `<p class="meta">Designer: ${personLink('designer', p.designer, p.designerSlug)}</p>` : ''}`}
+        ${compact ? '' : `${designerLinks ? `<p class="meta">Designer: ${designerLinks}</p>` : ''}`}
         ${compact ? '' : `${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}`}
         <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : 'View project'}</a>
       </div>
@@ -389,11 +391,24 @@ function enrichProjects(data) {
   const publisherByName = new Map(publishers.map((p) => [String(p.name || '').toLowerCase(), p]));
 
   return data.projects.map((project) => {
+    const designerNames = Array.isArray(project.designers)
+      ? project.designers.map((n) => String(n || '').trim()).filter(Boolean)
+      : String(project.designer || '')
+        .split(',')
+        .map((n) => n.trim())
+        .filter(Boolean);
+    const designerItems = designerNames.map((name) => {
+      const match = designerByName.get(String(name).toLowerCase());
+      return { name, slug: match?.slug || slugify(name) };
+    });
     const d = project.designer ? designerByName.get(String(project.designer).toLowerCase()) : null;
     const p = project.publisher ? publisherByName.get(String(project.publisher).toLowerCase()) : null;
     return {
       ...project,
-      designerSlug: d?.slug || (project.designer ? slugify(project.designer) : ''),
+      designer: project.designer || designerNames.join(', '),
+      designerItems,
+      designerSlugs: designerItems.map((item) => item.slug),
+      designerSlug: designerItems[0]?.slug || d?.slug || (project.designer ? slugify(project.designer) : ''),
       publisherSlug: p?.slug || (project.publisher ? slugify(project.publisher) : '')
     };
   });
