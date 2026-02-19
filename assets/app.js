@@ -24,6 +24,15 @@ function slugify(value = '') {
     .replace(/^-+|-+$/g, '');
 }
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function parseDate(value) {
   if (typeof value === 'string') {
     const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
@@ -111,9 +120,10 @@ function footer() {
 
 function personLink(type, name, customSlug) {
   if (!name) return '';
+  if (String(name).includes(',')) return escapeHtml(name);
   const slug = customSlug || slugify(name);
   const href = withBase(`${type}.html?slug=${encodeURIComponent(slug)}`);
-  return `<a class="person-link" href="${href}" target="_blank" rel="noreferrer noopener">${name}</a>`;
+  return `<a class="person-link" href="${href}" target="_blank" rel="noreferrer noopener">${escapeHtml(name)}</a>`;
 }
 
 function projectStatus(p, now = new Date()) {

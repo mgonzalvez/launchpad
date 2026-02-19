@@ -282,6 +282,19 @@
       "promoDetails": "$10 print-and-play campaign with late pledge available.",
       "isLatePledge": true,
       "latePledgeUrl": "https://www.kickstarter.com/projects/239309591/the-daily-weather/description"
+    },
+    {
+      "slug": "forage-honeypot",
+      "title": "Forage + Honeypot",
+      "summary": "A pair of fast and fun games for everyone, from the team that brought you the smash hits Point Salad, Calico, and Cascadia. $10 for print and play files for both games.",
+      "image": "https://cf.geekdo-images.com/qII_JObHxyBh77FjVN-1vA__original/img/d_2R3Ak-0m-inXZ7RfR_jSgWdaY=/0x0/filters:format(png)/pic9225193.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-17",
+      "endDate": "2026-03-20",
+      "primaryUrl": "https://www.kickstarter.com/projects/flatoutgames/forage-honeypot/description",
+      "designer": "Molly Johnson, Robert Melvin, Shawn Stankewich",
+      "publisher": "Flatout Games",
+      "promoDetails": "$10 print-and-play files tier includes both games."
     }
   ],
   "designers": [
@@ -398,6 +411,30 @@
       "name": "Jason Tagmire",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/26997/jason-tagmire",
       "bio": "Designer of Pixel Lincoln."
+    },
+    {
+      "slug": "beth-sobel",
+      "name": "Beth Sobel",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "molly-johnson",
+      "name": "Molly Johnson",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "robert-melvin",
+      "name": "Robert Melvin",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "shawn-stankewich",
+      "name": "Shawn Stankewich",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -508,6 +545,12 @@
       "name": "Button Shy",
       "bggUrl": "https://boardgamegeek.com/boardgamepublisher/26991/button-shy",
       "bio": "Button Shy is a small board game publisher led by Jason Tagmire, supported by family and friends in South Jersey. They focus on portable wallet games (typically 18 cards or fewer) packaged in durable bi-fold wallets. Popular titles include Sprawlopolis, Circle the Wagons, Avignon: A Clash of Popes, Pretense, and Pentaquark. Each wallet game is hand-assembled, and they release a new wallet game every month, usually through Kickstarter and their Patreon Board Game of the Month Club."
+    },
+    {
+      "slug": "flatout-games",
+      "name": "Flatout Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/42733/flatout-games",
+      "bio": "Flatout Games is a design collaborative founded in 2017 by Molly Johnson, Robert Melvin, and Shawn Stankewich. They focus on elegant, puzzly, low-luck decision-making games with simple rules, high replayability, and strong strategic tension. Through the Flatout Games CoLab, they partner with established and emerging creators to build polished, collaborative tabletop experiences."
     }
   ]
 }
