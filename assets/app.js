@@ -94,6 +94,7 @@ function header(active = '') {
             <summary>Tools</summary>
             <div class="tools-list">
               <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
+              <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
               <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
               <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
             </div>
