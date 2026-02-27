@@ -329,6 +329,18 @@
       "publisher": "Mischievous Vibes Entertainment",
       "isLatePledge": true,
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "fort-douaumont",
+      "title": "Fort Douaumont",
+      "summary": "Fort Douaumont is a 2-player print-and-play strategy game set on the Verdun front, blending tense push-your-luck dice battles with positional control across six contested zones. Players fight for ground through brinkmanship, reinforcements, and tactical movement, while one-shot powers and sector control can swing key moments.",
+      "image": "/uploads/bannerfortks2.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-03-10",
+      "endDate": "2026-03-27",
+      "primaryUrl": "https://www.kickstarter.com/projects/dadu/fort-douaumont",
+      "designer": "Davide Ghelfi",
+      "promoDetails": "Submitted as a crowdfunding project."
     }
   ],
   "designers": [
@@ -473,6 +485,12 @@
     {
       "slug": "yuriy-shikhanovich",
       "name": "Yuriy Shikhanovich",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "davide-ghelfi",
+      "name": "Davide Ghelfi",
       "bggUrl": "",
       "bio": ""
     }
