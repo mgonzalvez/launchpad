@@ -133,8 +133,13 @@ function projectStatus(p, now = new Date()) {
   const launch = atDayStart(parseDate(p.launchDate));
   const end = atDayEnd(parseDate(p.endDate));
   const hasLatePledge = Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl);
+  const hasPreOrder = Boolean(p.isPreOrder || p.hasPreOrder || p.preOrderUrl);
   if (launch > now) return 'upcoming';
-  if (end < now) return hasLatePledge ? 'late-pledge' : 'archived';
+  if (end < now) {
+    if (hasLatePledge) return 'late-pledge';
+    if (hasPreOrder) return 'pre-order';
+    return 'archived';
+  }
   if (p.isPromo) return 'promo';
   return 'live';
 }
@@ -166,6 +171,10 @@ function statusBadge(status, p = null, now = new Date()) {
     const lpUrl = p?.latePledgeUrl ? String(p.latePledgeUrl) : withBase('archive.html');
     return `<a class="badge-link" href="${lpUrl}" target="_blank" rel="noreferrer noopener"><span class="badge late-pledge">LATE PLEDGE</span></a>`;
   }
+  if (status === 'pre-order') {
+    const poUrl = p?.preOrderUrl ? String(p.preOrderUrl) : withBase('archive.html');
+    return `<a class="badge-link" href="${poUrl}" target="_blank" rel="noreferrer noopener"><span class="badge pre-order">PRE-ORDER</span></a>`;
+  }
   return `<span class="badge archived">Ended</span>`;
 }
 
@@ -176,7 +185,7 @@ function countdownChip(status, p, now = new Date()) {
     if (days <= 0) return '<span class="countdown-chip upcoming">Launching soon</span>';
     return `<span class="countdown-chip upcoming">Launches in ${days}d</span>`;
   }
-  if (['live', 'promo', 'late-pledge'].includes(status) && hasIsoDate(p.endDate)) {
+  if (['live', 'promo', 'late-pledge', 'pre-order'].includes(status) && hasIsoDate(p.endDate)) {
     const days = dayDiff(now, parseDate(p.endDate));
     if (days < 0) return '<span class="countdown-chip ended">Ended</span>';
     if (days === 0) return '<span class="countdown-chip live">Ends today</span>';
@@ -287,7 +296,9 @@ function projectCard(p, options = {}) {
   const compact = Boolean(options.compact);
   const now = new Date();
   const status = projectStatus(p, now);
-  const cardUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
+  const cardUrl = status === 'late-pledge' && p.latePledgeUrl
+    ? p.latePledgeUrl
+    : (status === 'pre-order' && p.preOrderUrl ? p.preOrderUrl : p.primaryUrl);
   const designerLinks = Array.isArray(p.designerItems) && p.designerItems.length
     ? p.designerItems.map((d) => personLink('designer', d.name, d.slug)).join(', ')
     : (p.designer ? personLink('designer', p.designer, p.designerSlug) : '');
@@ -312,10 +323,11 @@ function projectCard(p, options = {}) {
         ${compact ? '' : `<p>${p.summary}</p>`}
         <p class="meta">${dateMeta}</p>
         ${compact ? '' : `${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}`}
+        ${compact ? '' : `${status === 'pre-order' ? '<p class="meta"><strong>Pre-order is available.</strong></p>' : ''}`}
         ${compact ? '' : `${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}`}
         ${compact ? '' : `${designerLinks ? `<p class="meta">Designer: ${designerLinks}</p>` : ''}`}
         ${compact ? '' : `${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}`}
-        <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : 'View project'}</a>
+        <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : (status === 'pre-order' ? 'Open pre-order' : 'View project')}</a>
       </div>
     </article>
   `;
@@ -324,7 +336,9 @@ function projectCard(p, options = {}) {
 function projectTile(p) {
   const now = new Date();
   const status = projectStatus(p, now);
-  const tileUrl = status === 'late-pledge' && p.latePledgeUrl ? p.latePledgeUrl : p.primaryUrl;
+  const tileUrl = status === 'late-pledge' && p.latePledgeUrl
+    ? p.latePledgeUrl
+    : (status === 'pre-order' && p.preOrderUrl ? p.preOrderUrl : p.primaryUrl);
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
       <a class="tile-image-link smart-image-frame" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
@@ -378,7 +392,12 @@ function byLaunchDesc(a, b) {
 }
 
 function byArchivePriority(a, b) {
-  const rank = (p) => (projectStatus(p, new Date()) === 'late-pledge' ? 0 : 1);
+  const rank = (p) => {
+    const status = projectStatus(p, new Date());
+    if (status === 'late-pledge') return 0;
+    if (status === 'pre-order') return 1;
+    return 2;
+  };
   const rankDiff = rank(a) - rank(b);
   if (rankDiff !== 0) return rankDiff;
   return parseDate(b.endDate).getTime() - parseDate(a.endDate).getTime();

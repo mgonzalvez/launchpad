@@ -25,6 +25,8 @@
       "designer": "Martin Melbardis",
       "publisher": "Martin Melbardis",
       "promoDetails": "Includes printable game sheets and card assets.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
       "imagePosition": "center 85%"
     },
     {
@@ -156,7 +158,9 @@
       "primaryUrl": "https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description",
       "designer": "Jason Hager",
       "publisher": "Weird Giraffe Games",
-      "promoDetails": "$10 print-and-play pledge tier is available."
+      "promoDetails": "$10 print-and-play pledge tier was available during campaign; pre-order remains available.",
+      "isPreOrder": true,
+      "preOrderUrl": "https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description"
     },
     {
       "slug": "the-black-dahlia-case-murder-mystery-game",

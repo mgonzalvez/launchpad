@@ -18,7 +18,7 @@
         const projects = PNPL.enrichProjects(data);
         const now = new Date();
         const archived = projects
-          .filter((p) => ['archived', 'late-pledge'].includes(PNPL.projectStatus(p, now)))
+          .filter((p) => ['archived', 'late-pledge', 'pre-order'].includes(PNPL.projectStatus(p, now)))
           .sort(PNPL.byArchivePriority);
 
         el.innerHTML = `
@@ -26,7 +26,7 @@
           <main>
             <section class="hero">
               <h1>Ended Projects</h1>
-              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges available are shown first.</p>
+              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders available are shown first.</p>
             </section>
             ${archived.length ? `<div class="grid">${archived.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No archived projects yet.</p>'}
           </main>

@@ -298,6 +298,15 @@ main {
   animation: pulse-late 2.2s infinite ease-in-out;
 }
 
+.badge.pre-order {
+  background: #e7fff0;
+  color: #1e6a43;
+  border-color: #98d0b2;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  animation: pulse-late 2.2s infinite ease-in-out;
+}
+
 .badge.archived { background: #f3e2cf; color: #7a3d17; }
 
 .badge.just-launched {
