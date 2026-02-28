@@ -32,8 +32,13 @@
               return PNPL.byEndAsc(a, b);
             });
           const justLaunched = liveAndPromo.filter((p) => PNPL.projectIsJustLaunched(p, now));
-          const nonLaunchFeatured = liveAndPromo.filter((p) => !PNPL.projectIsJustLaunched(p, now)).sort(() => Math.random() - 0.5);
-          const featured = [...justLaunched, ...nonLaunchFeatured];
+          const endingSoon = liveAndPromo
+            .filter((p) => PNPL.projectIsEndingSoon(p, now))
+            .sort(PNPL.byEndAsc);
+          const remainingFeatured = liveAndPromo
+            .filter((p) => !PNPL.projectIsEndingSoon(p, now) && !PNPL.projectIsJustLaunched(p, now))
+            .sort(PNPL.byEndAsc);
+          const featured = [...endingSoon, ...justLaunched.filter((p) => !PNPL.projectIsEndingSoon(p, now)), ...remainingFeatured];
           const upcoming = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
             .sort((a, b) => PNPL.parseDate(a.launchDate) - PNPL.parseDate(b.launchDate));
@@ -46,9 +51,15 @@
 
           const slides = featured.map((p, idx) => {
             const status = PNPL.projectStatus(p, now);
-            const badge = status === 'promo'
-              ? '<span class="badge promo">PROMO</span>'
-              : '<span class="badge live-now">LIVE NOW</span>';
+            let badge = '';
+            if (status === 'promo') {
+              badge = '<span class="badge promo">PROMO</span>';
+            } else {
+              badge = '<span class="badge live-now">LIVE NOW</span>';
+              if (PNPL.projectIsEndingSoon(p, now)) {
+                badge += '<span class="badge ending-soon">ENDING SOON</span>';
+              }
+            }
             return `
               <article class="carousel-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
                 <a class="smart-image-frame" href="${p.primaryUrl}" target="_blank" rel="noreferrer">
