@@ -151,12 +151,24 @@ function projectIsJustLaunched(p, now = new Date()) {
   return isSameLocalDay(atDayStart(parseDate(p.launchDate)), now);
 }
 
+function projectIsEndingSoon(p, now = new Date()) {
+  const status = projectStatus(p, now);
+  if (!['live', 'promo'].includes(status)) return false;
+  if (!hasIsoDate(p.endDate)) return false;
+  const end = atDayEnd(parseDate(p.endDate));
+  const msLeft = end.getTime() - now.getTime();
+  return msLeft >= 0 && msLeft <= (24 * 60 * 60 * 1000);
+}
+
 function statusBadge(status, p = null, now = new Date()) {
   const launchBadge = (p && projectIsJustLaunched(p, now))
     ? '<span class="badge just-launched">JUST LAUNCHED</span>'
     : '';
+  const endingSoonBadge = (p && projectIsEndingSoon(p, now))
+    ? '<span class="badge ending-soon">ENDING SOON</span>'
+    : '';
   if (status === 'live') {
-    return `${launchBadge}<a class="badge-link" href="${withBase('live.html')}"><span class="badge live-now">LIVE NOW</span></a>`;
+    return `${launchBadge}<a class="badge-link" href="${withBase('live.html')}"><span class="badge live-now">LIVE NOW</span></a>${endingSoonBadge}`;
   }
   if (status === 'upcoming') {
     return `<a class="badge-link" href="${withBase('upcoming.html')}"><span class="badge upcoming">Upcoming</span></a>`;
@@ -580,6 +592,7 @@ window.PNPL = {
   footer,
   projectStatus,
   projectIsJustLaunched,
+  projectIsEndingSoon,
   projectCard,
   projectTile,
   issueCard,
