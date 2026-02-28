@@ -318,6 +318,15 @@ main {
   animation: pulse-launch 1.7s infinite ease-in-out;
 }
 
+.badge.ending-soon {
+  background: #ffd9c7;
+  color: #8a2f00;
+  border-color: #d38c65;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  animation: pulse-live 1.5s infinite ease-in-out;
+}
+
 .countdown-chip {
   display: inline-block;
   margin-top: 8px;
