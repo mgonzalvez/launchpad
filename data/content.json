@@ -345,6 +345,21 @@
       "primaryUrl": "https://www.kickstarter.com/projects/dadu/fort-douaumont",
       "designer": "Davide Ghelfi",
       "promoDetails": "Submitted as a crowdfunding project."
+    },
+    {
+      "slug": "ludos-the-ancient-games-collection-europe",
+      "title": "LUDOS: The ancient games collection - Europe",
+      "summary": "The 4th volume in a beautiful collection of handpicked ancient games that fit in your pocket. Featuring 4 two-player gems from Europe. $7 print-and-play pledge level.",
+      "image": "/uploads/ludos_europe.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-02",
+      "endDate": "2026-02-26",
+      "primaryUrl": "https://www.kickstarter.com/projects/lemerygames/ludos-the-ancient-games-collection-europe",
+      "designer": "Uncredited",
+      "publisher": "Lemery Games",
+      "promoDetails": "$7 print-and-play pledge level; late pledge available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/lemerygames/ludos-the-ancient-games-collection-europe"
     }
   ],
   "designers": [
@@ -497,6 +512,12 @@
       "name": "Davide Ghelfi",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "uncredited",
+      "name": "Uncredited",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -617,6 +638,12 @@
     {
       "slug": "mischievous-vibes-entertainment",
       "name": "Mischievous Vibes Entertainment",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "lemery-games",
+      "name": "Lemery Games",
       "bggUrl": "",
       "bio": ""
     }
