@@ -360,6 +360,33 @@
       "promoDetails": "$7 print-and-play pledge level; late pledge available.",
       "isLatePledge": true,
       "latePledgeUrl": "https://www.kickstarter.com/projects/lemerygames/ludos-the-ancient-games-collection-europe"
+    },
+    {
+      "slug": "hex-factor",
+      "title": "HEX FACTOR",
+      "summary": "Hex Factor is a fast-paced abstract puzzle game for 1-4 players where you race to claim territory by solving shared-board hex puzzles. Use colorful wooden hex tiles to replicate black-and-white puzzle clusters and outmaneuver opponents. $11 print-and-play pledge level.",
+      "image": "https://cf.geekdo-images.com/1xGHXOAcTmFk1Oym4wltTg__original/img/2AkVT5B0DDxU6E_h14sEkKifOOM=/0x0/filters:format(jpeg)/pic9353894.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-24",
+      "endDate": "2026-03-17",
+      "primaryUrl": "https://www.kickstarter.com/projects/sneakylabgames/hex-factor/",
+      "designer": "Frederick Weller",
+      "publisher": "Roxbury Games",
+      "promoDetails": "$11 print-and-play pledge level."
+    },
+    {
+      "slug": "stitchery-faire",
+      "title": "Stitchery Faire",
+      "summary": "Tell your story one stitch at a time as you meet patrons, create garments, and find your place in the community of Threadwyke. Cozy solo journaling and sketching gameplay with a $30 print-on-demand pledge level.",
+      "image": "/uploads/stitchery_faire.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-25",
+      "endDate": "2026-03-19",
+      "primaryUrl": "https://www.kickstarter.com/projects/storyseamstress/stitchery-faire-a-cozy-solo-journaling-and-sketching-game/",
+      "designer": "Amanda Kastner",
+      "promoDetails": "$30 print-on-demand pledge level; late pledge available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/storyseamstress/stitchery-faire-a-cozy-solo-journaling-and-sketching-game/"
     }
   ],
   "designers": [
@@ -518,6 +545,18 @@
       "name": "Uncredited",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "frederick-weller",
+      "name": "Frederick Weller",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "amanda-kastner",
+      "name": "Amanda Kastner",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -644,6 +683,12 @@
     {
       "slug": "lemery-games",
       "name": "Lemery Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "roxbury-games",
+      "name": "Roxbury Games",
       "bggUrl": "",
       "bio": ""
     }
