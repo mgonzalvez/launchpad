@@ -11,7 +11,9 @@
       "primaryUrl": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
       "designer": "Krzysiek Pietrzak",
       "publisher": "Time to Dice",
-      "promoDetails": "Campaign is live. Uses a standard deck of 52 cards."
+      "promoDetails": "Campaign is live. Uses a standard deck of 52 cards. Late pledge is available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/timetodice/red-dungeon"
     },
     {
       "slug": "fliegerkorps",
@@ -66,7 +68,9 @@
       "primaryUrl": "https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game",
       "designer": "Keepers of Fun",
       "publisher": "Keepers of Fun",
-      "promoDetails": "Shared in this week's creator thread."
+      "promoDetails": "Shared in this week's creator thread. Late pledge is available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game"
     },
     {
       "slug": "beastward-monster-hunt-rpg-boardgame",
