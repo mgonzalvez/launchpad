@@ -390,6 +390,19 @@
       "promoDetails": "$30 print-on-demand pledge level; late pledge available.",
       "isLatePledge": true,
       "latePledgeUrl": "https://www.kickstarter.com/projects/storyseamstress/stitchery-faire-a-cozy-solo-journaling-and-sketching-game/"
+    },
+    {
+      "slug": "hexoplanets",
+      "title": "Hexoplanets",
+      "summary": "A print-and-play board game where you terraform entire planets with dice, pencils, and an interactive digital story.",
+      "image": "/uploads/hexoplanets_1080x1080_new_hero.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-03-03",
+      "endDate": "2026-04-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/fullsauna/hexoplanets/",
+      "designer": "Vasil Petrakov",
+      "publisher": "Vasil Petrakov",
+      "promoDetails": "Submitted as a crowdfunding project."
     }
   ],
   "designers": [
@@ -560,6 +573,12 @@
       "name": "Amanda Kastner",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "vasil-petrakov",
+      "name": "Vasil Petrakov",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -692,6 +711,12 @@
     {
       "slug": "roxbury-games",
       "name": "Roxbury Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "vasil-petrakov",
+      "name": "Vasil Petrakov",
       "bggUrl": "",
       "bio": ""
     }
