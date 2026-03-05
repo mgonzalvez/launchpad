@@ -202,12 +202,14 @@ function countdownChip(status, p, now = new Date()) {
     if (days <= 0) return '<span class="countdown-chip upcoming">Launching soon</span>';
     return `<span class="countdown-chip upcoming">Launches in ${days}d</span>`;
   }
-  if (['live', 'promo', 'late-pledge', 'pre-order'].includes(status) && hasIsoDate(p.endDate)) {
+  if (['live', 'promo'].includes(status) && hasIsoDate(p.endDate)) {
     const days = dayDiff(now, parseDate(p.endDate));
     if (days < 0) return '<span class="countdown-chip live">Final day</span>';
     if (days === 0) return '<span class="countdown-chip live">Ends today</span>';
     return `<span class="countdown-chip live">Ends in ${days}d</span>`;
   }
+  if (status === 'late-pledge') return '<span class="countdown-chip ended">Late pledge open</span>';
+  if (status === 'pre-order') return '<span class="countdown-chip ended">Pre-order open</span>';
   return '';
 }
 
