@@ -208,7 +208,6 @@ function countdownChip(status, p, now = new Date()) {
     if (days === 0) return '<span class="countdown-chip live">Ends today</span>';
     return `<span class="countdown-chip live">Ends in ${days}d</span>`;
   }
-  if (status === 'late-pledge') return '<span class="countdown-chip ended">Late pledge open</span>';
   if (status === 'pre-order') return '<span class="countdown-chip ended">Pre-order open</span>';
   return '';
 }
