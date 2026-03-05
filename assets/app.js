@@ -67,6 +67,10 @@ function atDayEnd(value) {
   return d;
 }
 
+function addHours(value, hours) {
+  return new Date(value.getTime() + (hours * 60 * 60 * 1000));
+}
+
 function isSameLocalDay(a, b) {
   return a.getFullYear() === b.getFullYear()
     && a.getMonth() === b.getMonth()
@@ -131,7 +135,8 @@ function projectStatus(p, now = new Date()) {
   if (isPreview) return 'preview';
 
   const launch = atDayStart(parseDate(p.launchDate));
-  const end = atDayEnd(parseDate(p.endDate));
+  // Keep projects active for an extra 24h after stated end date to avoid timezone cutoffs.
+  const end = addHours(atDayEnd(parseDate(p.endDate)), 24);
   const hasLatePledge = Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl);
   const hasPreOrder = Boolean(p.isPreOrder || p.hasPreOrder || p.preOrderUrl);
   if (launch > now) return 'upcoming';
@@ -199,7 +204,7 @@ function countdownChip(status, p, now = new Date()) {
   }
   if (['live', 'promo', 'late-pledge', 'pre-order'].includes(status) && hasIsoDate(p.endDate)) {
     const days = dayDiff(now, parseDate(p.endDate));
-    if (days < 0) return '<span class="countdown-chip ended">Ended</span>';
+    if (days < 0) return '<span class="countdown-chip live">Final day</span>';
     if (days === 0) return '<span class="countdown-chip live">Ends today</span>';
     return `<span class="countdown-chip live">Ends in ${days}d</span>`;
   }
