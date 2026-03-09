@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="shortcut icon" href="assets/logo.svg" />
+    <title>Projects Live Right Now | PnP Launchpad</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="assets/app.js"></script>
+    <script>
+      (async () => {
+        const el = document.getElementById('app');
+        const data = await PNPL.loadContent();
+        const projects = PNPL.enrichProjects(data);
+        const now = new Date();
+        const live = projects
+          .filter((p) => ['live', 'promo'].includes(PNPL.projectStatus(p, now)))
+          .sort(PNPL.byEndAsc);
+        const justLaunched = live.filter((p) => PNPL.projectIsJustLaunched(p, now));
+        const standardLive = live.filter((p) => !PNPL.projectIsJustLaunched(p, now));
+
+        el.innerHTML = `
+          ${PNPL.header('Live Now')}
+          <main>
+            <section class="hero">
+              <h1>Projects Live Right Now</h1>
+              <p>Campaigns currently active and accepting backers.</p>
+            </section>
+            ${justLaunched.length ? `
+              <section class="launch-alert">
+                <h2>Just Launched Today</h2>
+                <p>Freshly launched campaigns get priority placement here for the day.</p>
+                <div class="grid featured">${justLaunched.map((p) => PNPL.projectCard(p)).join('')}</div>
+              </section>
+            ` : ''}
+            ${standardLive.length ? `<div class="grid featured">${standardLive.map((p) => PNPL.projectCard(p)).join('')}</div>` : (justLaunched.length ? '' : '<p>No projects are live right now.</p>')}
+          </main>
+          ${PNPL.footer()}
+        `;
+      })();
+    </script>
+  </body>
+</html>

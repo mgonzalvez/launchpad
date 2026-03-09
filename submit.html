@@ -3,94 +3,323 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link rel="shortcut icon" href="assets/logo.svg" />
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"15b3fbb1839542c9a2d8c7e4bf6df634"}'></script>
+    <!-- End Cloudflare Web Analytics -->
     <title>Submit a Project | PnP Launchpad</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <div id="app">
       <header class="site-header">
         <div class="inner">
-          <h1 class="brand"><a href="/">PnP Launchpad</a></h1>
+          <h1 class="brand"><a class="brand-link" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="PnP Launchpad logo" /><span>PnP Launchpad</span></a></h1>
           <nav class="nav" aria-label="Primary">
-            <a href="/">Home</a>
-            <a href="/issues.html">Issues</a>
-            <a href="/archive.html">Archive</a>
-            <a href="/submit.html" aria-current="page">Submit a Project</a>
-            <a href="/admin/">Editor Login</a>
+            <a href="index.html">Home</a>
+            <a href="live.html">Live Now</a>
+            <a href="upcoming.html">Upcoming</a>
+            <a href="preview.html">Preview</a>
+            <a href="blog/">Blog</a>
+            <a href="archive.html">Ended</a>
+            <a href="submit.html" aria-current="page">Submit a Project</a>
+            <details class="tools-menu">
+              <summary>Tools</summary>
+              <div class="tools-list">
+                <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
+                <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
+                <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
+                <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
+              </div>
+            </details>
           </nav>
         </div>
       </header>
       <main>
         <section class="hero">
           <h1>Submit a Project</h1>
-          <p>Creator submissions are reviewed manually before publication. This form creates a pre-filled GitHub issue for editorial review.</p>
+          <p>Fill out this form to submit your project for Launchpad review. Submissions are reviewed by admin before publishing.</p>
+          <p class="meta">Required fields: email, project title, project URL, designer, project summary, and either image URL or image upload. Start/end dates are required unless you choose Preview mode.</p>
+        </section>
+
+        <section id="submit-confirmation" class="notice success" hidden>
+          <h2>Submission Confirmed</h2>
+          <p>Your submission was received and will be posted after admin approval, which may take a few hours.</p>
+          <p>For extra exposure, share your project in the Weekly Promotion Post in the <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Print and Play Hideaway Facebook Group</a>.</p>
         </section>
 
         <section class="form-panel">
-          <form id="submit-form" class="form-grid">
-            <label>Title *<input name="title" required /></label>
-            <label>Platform *
-              <select name="platform" required>
-                <option>Kickstarter</option>
-                <option>Gamefound</option>
-              </select>
-            </label>
-            <label class="full">Short summary *<textarea name="summary" rows="4" required></textarea></label>
-            <label>Launch date *<input type="date" name="launchDate" required /></label>
-            <label>End date *<input type="date" name="endDate" required /></label>
-            <label class="full">Primary URL *<input type="url" name="primaryUrl" placeholder="https://..." required /></label>
-            <label>Designer<input name="designer" /></label>
-            <label>Publisher<input name="publisher" /></label>
-            <label class="full">Image URL *<input type="url" name="imageUrl" placeholder="https://..." required /></label>
-            <label class="full">Promo details<textarea name="promoDetails" rows="3"></textarea></label>
-            <div class="full"><button type="submit">Create Submission Draft</button></div>
-            <small class="full">This opens a pre-filled issue in a new tab for editorial review.</small>
+          <form id="project-submit-form" class="submission-form" action="https://formsubmit.co/mgonzalvez@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+            <input type="hidden" name="_subject" value="Launchpad submission" />
+            <input type="hidden" name="_next" id="next-url" value="" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="form-grid">
+              <label>
+                <span>Your email (Required)</span>
+                <input type="email" name="submitter_email" autocomplete="email" required />
+              </label>
+
+              <label>
+                <span>Project title (Required)</span>
+                <input type="text" name="project_title" required />
+              </label>
+
+              <label class="wide">
+                <span>Project URL (Required)</span>
+                <input type="url" name="project_url" placeholder="https://..." required />
+              </label>
+
+              <label>
+                <span>Submission type (Required)</span>
+                <select name="submission_type" required>
+                  <option value="">Select one</option>
+                  <option value="Crowdfunding project">Crowdfunding project</option>
+                  <option value="Limited-time promotion">Limited-time promotion</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Preview listing?</span>
+                <select name="is_preview">
+                  <option value="No" selected>No</option>
+                  <option value="Yes">Yes (dates TBD)</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Start date (Required unless Preview = Yes)</span>
+                <input type="date" name="start_date" />
+              </label>
+
+              <label>
+                <span>End date (Required unless Preview = Yes)</span>
+                <input type="date" name="end_date" />
+              </label>
+
+              <label>
+                <span>Designer (Required)</span>
+                <input type="text" name="designer" required />
+              </label>
+
+              <label>
+                <span>Publisher (Optional)</span>
+                <input type="text" name="publisher" />
+              </label>
+
+              <label>
+                <span>Late pledge available? (Optional)</span>
+                <select name="late_pledge_available">
+                  <option value="">Not specified</option>
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </label>
+
+              <label class="wide">
+                <span>Late pledge URL (Optional)</span>
+                <input type="url" name="late_pledge_url" placeholder="https://..." />
+              </label>
+
+              <label class="wide">
+                <span>Project summary (Required)</span>
+                <textarea name="project_summary" rows="5" required></textarea>
+              </label>
+
+              <label class="wide">
+                <span>Image URL (Required unless image upload is provided)</span>
+                <input type="url" name="image_url" placeholder="https://example.com/image.png" />
+                <small>Must be a direct public image URL. Private cloud links are not accepted.</small>
+              </label>
+
+              <label class="wide">
+                <span>Or upload image (Required unless image URL is provided)</span>
+                <input type="file" name="image_file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+              </label>
+            </div>
+
+            <p class="form-note">Provide either a valid direct image URL or upload a PNG/JPG file (max 5MB). If this is a Preview listing, start/end dates can be left blank.</p>
+
+            <div id="form-error" class="notice error" hidden></div>
+
+            <button type="submit" class="cta" id="submit-btn">Submit Project</button>
           </form>
         </section>
+
+        <section class="hero" style="margin-top: 16px;">
+          <p>For more exposure, also share your project in the Weekly Promotion Post in the <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Print and Play Hideaway Facebook Group</a>.</p>
+        </section>
       </main>
-      <footer class="footer">PnP Launchpad is manually curated from creator-submitted project links. All submissions require approval before publication.</footer>
+      <footer class="footer">Copyright 2026 by <a href="mailto:help@pnpfinder.com">Martin Gonzalvez</a>.<br />If you find this site helpful, <a href="https://ko-fi.com/marting" target="_blank" rel="noreferrer noopener">why not buy me a coffee?</a></footer>
     </div>
 
     <script>
-      const form = document.getElementById('submit-form');
-      form?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const data = new FormData(form);
-        const title = String(data.get('title') || '').trim();
-        const platform = String(data.get('platform') || '').trim();
-        const summary = String(data.get('summary') || '').trim();
-        const launchDate = String(data.get('launchDate') || '').trim();
-        const endDate = String(data.get('endDate') || '').trim();
-        const primaryUrl = String(data.get('primaryUrl') || '').trim();
-        const designer = String(data.get('designer') || '').trim();
-        const publisher = String(data.get('publisher') || '').trim();
-        const imageUrl = String(data.get('imageUrl') || '').trim();
-        const promoDetails = String(data.get('promoDetails') || '').trim();
+      (function () {
+        // Optional: set this to your deployed Google Apps Script Web App URL
+        // to also log submissions into Google Sheets.
+        const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbylpQiyqZZ8YGbcJCoW-ORfvhw13cqf3jUT7rsOLGC_KwsotsoZwRVSqNVsTb5Bh5Z0pA/exec';
 
-        const issueTitle = `[Submission] ${title}`;
-        const body = [
-          `## Project Submission`,
-          ``,
-          `- **Title:** ${title}`,
-          `- **Platform:** ${platform}`,
-          `- **Launch date:** ${launchDate}`,
-          `- **End date:** ${endDate}`,
-          `- **Primary URL:** ${primaryUrl}`,
-          `- **Image URL:** ${imageUrl}`,
-          `- **Designer:** ${designer || 'N/A'}`,
-          `- **Publisher:** ${publisher || 'N/A'}`,
-          ``,
-          `### Short Summary`,
-          summary,
-          ``,
-          `### Promo Details`,
-          promoDetails || 'N/A'
-        ].join('\n');
+        const form = document.querySelector('#project-submit-form');
+        const errorEl = document.querySelector('#form-error');
+        const confirmation = document.querySelector('#submit-confirmation');
+        const submitBtn = document.querySelector('#submit-btn');
+        const nextUrl = document.querySelector('#next-url');
+        if (!form || !errorEl || !confirmation || !submitBtn || !nextUrl) return;
 
-        const repoPath = 'mgonzalvez/launchpad';
-        const url = `https://github.com/${repoPath}/issues/new?labels=submission&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(body)}`;
-        window.open(url, '_blank', 'noopener,noreferrer');
-      });
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('submitted') === '1') {
+          confirmation.hidden = false;
+        }
+
+        nextUrl.value = `${window.location.origin}${window.location.pathname}?submitted=1`;
+
+        const imageUrlInput = form.querySelector('input[name="image_url"]');
+        const imageFileInput = form.querySelector('input[name="image_file"]');
+        const startDateInput = form.querySelector('input[name="start_date"]');
+        const endDateInput = form.querySelector('input[name="end_date"]');
+        const isPreviewInput = form.querySelector('select[name="is_preview"]');
+        const latePledgeAvailableInput = form.querySelector('select[name="late_pledge_available"]');
+        const latePledgeUrlInput = form.querySelector('input[name="late_pledge_url"]');
+
+        const blockedHosts = [
+          'drive.google.com',
+          'docs.google.com',
+          'dropbox.com',
+          'onedrive.live.com',
+          'icloud.com',
+          'mega.nz',
+          'facebook.com'
+        ];
+
+        function setError(message) {
+          errorEl.textContent = message;
+          errorEl.hidden = !message;
+        }
+
+        function isDirectImageUrl(value) {
+          try {
+            const u = new URL(value);
+            if (!/^https?:$/i.test(u.protocol)) return false;
+            const host = u.hostname.toLowerCase();
+            if (blockedHosts.some((h) => host === h || host.endsWith(`.${h}`))) return false;
+            if (/\/s\/[0-9]+\//i.test(u.pathname)) return false;
+            return /\.(png|jpe?g)$/i.test(u.pathname);
+          } catch {
+            return false;
+          }
+        }
+
+        function boolText(value) {
+          return value ? 'Yes' : 'No';
+        }
+
+        async function postToGoogleSheets() {
+          if (!GOOGLE_SHEETS_WEBHOOK_URL) return;
+
+          const imageFile = imageFileInput.files && imageFileInput.files[0] ? imageFileInput.files[0] : null;
+          const payload = {
+            submitted_at: new Date().toISOString(),
+            submitter_email: String(form.querySelector('input[name="submitter_email"]').value || '').trim(),
+            project_title: String(form.querySelector('input[name="project_title"]').value || '').trim(),
+            project_url: String(form.querySelector('input[name="project_url"]').value || '').trim(),
+            submission_type: String(form.querySelector('select[name="submission_type"]').value || '').trim(),
+            is_preview: String(isPreviewInput.value || 'No'),
+            start_date: String(startDateInput.value || '').trim(),
+            end_date: String(endDateInput.value || '').trim(),
+            designer: String(form.querySelector('input[name="designer"]').value || '').trim(),
+            publisher: String(form.querySelector('input[name="publisher"]').value || '').trim(),
+            late_pledge_available: String(latePledgeAvailableInput.value || '').trim(),
+            late_pledge_url: String(latePledgeUrlInput.value || '').trim(),
+            project_summary: String(form.querySelector('textarea[name="project_summary"]').value || '').trim(),
+            image_url: String(imageUrlInput.value || '').trim(),
+            image_uploaded: boolText(Boolean(imageFile)),
+            image_file_name: imageFile ? imageFile.name : ''
+          };
+
+          // Best-effort logging; do not block email submit if this fails.
+          await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            mode: 'no-cors'
+          });
+        }
+
+        function validateForm() {
+          setError('');
+
+          if (!form.reportValidity()) {
+            setError('Please fill all required fields with valid values.');
+            return false;
+          }
+
+          const isPreview = String(isPreviewInput.value || 'No') === 'Yes';
+          if (!isPreview && (!startDateInput.value || !endDateInput.value)) {
+            setError('Start and end dates are required unless Preview is set to Yes.');
+            return false;
+          }
+
+          if (startDateInput.value && endDateInput.value && endDateInput.value < startDateInput.value) {
+            setError('End date must be on or after start date.');
+            return false;
+          }
+
+          const latePledgeAvailable = String(latePledgeAvailableInput.value || '');
+          const latePledgeUrl = String(latePledgeUrlInput.value || '').trim();
+          if (latePledgeAvailable === 'Yes' && !latePledgeUrl) {
+            setError('Please provide a late pledge URL when late pledge is marked as available.');
+            return false;
+          }
+
+          const imageUrl = String(imageUrlInput.value || '').trim();
+          const file = imageFileInput.files && imageFileInput.files[0] ? imageFileInput.files[0] : null;
+
+          if (!imageUrl && !file) {
+            setError('Please provide either an image URL or upload a PNG/JPG image.');
+            return false;
+          }
+
+          if (file) {
+            const isAllowedType = ['image/png', 'image/jpeg'].includes(file.type);
+            const isAllowedName = /\.(png|jpe?g)$/i.test(file.name);
+            if (!isAllowedType && !isAllowedName) {
+              setError('Uploaded image must be PNG or JPG/JPEG.');
+              return false;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+              setError('Uploaded image must be 5MB or smaller.');
+              return false;
+            }
+          }
+
+          if (imageUrl && !isDirectImageUrl(imageUrl) && !file) {
+            setError('Image URL is not a direct public PNG/JPG/JPEG link. Please upload a PNG/JPG image (max 5MB).');
+            return false;
+          }
+
+          return true;
+        }
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          if (!validateForm()) {
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting...';
+
+          try {
+            await postToGoogleSheets();
+          } catch (_) {
+            // Ignore logging failures and continue with email submission.
+          }
+
+          form.submit();
+        });
+      })();
     </script>
   </body>
 </html>

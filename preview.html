@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
     <link rel="shortcut icon" href="assets/logo.svg" />
-    <title>Ended | PnP Launchpad</title>
+    <title>Preview Projects | PnP Launchpad</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -17,18 +17,18 @@
         const data = await PNPL.loadContent();
         const projects = PNPL.enrichProjects(data);
         const now = new Date();
-        const archived = projects
-          .filter((p) => ['archived', 'late-pledge', 'pre-order'].includes(PNPL.projectStatus(p, now)))
-          .sort(PNPL.byArchivePriority);
+        const preview = projects
+          .filter((p) => PNPL.projectStatus(p, now) === 'preview')
+          .sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
 
         el.innerHTML = `
-          ${PNPL.header('Ended')}
+          ${PNPL.header('Preview')}
           <main>
             <section class="hero">
-              <h1>Ended Projects</h1>
-              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders available are shown first.</p>
+              <h1>Preview Projects</h1>
+              <p>Projects in preview mode can be showcased before launch and end dates are announced.</p>
             </section>
-            ${archived.length ? `<div class="grid">${archived.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No archived projects yet.</p>'}
+            ${preview.length ? `<div class="grid">${preview.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
           </main>
           ${PNPL.footer()}
         `;

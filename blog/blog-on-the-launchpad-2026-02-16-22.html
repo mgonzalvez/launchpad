@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+    <link rel="shortcut icon" href="../assets/logo.svg" />
+    <title>What's New on the Launchpad This Week of Feb. 16-22, 2026 | PnP Launchpad</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../assets/app.js"></script>
+    <script>
+      const el = document.getElementById('app');
+      el.innerHTML = `
+        ${PNPL.header('Blog')}
+        <main>
+          <article class="blog-post-card blog-post-full">
+            <img class="blog-cover" src="/uploads/blog-collage-2026-02-16-22.jpg" alt="Collage of six newly added projects: The Black Dahlia Case, Rolling Pirates, Flipping Fortune, Bravery, BYTE: SHIFT, and Pocket Picks." loading="lazy" />
+            <div class="blog-post-body">
+              <p class="meta">Published: February 16, 2026</p>
+              <h1>What's New on the Launchpad This Week of Feb. 16-22, 2026</h1>
+
+              <p><strong>Fresh additions since last week's post:</strong> the Launchpad picked up a strong new wave of projects not covered in the previous roundup. New live crowdfunding additions include <a href="https://www.kickstarter.com/projects/malachi-rempen/almighty/description">Almighty ⚡️ The Godliest God Game</a>, <a href="https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description">Logic &amp; Lore 2nd Edition &amp; Expansion</a>, and <a href="https://www.kickstarter.com/projects/paulbamberger/the-black-dahlia-case">The Black Dahlia Case - Murder Mystery Game</a>. We also added <a href="https://www.kickstarter.com/projects/rollnwrite/rolling-pirates">Rolling Pirates</a> with late pledge availability, plus a growing preview lane: <a href="https://gamefound.com/en/projects/tabletop-for-world/hidden-realms-the-mummys-tomb">Hidden Realms: The Mummy's Tomb</a>, <a href="https://www.kickstarter.com/projects/herrgoldberg/flipping-fortune">Flipping Fortune</a>, <a href="https://www.kickstarter.com/projects/radek-ignatow/bravery">Bravery</a>, <a href="https://gamefound.com/en/projects/beaverlicious-games/byte-shift-competitive-hacking-game-dpnp">BYTE: SHIFT</a>, and <a href="https://gamefound.com/en/projects/beaverlicious-games/pocket-picks--7-micro-games-in-cartridge-cases">Pocket Picks - 7 Micro Games in Cartridge Cases</a>.</p>
+
+              <p><strong>Still live from last week's roundup:</strong> there's still time to back. <a href="https://www.kickstarter.com/projects/timetodice/red-dungeon">Red Dungeon</a> has <strong><span class="days-left" data-end-date="2026-02-28">12 days left</span></strong>, <a href="https://www.kickstarter.com/projects/105281170/fliegerkorps">Fliegerkorps</a> has <strong><span class="days-left" data-end-date="2026-02-20">4 days left</span></strong>, <a href="https://www.kickstarter.com/projects/littlerocketgames/one-card-dungeon-hells-door">One Card Dungeon - Hell's Door</a> has <strong><span class="days-left" data-end-date="2026-03-06">18 days left</span></strong>, <a href="https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game">ORMAN</a> has <strong><span class="days-left" data-end-date="2026-02-28">12 days left</span></strong>, <a href="https://www.kickstarter.com/projects/nukazombee/beastward-monster-hunt-rpg-boardgame?ref=1q7wvl">Beastward</a> has <strong><span class="days-left" data-end-date="2026-03-10">22 days left</span></strong>, and the <a href="https://itch.io/s/180328/-birthday-sale-">Birthday Sale promo</a> has <strong><span class="days-left" data-end-date="2026-02-20">4 days left</span></strong>.</p>
+
+              <p><strong>Bottom line:</strong> this week expands both ends of the funnel, with high-interest campaigns live now and a deeper preview bench worth tracking before launch.</p>
+
+              <p><a href="index.html">Back to Blog</a></p>
+            </div>
+          </article>
+        </main>
+        ${PNPL.footer()}
+      `;
+      document.querySelectorAll('.days-left[data-end-date]').forEach((node) => {
+        const iso = String(node.getAttribute('data-end-date') || '');
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return;
+        const now = new Date();
+        const end = new Date(`${iso}T23:59:59`);
+        const days = Math.ceil((end.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
+        if (days < 0) {
+          node.textContent = 'ended';
+        } else if (days === 0) {
+          node.textContent = 'ends today';
+        } else if (days === 1) {
+          node.textContent = '1 day left';
+        } else {
+          node.textContent = `${days} days left`;
+        }
+      });
+      PNPL.setMainLinksNewTab();
+    </script>
+  </body>
+</html>

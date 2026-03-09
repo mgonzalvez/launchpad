@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+    <link rel="shortcut icon" href="../assets/logo.svg" />
+    <title>Blog | PnP Launchpad</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../assets/app.js"></script>
+    <script>
+      const el = document.getElementById('app');
+      el.innerHTML = `
+        ${PNPL.header('Blog')}
+        <main>
+          <article class="blog-post-card blog-post-full">
+            <img class="blog-cover" src="../uploads/blog-collage-2026-03-09-15.jpg?v=20260309a" alt="Collage featuring KING, Hidden Realms, Mïnomancer, Fort Douaumont, Bravery, Hexoplanets, Stitchery Faire, LUDOS, and HEX FACTOR." loading="lazy" />
+            <div class="blog-post-body">
+              <p class="meta">Published: March 9, 2026</p>
+              <h1>What's New on the Launchpad This Week of March 9-15, 2026</h1>
+
+              <p><strong>KING</strong> is the live campaign with the clearest urgency in this week's thread. If you like strategic, puzzle-forward print-and-play designs, this is the campaign with the strongest immediate call to action right now.</p>
+
+              <p>The roundup also covers new Launchpad additions like HEX FACTOR, Stitchery Faire, Hexoplanets, and LUDOS, plus strong coming-soon signals from Hidden Realms, Fort Douaumont, and Bravery, along with a few non-crowdfunding finds worth your attention.</p>
+              <p><a href="blog-on-the-launchpad-2026-03-09-15.html">Read the full post</a></p>
+
+            </div>
+          </article>
+
+          <section class="blog-feed" style="max-width: 980px; margin: 18px auto 0;">
+            <h2 style="margin: 0 0 8px;">Older Posts</h2>
+            <p class="meta" style="margin-top: 0;">Older weekly posts appear here in collapsed cards as new entries are added.</p>
+            <article class="blog-post-card">
+              <a href="blog-on-the-launchpad-2026-02-22-27.html" target="_blank" rel="noreferrer noopener">
+                <img class="blog-cover" src="../uploads/blog-collage-2026-02-22-27.jpg?v=20260227a" alt="Collage featuring Fliegerkorps, Logic and Lore, Red Dungeon, ORMAN, Rolling Pirates, and Essence." loading="lazy" />
+              </a>
+              <div class="blog-post-body">
+                <p class="meta">Published: February 27, 2026</p>
+                <h2><a href="blog-on-the-launchpad-2026-02-22-27.html" target="_blank" rel="noreferrer noopener">What's New on the Launchpad This Week of Feb. 22-27, 2026</a></h2>
+              </div>
+            </article>
+            <article class="blog-post-card">
+              <a href="blog-pnp-projects-and-promos-to-note-2026-02-20.html" target="_blank" rel="noreferrer noopener">
+                <img class="blog-cover" src="../uploads/blog-collage-live-now-2026-02-20.jpg?v=20260220a" alt="Six-game collage featuring Fliegerkorps, Grim World, Logic and Lore, Red Dungeon, ORMAN, and Essence." loading="lazy" />
+              </a>
+              <div class="blog-post-body">
+                <p class="meta">Published: February 20, 2026</p>
+                <h2><a href="blog-pnp-projects-and-promos-to-note-2026-02-20.html" target="_blank" rel="noreferrer noopener">PnP Projects and Promos To Note This Week.</a></h2>
+              </div>
+            </article>
+            <article class="blog-post-card">
+              <a href="blog-essence-launch-2026-02-17.html" target="_blank" rel="noreferrer noopener">
+                <img class="blog-cover" src="/uploads/essence.jpg" alt="Essence: The Grim Expeditions cover art" loading="lazy" />
+              </a>
+              <div class="blog-post-body">
+                <p class="meta">Published: February 17, 2026</p>
+                <h2><a href="blog-essence-launch-2026-02-17.html" target="_blank" rel="noreferrer noopener">Essence: The Grim Expeditions Just Launched</a></h2>
+              </div>
+            </article>
+            <article class="blog-post-card">
+              <a href="blog-on-the-launchpad-2026-02-16-22.html" target="_blank" rel="noreferrer noopener">
+                <img class="blog-cover" src="/uploads/blog-collage-2026-02-16-22.jpg" alt="What's New on the Launchpad This Week of Feb. 16-22, 2026 cover" loading="lazy" />
+              </a>
+              <div class="blog-post-body">
+                <p class="meta">Published: February 16, 2026</p>
+                <h2><a href="blog-on-the-launchpad-2026-02-16-22.html" target="_blank" rel="noreferrer noopener">What's New on the Launchpad This Week of Feb. 16-22, 2026</a></h2>
+              </div>
+            </article>
+            <article class="blog-post-card">
+              <a href="blog-on-the-launchpad-2026-02-08-15.html" target="_blank" rel="noreferrer noopener">
+                <img class="blog-cover" src="https://cf.geekdo-images.com/IJc_ITmnznlytEvbkRyC5A__original/img/zm_WRlPyIrzqzsF24Ko4IqeUHrM=/0x0/filters:format(jpeg)/pic9244143.jpg" alt="On the Launchpad, Feb. 8-15, 2026 cover" loading="lazy" />
+              </a>
+              <div class="blog-post-body">
+                <p class="meta">Published: February 15, 2026</p>
+                <h2><a href="blog-on-the-launchpad-2026-02-08-15.html" target="_blank" rel="noreferrer noopener">On the Launchpad, Feb. 8-15, 2026: Dungeons, Air Combat, Tower Defense, Monsters, Cats, and More!</a></h2>
+              </div>
+            </article>
+          </section>
+        </main>
+        ${PNPL.footer()}
+      `;
+      document.querySelectorAll('.days-left[data-end-date]').forEach((node) => {
+        const iso = String(node.getAttribute('data-end-date') || '');
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return;
+        const now = new Date();
+        const end = new Date(`${iso}T23:59:59`);
+        const days = Math.ceil((end.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
+        if (days < 0) {
+          node.textContent = 'ended';
+        } else if (days === 0) {
+          node.textContent = 'ends today';
+        } else if (days === 1) {
+          node.textContent = '1 day left';
+        } else {
+          node.textContent = `${days} days left`;
+        }
+      });
+      PNPL.setMainLinksNewTab();
+    </script>
+  </body>
+</html>

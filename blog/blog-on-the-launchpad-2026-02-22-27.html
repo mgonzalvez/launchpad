@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+    <link rel="shortcut icon" href="../assets/logo.svg" />
+    <title>What's New on the Launchpad This Week of Feb. 22-27, 2026 | PnP Launchpad</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../assets/app.js"></script>
+    <script>
+      const el = document.getElementById('app');
+      el.innerHTML = `
+        ${PNPL.header('Blog')}
+        <main>
+          <article class="blog-post-card blog-post-full">
+            <img class="blog-cover" src="../uploads/blog-collage-2026-02-22-27.jpg?v=20260227a" alt="Collage featuring Fliegerkorps, Logic and Lore, Red Dungeon, ORMAN, Rolling Pirates, and Essence." loading="lazy" />
+            <div class="blog-post-body">
+              <p class="meta">Published: February 27, 2026</p>
+              <h1>What's New on the Launchpad This Week of Feb. 22-27, 2026</h1>
+
+              <p><strong>Pressure is up at the front of the page this week.</strong> The nearest deadlines belong to <a href="https://www.kickstarter.com/projects/timetodice/red-dungeon">Red Dungeon</a> and <a href="https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game">ORMAN</a>, both closing in <strong><span class="days-left" data-end-date="2026-02-28">days left</span></strong>. If you have been waiting to decide, those are the two campaigns most likely to punish hesitation.</p>
+
+              <p><strong>Red Dungeon</strong> remains one of the cleaner pitches on the board right now: compact, standard-deck friendly, and laser focused on getting dungeon tension out of minimal materials. <strong>ORMAN</strong> still stands apart because its plant-and-grow identity gives it a different rhythm than the usual abstract roll-and-write lane, which makes it feel fresher than a lot of quick-sheet projects.</p>
+
+              <p><strong>Right behind them:</strong> <a href="https://gamefound.com/en/projects/florianfiedler/essence-the-grim-expeditions">Essence: The Grim Expeditions</a> has <strong><span class="days-left" data-end-date="2026-03-03">days left</span></strong> and is still one of the most ambitious campaign-style systems currently live. <a href="https://www.kickstarter.com/projects/paulbamberger/the-black-dahlia-case">The Black Dahlia Case</a> closes in <strong><span class="days-left" data-end-date="2026-03-04">days left</span></strong> if you want something more theatrical and event-driven than the strategy-heavy projects dominating the page this week.</p>
+
+              <p><strong>Still comfortably in range but worth tracking now:</strong> <a href="https://www.kickstarter.com/projects/malachi-rempen/almighty/description">Almighty</a> has <strong><span class="days-left" data-end-date="2026-03-05">days left</span></strong>, <a href="https://www.kickstarter.com/projects/littlerocketgames/one-card-dungeon-hells-door">One Card Dungeon - Hell's Door</a> has <strong><span class="days-left" data-end-date="2026-03-06">days left</span></strong>, and <a href="https://www.kickstarter.com/projects/twoacornsgames/dice-horde">Dice Horde</a> has <strong><span class="days-left" data-end-date="2026-03-06">days left</span></strong>. <a href="https://www.kickstarter.com/projects/nukazombee/beastward-monster-hunt-rpg-boardgame?ref=1q7wvl">Beastward</a> still has <strong><span class="days-left" data-end-date="2026-03-10">days left</span></strong>, but it is close enough now that it belongs on your serious-consideration list, not your someday list.</p>
+
+              <p><strong>New additions since the last blog entry:</strong> the Launchpad added <a href="https://www.kickstarter.com/projects/239309591/button-shy-wallet-games-spring-2026-collection">Button Shy Wallet Games: Spring 2026 Collection</a> to the preview lane, plus <a href="https://www.mischievousvibes.com/">33 Seconds of Chaos</a> and <a href="https://www.kickstarter.com/projects/dadu/fort-douaumont">Fort Douaumont</a>. That gives the site a good mix of near-term campaigns to back right now and future projects worth watching before launch dates lock in.</p>
+
+              <p><strong>Archive catch-up:</strong> if you missed <a href="https://www.kickstarter.com/projects/239309591/the-daily-weather/description">The Daily Weather</a>, <a href="https://www.kickstarter.com/projects/rollnwrite/rolling-pirates">Rolling Pirates</a>, or <a href="https://www.kickstarter.com/projects/105281170/fliegerkorps">Fliegerkorps</a>, you can still late pledge. And if <a href="https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description">Logic &amp; Lore 2nd Edition &amp; Expansion</a> slipped past you during the campaign, it is still available for pre-order.</p>
+
+              <p><strong>Bottom line:</strong> Red Dungeon and ORMAN are the urgent calls, Essence is the big-system pick that still has a little runway, and the archive now has enough meaningful post-campaign options that missing the original funding window is no longer the end of the story.</p>
+
+              <p><a href="index.html">Back to Blog</a></p>
+            </div>
+          </article>
+        </main>
+        ${PNPL.footer()}
+      `;
+      document.querySelectorAll('.days-left[data-end-date]').forEach((node) => {
+        const iso = String(node.getAttribute('data-end-date') || '');
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return;
+        const now = new Date();
+        const end = new Date(`${iso}T23:59:59`);
+        const days = Math.ceil((end.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
+        if (days < 0) {
+          node.textContent = 'ended';
+        } else if (days === 0) {
+          node.textContent = 'ends today';
+        } else if (days === 1) {
+          node.textContent = '1 day left';
+        } else {
+          node.textContent = `${days} days left`;
+        }
+      });
+      PNPL.setMainLinksNewTab();
+    </script>
+  </body>
+</html>

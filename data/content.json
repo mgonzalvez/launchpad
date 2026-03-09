@@ -1,70 +1,750 @@
 {
-  "issues": [
-    {
-      "slug": "2026-02-09",
-      "title": "Weekly Issue: Feb 9-14, 2026",
-      "weekStart": "2026-02-09",
-      "weekEnd": "2026-02-14",
-      "intro": "A curated roundup of paid Print-and-Play projects shared by creators in the community this week.",
-      "coverImage": "/uploads/01.png"
-    }
-  ],
   "projects": [
     {
       "slug": "red-dungeon",
       "title": "Red Dungeon",
       "summary": "A standard-deck print-and-play dungeon crawler where players rebel against cursed-mine guards in a compact card-driven system.",
-      "image": "/uploads/05.png",
-      "issue": "2026-02-09",
+      "image": "https://cf.geekdo-images.com/IJc_ITmnznlytEvbkRyC5A__original/img/zm_WRlPyIrzqzsF24Ko4IqeUHrM=/0x0/filters:format(jpeg)/pic9244143.jpg",
       "platform": "Kickstarter",
-      "launchDate": "2026-02-09",
-      "endDate": "2026-03-09",
+      "launchDate": "2026-02-06",
+      "endDate": "2026-02-28",
       "primaryUrl": "https://www.kickstarter.com/projects/timetodice/red-dungeon",
       "designer": "Krzysiek Pietrzak",
       "publisher": "Time to Dice",
-      "promoDetails": "Campaign is live. Uses a standard deck of 52 cards."
+      "promoDetails": "Campaign is live. Uses a standard deck of 52 cards. Late pledge is available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/timetodice/red-dungeon"
     },
     {
       "slug": "fliegerkorps",
       "title": "Fliegerkorps",
       "summary": "A solo PnP wargame focused on air-corps command decisions with included sheets and card content for WWII-themed operations.",
-      "image": "/uploads/04.png",
-      "issue": "2026-02-09",
+      "image": "https://cf.geekdo-images.com/XNc9Ak6Ix7dH0YZ0CO8atQ__original/img/ZPVA4DVo1t8obL0amz78lEZypjk=/0x0/filters:format(jpeg)/pic9366637.jpg",
       "platform": "Kickstarter",
-      "launchDate": "2026-02-10",
-      "endDate": "2026-03-12",
+      "launchDate": "2026-02-04",
+      "endDate": "2026-02-20",
       "primaryUrl": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
       "designer": "Martin Melbardis",
       "publisher": "Martin Melbardis",
-      "promoDetails": "Includes printable game sheets and card assets."
+      "promoDetails": "Includes printable game sheets and card assets.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/105281170/fliegerkorps",
+      "imagePosition": "center 85%"
     },
     {
       "slug": "king",
       "title": "KING",
       "summary": "An advanced flip-and-write project aimed at players who enjoy deeper strategy and layered scoring puzzles.",
-      "image": "/uploads/01.png",
-      "issue": "2026-02-09",
+      "image": "https://cf.geekdo-images.com/4OLqhcfrLAt09gjl_dq10w__original/img/XhTIw9BgJbz72JZ6mjbSSzKGz1w=/0x0/filters:format(png)/pic9331606.png",
       "platform": "Kickstarter",
-      "launchDate": "2026-02-14",
+      "launchDate": "2026-03-03",
       "endDate": "2026-03-15",
       "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/king-0",
       "designer": "Radek Ignatow",
       "publisher": "Radek Ignatow",
-      "promoDetails": "Project announced as coming soon in the weekly thread."
+      "promoDetails": "Project announced as coming soon. Planned launch: March 3, 2026."
     },
     {
       "slug": "cat-saga",
       "title": "Cat Saga",
       "summary": "A co-op story-driven print-and-play adventure where group choices shape narrative outcomes across sessions.",
-      "image": "/uploads/02.png",
-      "issue": "2026-02-09",
+      "image": "https://cf.geekdo-images.com/nLh85hxuSmY-tlOe2vFt6Q__original/img/6z-bl-EXHajuoXpZpsJOiv43dqU=/0x0/filters:format(png)/pic8807429.png",
       "platform": "Kickstarter",
-      "launchDate": "2026-02-12",
+      "launchDate": "2026-03-01",
       "endDate": "2026-03-20",
       "primaryUrl": "https://www.kickstarter.com/projects/rollingrhinogames/catsaga",
       "designer": "Martin van Rossum",
       "publisher": "Rolling Rhino Games",
       "promoDetails": "Promoted as a launch notification page for early supporters."
+    },
+    {
+      "slug": "orman-roll-and-plant",
+      "title": "ORMAN: A Roll & Plant Print and Play Game",
+      "summary": "A nature-themed roll-and-write style print-and-play project focused on planting strategy and quick turns.",
+      "image": "https://cf.geekdo-images.com/v1n_cSgHJ-nEOotgF87kPg__original/img/QSzIvDPEHHWfN8PA_GVKrQOfC3Y=/0x0/filters:format(png)/pic9237914.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-01-31",
+      "endDate": "2026-02-28",
+      "primaryUrl": "https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game",
+      "designer": "Keepers of Fun",
+      "publisher": "Keepers of Fun",
+      "promoDetails": "Shared in this week's creator thread. Late pledge is available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/keepersoffun/orman-a-roll-and-plant-print-and-play-game"
+    },
+    {
+      "slug": "beastward-monster-hunt-rpg-boardgame",
+      "title": "Beastward: Monster Hunt RPG Boardgame",
+      "summary": "A fantasy monster-hunting campaign project with RPG progression and boardgame structure.",
+      "image": "https://cf.geekdo-images.com/tkg17D8m3kPNt-lX7vGD3A__original/img/HrUQ9Z0r_e7LxoQZQdSbhGmze1s=/0x0/filters:format(png)/pic9393462.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-08",
+      "endDate": "2026-03-10",
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/beastward-monster-hunt-rpg-boardgame?ref=1q7wvl",
+      "designer": "Nuka Zombee Games",
+      "publisher": "Nuka Zombee Games",
+      "promoDetails": "Campaign highlighted with launch traction in the weekly thread."
+    },
+    {
+      "slug": "one-card-dungeon-hells-door",
+      "title": "One Card Dungeon - Hell's Door",
+      "summary": "An expansion-focused entry in the One Card Dungeon line designed for compact print-and-play sessions.",
+      "image": "https://cf.geekdo-images.com/gdiamVY9Htui0ev9qNXHsg__original/img/wDEFwLKaBaPl-kk8eR5kf39ozYE=/0x0/filters:format(jpeg)/pic9331790.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-04",
+      "endDate": "2026-03-06",
+      "primaryUrl": "https://www.kickstarter.com/projects/littlerocketgames/one-card-dungeon-hells-door",
+      "designer": "Little Rocket Games",
+      "publisher": "Little Rocket Games",
+      "promoDetails": "Posted as a weekly project update for One Card Dungeon fans."
+    },
+    {
+      "slug": "dice-horde",
+      "title": "Dice Horde",
+      "summary": "A dice-driven tower defense experience built for minimal setup and fast tactical decisions.",
+      "image": "https://cf.geekdo-images.com/RI65YpqKmDaTyDbZfsUc9Q__original/img/b0U7zPRy1KKFiXbfbONlxHlIPBM=/0x0/filters:format(jpeg)/pic9369051.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-24",
+      "endDate": "2026-03-06",
+      "primaryUrl": "https://www.kickstarter.com/projects/twoacornsgames/dice-horde",
+      "designer": "Two Acorns Games",
+      "publisher": "Two Acorns Games",
+      "promoDetails": "Presented as a challenge-forward tower defense campaign."
+    },
+    {
+      "slug": "birthday-sale",
+      "title": "Birthday Sale (Grim World / The Promise)",
+      "summary": "A limited-time Itch sale featuring discounted print-and-play titles including Grim World and The Promise.",
+      "image": "https://cf.geekdo-images.com/exsmoRIq8fsZyLq_9bc1Tw__original/img/cmR82F6jciQ0ZTIrBm6SRPI6cPk=/0x0/filters:format(png)/pic8282141.png",
+      "platform": "Itch.io",
+      "launchDate": "2026-02-13",
+      "endDate": "2026-02-20",
+      "primaryUrl": "https://itch.io/s/180328/-birthday-sale-",
+      "designer": "Raoul Schaupp",
+      "publisher": "Raoul Schaupp",
+      "promoDetails": "One-week promo sale shared directly by creator.",
+      "isPromo": true
+    },
+    {
+      "slug": "essence-the-grim-expeditions",
+      "title": "Essence: The Grim Expeditions",
+      "summary": "A tactical legacy-style dice crawler where players manage essence and class synergies across linked campaigns.",
+      "image": "https://cf.geekdo-images.com/SFUdXWsOMZOObMPC_axNdg__original/img/Rtbe5p9f1Ioz6KzW4hlyeWel49M=/0x0/filters:format(png)/pic9407633.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-02-17",
+      "endDate": "2026-03-03",
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/essence-the-grim-expeditions",
+      "designer": "Florian Fiedler",
+      "publisher": "Florian Fiedler",
+      "promoDetails": "Gamefound listing shared with campaign overview in thread."
+    },
+    {
+      "slug": "almighty-the-godliest-god-game",
+      "title": "Almighty ⚡️ The Godliest God Game",
+      "summary": "A competitive god-game experience with a dedicated print-and-play reward tier for backers.",
+      "image": "https://cf.geekdo-images.com/ZAQzUeNiRNmWJqA0uU3RCQ__original/img/xqKKoQxQjwuRPI33bZHxFnYH7rg=/0x0/filters:format(png)/pic9033470.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-10",
+      "endDate": "2026-03-05",
+      "primaryUrl": "https://www.kickstarter.com/projects/malachi-rempen/almighty/description",
+      "designer": "Malachi Rempen",
+      "publisher": "Malachi Rempen",
+      "promoDetails": "$5 print-and-play pledge/reward is available."
+    },
+    {
+      "slug": "logic-and-lore-2nd-edition-expansion",
+      "title": "Logic & Lore 2nd Edition & Expansion",
+      "summary": "A revised edition and expansion bundle that adds more tactical cardplay and content to the Logic & Lore system, including a $10 print-and-play pledge tier.",
+      "image": "https://cf.geekdo-images.com/lrHAQv_mccR-gulDoHxaJA__original/img/YciAtUa8J2DkWhR8hYFi9nlNrHk=/0x0/filters:format(png)/pic8003054.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-03",
+      "endDate": "2026-02-24",
+      "primaryUrl": "https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description",
+      "designer": "Jason Hager",
+      "publisher": "Weird Giraffe Games",
+      "promoDetails": "$10 print-and-play pledge tier was available during campaign; pre-order remains available.",
+      "isPreOrder": true,
+      "preOrderUrl": "https://www.kickstarter.com/projects/weirdgiraffegames/logic-and-lore-2nd-edition/description"
+    },
+    {
+      "slug": "the-black-dahlia-case-murder-mystery-game",
+      "title": "The Black Dahlia Case - Murder Mystery Game",
+      "summary": "A murder mystery game inspired by the Black Dahlia case with a $12 print-and-play basic pledge tier.",
+      "image": "/uploads/black_dahlia.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-02",
+      "endDate": "2026-03-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/paulbamberger/the-black-dahlia-case",
+      "designer": "Paul Bamberger",
+      "publisher": "Paul Bamberger",
+      "promoDetails": "$12 print-and-play basic pledge tier is available."
+    },
+    {
+      "slug": "rolling-pirates",
+      "title": "Rolling Pirates",
+      "summary": "Treasure Hunt - An adventure roll-and-write game with free navigation in print-and-play format.",
+      "image": "/uploads/rolling_pirates.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2025-05-20",
+      "endDate": "2025-06-19",
+      "primaryUrl": "https://www.kickstarter.com/projects/rollnwrite/rolling-pirates",
+      "designer": "Sébastien Brégeon",
+      "publisher": "Rollnwrite",
+      "promoDetails": "Late pledge is available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/rollnwrite/rolling-pirates"
+    },
+    {
+      "slug": "hidden-realms-the-mummys-tomb",
+      "title": "Hidden Realms: The Mummy's Tomb",
+      "summary": "Hidden Realms: The Mummy's Tomb is a single-page, print-and-play, roll-and-write dungeon crawl inspired by classic D&D maps. Draw polyomino shapes to map a new dungeon every game. Uncover treasure, face deadly guardians, and confront the Mummy!",
+      "image": "https://cf.geekdo-images.com/3WTQ3Yzrhd9kXqYTOCw8dQ__original/img/6kP9jqHmYoPlBcO5AIeC_xDdUeM=/0x0/filters:format(png)/pic9407757.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-03-18",
+      "endDate": "2026-04-01",
+      "primaryUrl": "https://gamefound.com/en/projects/tabletop-for-world/hidden-realms-the-mummys-tomb",
+      "designer": "Spiros Kallos",
+      "publisher": "Tabletop for World",
+      "promoDetails": "Tentative launch date March 18, 2026; tentative end date April 1, 2026."
+    },
+    {
+      "slug": "flipping-fortune",
+      "title": "Flipping Fortune",
+      "summary": "A quirky push-your-luck tarot card game with some deckbuilding. Print & Play.",
+      "image": "/uploads/flipping_fortune.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/herrgoldberg/flipping-fortune",
+      "designer": "Georg Fischer",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "bravery",
+      "title": "Bravery",
+      "summary": "A card-based survival game about surviving in the wilderness.",
+      "image": "/uploads/bravery.png",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/bravery",
+      "designer": "Radek Ignatow",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "byteshift",
+      "title": "BYTE: SHIFT",
+      "summary": "BYTE:SHIFT is a competitive hacking game where one or two players design the most effective routines by drafting modular elements onto their floppy disks.",
+      "image": "/uploads/byte_shift.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/byte-shift-competitive-hacking-game-dpnp",
+      "publisher": "Beaverlicious Games",
+      "designer": "Robin Metz",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "pocket-picks-7-micro-games-in-cartridge-cases",
+      "title": "Pocket Picks - 7 Micro Games in Cartridge Cases",
+      "summary": "Pocket Picks is a passionate indie crowdfunding project featuring 7 cleverly designed micro board and card games, each delivering a rich, strategic or adventurous experience in a portable, pocket-sized format.",
+      "image": "/uploads/pocket_picks.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/pocket-picks--7-micro-games-in-cartridge-cases",
+      "designer": "Robin Metz",
+      "publisher": "Beaverlicious Games",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "pocket-puffins-lost-in-space",
+      "title": "Pocket Puffins: Lost in Space",
+      "summary": "Pocket Puffins Lost in Space is an 18 card solo and replayable space puzzle that fits in your pocket.",
+      "image": "/uploads/pocket_puffins.png",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/pocket-puffins/pocket-puffins-lost-in-space-18-card-solo-space-puzzle",
+      "designer": "Edward Bell",
+      "publisher": "Red Stache Games",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "the-daily-weather-a-different-challenge-every-day",
+      "title": "The Daily Weather - A different challenge every day",
+      "summary": "Challenge yourself daily to create the perfect forecast using each day's unique conditions in this pocket-sized solo game. Only $10!",
+      "image": "https://cf.geekdo-images.com/TYP2tsFMX7Ynw47mnSvfmQ__original/img/iTPLnLbG3OtsgHvf46LqQX33AWI=/0x0/filters:format(png)/pic9200581.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-03",
+      "endDate": "2026-02-14",
+      "primaryUrl": "https://www.kickstarter.com/projects/239309591/the-daily-weather/",
+      "designer": "Jason Tagmire",
+      "publisher": "Button Shy",
+      "promoDetails": "$10 print-and-play campaign with late pledge available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/239309591/the-daily-weather/description"
+    },
+    {
+      "slug": "forage-honeypot",
+      "title": "Forage + Honeypot",
+      "summary": "A pair of fast and fun games for everyone, from the team that brought you the smash hits Point Salad, Calico, and Cascadia. $10 for print and play files for both games.",
+      "image": "https://cf.geekdo-images.com/qII_JObHxyBh77FjVN-1vA__original/img/d_2R3Ak-0m-inXZ7RfR_jSgWdaY=/0x0/filters:format(png)/pic9225193.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-17",
+      "endDate": "2026-03-20",
+      "primaryUrl": "https://www.kickstarter.com/projects/flatoutgames/forage-honeypot/description",
+      "designer": "Molly Johnson, Robert Melvin, Shawn Stankewich",
+      "designers": [
+        "Molly Johnson",
+        "Robert Melvin",
+        "Shawn Stankewich"
+      ],
+      "publisher": "Flatout Games",
+      "promoDetails": "$10 print-and-play files tier includes both games."
+    },
+    {
+      "slug": "button-shy-wallet-games-spring-2026-collection",
+      "title": "Button Shy Wallet Games: Spring 2026 Collection",
+      "summary": "Button Shy Wallet Games: Spring 2026 Collection. Choose from Astro ROVE, Jarl, Everything Machine, and Shaper, or grab them all for one low price. We also have a few featured reprints!",
+      "image": "https://i.kickstarter.com/assets/052/638/967/57180d82adf19ff11a99dc2cf348fe31_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1771352121&width=1024&sig=7hiGAAJ1DYWIsuwLvLtXLQD2Rbii%2BB6CCvIKZT%2FUW6s%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/239309591/button-shy-wallet-games-spring-2026-collection",
+      "designer": "Jason Tagmire",
+      "publisher": "Button Shy",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "33-seconds-of-chaos",
+      "title": "33 Seconds of Chaos",
+      "summary": "33 Seconds of Chaos is a fast-paced social party game where you give clues under weird constraints. One turn, you do it as a movie announcer, or you have to use only adjectives and nouns. Sometimes there are duels. You might have to play Flip Card or rattle off three breakfast items faster than your opponent.",
+      "image": "/uploads/33_seconds.png",
+      "platform": "Crowdfunding",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.mischievousvibes.com/",
+      "designer": "Yuriy Shikhanovich",
+      "publisher": "Mischievous Vibes Entertainment",
+      "isLatePledge": true,
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "fort-douaumont",
+      "title": "Fort Douaumont",
+      "summary": "Fort Douaumont is a 2-player print-and-play strategy game set on the Verdun front, blending tense push-your-luck dice battles with positional control across six contested zones. Players fight for ground through brinkmanship, reinforcements, and tactical movement, while one-shot powers and sector control can swing key moments.",
+      "image": "/uploads/bannerfortks2.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-03-10",
+      "endDate": "2026-03-27",
+      "primaryUrl": "https://www.kickstarter.com/projects/dadu/fort-douaumont",
+      "designer": "Davide Ghelfi",
+      "promoDetails": "Submitted as a crowdfunding project."
+    },
+    {
+      "slug": "ludos-the-ancient-games-collection-europe",
+      "title": "LUDOS: The ancient games collection - Europe",
+      "summary": "The 4th volume in a beautiful collection of handpicked ancient games that fit in your pocket. Featuring 4 two-player gems from Europe. $7 print-and-play pledge level.",
+      "image": "/uploads/ludos_europe.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-02",
+      "endDate": "2026-02-26",
+      "primaryUrl": "https://www.kickstarter.com/projects/lemerygames/ludos-the-ancient-games-collection-europe",
+      "designer": "Uncredited",
+      "publisher": "Lemery Games",
+      "promoDetails": "$7 print-and-play pledge level; late pledge available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/lemerygames/ludos-the-ancient-games-collection-europe"
+    },
+    {
+      "slug": "hex-factor",
+      "title": "HEX FACTOR",
+      "summary": "Hex Factor is a fast-paced abstract puzzle game for 1-4 players where you race to claim territory by solving shared-board hex puzzles. Use colorful wooden hex tiles to replicate black-and-white puzzle clusters and outmaneuver opponents. $11 print-and-play pledge level.",
+      "image": "https://cf.geekdo-images.com/1xGHXOAcTmFk1Oym4wltTg__original/img/2AkVT5B0DDxU6E_h14sEkKifOOM=/0x0/filters:format(jpeg)/pic9353894.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-24",
+      "endDate": "2026-03-17",
+      "primaryUrl": "https://www.kickstarter.com/projects/sneakylabgames/hex-factor/",
+      "designer": "Frederick Weller",
+      "publisher": "Roxbury Games",
+      "promoDetails": "$11 print-and-play pledge level."
+    },
+    {
+      "slug": "stitchery-faire",
+      "title": "Stitchery Faire",
+      "summary": "Tell your story one stitch at a time as you meet patrons, create garments, and find your place in the community of Threadwyke. Cozy solo journaling and sketching gameplay with a $30 print-on-demand pledge level.",
+      "image": "/uploads/stitchery_faire.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-02-25",
+      "endDate": "2026-03-19",
+      "primaryUrl": "https://www.kickstarter.com/projects/storyseamstress/stitchery-faire-a-cozy-solo-journaling-and-sketching-game/",
+      "designer": "Amanda Kastner",
+      "promoDetails": "$30 print-on-demand pledge level; late pledge available.",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/storyseamstress/stitchery-faire-a-cozy-solo-journaling-and-sketching-game/"
+    },
+    {
+      "slug": "hexoplanets",
+      "title": "Hexoplanets",
+      "summary": "A print-and-play board game where you terraform entire planets with dice, pencils, and an interactive digital story.",
+      "image": "/uploads/hexoplanets_1080x1080_new_hero.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-03-03",
+      "endDate": "2026-04-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/fullsauna/hexoplanets/",
+      "designer": "Vasil Petrakov",
+      "publisher": "Vasil Petrakov",
+      "promoDetails": "Submitted as a crowdfunding project."
+    },
+    {
+      "slug": "minomancer-roll-em-bones",
+      "title": "Mïnomancer - Roll em Bones!",
+      "summary": "Mïnomancer: Roll Them Bones! is a solo roll-and-write dungeon crawler where you raise a skeletal army to explore a rival necromancer's lair. Arrange skeletons in polyomino formations to search for keys, uncover traps, battle enemies, and fight one of 15+ bosses across three configurable dungeon levels using eight skeleton classes.",
+      "image": "/uploads/minomancer.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/minomancer---the-roll--write-dungeon-crawler-dynamic-pnp-of-the-month--gamebook",
+      "designer": "Jack Chapman",
+      "publisher": "pagepunk",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    }
+  ],
+  "designers": [
+    {
+      "slug": "krzysiek-pietrzak",
+      "name": "Krzysiek Pietrzak",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "martin-melbardis",
+      "name": "Martin Melbardis",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/147160/martin-melbardis",
+      "bio": "Designer of wargames such as Campaign: Fall Blau, Rome Must Fall and Operation Barbarossa, Martin has been obsessed with history and solitaire games for as long as he can remember&mdash;probably longer. He&rsquo;s spent years dreaming up wargames, much to the confusion of friends and family who prefer games with &ldquo;fun&rdquo; themes. When he&rsquo;s not buried in research or fine-tuning dice mechanics, he&rsquo;s either contemplating his next big design or wondering if he really needs another book on the Eastern Front (he does). With a passion for making quick-playing solo wargames that are both historically rich and mechanically engaging, Martin has created a small independent wargaming company called &quot;Solo Wargame&quot; with a single mission to ensure that no gamer ever has to suffer through an unbalanced AI opponent again."
+    },
+    {
+      "slug": "radek-ignatow",
+      "name": "Radek Ignatow",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/126631/radoslaw-ignatow",
+      "bio": "Polish game designer known as &quot;GameMaker&quot;"
+    },
+    {
+      "slug": "martin-van-rossum",
+      "name": "Martin van Rossum",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/147777/martin-van-rossum",
+      "bio": "Board game designer &amp; escape room designer from the Netherlands."
+    },
+    {
+      "slug": "keepers-of-fun",
+      "name": "Keepers of Fun",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nuka-zombee-games",
+      "name": "Nuka Zombee Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "little-rocket-games",
+      "name": "Little Rocket Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "two-acorns-games",
+      "name": "Two Acorns Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "raoul-schaupp",
+      "name": "Raoul Schaupp",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/52033/raoul-schaupp",
+      "bio": "- Born in 1983 in Karlsruhe/Germany - Studied System Engineering and works as a Consultant in the field of Concept Development E/E-Systems"
+    },
+    {
+      "slug": "florian-fiedler",
+      "name": "Florian Fiedler",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/165788/florian-fiedler",
+      "bio": "I'm a graphic designer and illustrator by profession, and a passionate creator with a love for games that offer high replayability, short to medium playtimes, and multiple strategic avenues to explore. My favorite games include Magic: The Gathering, Lost Ruins of Arnak, DotA, and Chess&mdash;all of which share that balance of depth and strategy that I admire."
+    },
+    {
+      "slug": "malachi-rempen",
+      "name": "Malachi Rempen",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/102087/malachi-ray-rempen",
+      "bio": ""
+    },
+    {
+      "slug": "jason-hager",
+      "name": "Jason Hager",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/88080/jason-hager",
+      "bio": "Illustrator and game designer. Half of the game design duo of Durdle Games."
+    },
+    {
+      "slug": "paul-bamberger",
+      "name": "Paul Bamberger",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "sebastien-bregeon",
+      "name": "Sébastien Brégeon",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "spiros-kallos",
+      "name": "Spiros Kallos",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "georg-fischer",
+      "name": "Georg Fischer",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "robin-metz",
+      "name": "Robin Metz",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/145351/robin-metz",
+      "bio": "Indie board game designer from Germany. Creator of Rotation Rumble."
+    },
+    {
+      "slug": "edward-bell",
+      "name": "Edward Bell",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jason-tagmire",
+      "name": "Jason Tagmire",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/26997/jason-tagmire",
+      "bio": "Designer of Pixel Lincoln."
+    },
+    {
+      "slug": "beth-sobel",
+      "name": "Beth Sobel",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "molly-johnson",
+      "name": "Molly Johnson",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/116182/molly-johnson",
+      "bio": ""
+    },
+    {
+      "slug": "robert-melvin",
+      "name": "Robert Melvin",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/116181/robert-melvin",
+      "bio": ""
+    },
+    {
+      "slug": "shawn-stankewich",
+      "name": "Shawn Stankewich",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/116180/shawn-stankewich",
+      "bio": "Shawn Stankewich is a founding member of Flatout Games, based in Seattle, WA, and active in Playtest Northwest and the Seattle Board Game Designers group. He co-designs modern strategy titles and co-hosts the Flatout at the Table podcast on board game mechanics."
+    },
+    {
+      "slug": "yuriy-shikhanovich",
+      "name": "Yuriy Shikhanovich",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "davide-ghelfi",
+      "name": "Davide Ghelfi",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "uncredited",
+      "name": "Uncredited",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "frederick-weller",
+      "name": "Frederick Weller",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "amanda-kastner",
+      "name": "Amanda Kastner",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "vasil-petrakov",
+      "name": "Vasil Petrakov",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jack-chapman",
+      "name": "Jack Chapman",
+      "bggUrl": "",
+      "bio": ""
+    }
+  ],
+  "publishers": [
+    {
+      "slug": "time-to-dice",
+      "name": "Time to Dice",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/51722/time-to-dice",
+      "bio": "Sport simulations, tabletop games, print&amp;play games."
+    },
+    {
+      "slug": "martin-melbardis",
+      "name": "Martin Melbardis",
+      "bggUrl": "",
+      "bio": "Independent wargame publisher focused on quick-playing solo print-and-play designs with strong historical themes and balanced AI opposition."
+    },
+    {
+      "slug": "radek-ignatow",
+      "name": "Radek Ignatow",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rolling-rhino-games",
+      "name": "Rolling Rhino Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/52335/rolling-rhino-games",
+      "bio": "At Rolling Rhino Games we create board games that can be printed and played at home. Printed in full sheets so no cutting or crafting is needed. These games offer an experience you would normally find in a bigger box, for a small price point. We want to make our games accessible to everyone. They are often light-medium weight, making them perfect as gateway games and also offer strategic depth for expert players. With global shipping being expensive and slow, we offer a cheap solution which also decreases the waiting time to receive your games. And ofcourse it's good for the environment to print at your own house instead shipping products all over the world. We hope our games bring joy and excitement to all tables."
+    },
+    {
+      "slug": "keepers-of-fun",
+      "name": "Keepers of Fun",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/54263/keepers-of-fun",
+      "bio": "At Keepers of Fun, we are dedicated to developing inclusive, accessible, and enjoyable gaming experiences for all. Our innovative approach reimagines the conventional production and distribution model by offering games in a fully digital format&mdash;allowing users to download, print, and play instantly. This digital-first strategy significantly reduces environmental impact by eliminating the need for physical manufacturing and global shipping. By shifting the &quot;game factory&quot; into the homes of our players, we promote sustainability and convenience without compromising on quality. Furthermore, as a company based in a developing economy, we are acutely aware of the financial barriers posed by international shipping and import costs&mdash;often increasing retail prices by a factor of three. Through our print-and-play model, we aim to make board games more economically accessible and environmentally responsible. Join us in redefining the way games are enjoyed&mdash;where fun, affordability, and sustainability meet."
+    },
+    {
+      "slug": "nuka-zombee-games",
+      "name": "Nuka Zombee Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/56601/nuka-zombee-games",
+      "bio": "Indie game studio based in Auckland, NZ"
+    },
+    {
+      "slug": "little-rocket-games",
+      "name": "Little Rocket Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/44898/little-rocket-games",
+      "bio": "Little Rocket Games is an independent Italian publishing company that deals with the conception, development, production and distribution of board games, card games and librigame. We start from the ideation of the game (we change our mind at least a dozen times), we illustrate every part of it paying maximum attention to the artistic aspect of the product, until, after long days of testing, we create a definitive prototype. We follow the production in all its aspects, we choose the best game components on the Italian and European territory and we assemble the games directly in our warehouse. Finally, we take care of the distribution part of our products, bringing them directly to store shelves. We are able to create your ideas, so don't hesitate to contact us."
+    },
+    {
+      "slug": "two-acorns-games",
+      "name": "Two Acorns Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/54191/two-acorns-games",
+      "bio": "The main goal of Two Acorns Games is to create roll-and-write games in a print-and-play format that catch the eye and stand out with simplicity, while also containing significant depth. &mdash;description from the publisher"
+    },
+    {
+      "slug": "raoul-schaupp",
+      "name": "Raoul Schaupp",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-fiedler",
+      "name": "Florian Fiedler",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "malachi-rempen",
+      "name": "Malachi Rempen",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "weird-giraffe-games",
+      "name": "Weird Giraffe Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/33013/weird-giraffe-games",
+      "bio": "Weird Giraffe Games, based in Huntsville, Alabama, is a group of game designers dedicated to creating games that are easy to learn and play, but layered with strategy."
+    },
+    {
+      "slug": "paul-bamberger",
+      "name": "Paul Bamberger",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rollnwrite",
+      "name": "Rollnwrite",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "tabletop-for-world",
+      "name": "Tabletop for World",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "beaverlicious-games",
+      "name": "Beaverlicious Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/52961/beaverlicious",
+      "bio": "Beaverlicious is an indie card and tabletop game studio based in Frankfurt, Germany. Run by a small team of two people and one clever cat, Beaverlicious focuses on creating extremely small, cartridge-format games that fit in your pocket."
+    },
+    {
+      "slug": "red-stache-games",
+      "name": "Red Stache Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "button-shy",
+      "name": "Button Shy",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/26991/button-shy",
+      "bio": "Button Shy is a small board game publisher led by Jason Tagmire, supported by family and friends in South Jersey. They focus on portable wallet games (typically 18 cards or fewer) packaged in durable bi-fold wallets. Popular titles include Sprawlopolis, Circle the Wagons, Avignon: A Clash of Popes, Pretense, and Pentaquark. Each wallet game is hand-assembled, and they release a new wallet game every month, usually through Kickstarter and their Patreon Board Game of the Month Club."
+    },
+    {
+      "slug": "flatout-games",
+      "name": "Flatout Games",
+      "bggUrl": "https://boardgamegeek.com/boardgamepublisher/42733/flatout-games",
+      "bio": "Flatout Games is a design collaborative founded in 2017 by Molly Johnson, Robert Melvin, and Shawn Stankewich. They focus on elegant, puzzly, low-luck decision-making games with simple rules, high replayability, and strong strategic tension. Through the Flatout Games CoLab, they partner with established and emerging creators to build polished, collaborative tabletop experiences."
+    },
+    {
+      "slug": "mischievous-vibes-entertainment",
+      "name": "Mischievous Vibes Entertainment",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "lemery-games",
+      "name": "Lemery Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "roxbury-games",
+      "name": "Roxbury Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "vasil-petrakov",
+      "name": "Vasil Petrakov",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "pagepunk",
+      "name": "pagepunk",
+      "bggUrl": "",
+      "bio": ""
     }
   ]
 }

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">PnP Projects and Promos To Note This Week collage</title>
+  <desc id="desc">A six-image collage featuring Fliegerkorps, Grim World, Logic and Lore 2nd Edition and Expansion, Red Dungeon, ORMAN, and Essence.</desc>
+  <rect width="1800" height="1200" fill="#1b1b1b" />
+
+  <defs>
+    <clipPath id="r1"><rect x="24" y="24" width="576" height="564" rx="20" ry="20" /></clipPath>
+    <clipPath id="r2"><rect x="612" y="24" width="576" height="564" rx="20" ry="20" /></clipPath>
+    <clipPath id="r3"><rect x="1200" y="24" width="576" height="564" rx="20" ry="20" /></clipPath>
+    <clipPath id="r4"><rect x="24" y="612" width="576" height="564" rx="20" ry="20" /></clipPath>
+    <clipPath id="r5"><rect x="612" y="612" width="576" height="564" rx="20" ry="20" /></clipPath>
+    <clipPath id="r6"><rect x="1200" y="612" width="576" height="564" rx="20" ry="20" /></clipPath>
+  </defs>
+
+  <rect x="24" y="24" width="576" height="564" rx="20" ry="20" fill="#101010" />
+  <image x="24" y="24" width="576" height="564" preserveAspectRatio="xMidYMid slice" clip-path="url(#r1)" href="https://cf.geekdo-images.com/XNc9Ak6Ix7dH0YZ0CO8atQ__original/img/ZPVA4DVo1t8obL0amz78lEZypjk=/0x0/filters:format(jpeg)/pic9366637.jpg" />
+
+  <rect x="612" y="24" width="576" height="564" rx="20" ry="20" fill="#101010" />
+  <image x="612" y="24" width="576" height="564" preserveAspectRatio="xMidYMid slice" clip-path="url(#r2)" href="https://cf.geekdo-images.com/exsmoRIq8fsZyLq_9bc1Tw__original/img/cmR82F6jciQ0ZTIrBm6SRPI6cPk=/0x0/filters:format(png)/pic8282141.png" />
+
+  <rect x="1200" y="24" width="576" height="564" rx="20" ry="20" fill="#101010" />
+  <image x="1200" y="24" width="576" height="564" preserveAspectRatio="xMidYMid slice" clip-path="url(#r3)" href="https://cf.geekdo-images.com/lrHAQv_mccR-gulDoHxaJA__original/img/YciAtUa8J2DkWhR8hYFi9nlNrHk=/0x0/filters:format(png)/pic8003054.png" />
+
+  <rect x="24" y="612" width="576" height="564" rx="20" ry="20" fill="#101010" />
+  <image x="24" y="612" width="576" height="564" preserveAspectRatio="xMidYMid slice" clip-path="url(#r4)" href="https://cf.geekdo-images.com/IJc_ITmnznlytEvbkRyC5A__original/img/zm_WRlPyIrzqzsF24Ko4IqeUHrM=/0x0/filters:format(jpeg)/pic9244143.jpg" />
+
+  <rect x="612" y="612" width="576" height="564" rx="20" ry="20" fill="#101010" />
+  <image x="612" y="612" width="576" height="564" preserveAspectRatio="xMidYMid slice" clip-path="url(#r5)" href="https://cf.geekdo-images.com/v1n_cSgHJ-nEOotgF87kPg__original/img/QSzIvDPEHHWfN8PA_GVKrQOfC3Y=/0x0/filters:format(png)/pic9237914.png" />
+
+  <rect x="1200" y="612" width="576" height="564" rx="20" ry="20" fill="#101010" />
+  <image x="1200" y="612" width="576" height="564" preserveAspectRatio="xMidYMid slice" clip-path="url(#r6)" href="https://cf.geekdo-images.com/SFUdXWsOMZOObMPC_axNdg__original/img/Rtbe5p9f1Ioz6KzW4hlyeWel49M=/0x0/filters:format(png)/pic9407633.png" />
+</svg>
