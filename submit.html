@@ -10,30 +10,40 @@
     <!-- End Cloudflare Web Analytics -->
     <title>Submit a Project | PnP Launchpad</title>
     <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/app.js"></script>
   </head>
   <body>
     <div id="app">
       <header class="site-header">
         <div class="inner">
           <h1 class="brand"><a class="brand-link" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="PnP Launchpad logo" /><span>PnP Launchpad</span></a></h1>
-          <nav class="nav" aria-label="Primary">
-            <a href="index.html">Home</a>
-            <a href="live.html">Live Now</a>
-            <a href="upcoming.html">Upcoming</a>
-            <a href="preview.html">Preview</a>
-            <a href="blog/">Blog</a>
-            <a href="archive.html">Ended</a>
-            <a href="submit.html" aria-current="page">Submit a Project</a>
-            <details class="tools-menu">
-              <summary>Tools</summary>
-              <div class="tools-list">
-                <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
-                <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
-                <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
-                <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
-              </div>
-            </details>
-          </nav>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-panel" id="site-nav-panel">
+            <nav class="nav" aria-label="Primary">
+              <a href="index.html">Home</a>
+              <a href="live.html">Live Now</a>
+              <a href="upcoming.html">Upcoming</a>
+              <a href="preview.html">Preview</a>
+              <a href="blog/">Blog</a>
+              <a href="archive.html">Ended</a>
+              <a href="watchlist.html">Watchlist</a>
+              <a href="submit.html" aria-current="page">Submit a Project</a>
+              <details class="tools-menu">
+                <summary>Tools</summary>
+                <div class="tools-list">
+                  <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
+                  <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
+                  <a href="https://prototyper.gonzhome.us" target="_blank" rel="noreferrer noopener">Prototyper</a>
+                  <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
+                  <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
+                </div>
+              </details>
+            </nav>
+          </div>
         </div>
       </header>
       <main>
@@ -156,6 +166,10 @@
 
     <script>
       (function () {
+        if (window.PNPL && typeof window.PNPL.initSiteHeader === 'function') {
+          window.PNPL.initSiteHeader(document);
+        }
+
         // Optional: set this to your deployed Google Apps Script Web App URL
         // to also log submissions into Google Sheets.
         const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbylpQiyqZZ8YGbcJCoW-ORfvhw13cqf3jUT7rsOLGC_KwsotsoZwRVSqNVsTb5Bh5Z0pA/exec';

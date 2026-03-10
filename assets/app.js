@@ -101,19 +101,26 @@ function header(active = '') {
             <span>PnP Launchpad</span>
           </a>
         </h1>
-        <nav class="nav" aria-label="Primary">
-          ${links.map(([href, label]) => `<a href="${withBase(href)}"${label === active ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
-          <details class="tools-menu">
-            <summary>Tools</summary>
-            <div class="tools-list">
-              <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
-              <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
-              <a href="https://prototyper.gonzhome.us" target="_blank" rel="noreferrer noopener">Prototyper</a>
-              <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
-              <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
-            </div>
-          </details>
-        </nav>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-panel" id="site-nav-panel">
+          <nav class="nav" aria-label="Primary">
+            ${links.map(([href, label]) => `<a href="${withBase(href)}"${label === active ? ' aria-current="page"' : ''}>${label}</a>`).join('')}
+            <details class="tools-menu">
+              <summary>Tools</summary>
+              <div class="tools-list">
+                <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
+                <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
+                <a href="https://prototyper.gonzhome.us" target="_blank" rel="noreferrer noopener">Prototyper</a>
+                <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
+                <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
+              </div>
+            </details>
+          </nav>
+        </div>
       </div>
     </header>
   `;
@@ -480,6 +487,52 @@ function initContentLinkBehavior() {
   });
 }
 
+function initSiteHeader(root = document) {
+  const headers = root.querySelectorAll('.site-header');
+  headers.forEach((siteHeader) => {
+    if (siteHeader.dataset.navReady === '1') return;
+    siteHeader.dataset.navReady = '1';
+
+    const toggle = siteHeader.querySelector('.nav-toggle');
+    const panel = siteHeader.querySelector('.nav-panel');
+    const toolsMenu = siteHeader.querySelector('.tools-menu');
+    if (!toggle || !panel) return;
+
+    const closeMenu = () => {
+      siteHeader.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+      if (toolsMenu) toolsMenu.removeAttribute('open');
+    };
+
+    const openMenu = () => {
+      siteHeader.classList.add('nav-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close navigation menu');
+    };
+
+    toggle.addEventListener('click', () => {
+      if (siteHeader.classList.contains('nav-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    panel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => closeMenu());
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!siteHeader.contains(event.target)) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980) closeMenu();
+    });
+  });
+}
+
 function setMainLinksNewTab(root = document) {
   const anchors = root.querySelectorAll('main a');
   anchors.forEach((a) => {
@@ -592,6 +645,7 @@ function initSmartImageFitObserver() {
 
 initContentLinkBehavior();
 initSmartImageFitObserver();
+initSiteHeader();
 
 window.PNPL = {
   header,
@@ -613,6 +667,7 @@ window.PNPL = {
   enrichProjects,
   setMainLinksNewTab,
   applySmartImageFit,
+  initSiteHeader,
   getWatchlistSlugs,
   clearWatchlist,
   refreshWatchButtons
