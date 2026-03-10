@@ -533,6 +533,19 @@ function initSiteHeader(root = document) {
   });
 }
 
+function initSiteHeaderObserver() {
+  if (window.__pnplHeaderObserverInitialized) return;
+  window.__pnplHeaderObserverInitialized = true;
+
+  const rerun = () => initSiteHeader(document);
+  rerun();
+
+  const observer = new MutationObserver(() => rerun());
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+}
+
 function setMainLinksNewTab(root = document) {
   const anchors = root.querySelectorAll('main a');
   anchors.forEach((a) => {
@@ -645,7 +658,7 @@ function initSmartImageFitObserver() {
 
 initContentLinkBehavior();
 initSmartImageFitObserver();
-initSiteHeader();
+initSiteHeaderObserver();
 
 window.PNPL = {
   header,
@@ -668,6 +681,7 @@ window.PNPL = {
   setMainLinksNewTab,
   applySmartImageFit,
   initSiteHeader,
+  initSiteHeaderObserver,
   getWatchlistSlugs,
   clearWatchlist,
   refreshWatchButtons
