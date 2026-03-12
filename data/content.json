@@ -417,6 +417,19 @@
       "designer": "Jack Chapman",
       "publisher": "pagepunk",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "path-of-bones",
+      "title": "Path of Bones",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/printandgame/path-of-bones-print-and-play-pnp-card-game-pdf?ref=discovery&term=print%20and%20play%20games&total_hits=491&category_id=34",
+      "designer": "PRINTANDGAME",
+      "publisher": "PRINTANDGAME",
+      "summary": "Path of Bones is a fast-paced card game for up to 3 players, where strategy, wit, and a touch of malice pave the way to victory. It combines dynamic mechanics, constant interaction, and an evocative visual style that transports players to a universe of dungeons, dark humor, and malicious decisions.",
+      "image": "https://i.kickstarter.com/assets/052/901/201/7b1095adcd91712d45acc62a07bbd661_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1773164823&width=1024&sig=3%2Fxgpcg5ZgeW2wpsfAmFytxIn3XDY68g0pCeIjrhFw8%3D"
     }
   ],
   "designers": [
@@ -599,6 +612,12 @@
       "name": "Jack Chapman",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "printandgame",
+      "name": "PRINTANDGAME",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -743,6 +762,12 @@
     {
       "slug": "pagepunk",
       "name": "pagepunk",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "printandgame",
+      "name": "PRINTANDGAME",
       "bggUrl": "",
       "bio": ""
     }
