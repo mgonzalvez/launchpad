@@ -430,6 +430,18 @@
       "publisher": "PRINTANDGAME",
       "summary": "Path of Bones is a fast-paced card game for up to 3 players, where strategy, wit, and a touch of malice pave the way to victory. It combines dynamic mechanics, constant interaction, and an evocative visual style that transports players to a universe of dungeons, dark humor, and malicious decisions.",
       "image": "https://i.kickstarter.com/assets/052/901/201/7b1095adcd91712d45acc62a07bbd661_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1773164823&width=1024&sig=3%2Fxgpcg5ZgeW2wpsfAmFytxIn3XDY68g0pCeIjrhFw8%3D"
+    },
+    {
+      "slug": "forgetify",
+      "title": "Forgetify",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-12",
+      "endDate": "2026-06-11",
+      "primaryUrl": "https://www.kickstarter.com/projects/nonymousgames/forgetify-recall-recite-repeat-0",
+      "designer": "Tony Diaz",
+      "publisher": "Nonymous Games",
+      "summary": "Forgetify is a quick memory game where you challenge your opponent to recall a growing sequence of card items, quantities, and colors. Players take turns revealing cards and reciting the full sequence in order, with the winner taking the most rounds out of five.",
+      "image": "https://cf.geekdo-images.com/U7MYOIcJ9t1JdgKCq27iAg__original/img/kdpebO3Xy9O1CxqFu13hSqD9r9Q=/0x0/filters:format(png)/pic9468394.png"
     }
   ],
   "designers": [
@@ -618,6 +630,12 @@
       "name": "PRINTANDGAME",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "tony-diaz",
+      "name": "Tony Diaz",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -768,6 +786,12 @@
     {
       "slug": "printandgame",
       "name": "PRINTANDGAME",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nonymous-games",
+      "name": "Nonymous Games",
       "bggUrl": "",
       "bio": ""
     }
