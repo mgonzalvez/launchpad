@@ -442,6 +442,34 @@
       "publisher": "Nonymous Games",
       "summary": "Forgetify is a quick memory game where you challenge your opponent to recall a growing sequence of card items, quantities, and colors. Players take turns revealing cards and reciting the full sequence in order, with the winner taking the most rounds out of five.",
       "image": "https://cf.geekdo-images.com/U7MYOIcJ9t1JdgKCq27iAg__original/img/kdpebO3Xy9O1CxqFu13hSqD9r9Q=/0x0/filters:format(png)/pic9468394.png"
+    },
+    {
+      "slug": "dino-farmers",
+      "title": "Dino Farmers",
+      "platform": "Kickstarter",
+      "isPreview": false,
+      "launchDate": "2026-03-23",
+      "endDate": "2026-04-15",
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/dino-farmers",
+      "designer": "Denis Kurdiukov",
+      "publisher": "NukaZombee Games",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/nukazombee/dino-farmers",
+      "summary": "Cave people on a mission to explore new regions, sow the land, and restore the population of our old friends - dinosaurs! Solo/Coop PnP.",
+      "image": "https://i.imgur.com/Puzdcry.jpeg"
+    },
+    {
+      "slug": "bananarchy",
+      "title": "Bananarchy",
+      "platform": "Kickstarter",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": "",
+      "primaryUrl": "https://bananarchylaunch.pickupandplaygames.com/",
+      "designer": "Nathan Lundgaard",
+      "publisher": "",
+      "summary": "Snatch, stash, snack, and smash all the bananas to claim your crown as Monkey King. Never wait your turn in this fast-paced, energetic, and chaotic game full of monkey mayhem.",
+      "image": "https://cf.geekdo-images.com/m4GZSsPIBfSlGWqP0TpQWA__original/img/x-W9VudM68PH-HM6hyAiJxvIXOo=/0x0/filters:format(jpeg)/pic9324155.jpg"
     }
   ],
   "designers": [
@@ -636,6 +664,18 @@
       "name": "Tony Diaz",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "denis-kurdiukov",
+      "name": "Denis Kurdiukov",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nathan-lundgaard",
+      "name": "Nathan Lundgaard",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -792,6 +832,12 @@
     {
       "slug": "nonymous-games",
       "name": "Nonymous Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nukazombee-games",
+      "name": "NukaZombee Games",
       "bggUrl": "",
       "bio": ""
     }
