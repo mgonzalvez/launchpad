@@ -470,6 +470,18 @@
       "publisher": "",
       "summary": "Snatch, stash, snack, and smash all the bananas to claim your crown as Monkey King. Never wait your turn in this fast-paced, energetic, and chaotic game full of monkey mayhem.",
       "image": "https://cf.geekdo-images.com/m4GZSsPIBfSlGWqP0TpQWA__original/img/x-W9VudM68PH-HM6hyAiJxvIXOo=/0x0/filters:format(jpeg)/pic9324155.jpg"
+    },
+    {
+      "slug": "play-with-fire-the-card-game",
+      "title": "Play With Fire - The Card Game",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-05",
+      "endDate": "2026-05-26",
+      "primaryUrl": "https://www.kickstarter.com/projects/umbrapublishing/play-with-fire-the-card-game",
+      "designer": "Pierluigi De Luca",
+      "publisher": "Umbra Publishing",
+      "summary": "Play With Fire is a strategic push-your-luck card game of elimination for 2-6 players. Accumulate mana by challenging the Brazier, cast powerful spells, and strike your opponents.",
+      "image": "https://cf.geekdo-images.com/AnfHfhS9cYqW94t6pBgLKQ__original/img/ur6FNGJewtl8N34nI0rB5DSh2AI=/0x0/filters:format(png)/pic9417796.png"
     }
   ],
   "designers": [
@@ -676,6 +688,12 @@
       "name": "Nathan Lundgaard",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "pierluigi-de-luca",
+      "name": "Pierluigi De Luca",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -838,6 +856,12 @@
     {
       "slug": "nukazombee-games",
       "name": "NukaZombee Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "umbra-publishing",
+      "name": "Umbra Publishing",
       "bggUrl": "",
       "bio": ""
     }
