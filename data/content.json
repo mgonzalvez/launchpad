@@ -482,6 +482,19 @@
       "publisher": "Umbra Publishing",
       "summary": "Play With Fire is a strategic push-your-luck card game of elimination for 2-6 players. Accumulate mana by challenging the Brazier, cast powerful spells, and strike your opponents.",
       "image": "https://cf.geekdo-images.com/AnfHfhS9cYqW94t6pBgLKQ__original/img/ur6FNGJewtl8N34nI0rB5DSh2AI=/0x0/filters:format(png)/pic9417796.png"
+    },
+    {
+      "slug": "what-if-wars-wwii-series",
+      "title": "What If...WARS (WWII Series)",
+      "platform": "Promo",
+      "isPromo": true,
+      "launchDate": "2026-03-20",
+      "endDate": "2026-04-01",
+      "primaryUrl": "https://site.wargamevault.com/product/560851/WHAT-IFWars-WWII-Series?affiliate_id=3623781",
+      "designer": "Shane \"Bogue\" Bogardus",
+      "publisher": "Meepology",
+      "summary": "What If...WARS is a quick under-90-minute print-and-play area-control and resource-managed combat strategy game for 1 to 2 players, with solo play included. It offers legacy-light battle tracking across chronological World War II scenarios, using just one six-sided die, a pencil, and minimal printing and cutting.",
+      "image": "https://site.wargamevault.com/images/33431/560851.jpg"
     }
   ],
   "designers": [
@@ -694,6 +707,12 @@
       "name": "Pierluigi De Luca",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "shane-bogue-bogardus",
+      "name": "Shane \"Bogue\" Bogardus",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -862,6 +881,12 @@
     {
       "slug": "umbra-publishing",
       "name": "Umbra Publishing",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "meepology",
+      "name": "Meepology",
       "bggUrl": "",
       "bio": ""
     }
