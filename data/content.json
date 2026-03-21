@@ -495,6 +495,18 @@
       "publisher": "Meepology",
       "summary": "What If...WARS is a quick under-90-minute print-and-play area-control and resource-managed combat strategy game for 1 to 2 players, with solo play included. It offers legacy-light battle tracking across chronological World War II scenarios, using just one six-sided die, a pencil, and minimal printing and cutting.",
       "image": "https://site.wargamevault.com/images/33431/560851.jpg"
+    },
+    {
+      "slug": "sole-survivor",
+      "title": "Sole Survivor",
+      "platform": "Kickstarter",
+      "launchDate": "2026-04-15",
+      "endDate": "2026-05-15",
+      "primaryUrl": "https://www.kickstarter.com/projects/papertigers/sole-survivor-0",
+      "designer": "Paper Tigers",
+      "publisher": "",
+      "summary": "Sole Survivor is an alien-infested spaceship solo survival challenge. It is a lightweight print-and-play game where you run, hide, and scramble to assemble a transporter before the creatures find you.",
+      "image": "https://cf.geekdo-images.com/zp41_Wyp6tK44xsO1I3GkA__original/img/NSLFdyTBUFi7FGSDPa5jMJuEwfk=/0x0/filters:format(png)/pic9474025.png"
     }
   ],
   "designers": [
@@ -711,6 +723,12 @@
     {
       "slug": "shane-bogue-bogardus",
       "name": "Shane \"Bogue\" Bogardus",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "paper-tigers",
+      "name": "Paper Tigers",
       "bggUrl": "",
       "bio": ""
     }
