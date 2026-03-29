@@ -239,13 +239,15 @@
       "summary": "BYTE:SHIFT is a competitive hacking game where one or two players design the most effective routines by drafting modular elements onto their floppy disks.",
       "image": "/uploads/byte_shift.png",
       "platform": "Gamefound",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-04-02",
+      "endDate": "2026-04-17",
+      "isPreview": false,
       "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/byte-shift-competitive-hacking-game-dpnp",
       "publisher": "Beaverlicious Games",
       "designer": "Robin Metz",
-      "promoDetails": "Submitted as a preview crowdfunding project."
+      "promoDetails": "Gamefound campaign scheduled to launch April 2, 2026 at 13:00 and end April 17, 2026 at 20:00.",
+      "launchTime": "13:00",
+      "endTime": "20:00"
     },
     {
       "slug": "pocket-picks-7-micro-games-in-cartridge-cases",

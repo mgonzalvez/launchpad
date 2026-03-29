@@ -1,4 +1,5 @@
 const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
+const fmtDateTime = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' });
 const WATCHLIST_STORAGE_KEY = 'pnpl_watchlist_v1';
 const IMAGE_TONE_CACHE = new Map();
 const basePath = (() => {
@@ -44,6 +45,35 @@ function parseDate(value) {
     }
   }
   return new Date(value);
+}
+
+function parseTimeParts(value) {
+  if (typeof value !== 'string') return null;
+  const m = value.trim().match(/^(\d{1,2}):(\d{2})$/);
+  if (!m) return null;
+  const hours = Number(m[1]);
+  const minutes = Number(m[2]);
+  if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) return null;
+  return { hours, minutes };
+}
+
+function parseProjectDateTime(dateValue, timeValue, fallback = 'midday') {
+  if (!hasIsoDate(dateValue)) return new Date(dateValue);
+  const m = String(dateValue).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const parts = parseTimeParts(timeValue);
+  let hours = 12;
+  let minutes = 0;
+  if (parts) {
+    hours = parts.hours;
+    minutes = parts.minutes;
+  } else if (fallback === 'start') {
+    hours = 0;
+    minutes = 0;
+  } else if (fallback === 'end') {
+    hours = 23;
+    minutes = 59;
+  }
+  return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), hours, minutes, 0, 0);
 }
 
 function hasIsoDate(value) {
@@ -141,9 +171,9 @@ function projectStatus(p, now = new Date()) {
   const isPreview = Boolean(p.isPreview) || (!hasIsoDate(p.launchDate) && !hasIsoDate(p.endDate));
   if (isPreview) return 'preview';
 
-  const launch = atDayStart(parseDate(p.launchDate));
+  const launch = parseProjectDateTime(p.launchDate, p.launchTime, 'start');
   // Keep projects active for an extra 24h after stated end date to avoid timezone cutoffs.
-  const end = addHours(atDayEnd(parseDate(p.endDate)), 24);
+  const end = addHours(parseProjectDateTime(p.endDate, p.endTime, 'end'), 24);
   const hasLatePledge = Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl);
   const hasPreOrder = Boolean(p.isPreOrder || p.hasPreOrder || p.preOrderUrl);
   if (launch > now) return 'upcoming';
@@ -160,16 +190,24 @@ function projectIsJustLaunched(p, now = new Date()) {
   const status = projectStatus(p, now);
   if (!['live', 'promo'].includes(status)) return false;
   if (!hasIsoDate(p.launchDate)) return false;
-  return isSameLocalDay(atDayStart(parseDate(p.launchDate)), now);
+  return isSameLocalDay(parseProjectDateTime(p.launchDate, p.launchTime, 'start'), now);
 }
 
 function projectIsEndingSoon(p, now = new Date()) {
   const status = projectStatus(p, now);
   if (!['live', 'promo'].includes(status)) return false;
   if (!hasIsoDate(p.endDate)) return false;
-  const end = atDayEnd(parseDate(p.endDate));
+  const end = parseProjectDateTime(p.endDate, p.endTime, 'end');
   const msLeft = end.getTime() - now.getTime();
   return msLeft >= 0 && msLeft <= (24 * 60 * 60 * 1000);
+}
+
+function formatProjectDateLabel(dateValue, timeValue) {
+  if (!hasIsoDate(dateValue)) return 'TBA';
+  if (parseTimeParts(timeValue)) {
+    return fmtDateTime.format(parseProjectDateTime(dateValue, timeValue));
+  }
+  return fmt.format(parseDate(dateValue));
 }
 
 function statusBadge(status, p = null, now = new Date()) {
@@ -329,7 +367,7 @@ function projectCard(p, options = {}) {
     : (p.designer ? personLink('designer', p.designer, p.designerSlug) : '');
   const dateMeta = status === 'preview'
     ? 'Launch: TBA | End: TBA'
-    : `Launch: ${fmt.format(parseDate(p.launchDate))} | End: ${fmt.format(parseDate(p.endDate))}`;
+    : `Launch: ${formatProjectDateLabel(p.launchDate, p.launchTime)} | End: ${formatProjectDateLabel(p.endDate, p.endTime)}`;
   return `
     <article class="card card-click${compact ? ' compact' : ''}" data-url="${cardUrl}">
       <a class="smart-image-frame" href="${cardUrl}" target="_blank" rel="noreferrer noopener">
