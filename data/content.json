@@ -509,6 +509,28 @@
       "publisher": "",
       "summary": "Sole Survivor is an alien-infested spaceship solo survival challenge. It is a lightweight print-and-play game where you run, hide, and scramble to assemble a transporter before the creatures find you.",
       "image": "https://cf.geekdo-images.com/zp41_Wyp6tK44xsO1I3GkA__original/img/NSLFdyTBUFi7FGSDPa5jMJuEwfk=/0x0/filters:format(png)/pic9474025.png"
+    },
+    {
+      "slug": "galens-games-mint-tin-series-2",
+      "title": "Galen's Games Mint Tin Series 2",
+      "platform": "Kickstarter",
+      "launchDate": "2026-03-24",
+      "endDate": "2026-04-23",
+      "primaryUrl": "https://www.kickstarter.com/projects/galensgames/galens-games-mint-tin-series-2",
+      "designers": [
+        "Galen McCown",
+        "Stefan Barkow",
+        "Evan Wilcock",
+        "Jonathan Carnehl",
+        "Ryan Sromek",
+        "Chris Backe"
+      ],
+      "designer": "Galen McCown, Stefan Barkow, Evan Wilcock, Jonathan Carnehl, Ryan Sromek, Chris Backe",
+      "publisher": "Galen's Games",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/galensgames/galens-games-mint-tin-series-2",
+      "summary": "A series of 1-2 player games that fit inside a mint tin. Most can be learned in about 5 minutes and played in 15-20 minutes.",
+      "image": "https://i.kickstarter.com/assets/053/094/000/75c9f750b7cd3c32fc9955b35b242783_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1774458087&width=1024&sig=QDu0%2BAdHcb14lK5pjC%2Fr2g6f73HyrXZf5OMoR7KDBLA%3D"
     }
   ],
   "designers": [
@@ -733,6 +755,42 @@
       "name": "Paper Tigers",
       "bggUrl": "",
       "bio": "Marco Salogni is an Italian illustrator and painter based in Passirano, Franciacorta. He works as a freelance graphic artist, has written and illustrated children's books published in Italy, and continues to build imaginative worlds through his artwork."
+    },
+    {
+      "slug": "galen-mccown",
+      "name": "Galen McCown",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "stefan-barkow",
+      "name": "Stefan Barkow",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "evan-wilcock",
+      "name": "Evan Wilcock",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jonathan-carnehl",
+      "name": "Jonathan Carnehl",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "ryan-sromek",
+      "name": "Ryan Sromek",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "chris-backe",
+      "name": "Chris Backe",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -907,6 +965,12 @@
     {
       "slug": "meepology",
       "name": "Meepology",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "galen-s-games",
+      "name": "Galen's Games",
       "bggUrl": "",
       "bio": ""
     }
