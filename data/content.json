@@ -531,6 +531,22 @@
       "latePledgeUrl": "https://www.kickstarter.com/projects/galensgames/galens-games-mint-tin-series-2",
       "summary": "A series of 1-2 player games that fit inside a mint tin. Most can be learned in about 5 minutes and played in 15-20 minutes.",
       "image": "https://i.kickstarter.com/assets/053/094/000/75c9f750b7cd3c32fc9955b35b242783_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1774458087&width=1024&sig=QDu0%2BAdHcb14lK5pjC%2Fr2g6f73HyrXZf5OMoR7KDBLA%3D"
+    },
+    {
+      "slug": "shinobi-spy-and-supply",
+      "title": "Shinobi Spy & Supply",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-05",
+      "endDate": "2026-05-31",
+      "primaryUrl": "https://www.kickstarter.com/projects/orcaislandgames/shinobi-spy-and-supply",
+      "designers": [
+        "Leslie Kolke",
+        "Jered Byford"
+      ],
+      "designer": "Leslie Kolke, Jered Byford",
+      "publisher": "Orca Island Games",
+      "summary": "Shinobi Spy & Supply is a small card game about two competing shops selling all the gear Japanese fantasy spies need for espionage. PNP tier $3.",
+      "image": "https://i.kickstarter.com/assets/052/554/698/2c9858f77fc6af6052ac2211732df2dd_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1770750928&width=1024&sig=xzALeu1YI1DHhiggCh9vWzbLaNbw5vTLrZQ1P%2FrmmZM%3D"
     }
   ],
   "designers": [
@@ -791,6 +807,18 @@
       "name": "Chris Backe",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "leslie-kolke",
+      "name": "Leslie Kolke",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jered-byford",
+      "name": "Jered Byford",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -971,6 +999,12 @@
     {
       "slug": "galen-s-games",
       "name": "Galen's Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "orca-island-games",
+      "name": "Orca Island Games",
       "bggUrl": "",
       "bio": ""
     }
