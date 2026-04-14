@@ -560,6 +560,19 @@
       "summary": "A fast, easy-to-learn, cute horror card game about saving critters in a maze from being eaten. Includes the Midnight Showdown mini game, supports solo and co-op for 1-4 players, and adds free-for-all and team variant modes.",
       "image": "/uploads/7-to-midnight.png",
       "promoDetails": "Upcoming Kickstarter campaign for the print-and-play edition. Launches June 2, 2026."
+    },
+    {
+      "slug": "the-weekly-haunt",
+      "title": "The Weekly Haunt",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/jasongreeno/theweeklyhaunt?utm_id=97758_v0_s00_e0_tv4",
+      "designer": "Jason Greeno",
+      "summary": "Take on the role of a monster hunter. Slay beasts and terrors with supernatural powers, battle terrifying monsters while racing the event track, and try to save innocent civilians who are oblivious to the dangers around them.",
+      "image": "/uploads/the-weekly-haunt.png",
+      "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
   "designers": [
@@ -836,6 +849,12 @@
     {
       "slug": "bob-whitely",
       "name": "Bob Whitely",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jason-greeno",
+      "name": "Jason Greeno",
       "bggUrl": "",
       "bio": ""
     }
