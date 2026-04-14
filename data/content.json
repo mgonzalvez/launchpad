@@ -586,6 +586,20 @@
       "summary": "A solo print-and-play wargame where you command a Soviet battalion in the street-by-street defense of Stalingrad while facing both the Germans and the growing pressure of the battle itself.",
       "image": "/uploads/not-one-step-back-stalingrad.jpg",
       "promoDetails": "Submitted as a crowdfunding project."
+    },
+    {
+      "slug": "dungeon-legacy-a-roll-and-crawl-pnp-adventure",
+      "title": "Dungeon Legacy: A Roll & Crawl PnP Adventure",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/keepersoffun/dungeon-legacy-a-roll-and-crawl-pnp-adventure?utm_id=97758_v0_s00_e0_tv0",
+      "designer": "Nezih Savı",
+      "publisher": "Keepers of Fun",
+      "summary": "A roll-and-crawl dungeon adventure with just a few sheets and three dice.",
+      "image": "/uploads/dungeon-legacy.png",
+      "promoDetails": "Submitted as a preview crowdfunding project."
     }
   ],
   "designers": [
@@ -868,6 +882,12 @@
     {
       "slug": "jason-greeno",
       "name": "Jason Greeno",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nezih-savi",
+      "name": "Nezih Savı",
       "bggUrl": "",
       "bio": ""
     }
