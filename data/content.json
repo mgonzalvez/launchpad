@@ -547,6 +547,19 @@
       "publisher": "Orca Island Games",
       "summary": "Shinobi Spy & Supply is a small card game about two competing shops selling all the gear Japanese fantasy spies need for espionage. PNP tier $3.",
       "image": "https://i.kickstarter.com/assets/052/554/698/2c9858f77fc6af6052ac2211732df2dd_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1770750928&width=1024&sig=xzALeu1YI1DHhiggCh9vWzbLaNbw5vTLrZQ1P%2FrmmZM%3D"
+    },
+    {
+      "slug": "7-to-midnight-card-game-print-and-play-edition",
+      "title": "7 To Midnight Card Game Print and Play Edition",
+      "platform": "Kickstarter",
+      "launchDate": "2026-06-02",
+      "endDate": "2026-07-02",
+      "primaryUrl": "https://www.kickstarter.com/projects/qtgames/7-to-midnight-card-game",
+      "designer": "Bob Whitely",
+      "publisher": "QT Games LLC",
+      "summary": "A fast, easy-to-learn, cute horror card game about saving critters in a maze from being eaten. Includes the Midnight Showdown mini game, supports solo and co-op for 1-4 players, and adds free-for-all and team variant modes.",
+      "image": "/uploads/7-to-midnight.png",
+      "promoDetails": "Upcoming Kickstarter campaign for the print-and-play edition. Launches June 2, 2026."
     }
   ],
   "designers": [
@@ -819,6 +832,12 @@
       "name": "Jered Byford",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "bob-whitely",
+      "name": "Bob Whitely",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1005,6 +1024,12 @@
     {
       "slug": "orca-island-games",
       "name": "Orca Island Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "qt-games-llc",
+      "name": "QT Games LLC",
       "bggUrl": "",
       "bio": ""
     }
