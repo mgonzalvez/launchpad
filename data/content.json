@@ -573,6 +573,19 @@
       "summary": "Take on the role of a monster hunter. Slay beasts and terrors with supernatural powers, battle terrifying monsters while racing the event track, and try to save innocent civilians who are oblivious to the dangers around them.",
       "image": "/uploads/the-weekly-haunt.png",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "not-one-step-back-stalingrad",
+      "title": "Not One Step Back: Stalingrad",
+      "platform": "Kickstarter",
+      "launchDate": "2026-04-08",
+      "endDate": "2026-04-15",
+      "primaryUrl": "https://www.kickstarter.com/projects/105281170/not-one-step-back-stalingrad?utm_id=97758_v0_s00_e0_tv4",
+      "designer": "Martin Melbardis",
+      "publisher": "Solo Wargame",
+      "summary": "A solo print-and-play wargame where you command a Soviet battalion in the street-by-street defense of Stalingrad while facing both the Germans and the growing pressure of the battle itself.",
+      "image": "/uploads/not-one-step-back-stalingrad.jpg",
+      "promoDetails": "Submitted as a crowdfunding project."
     }
   ],
   "designers": [
@@ -1043,6 +1056,12 @@
     {
       "slug": "orca-island-games",
       "name": "Orca Island Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "solo-wargame",
+      "name": "Solo Wargame",
       "bggUrl": "",
       "bio": ""
     },
