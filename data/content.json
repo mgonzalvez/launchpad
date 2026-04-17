@@ -600,6 +600,19 @@
       "summary": "A roll-and-crawl dungeon adventure with just a few sheets and three dice.",
       "image": "/uploads/dungeon-legacy.png",
       "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
+      "slug": "cryptid-creek-build-a-legend",
+      "title": "Cryptid Creek: Build a Legend",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-05",
+      "endDate": "2026-05-28",
+      "primaryUrl": "https://www.kickstarter.com/projects/mayhemdelight/cryptid-creek-build-a-legend?ref=9d7bci",
+      "designer": "Nicole Fende",
+      "publisher": "Mayhem & Delight Games",
+      "summary": "In Cryptid Creek: Build a Legend, players craft fake cryptids from mismatched body parts to save their dying town. Only one player can win this competitive card game, but if the reality TV crew exposes the hoax, everyone loses.",
+      "image": "/uploads/cryptid_creek.png",
+      "promoDetails": "Upcoming Kickstarter campaign with a $3 print-and-play tier."
     }
   ],
   "designers": [
@@ -890,6 +903,12 @@
       "name": "Nezih Savı",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "nicole-fende",
+      "name": "Nicole Fende",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1082,6 +1101,12 @@
     {
       "slug": "solo-wargame",
       "name": "Solo Wargame",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "mayhem-delight-games",
+      "name": "Mayhem & Delight Games",
       "bggUrl": "",
       "bio": ""
     },
