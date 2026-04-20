@@ -612,6 +612,36 @@
       "summary": "In Cryptid Creek: Build a Legend, players craft fake cryptids from mismatched body parts to save their dying town. Only one player can win this competitive card game, but if the reality TV crew exposes the hoax, everyone loses.",
       "image": "/uploads/cryptid_creek.png",
       "promoDetails": "Upcoming Kickstarter campaign with a $3 print-and-play tier."
+    },
+    {
+      "slug": "rook-and-ruin",
+      "title": "Rook & Ruin",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/rookruin",
+      "designer": "Florian Fiedler",
+      "publisher": "Florian Fiedler",
+      "summary": "A chess-inspired 1v1 deck builder from Florian Fiedler, currently being teased alongside its first add-on.",
+      "image": "/uploads/rook-and-ruin.png",
+      "promoDetails": "Preview project highlighted in today's PnP Hideaway promotion thread."
+    },
+    {
+      "slug": "like-herding-cats",
+      "title": "Like Herding Cats",
+      "platform": "Store",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPreOrder": true,
+      "preOrderUrl": "https://www.rncgames.com/lhc",
+      "primaryUrl": "https://www.rncgames.com/lhc",
+      "designer": "Benjamin Morayta Franklin",
+      "publisher": "RNC Games",
+      "summary": "Professional print-and-play pre-orders are open for Like Herding Cats: The Definitive Cat Herding Game.",
+      "image": "/uploads/like-herding-cats.png",
+      "promoDetails": "Professional PnP pre-orders are currently available direct from the publisher site."
     }
   ],
   "designers": [
@@ -908,6 +938,12 @@
       "name": "Nicole Fende",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "benjamin-morayta-franklin",
+      "name": "Benjamin Morayta Franklin",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1106,6 +1142,12 @@
     {
       "slug": "mayhem-delight-games",
       "name": "Mayhem & Delight Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rnc-games",
+      "name": "RNC Games",
       "bggUrl": "",
       "bio": ""
     },
