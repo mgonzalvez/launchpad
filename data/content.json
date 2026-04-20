@@ -270,11 +270,12 @@
       "image": "/uploads/pocket_puffins.png",
       "platform": "Kickstarter",
       "launchDate": "2026-04-14",
-      "endDate": "",
+      "endDate": "2026-05-14",
+      "endTime": "07:01",
       "primaryUrl": "https://www.kickstarter.com/projects/pocket-puffins/pocket-puffins-lost-in-space-18-card-solo-space-puzzle",
       "designer": "Edward Bell",
       "publisher": "Red Stache Games",
-      "promoDetails": "Kickstarter campaign went live on April 14, 2026."
+      "promoDetails": "Kickstarter campaign went live on April 14, 2026 and ends May 14, 2026 at 7:01 AM PDT."
     },
     {
       "slug": "the-daily-weather-a-different-challenge-every-day",
