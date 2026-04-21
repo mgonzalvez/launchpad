@@ -1,1 +1,16 @@
 .DS_Store
+
+# Editor/IDE
+.vscode/
+
+# Agent context
+AGENTS.md
+
+# Sync plans
+GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md
+
+# Local voice samples
+voice-samples/
+
+# Local blog working copies
+blog/
