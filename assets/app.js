@@ -157,7 +157,22 @@ function header(active = '') {
 }
 
 function footer() {
-  return `<footer class="footer">Copyright 2026 by <a href="mailto:help@pnpfinder.com">Martin Gonzalvez</a>.<br />If you find this site helpful, <a href="https://ko-fi.com/marting" target="_blank" rel="noreferrer noopener">why not buy me a coffee?</a></footer>`;
+  const tools = [
+    ['http://pnpfinder.com', 'PnPFinder'],
+    ['https://pnptools.gonzhome.us', 'PnPTools'],
+    ['https://prototyper.gonzhome.us', 'Prototyper'],
+    ['https://formatter.gonzhome.us', 'Card Formatter'],
+    ['https://extractor.gonzhome.us', 'Card Extractor']
+  ];
+  return `
+    <footer class="footer">
+      <nav class="footer-tools" aria-label="Tools">
+        ${tools.map(([href, label]) => `<a href="${href}" target="_blank" rel="noreferrer noopener">${label}</a>`).join('')}
+      </nav>
+      <hr />
+      <p>Copyright 2026 by <a href="mailto:help@pnpfinder.com">Martin Gonzalvez</a>.<br />If you find this site helpful, <a href="https://ko-fi.com/marting" target="_blank" rel="noreferrer noopener">why not buy me a coffee?</a></p>
+    </footer>
+  `;
 }
 
 function personLink(type, name, customSlug) {
