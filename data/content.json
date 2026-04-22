@@ -628,6 +628,20 @@
       "promoDetails": "Preview project highlighted in today's PnP Hideaway promotion thread."
     },
     {
+      "slug": "iron-quest-the-first-ember",
+      "title": "Iron Quest: The First Ember [Print & Play]",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/giza-games/iron-quest-the-first-ember",
+      "designer": "Giza Games",
+      "publisher": "Giza Games",
+      "summary": "A crunchy dice worker placement Viking adventure for 1–4 players. As a Captain, you must fulfill the King's Orders before winter—or face exile. Recruit a skilled crew, settle uncharted islands and defeat the outcast raiders.",
+      "image": "https://imgcdn.gamefound.com/og-image-square/projects/9870/d7868600-f221-406e-8aa6-5706f2e9d265.jpg",
+      "promoDetails": "Submitted as a preview crowdfunding project."
+    },
+    {
       "slug": "like-herding-cats",
       "title": "Like Herding Cats",
       "platform": "Store",
