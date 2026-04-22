@@ -1,7 +1,37 @@
 const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
 const fmtDateTime = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' });
 const WATCHLIST_STORAGE_KEY = 'pnpl_watchlist_v1';
+const VIEW_MODE_STORAGE_KEY = 'pnpl_view_mode_v1';
 const IMAGE_TONE_CACHE = new Map();
+
+const PAGE_DEFAULT_VIEW = {
+  'archive.html': 'compact',
+  'live.html': 'full',
+  'upcoming.html': 'full',
+  'preview.html': 'full',
+  'watchlist.html': 'full',
+};
+
+function getViewMode(page) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlView = urlParams.get('view');
+  if (urlView === 'full' || urlView === 'compact') return urlView;
+  try {
+    const stored = localStorage.getItem(VIEW_MODE_STORAGE_KEY);
+    if (stored === 'full' || stored === 'compact') return stored;
+  } catch (_err) { /* noop */ }
+  return PAGE_DEFAULT_VIEW[page] || 'full';
+}
+
+function setViewMode(mode) {
+  try {
+    localStorage.setItem(VIEW_MODE_STORAGE_KEY, mode);
+  } catch (_err) { /* noop */ }
+  const params = new URLSearchParams(window.location.search);
+  params.set('view', mode);
+  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  window.history.replaceState({}, '', newUrl);
+}
 const basePath = (() => {
   if (window.location.hostname.endsWith('github.io')) {
     const first = window.location.pathname.split('/').filter(Boolean)[0];
@@ -372,6 +402,7 @@ function refreshWatchButtons(slug = '') {
 
 function projectCard(p, options = {}) {
   const compact = Boolean(options.compact);
+  const compactView = Boolean(options.compactView);
   const now = new Date();
   const status = projectStatus(p, now);
   const cardUrl = status === 'late-pledge' && p.latePledgeUrl
@@ -384,7 +415,7 @@ function projectCard(p, options = {}) {
     ? 'Launch: TBA | End: TBA'
     : `Launch: ${formatProjectDateLabel(p.launchDate, p.launchTime)} | End: ${formatProjectDateLabel(p.endDate, p.endTime)}`;
   return `
-    <article class="card card-click${compact ? ' compact' : ''}" data-url="${cardUrl}">
+    <article class="card card-click${compact ? ' compact' : ''}${compactView ? ' compact-view' : ''}" data-url="${cardUrl}">
       <a class="smart-image-frame" href="${cardUrl}" target="_blank" rel="noreferrer noopener">
         <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
@@ -394,17 +425,17 @@ function projectCard(p, options = {}) {
             ${statusBadge(status, p, now)}
             <span class="badge">${p.platform}</span>
           </div>
-          ${watchButton(p, compact)}
+          ${watchButton(p, compactView)}
         </div>
         ${countdownChip(status, p, now)}
         <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
-        ${compact ? '' : `<p>${p.summary}</p>`}
+        ${compactView ? '' : `<p>${p.summary}</p>`}
         <p class="meta">${dateMeta}</p>
-        ${compact ? '' : `${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}`}
-        ${compact ? '' : `${status === 'pre-order' ? '<p class="meta"><strong>Pre-order is available.</strong></p>' : ''}`}
-        ${compact ? '' : `${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}`}
-        ${compact ? '' : `${designerLinks ? `<p class="meta">Designer: ${designerLinks}</p>` : ''}`}
-        ${compact ? '' : `${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}`}
+        ${compactView ? '' : `${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}`}
+        ${compactView ? '' : `${status === 'pre-order' ? '<p class="meta"><strong>Pre-order is available.</strong></p>' : ''}`}
+        ${compactView ? '' : `${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}`}
+        ${compactView ? '' : `${designerLinks ? `<p class="meta">Designer: ${designerLinks}</p>` : ''}`}
+        ${compactView ? '' : `${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}`}
         <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : (status === 'pre-order' ? 'Open pre-order' : 'View project')}</a>
       </div>
     </article>
@@ -737,5 +768,7 @@ window.PNPL = {
   initSiteHeaderObserver,
   getWatchlistSlugs,
   clearWatchlist,
-  refreshWatchButtons
+  refreshWatchButtons,
+  getViewMode,
+  setViewMode
 };

@@ -20,6 +20,16 @@
         const archived = projects
           .filter((p) => ['archived', 'late-pledge', 'pre-order'].includes(PNPL.projectStatus(p, now)))
           .sort(PNPL.byArchivePriority);
+        const defaultView = 'compact';
+        const currentView = PNPL.getViewMode('archive.html');
+        const isCompact = currentView === 'compact';
+
+        const viewToggle = archived.length ? `
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button type="button" class="${isCompact ? 'active' : ''}" data-view="compact" aria-pressed="${isCompact}">Compact</button>
+            <button type="button" class="${!isCompact ? 'active' : ''}" data-view="full" aria-pressed="${!isCompact}">Full</button>
+          </div>
+        ` : '';
 
         el.innerHTML = `
           ${PNPL.header('Ended')}
@@ -27,11 +37,22 @@
             <section class="hero">
               <h1>Ended Projects</h1>
               <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders available are shown first.</p>
+              ${viewToggle}
             </section>
-            ${archived.length ? `<div class="grid">${archived.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No archived projects yet.</p>'}
+            ${archived.length ? `<div class="grid${isCompact ? ' compact-grid' : ''}">${archived.map((p) => PNPL.projectCard(p, { compactView: isCompact })).join('')}</div>` : '<p>No archived projects yet.</p>'}
           </main>
           ${PNPL.footer()}
         `;
+
+        if (archived.length) {
+          el.querySelectorAll('.view-toggle button').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const mode = btn.dataset.view;
+              PNPL.setViewMode(mode);
+              window.location.reload();
+            });
+          });
+        }
       })();
     </script>
   </body>
