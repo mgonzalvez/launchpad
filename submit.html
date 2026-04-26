@@ -50,7 +50,7 @@
         <section class="hero">
           <h1>Submit a Project</h1>
           <p>Fill out this form to submit your project for Launchpad review. Submissions are reviewed by admin before publishing.</p>
-          <p class="meta">Required fields: email, project title, project URL, designer, project summary, and either image URL or image upload. Start/end dates are required unless you choose Preview mode.</p>
+          <p class="meta">Required fields: email, project title, project URL, designer, project summary, and image URL. Start/end dates are required unless you choose Preview mode.</p>
         </section>
 
         <section id="submit-confirmation" class="notice success" hidden>
@@ -60,7 +60,7 @@
         </section>
 
         <section class="form-panel">
-          <form id="project-submit-form" class="submission-form" action="https://formsubmit.co/mgonzalvez@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+          <form id="project-submit-form" class="submission-form" action="https://formsubmit.co/mgonzalvez@gmail.com" method="POST" novalidate>
             <input type="hidden" name="_subject" value="Launchpad submission" />
             <input type="hidden" name="_next" id="next-url" value="" />
             <input type="hidden" name="_captcha" value="false" />
@@ -138,18 +138,13 @@
               </label>
 
               <label class="wide">
-                <span>Image URL (Required unless image upload is provided)</span>
-                <input type="url" name="image_url" placeholder="https://example.com/image.png" />
-                <small>Must be a direct public image URL. Private cloud links are not accepted.</small>
-              </label>
-
-              <label class="wide">
-                <span>Or upload image (Required unless image URL is provided)</span>
-                <input type="file" name="image_file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
+                <span>Image URL (Required)</span>
+                <input type="url" name="image_url" placeholder="https://example.com/image.png" required />
+                <small>Must be a direct public image URL ending in .jpg or .png. Private cloud links are not accepted.</small>
               </label>
             </div>
 
-            <p class="form-note">Provide either a valid direct image URL or upload a PNG/JPG file (max 5MB). If this is a Preview listing, start/end dates can be left blank.</p>
+            <p class="form-note">A valid direct image URL ending in .jpg or .png is required. If this is a Preview listing, start/end dates can be left blank.</p>
 
             <div id="form-error" class="notice error" hidden></div>
 
@@ -189,7 +184,6 @@
         nextUrl.value = `${window.location.origin}${window.location.pathname}?submitted=1`;
 
         const imageUrlInput = form.querySelector('input[name="image_url"]');
-        const imageFileInput = form.querySelector('input[name="image_file"]');
         const startDateInput = form.querySelector('input[name="start_date"]');
         const endDateInput = form.querySelector('input[name="end_date"]');
         const isPreviewInput = form.querySelector('select[name="is_preview"]');
@@ -231,7 +225,6 @@
         async function postToGoogleSheets() {
           if (!GOOGLE_SHEETS_WEBHOOK_URL) return;
 
-          const imageFile = imageFileInput.files && imageFileInput.files[0] ? imageFileInput.files[0] : null;
           const payload = {
             submitted_at: new Date().toISOString(),
             submitter_email: String(form.querySelector('input[name="submitter_email"]').value || '').trim(),
@@ -246,9 +239,7 @@
             late_pledge_available: String(latePledgeAvailableInput.value || '').trim(),
             late_pledge_url: String(latePledgeUrlInput.value || '').trim(),
             project_summary: String(form.querySelector('textarea[name="project_summary"]').value || '').trim(),
-            image_url: String(imageUrlInput.value || '').trim(),
-            image_uploaded: boolText(Boolean(imageFile)),
-            image_file_name: imageFile ? imageFile.name : ''
+            image_url: String(imageUrlInput.value || '').trim()
           };
 
           // Best-effort logging; do not block email submit if this fails.
@@ -287,28 +278,14 @@
           }
 
           const imageUrl = String(imageUrlInput.value || '').trim();
-          const file = imageFileInput.files && imageFileInput.files[0] ? imageFileInput.files[0] : null;
 
-          if (!imageUrl && !file) {
-            setError('Please provide either an image URL or upload a PNG/JPG image.');
+          if (!imageUrl) {
+            setError('Please provide an image URL.');
             return false;
           }
 
-          if (file) {
-            const isAllowedType = ['image/png', 'image/jpeg'].includes(file.type);
-            const isAllowedName = /\.(png|jpe?g)$/i.test(file.name);
-            if (!isAllowedType && !isAllowedName) {
-              setError('Uploaded image must be PNG or JPG/JPEG.');
-              return false;
-            }
-            if (file.size > 5 * 1024 * 1024) {
-              setError('Uploaded image must be 5MB or smaller.');
-              return false;
-            }
-          }
-
-          if (imageUrl && !isDirectImageUrl(imageUrl) && !file) {
-            setError('Image URL is not a direct public PNG/JPG/JPEG link. Please upload a PNG/JPG image (max 5MB).');
+          if (!isDirectImageUrl(imageUrl)) {
+            setError('Image URL is not a direct public PNG/JPG/JPEG link.');
             return false;
           }
 
