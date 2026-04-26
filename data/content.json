@@ -682,6 +682,19 @@
       "publisher": "Printer Ink Games",
       "summary": "A fast-paced, two-player basketball card and dice game that brings the intensity of streetball straight to your tabletop. Draft your offense and defense cards, execute slick plays, and react in real time to your opponent's moves. Score big, trigger special abilities, and race to 21 points in high-energy, head-to-head action.",
       "image": "https://cf.geekdo-images.com/p9t64nHmvhB6bXV_tZ0w8w__original/img/WIBrLBIcn_VVRL5RPMWWwyxKi6Q=/0x0/filters:format(png)/pic9117375.png"
+    },
+    {
+      "slug": "greetings-from-earth",
+      "title": "Greetings from Earth: A Roll & Write Outta World Tour",
+      "platform": "Kickstarter",
+      "launchDate": "2026-04-23",
+      "endDate": "2026-05-23",
+      "primaryUrl": "https://www.kickstarter.com/projects/1617006368/greetings-from-earth-a-roll-and-write-outa-world-tour",
+      "designer": "Benno Thönelt",
+      "publisher": "sloppygames",
+      "summary": "Collect the world - one landmark at a time. Travel light years with just one die and a pen in this Print & Play Game.",
+      "image": "https://sloppygames.de/wp-content/uploads/2026/02/gra_Map_Paris.jpg",
+      "promoDetails": "Roll & Write game with a world tour theme."
     }
   ],
   "designers": [
@@ -1194,6 +1207,18 @@
     {
       "slug": "qt-games-llc",
       "name": "QT Games LLC",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "benno-thonelt",
+      "name": "Benno Thönelt",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "sloppygames",
+      "name": "SloppyGames",
       "bggUrl": "",
       "bio": ""
     }
