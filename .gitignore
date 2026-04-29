@@ -14,3 +14,6 @@ voice-samples/
 
 # Local blog working copies
 blog/
+
+# Local dev folder
+new/
