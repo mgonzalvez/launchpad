@@ -609,7 +609,7 @@
       "primaryUrl": "https://www.kickstarter.com/projects/mayhemdelight/cryptid-creek-build-a-legend?ref=9d7bci",
       "designer": "Nicole Fende",
       "publisher": "Mayhem & Delight Games",
-      "summary": "In Cryptid Creek: Build a Legend, players craft fake cryptids from mismatched body parts to save their dying town. Only one player can win this competitive card game, but if the reality TV crew exposes the hoax, everyone loses.",
+      "summary": "In Cryptid Creek: Build a Legend players craft fake cryptids from mismatched body parts to save their dying town. Only one can win in this competitive card game. But if the reality TV crew exposes the hoax, everyone loses.",
       "image": "/uploads/cryptid_creek.png",
       "promoDetails": "Upcoming Kickstarter campaign with a $3 print-and-play tier."
     },
@@ -741,7 +741,7 @@
     {
       "slug": "of-wheat-wonders",
       "title": "Of Wheat & Wonders",
-      "summary": "Lead a growing civilization through ever-changing scenarios! Configure a map using the DPnP configurator, gather resources, expand your settlements, and unlock powerful advancements over a 15-year reign shaped by unexpected disasters.",
+      "summary": "In Of Wheat & Wonders, you lead a growing civilization through ever-changing scenarios! Generate a map, gather resources, expand your settlements, and unlock powerful advancements over a 15-year reign shaped by unexpected disasters. OWaW is a dynamic Print & Play game powered by an online configurator. It lets you customize the gameplay, design your own scenarios, generate randomized maps, and create a unique game sheet for every session.",
       "image": "/uploads/wheat_wonders.jpg",
       "platform": "Gamefound",
       "launchDate": "",
@@ -749,13 +749,13 @@
       "isPreview": true,
       "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/of-wheat-wonders-the-little-solitaire-civilization-game-dynamic-pnp-of-the-month-gamebook",
       "designer": "Robin Metz",
-      "publisher": "Beaverlicious Games",
+      "publisher": "pagepunk",
       "promoDetails": "Dynamic PnP of the Month & Gamebook. Submitted as a preview crowdfunding project."
     },
     {
       "slug": "infrared",
-      "title": "Infrared",
-      "summary": "A hyper-experimental mystery game and full choose-your-own-adventure experience condensed onto a single page, navigated using your mobile phone and QR codes. Each code triggers events and scenes that appear as images on your device — absolutely no app required.",
+      "title": "INFRARED: The Tape - A Paranormal & Interactive Adventure",
+      "summary": "Infrared is a hyper-experimental mystery game that condenses a full choose-your-own-adventure experience onto a single page, where players use their mobile phone camera and QR codes to unlock image-based scenes and branching events... no app required, just an internet connection.",
       "image": "https://cf.geekdo-images.com/xa_WWDwP4uRQzB5VnifFRg__original/img/GP3_qinsMBoIRh8ZfmVTxlpKSZw=/0x0/filters:format(jpeg)/pic9163888.jpg",
       "platform": "Gamefound",
       "launchDate": "",
@@ -763,7 +763,7 @@
       "isPreview": true,
       "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/infrared-the-tape-a-interactive-paranormal-adventure-dynamic-pnp-of-the-month-gamebook",
       "designer": "Robin Metz",
-      "publisher": "Beaverlicious Games",
+      "publisher": "pagepunk",
       "promoDetails": "Dynamic PnP of the Month & Gamebook. Submitted as a preview crowdfunding project."
     },
     {
@@ -795,16 +795,16 @@
     {
       "slug": "iron-protocol-exodus",
       "title": "Iron Protocol: Exodus",
-      "summary": "Deploy your mech into ruined suburbs, battle enemy machines, and search for survivors in this tactical sci-fi boardgame.",
+      "summary": "Iron Protocol is a compact solo experience for fans of sci-fi, heavy machinery, and tactical combat. Take control of a mech unit and push through hostile territory - engaging enemy machines while extracting survivors from the ruins. Designed for print-and-play, the game requires only a handful of components to assemble. Initial setup is quick, and once prepared, future missions take moments to deploy.",
       "image": "https://i.kickstarter.com/assets/053/476/790/89586de9b1f4276f2197af5ebd8e0462_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1777080011&width=1024&sig=icD0jadLHxlWDKhWU1wpQ8nN7vhM%2FJL1U3RU8S0Jv1A%3D",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
-      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/iron-protocol-exodus",
+      "launchDate": "2026-05-02",
+      "endDate": "2026-05-31",
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/iron-protocol-exodus?ref=4ftgv4",
       "designer": "Denis Kurdiukov",
       "publisher": "NukaZombee Games",
-      "promoDetails": "Submitted as a preview crowdfunding project."
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/nukazombee/iron-protocol-exodus?ref=4ftgv4"
     },
     {
       "slug": "tribe-harsh-lands",
