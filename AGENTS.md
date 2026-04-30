@@ -7,17 +7,54 @@
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. Hosted on GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
 
+All pages share a single JS file (`assets/app.js`) exported via `window.PNPL`. Each HTML page contains inline rendering scripts that call `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
+
 ## Data Model
 All content lives in `data/content.json`: `{ projects[], designers[], publishers[] }`.
-- **Projects** have no manual status field — status is computed dynamically from `launchDate`/`endDate` dates.
+
+- **Projects** have no manual status field — status is computed dynamically from `launchDate`/`endDate` dates via `projectStatus(p, now)`.
 - **Designers/Publishers** are referenced by slug; projects link via `designer`/`publisher` string fields.
-- Key project fields: `slug`, `title`, `summary`, `image`, `platform`, `launchDate`, `endDate`, `primaryUrl`, `isPreview`, `isPromo`, `isLatePledge`, `latePledgeUrl`, `designer`, `publisher`, `imagePosition`.
+- `designers` (array) is the modern format; `designer` (string) is legacy. Both are supported. `enrichProjects()` resolves both into `designerItems[]` with slugs.
+
+### Key project fields
+| Field | Type | Notes |
+|---|---|---|
+| `slug` | string | Unique identifier |
+| `title` | string | Display name |
+| `summary` | string | 1-3 sentence description |
+| `image` | string | Direct URL or `/uploads/...` local path |
+| `platform` | string | Kickstarter, Gamefound, Itch.io, Crowdfunding, Store, Promo |
+| `launchDate` / `endDate` | `YYYY-MM-DD` | ISO strings; empty = preview |
+| `launchTime` / `endTime` | `HH:MM` | Optional time override (default: start=00:00, end=23:59) |
+| `primaryUrl` | string | External project URL |
+| `isPreview` | boolean | `true` = no dates announced; also inferred from empty dates |
+| `isPromo` | boolean | Marks promotional listings |
+| `isLatePledge` / `hasLatePledge` | boolean | Either field works |
+| `latePledgeUrl` | string | Late pledge link |
+| `isPreOrder` / `hasPreOrder` | boolean | Either field works |
+| `preOrderUrl` | string | Pre-order link |
+| `designer` | string | Legacy single designer name |
+| `designers` | string[] | Modern multi-designer array |
+| `publisher` | string | Publisher name |
+| `imagePosition` | string | CSS position for smart image fit (e.g. `center 85%`) |
+| `promoDetails` | string | Contextual promo notes |
+
+### Enriched fields (added by `enrichProjects()`)
+- `designerItems[]` — `{ name, slug }` for each designer
+- `designerSlugs[]` — array of slugs
+- `designerSlug` — first designer slug
+- `publisherSlug` — publisher slug
+
+### Status values (computed, never stored)
+`preview` → `upcoming` → `live` → `late-pledge` / `pre-order` / `archived`
+- 24h grace period after end date for timezone safety
+- `promo` status when `isPromo` is true and project is live
 
 ## File Map
 | File | Purpose |
 |---|---|
-| `index.html` | Homepage: featured carousel, live rail, upcoming/preview sections |
-| `live.html` | Live projects listing |
+| `index.html` | Homepage: featured carousel (5s auto-rotate), live rail, upcoming/preview compact rows |
+| `live.html` | Live projects listing, sorted by end date ascending |
 | `upcoming.html` | Upcoming projects listing |
 | `preview.html` | Preview projects listing |
 | `archive.html` | Ended, late-pledge, pre-order projects |
@@ -26,49 +63,65 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 | `designer.html` | Designer profile page |
 | `publisher.html` | Publisher profile page |
 | `blog/index.html` | Blog landing page |
-| `blog/*.html` | Individual blog posts |
+| `blog/*.html` | Individual blog posts (static HTML) |
 | `assets/app.js` | All shared logic and rendering |
 | `assets/styles.css` | Complete styling |
-| `uploads/` | Local image assets |
+| `assets/logo.svg` | Site logo |
+| `data/content.json` | Source of truth for all content |
+| `uploads/` | Local image assets (referenced as `/uploads/...`) |
 
 ## Code Architecture (`assets/app.js`)
 - Plain ES5/ES6, no modules, no frameworks. All logic in `assets/app.js`, exported via `window.PNPL`.
 - **No central state object.** Functions are standalone; `content` is a module-level variable populated by `loadContent()`.
 
 ### Core Functions
-- **Status:** `projectStatus(p, now)` returns `preview`/`upcoming`/`live`/`promo`/`late-pledge`/`pre-order`/`archived`. 24h grace period after end date for timezone safety.
+- **Status:** `projectStatus(p, now)` — returns `preview`/`upcoming`/`live`/`promo`/`late-pledge`/`pre-order`/`archived`.
 - **Badges:** `projectIsJustLaunched(p, now)` / `projectIsEndingSoon(p, now)` — auto-expire after launch/end day.
-- **Rendering:** `projectCard(p, options)`, `projectTile(p)`, `statusBadge(status, p, now)`, `countdownChip(status, p, now)`, `issueCard(issue)`, `header(active)`, `footer()`, `personLink(type, name, customSlug)`.
-- **Data:** `enrichProjects(data)` builds lookup maps from `designers[]`/`publishers[]` for multi-designer support. `loadContent()` fetches `data/content.json` with `Cache-Control: no-store`.
+- **Rendering:** `projectCard(p, options)`, `projectTile(p)`, `statusBadge(status, p, now)`, `countdownChip(status, p, now)`, `header(active)`, `footer()`, `personLink(type, name, customSlug)`.
+- **Data:** `enrichProjects(data)` builds lookup maps from `designers[]`/`publishers[]`. `loadContent()` fetches `data/content.json` with `Cache-Control: no-store`.
 - **Sorting:** `byEndAsc` / `byLaunchDesc` / `byWeekDesc` / `byArchivePriority`.
 - **Watchlist:** localStorage-backed (`pnpl_watchlist_v1`), synced across tabs via `storage` event. Functions: `readWatchlist()`, `writeWatchlist()`, `toggleWatchlist()`, `isWatchlisted()`, `clearWatchlist()`, `watchButton()`.
-- **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars for carousel backdrops. Managed by MutationObserver + debounced resize.
+- **View mode:** `getViewMode(page)` / `setViewMode(mode)` — stores `full`/`compact` preference in `pnpl_view_mode_v1`, with per-page defaults defined in `PAGE_DEFAULT_VIEW`.
+- **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars. Managed by MutationObserver + debounced resize.
 - **Navigation:** `initSiteHeader()` — hamburger toggle, close-on-outside-click. `initContentLinkBehavior()` — card/tile clicks open `data-url` in new tab.
-- **URL helpers:** `withBase(path)` — prepends GitHub Pages subpath; `slugify(value)` — lowercase ASCII hyphen-separated.
+- **URL helpers:** `withBase(path)` — auto-detects GitHub Pages subpath from hostname; `slugify(value)` — Unicode-normalized, lowercase ASCII hyphen-separated.
 
 ### Event Flow
-1. Page loads → `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()`
-2. `PNPL.loadContent()` → `enrichProjects()` → render via `projectCard()`/`projectTile()`
+1. HTML page loads → inline script calls `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → renders via `PNPL.header()`, `PNPL.projectCard()`, `PNPL.projectTile()`
+2. `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()` run at module scope (top of `app.js`)
 3. Status computed → badges + countdown chips rendered
 4. Watchlist buttons wired → localStorage
 5. Smart image fit runs on load + MutationObserver + debounced resize
 
 ### Coding Conventions
-- Dates: `YYYY-MM-DD` ISO strings, validated via `hasIsoDate()`, parsed at noon local.
+- Dates: `YYYY-MM-DD` ISO strings, validated via `hasIsoDate()`, parsed at noon local (or `launchTime`/`endTime` if provided).
 - HTML via template literals + `escapeHtml()` for user content.
 - CSS: `is-` prefix for state classes.
-- All project images use `loading="lazy"`.
-- Cloudflare Web Analytics beacon in header.
+- All project images use `loading="lazy"` (except first carousel slide = `eager`).
+- Cloudflare Web Analytics beacon in header (token: `15b3fbb1839542c9a2d8c7e4bf6df634`).
 
 ## submit.html Gotchas
-- Form submits via `formsubmit.co` email + best-effort Google Sheets webhook logging.
-- Image URL must be a direct public `.jpg`/`.png` link — no file upload. Blocked hosts: Google Drive, Docs, Dropbox, OneDrive, iCloud, MEGA, Facebook.
-- Required fields: email, title, URL, designer, summary, image URL. Start/end dates required unless Preview = Yes. Late pledge URL required when late pledge is marked available.
+- Form submits via `formsubmit.co` to `mgonzalvez@gmail.com` + best-effort Google Sheets webhook (`postToGoogleSheets()` runs before `form.submit()`).
+- Image URL must be a direct public `.jpg`/`.png` link — no file upload. Blocked hosts: Google Drive, Docs, Dropbox, OneDrive, iCloud, MEGA, Facebook. Also blocks itch.io `/s/NNNNN/` paths.
+- Required fields: email, title, URL, designer, summary, image URL. Start/end dates required unless Preview = Yes.
+- Late pledge URL required when late pledge is marked as available.
+- Google Sheets webhook URL is hardcoded in `submit.html` (not in `app.js`).
 
 ## Deployment
-- GitHub Actions workflow: `.github/workflows/deploy-pages.yml` — deploys on push to `main` or manual dispatch. Uses `actions/configure-pages@v5` + `actions/upload-pages-artifact@v3` + `actions/deployment-pages@v4`.
+- GitHub Actions: `.github/workflows/deploy-pages.yml` — deploys on push to `main` or manual dispatch. Uses `actions/configure-pages@v5` + `actions/upload-pages-artifact@v3` + `actions/deploy-pages@v4`.
 - No build step: uploads entire repo root as artifact.
+- `CNAME` file sets custom domain `launchpad.gonzhome.us`.
+
+## Editing Content
+- Add/edit projects in `data/content.json` → commit → push → auto-deploy.
+- Blog posts are static HTML files under `blog/` (excluded from git, local-only).
+- Local images go in `uploads/` and are referenced as `/uploads/filename.ext`.
 
 ## Planning Docs (not implemented)
 - `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake via Google Sheets + GitHub Actions. Not yet implemented.
 - `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — detailed sync plan for converting approved Google Sheet rows into `data/content.json`. Not yet implemented.
+
+## Known Gaps
+- `issueCard()` function exists in `app.js` but `issue.html` page does not exist in the repo.
+- `scripts/` directory is mentioned in `README.md` but does not exist.
+- `issue.html` is referenced in `issueCard()` output but is not a page in this repo.
