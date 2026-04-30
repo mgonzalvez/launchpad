@@ -12,8 +12,8 @@ GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md
 # Local voice samples
 voice-samples/
 
-# Local blog working copies
-blog/
+# Local blog working copies (uncomment when ready to commit)
+# blog/
 
 # Local dev folder
 new/
