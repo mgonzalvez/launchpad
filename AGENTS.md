@@ -3,6 +3,7 @@
 ## Git
 - Branch: `main`, remote: `origin/main`
 - `.gitignore` excludes `AGENTS.md`, `voice-samples/`, `new/`, `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — these are local/dev-only. `blog/` is commented out (not ignored).
+- `uploads/` is NOT in `.gitignore` — files must be tracked. A `pre-commit` hook auto-stages all files in `uploads/` so new images are included in every commit without manual `git add`.
 
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. Hosted on GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
