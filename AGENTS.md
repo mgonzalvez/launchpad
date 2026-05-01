@@ -2,7 +2,7 @@
 
 ## Git
 - Branch: `main`, remote: `origin/main`
-- `.gitignore` excludes `AGENTS.md`, `blog/`, `voice-samples/`, `new/`, `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — these are local/dev-only and should not be committed.
+- `.gitignore` excludes `AGENTS.md`, `voice-samples/`, `new/`, `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — these are local/dev-only. `blog/` is commented out (not ignored).
 
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. Hosted on GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
@@ -64,6 +64,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 | `publisher.html` | Publisher profile page |
 | `blog/index.html` | Blog landing page |
 | `blog/*.html` | Individual blog posts (static HTML) |
+| `blog/*.txt` | Facebook post drafts (local-only) |
 | `assets/app.js` | All shared logic and rendering |
 | `assets/styles.css` | Complete styling |
 | `assets/logo.svg` | Site logo |
@@ -116,6 +117,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - Add/edit projects in `data/content.json` → commit → push → auto-deploy.
 - Blog posts are static HTML files under `blog/` (excluded from git, local-only).
 - Local images go in `uploads/` and are referenced as `/uploads/filename.ext`.
+- Blog posts have corresponding `.txt` Facebook post drafts in `blog/`.
 
 ## Planning Docs (not implemented)
 - `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake via Google Sheets + GitHub Actions. Not yet implemented.

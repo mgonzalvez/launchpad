@@ -215,7 +215,7 @@
       "platform": "Kickstarter",
       "launchDate": "",
       "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-05-05",
       "primaryUrl": "https://www.kickstarter.com/projects/herrgoldberg/flipping-fortune",
       "designer": "Georg Fischer",
       "promoDetails": "Submitted as a preview crowdfunding project."
@@ -772,9 +772,8 @@
       "summary": "The Cats of New Orleans is a print-and-play crowdfunding project.",
       "image": "https://cf.geekdo-images.com/9xjEEE44A_9hhfxuL25Q2Q__original/img/xdEYOzt725_khgNilwkMubuBMM0=/0x0/filters:format(jpeg)/pic9396459.jpg",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-04-21",
+      "endDate": "2026-05-07",
       "primaryUrl": "https://www.kickstarter.com/projects/283509132/the-cats-of-new-orleans",
       "designer": "Marco Pecota",
       "promoDetails": "Submitted as a preview crowdfunding project."
@@ -785,9 +784,8 @@
       "summary": "A fast, family-friendly card game launching on Kickstarter as part of MicroMay.",
       "image": "https://i.kickstarter.com/assets/053/087/828/a02ce28d289de37249cc70906564a3d9_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1774425199&width=1024&sig=tvNI7eyAnZtWrGegKu0AS4R3En5Ygt1SXwSyUYDd96I%3D",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-05-02",
+      "endDate": "2026-05-31",
       "primaryUrl": "https://www.kickstarter.com/projects/tholen/flock-and-squabble",
       "designer": "Shane Thol",
       "promoDetails": "Part of MicroMay. Submitted as a preview crowdfunding project."
@@ -819,6 +817,16 @@
       "designer": "Dragos Cilibiu",
       "publisher": "Small Table Games",
       "promoDetails": "Released on itch.io. 2 players (+ automata for solo). ~15 mins. $2 USD."
+    },
+    {
+      "slug": "glory-driven-delving-heroes",
+      "title": "Glory Driven: Delving Heroes",
+      "summary": "A solo, dice-based dungeon crawler in print-and-play format where you choose a Hero to battle monsters room by room and defeat the Dungeon Boss.",
+      "image": "/uploads/glory-driven.jpg",
+      "platform": "Kickstarter",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/iuliagutu/glory-driven-delving-heroes-a-dice-based-dungeon-crawler?utm_id=97758_v0_s00_e0_tv4_a1dennhb7npo7w",
+      "designer": "Mariano Gutsu"
     }
   ],
   "designers": [
