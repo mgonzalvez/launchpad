@@ -828,6 +828,35 @@
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/iuliagutu/glory-driven-delving-heroes-a-dice-based-dungeon-crawler?utm_id=97758_v0_s00_e0_tv4_a1dennhb7npo7w",
       "designer": "Mariano Gutsu"
+    },
+    {
+      "slug": "efs-the-universal-voting-game",
+      "title": "EFS: The Universal Voting Game",
+      "summary": "A fun party game in which you are aliens voting on stuff from Earth and deducting who might be the human among you. A fresh take on social deduction games that brings some ridiculous voting to get everyone talking, 2 ways to win instantly, and 2 ways to win if you reach 2 rounds. Games are short, light, and silly fun. You vote as aliens, not as yourself, and you are not always trying to be in the majority. Universal in design and suits any group that likes party games.",
+      "image": "/uploads/efs-universal-voting-game.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-04",
+      "endDate": "2026-06-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/ex1stgames/efs-the-universal-voting-game",
+      "designer": "Charles Ward",
+      "publisher": "EX FIRST GAMES",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/ex1stgames/efs-the-universal-voting-game"
+    },
+    {
+      "slug": "courage-and-cunning",
+      "title": "Courage & Cunning",
+      "summary": "A 15-minute trick-taking game which packs fun player competition, asymmetric hero powers, and a replayable story mode all into a single, compact package.",
+      "image": "/uploads/courage-and-cunning.jpg",
+      "platform": "Kickstarter",
+      "primaryUrl": "https://www.kickstarter.com/projects/johnathansorce/courage-and-cunning",
+      "designers": [
+        "Johnathan Sorce",
+        "Salvatore Fontana"
+      ],
+      "publisher": "Fountain Mouse Games",
+      "isPreOrder": true,
+      "preOrderUrl": "https://www.kickstarter.com/projects/johnathansorce/courage-and-cunning"
     }
   ],
   "designers": [
@@ -1148,6 +1177,24 @@
       "name": "Dragos Cilibiu",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "charles-ward",
+      "name": "Charles Ward",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "johnathan-sorce",
+      "name": "Johnathan Sorce",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "salvatore-fontana",
+      "name": "Salvatore Fontana",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1376,6 +1423,18 @@
     {
       "slug": "small-table-games",
       "name": "Small Table Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "ex-first-games",
+      "name": "EX FIRST GAMES",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "fountain-mouse-games",
+      "name": "Fountain Mouse Games",
       "bggUrl": "",
       "bio": ""
     }
