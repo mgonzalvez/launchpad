@@ -857,6 +857,44 @@
       "publisher": "Fountain Mouse Games",
       "isPreOrder": true,
       "preOrderUrl": "https://www.kickstarter.com/projects/johnathansorce/courage-and-cunning"
+    },
+    {
+      "slug": "bee-the-buzz",
+      "title": "Bee The Buzz",
+      "summary": "A card game about native Aussie bees. Literally get your bees to fly and land on flowers or Bee Hotels while avoiding pesticides!",
+      "image": "https://cf.geekdo-images.com/EJThwrmQYNTsTU4EQgfahQ__original/img/o7zPQt99nf1FXE95i3n9D1Ig1kg=/0x0/filters:format(png)/pic9558972.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-01",
+      "endDate": "2026-05-31",
+      "primaryUrl": "https://www.kickstarter.com/projects/edugamingcollective/bee-the-buzz",
+      "designer": "Ahmad Salahuddin",
+      "publisher": "EduGaming Collective",
+      "promoDetails": "We've got an educational card game (PnP available) about native Aussie bees! It's a dexterity game where you throw or flick the bees cards to try and land on flower cards while avoiding pesticides. We're even working with scientists to get accurate scientific content on the cards!"
+    },
+    {
+      "slug": "nine-nights-siege",
+      "title": "Nine Nights Siege",
+      "summary": "A print & play tactical solo/co-op game.",
+      "image": "https://cf.geekdo-images.com/gDFogzbbzqZFw-YMYWGh-g__original/img/kin_L-VKRk5vl-MZGJUjUYjdPOU=/0x0/filters:format(png)/pic9415579.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-04",
+      "endDate": "2026-05-25",
+      "primaryUrl": "https://www.kickstarter.com/projects/lanternling/nine-nights-siege",
+      "designer": "Alex Ivanov",
+      "promoDetails": "It's finally live! Nine Nights Siege is now on Kickstarter! A print & play tactical solo/co-op game I've been working on for the past year."
+    },
+    {
+      "slug": "crown-and-courage",
+      "title": "Crown & Courage",
+      "summary": "Escape the Germans and inspire hope for your country as the King of Norway.",
+      "image": "https://cf.geekdo-images.com/hRwI_kkpwB72CYkeluhN2A__original/img/FcEvp2jnfNYoNC3a9t-PMO7iHNo=/0x0/filters:format(jpeg)/pic8556479.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/tompet/crown-and-courage",
+      "designer": "Petter Schanke Olsen",
+      "promoDetails": "You can download a free PnP of our upcoming solo game Crown & Courage at the kickstarter preview link below. Many members of this group made awesome builds of our previous game, Halls of Hegra. I can't wait to see what you do this time. Let me know if you have any questions."
     }
   ],
   "designers": [
@@ -1195,6 +1233,24 @@
       "name": "Salvatore Fontana",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "ahmad-salahuddin",
+      "name": "Ahmad Salahuddin",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "alex-ivanov",
+      "name": "Alex Ivanov",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "petter-schanke-olsen",
+      "name": "Petter Schanke Olsen",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1435,6 +1491,12 @@
     {
       "slug": "fountain-mouse-games",
       "name": "Fountain Mouse Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "edugaming-collective",
+      "name": "EduGaming Collective",
       "bggUrl": "",
       "bio": ""
     }
