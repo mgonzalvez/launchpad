@@ -124,6 +124,12 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake via Google Sheets + GitHub Actions. Not yet implemented.
 - `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — detailed sync plan for converting approved Google Sheet rows into `data/content.json`. Not yet implemented.
 
+## Creating a 3x3 Image Collage
+- See `docs/create-collage.md` for full instructions.
+- Key: use `-resize 400x400^ -gravity center -extent 400x400` to fill each cell uniformly (not `-resize 400x400` which leaves different-sized cells).
+- Group into 3 rows of 3, then stack vertically with `-append` (not all 9 at once with `+append` which makes a single row).
+- No text annotations — Ghostscript is not installed. Use `.miff` for intermediates to avoid quality loss.
+
 ## Known Gaps
 - `issueCard()` function exists in `app.js` but `issue.html` page does not exist in the repo.
 - `scripts/` directory is mentioned in `README.md` but does not exist.
