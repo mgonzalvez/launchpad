@@ -8,7 +8,7 @@
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. Hosted on GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
 
-All pages share a single JS file (`assets/app.js`) exported via `window.PNPL`. Each HTML page contains inline rendering scripts that call `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
+All pages share `assets/app.js` (core logic) and `assets/search.js` (client-side search), both exported via `window.PNPL`. Each HTML page contains inline rendering scripts that call `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
 
 ## Data Model
 All content lives in `data/content.json`: `{ projects[], designers[], publishers[] }`.
@@ -67,6 +67,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 | `blog/*.html` | Individual blog posts (static HTML) |
 | `blog/*.txt` | Facebook post drafts (local-only) |
 | `assets/app.js` | All shared logic and rendering |
+| `assets/search.js` | Client-side search module — top dropdown panel, real-time filtering, grouped by status |
 | `assets/styles.css` | Complete styling |
 | `assets/logo.svg` | Site logo |
 | `data/content.json` | Source of truth for all content |
@@ -86,14 +87,16 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - **View mode:** `getViewMode(page)` / `setViewMode(mode)` — stores `full`/`compact` preference in `pnpl_view_mode_v1`, with per-page defaults defined in `PAGE_DEFAULT_VIEW`.
 - **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars. Managed by MutationObserver + debounced resize.
 - **Navigation:** `initSiteHeader()` — hamburger toggle, close-on-outside-click. `initContentLinkBehavior()` — card/tile clicks open `data-url` in new tab.
+- **Search:** `assets/search.js` — IIFE module that injects a search icon into the header. On click, opens a top dropdown panel with real-time filtering. Searches project titles, summaries, designers, publishers, and platforms. Results grouped by status (Live Now, Upcoming, Preview, Ended). Designer/publisher matches link to profile pages. Top 20 results with "Show more". Recent search history in localStorage. Close via Escape, click outside, or × button. Body scroll lock when open.
 - **URL helpers:** `withBase(path)` — auto-detects GitHub Pages subpath from hostname; `slugify(value)` — Unicode-normalized, lowercase ASCII hyphen-separated.
 
 ### Event Flow
 1. HTML page loads → inline script calls `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → renders via `PNPL.header()`, `PNPL.projectCard()`, `PNPL.projectTile()`
 2. `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()` run at module scope (top of `app.js`)
-3. Status computed → badges + countdown chips rendered
-4. Watchlist buttons wired → localStorage
-5. Smart image fit runs on load + MutationObserver + debounced resize
+3. `search.js` IIFE runs at module scope — injects search icon into header, loads content for indexing
+4. Status computed → badges + countdown chips rendered
+5. Watchlist buttons wired → localStorage
+6. Smart image fit runs on load + MutationObserver + debounced resize
 
 ### Coding Conventions
 - Dates: `YYYY-MM-DD` ISO strings, validated via `hasIsoDate()`, parsed at noon local (or `launchTime`/`endTime` if provided).
@@ -119,6 +122,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - Blog posts are static HTML files under `blog/` (excluded from git, local-only).
 - Local images go in `uploads/` and are referenced as `/uploads/filename.ext`.
 - Blog posts have corresponding `.txt` Facebook post drafts in `blog/`.
+- **Adding projects:** See `docs/adding-projects.md` for a complete step-by-step guide with field reference, examples, and common pitfalls.
 
 ## Planning Docs (not implemented)
 - `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake via Google Sheets + GitHub Actions. Not yet implemented.
@@ -129,6 +133,11 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - Key: use `-resize 400x400^ -gravity center -extent 400x400` to fill each cell uniformly (not `-resize 400x400` which leaves different-sized cells).
 - Group into 3 rows of 3, then stack vertically with `-append` (not all 9 at once with `+append` which makes a single row).
 - No text annotations — Ghostscript is not installed. Use `.miff` for intermediates to avoid quality loss.
+
+## Docs
+- `docs/adding-projects.md` — step-by-step guide for adding projects to `content.json`
+- `docs/create-collage.md` — creating 3x3 image collages with ImageMagick
+- `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps
 - `issueCard()` function exists in `app.js` but `issue.html` page does not exist in the repo.

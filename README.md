@@ -36,6 +36,14 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
   - `submit.html` includes required-field validation
   - Supports image URL or image upload
   - Includes preview and late-pledge options
+- Client-side search:
+  - Search icon in site header opens a top dropdown panel
+  - Real-time filtering as you type (150ms debounce)
+  - Searches project titles, summaries, designers, publishers, platforms
+  - Results grouped by status: Live Now, Upcoming, Preview, Ended
+  - Designer/publisher matches link to their profile pages
+  - Top 20 results with "Show more" option
+  - Recent search history in localStorage
 
 ## Project Structure
 
@@ -51,6 +59,7 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
 - `designer.html` - designer profile page
 - `publisher.html` - publisher profile page
 - `assets/app.js` - shared logic/rendering
+- `assets/search.js` - client-side search module
 - `assets/styles.css` - styling
 - `data/content.json` - projects + designer/publisher profiles
 - `uploads/` - local image assets
