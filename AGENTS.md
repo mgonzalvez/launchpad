@@ -8,7 +8,7 @@
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. Hosted on GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
 
-All pages share `assets/app.js` (core logic) and `assets/search.js` (client-side search), both exported via `window.PNPL`. Each HTML page contains inline rendering scripts that call `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
+All pages share `assets/app.js` (core logic + DOM utilities) and `assets/search.js` (client-side search), both exported via `window.PNPL`. Each HTML page contains inline rendering scripts that call `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
 
 ## Data Model
 All content lives in `data/content.json`: `{ projects[], designers[], publishers[] }`.
@@ -66,8 +66,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 | `blog/index.html` | Blog landing page |
 | `blog/*.html` | Individual blog posts (static HTML) |
 | `blog/*.txt` | Facebook post drafts (local-only) |
-| `assets/dom-utils.js` | Shared DOM utilities — `waitFor(selector, cb)` for safe DOM access, `safeCanvasOperation(fn, default)` for tainted canvas handling |
-| `assets/app.js` | All shared logic and rendering |
+| `assets/app.js` | All shared logic, DOM utilities (`waitFor`, `safeCanvasOperation`), and rendering |
 | `assets/search.js` | Client-side search module — top dropdown panel, real-time filtering, grouped by status |
 | `assets/styles.css` | Complete styling |
 | `assets/logo.svg` | Site logo |
@@ -86,14 +85,14 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - **Sorting:** `byEndAsc` / `byLaunchDesc` / `byWeekDesc` / `byArchivePriority`.
 - **Watchlist:** localStorage-backed (`pnpl_watchlist_v1`), synced across tabs via `storage` event. Functions: `readWatchlist()`, `writeWatchlist()`, `toggleWatchlist()`, `isWatchlisted()`, `clearWatchlist()`, `watchButton()`.
 - **View mode:** `getViewMode(page)` / `setViewMode(mode)` — stores `full`/`compact` preference in `pnpl_view_mode_v1`, with per-page defaults defined in `PAGE_DEFAULT_VIEW`.
-- **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars. Managed by MutationObserver + debounced resize.
+- **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars. Managed by MutationObserver + debounced resize. Cross-origin images skipped to avoid tainted canvas.
 - **Navigation:** `initSiteHeader()` — hamburger toggle, close-on-outside-click. `initContentLinkBehavior()` — card/tile clicks open `data-url` in new tab.
 - **Search:** `assets/search.js` — IIFE module that uses `PNPL.waitFor('.site-header .inner', ...)` to inject a search icon into the header. On click, opens a top dropdown panel with real-time filtering. Searches project titles, summaries, designers, publishers, and platforms. Results grouped by status (Live Now, Upcoming, Preview, Ended). Designer/publisher matches link to profile pages. Top 20 results with "Show more". Recent search history in localStorage. Close via Escape, click outside, or × button. Body scroll lock when open.
 - **URL helpers:** `withBase(path)` — auto-detects GitHub Pages subpath from hostname; `slugify(value)` — Unicode-normalized, lowercase ASCII hyphen-separated.
 
 ### Event Flow
-1. HTML page loads → `dom-utils.js` defines `PNPL.waitFor()` and `PNPL.safeCanvasOperation()`
-2. `app.js` loads → `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()` run at module scope
+1. HTML page loads → `app.js` defines `PNPL.waitFor()` and `PNPL.safeCanvasOperation()` as part of `window.PNPL`
+2. `app.js` module scope runs: `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()`
 3. `search.js` IIFE runs at module scope — uses `PNPL.waitFor('.site-header .inner', ...)` to inject search icon, loads content for indexing
 4. Inline script calls `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → renders via `PNPL.header()`, `PNPL.projectCard()`, `PNPL.projectTile()`
 5. Status computed → badges + countdown chips rendered
@@ -139,7 +138,6 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 ## Docs
 - `docs/adding-projects.md` — step-by-step guide for adding projects to `content.json`
 - `docs/create-collage.md` — creating 3x3 image collages with ImageMagick
-- `assets/dom-utils.js` — shared DOM utilities (`waitFor`, `safeCanvasOperation`)
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps

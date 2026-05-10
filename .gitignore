@@ -3,8 +3,12 @@
 # Editor/IDE
 .vscode/
 
+# Pi settings (local config)
+.pi/
+
 # Agent context
 AGENTS.md
+CONTEXT.md
 
 # Sync plans
 GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md
