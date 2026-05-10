@@ -66,6 +66,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 | `blog/index.html` | Blog landing page |
 | `blog/*.html` | Individual blog posts (static HTML) |
 | `blog/*.txt` | Facebook post drafts (local-only) |
+| `assets/dom-utils.js` | Shared DOM utilities — `waitFor(selector, cb)` for safe DOM access, `safeCanvasOperation(fn, default)` for tainted canvas handling |
 | `assets/app.js` | All shared logic and rendering |
 | `assets/search.js` | Client-side search module — top dropdown panel, real-time filtering, grouped by status |
 | `assets/styles.css` | Complete styling |
@@ -87,16 +88,17 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - **View mode:** `getViewMode(page)` / `setViewMode(mode)` — stores `full`/`compact` preference in `pnpl_view_mode_v1`, with per-page defaults defined in `PAGE_DEFAULT_VIEW`.
 - **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars. Managed by MutationObserver + debounced resize.
 - **Navigation:** `initSiteHeader()` — hamburger toggle, close-on-outside-click. `initContentLinkBehavior()` — card/tile clicks open `data-url` in new tab.
-- **Search:** `assets/search.js` — IIFE module that injects a search icon into the header. On click, opens a top dropdown panel with real-time filtering. Searches project titles, summaries, designers, publishers, and platforms. Results grouped by status (Live Now, Upcoming, Preview, Ended). Designer/publisher matches link to profile pages. Top 20 results with "Show more". Recent search history in localStorage. Close via Escape, click outside, or × button. Body scroll lock when open.
+- **Search:** `assets/search.js` — IIFE module that uses `PNPL.waitFor('.site-header .inner', ...)` to inject a search icon into the header. On click, opens a top dropdown panel with real-time filtering. Searches project titles, summaries, designers, publishers, and platforms. Results grouped by status (Live Now, Upcoming, Preview, Ended). Designer/publisher matches link to profile pages. Top 20 results with "Show more". Recent search history in localStorage. Close via Escape, click outside, or × button. Body scroll lock when open.
 - **URL helpers:** `withBase(path)` — auto-detects GitHub Pages subpath from hostname; `slugify(value)` — Unicode-normalized, lowercase ASCII hyphen-separated.
 
 ### Event Flow
-1. HTML page loads → inline script calls `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → renders via `PNPL.header()`, `PNPL.projectCard()`, `PNPL.projectTile()`
-2. `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()` run at module scope (top of `app.js`)
-3. `search.js` IIFE runs at module scope — injects search icon into header, loads content for indexing
-4. Status computed → badges + countdown chips rendered
-5. Watchlist buttons wired → localStorage
-6. Smart image fit runs on load + MutationObserver + debounced resize
+1. HTML page loads → `dom-utils.js` defines `PNPL.waitFor()` and `PNPL.safeCanvasOperation()`
+2. `app.js` loads → `initContentLinkBehavior()`, `initSmartImageFitObserver()`, `initSiteHeaderObserver()` run at module scope
+3. `search.js` IIFE runs at module scope — uses `PNPL.waitFor('.site-header .inner', ...)` to inject search icon, loads content for indexing
+4. Inline script calls `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → renders via `PNPL.header()`, `PNPL.projectCard()`, `PNPL.projectTile()`
+5. Status computed → badges + countdown chips rendered
+6. Watchlist buttons wired → localStorage
+7. Smart image fit runs on load + MutationObserver + debounced resize
 
 ### Coding Conventions
 - Dates: `YYYY-MM-DD` ISO strings, validated via `hasIsoDate()`, parsed at noon local (or `launchTime`/`endTime` if provided).
@@ -137,6 +139,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 ## Docs
 - `docs/adding-projects.md` — step-by-step guide for adding projects to `content.json`
 - `docs/create-collage.md` — creating 3x3 image collages with ImageMagick
+- `assets/dom-utils.js` — shared DOM utilities (`waitFor`, `safeCanvasOperation`)
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps

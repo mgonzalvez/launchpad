@@ -48,8 +48,10 @@
 
 ### 7. Documentation Updates
 - `docs/adding-projects.md` — created (step-by-step guide for adding projects)
-- `AGENTS.md` — updated with search feature docs, adding-projects.md reference
-- `README.md` — updated with search feature and search.js entry
+- `AGENTS.md` — updated with search feature docs, adding-projects.md reference, dom-utils docs
+- `README.md` — updated with search feature, dom-utils, and search.js entry
+- `AGENTS.md` — cleaned up stale Known Gaps (issueCard, scripts/)
+- `README.md` — removed stale scripts/ reference
 
 ## Key Decisions
 - Search is client-side only (no backend), blazing fast, feels premium
@@ -63,6 +65,7 @@
 - `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — not yet implemented
 - Search could benefit from "recent searches" clearing option
 - Search could add platform filter later if needed
+- Consider adding a lint script to detect dead exports and orphaned references
 
 ## Current State
 - 60+ projects in `data/content.json`

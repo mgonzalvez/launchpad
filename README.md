@@ -44,6 +44,9 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
   - Designer/publisher matches link to their profile pages
   - Top 20 results with "Show more" option
   - Recent search history in localStorage
+- Shared DOM utilities (`assets/dom-utils.js`):
+  - `PNPL.waitFor(selector, callback)` — waits for DOM element to appear (prevents timing bugs)
+  - `PNPL.safeCanvasOperation(fn, default)` — catches SecurityError from tainted canvases
 
 ## Project Structure
 
@@ -59,6 +62,7 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
 - `designer.html` - designer profile page
 - `publisher.html` - publisher profile page
 - `assets/app.js` - shared logic/rendering
+- `assets/dom-utils.js` - shared DOM utilities (waitFor, safeCanvasOperation)
 - `assets/search.js` - client-side search module
 - `assets/styles.css` - styling
 - `data/content.json` - projects + designer/publisher profiles

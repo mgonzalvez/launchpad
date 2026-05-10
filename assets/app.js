@@ -632,7 +632,7 @@ function estimateImageTone(img) {
   if (src && IMAGE_TONE_CACHE.has(src)) return IMAGE_TONE_CACHE.get(src);
   // Skip cross-origin images — they taint the canvas
   if (img.crossOrigin !== 'anonymous') return '';
-  try {
+  return PNPL.safeCanvasOperation(() => {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) return '';
@@ -654,9 +654,7 @@ function estimateImageTone(img) {
     const tone = `rgb(${Math.round(r / px)}, ${Math.round(g / px)}, ${Math.round(b / px)})`;
     if (src) IMAGE_TONE_CACHE.set(src, tone);
     return tone;
-  } catch (_err) {
-    return '';
-  }
+  }, '');
 }
 
 function applySmartImageFit(root = document) {
