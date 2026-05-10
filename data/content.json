@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "the-lost-island-secret-valley",
+      "title": "The Lost Island + The Secret Valley",
+      "summary": "Award-winning games from Argentina make their English debut. The Lost Island is a roll-and-write map-making game for 1-4 players (~30 min). The Secret Valley is a drafting and tableau-building card game for 2-4 players. The Machaqa expansion adds a solo mode and extra cards. $9 PnP pledge tier available.",
+      "image": "https://cf.geekdo-images.com/ThlKRaFepNFq_9WvBVCm8w__original/img/kE60bjXVEk8Qs5ffAusU7DBObqc=/0x0/filters:format(jpeg)/pic6112212.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-05",
+      "endDate": "2026-05-23",
+      "primaryUrl": "https://www.kickstarter.com/projects/mikegnade/the-lost-island-secret-valley?ref=bggforums",
+      "designer": "Martin Oddino",
+      "publisher": "Mike Gnade Games",
+      "isLatePledge": true,
+      "promoDetails": "$9 PnP pledge tier for The Lost Island, The Secret Valley & Machaqa expansion. Award-winning games from Argentina make their English debut."
+    },
+    {
       "slug": "midtown-mall",
       "title": "Midtown Mall",
       "summary": "A solo roll-and-write game where you run your own mall! Build up the reputation and stores of your mall while managing different resources to get the highest amount of sales. Designed to be played solo in about 20 minutes with just 5+ dice.",
@@ -924,6 +938,12 @@
       "bio": "Designer of wargames such as Campaign: Fall Blau, Rome Must Fall and Operation Barbarossa, Martin has been obsessed with history and solitaire games for as long as he can remember&mdash;probably longer. He&rsquo;s spent years dreaming up wargames, much to the confusion of friends and family who prefer games with &ldquo;fun&rdquo; themes. When he&rsquo;s not buried in research or fine-tuning dice mechanics, he&rsquo;s either contemplating his next big design or wondering if he really needs another book on the Eastern Front (he does). With a passion for making quick-playing solo wargames that are both historically rich and mechanically engaging, Martin has created a small independent wargaming company called &quot;Solo Wargame&quot; with a single mission to ensure that no gamer ever has to suffer through an unbalanced AI opponent again."
     },
     {
+      "slug": "martin-oddino",
+      "name": "Martin Oddino",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/81891/martin-oddino",
+      "bio": ""
+    },
+    {
       "slug": "radek-ignatow",
       "name": "Radek Ignatow",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/126631/radoslaw-ignatow",
@@ -1284,6 +1304,12 @@
       "name": "Martin Melbardis",
       "bggUrl": "",
       "bio": "Independent wargame publisher focused on quick-playing solo print-and-play designs with strong historical themes and balanced AI opposition."
+    },
+    {
+      "slug": "mike-gnade-games",
+      "name": "Mike Gnade Games",
+      "bggUrl": "",
+      "bio": ""
     },
     {
       "slug": "radek-ignatow",
