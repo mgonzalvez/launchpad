@@ -373,7 +373,13 @@
     searchBtn.setAttribute('title', 'Search');
     searchBtn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>';
 
-    headerEl.appendChild(searchBtn);
+    // Insert before the nav toggle so it sits between brand and hamburger
+    var navToggle = headerEl.querySelector('.nav-toggle');
+    if (navToggle) {
+      headerEl.insertBefore(searchBtn, navToggle);
+    } else {
+      headerEl.appendChild(searchBtn);
+    }
 
     // Create search panel container
     var searchContainer = document.createElement('div');
