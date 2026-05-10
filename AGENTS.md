@@ -126,7 +126,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - **Adding projects:** See `docs/adding-projects.md` for a complete step-by-step guide with field reference, examples, and common pitfalls.
 
 ## Planning Docs (not implemented)
-- `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake. Not yet implemented.
+None currently.
 
 ## Creating a 3x3 Image Collage
 - See `docs/create-collage.md` for full instructions.
@@ -140,4 +140,4 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps
-- `AUTOMATED_SUBMISSION_WORKFLOW.md` is a planning doc (not yet implemented).
+None currently.
