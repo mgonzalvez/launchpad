@@ -1177,7 +1177,293 @@ small { color: var(--muted); }
   background: #f0e7ce;
 }
 
+/* ── Search Component ─────────────────────────────────────────── */
+
+.search-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--muted);
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-trigger:hover,
+.search-trigger.active {
+  color: var(--accent);
+  background: rgba(193, 68, 14, 0.08);
+}
+
+.search-trigger svg {
+  display: block;
+}
+
+.search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--panel);
+  border-bottom: 3px solid var(--line);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  max-height: 70vh;
+  overflow-y: auto;
+  animation: searchSlideDown 0.2s ease-out;
+}
+
+@keyframes searchSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 1;
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  font-family: inherit;
+  color: var(--ink);
+  outline: none;
+  padding: 4px 0;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.search-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.search-close:hover {
+  color: var(--accent);
+  background: rgba(193, 68, 14, 0.08);
+}
+
+.search-results {
+  padding: 8px 0;
+}
+
+.search-group {
+  margin-bottom: 4px;
+}
+
+.search-group-label {
+  font-family: "Baloo 2", "Trebuchet MS", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding: 10px 20px 4px;
+  margin: 0;
+}
+
+.search-count {
+  font-weight: 600;
+  color: var(--line);
+}
+
+.search-result-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.12s;
+  border-left: 3px solid transparent;
+}
+
+.search-result-item:hover {
+  background: rgba(193, 68, 14, 0.04);
+  border-left-color: var(--accent);
+}
+
+.search-result-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.search-result-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.search-status-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.search-status-badge.live {
+  background: #d4edda;
+  color: #155724;
+}
+
+.search-status-badge.promo {
+  background: #d4edda;
+  color: #155724;
+}
+
+.search-status-badge.upcoming {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.search-status-badge.preview {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.search-status-badge.archived {
+  background: #f3e2cf;
+  color: #7a3d17;
+}
+
+.search-result-designer {
+  color: var(--accent-2);
+}
+
+.search-person-type {
+  font-style: italic;
+  color: var(--accent-3);
+}
+
+.search-empty {
+  padding: 24px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.search-history {
+  padding: 8px 20px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-history-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.search-history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.search-history-item {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.search-history-item:hover {
+  background: var(--panel);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.search-show-more {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--line);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.search-show-more:hover {
+  background: rgba(193, 68, 14, 0.06);
+}
+
+/* Body scroll lock when search is open */
+body.search-open {
+  overflow: hidden;
+}
+
 @media (max-width: 600px) {
+  .search-container {
+    max-height: 80vh;
+  }
+
+  .search-input-row {
+    padding: 10px 14px;
+  }
+
+  .search-result-item {
+    padding: 10px 14px;
+  }
+
+  .search-group-label {
+    padding: 8px 14px 4px;
+  }
+
+  .search-history {
+    padding: 8px 14px 12px;
+  }
+
   .view-toggle {
     margin-left: 0;
     margin-top: 8px;
