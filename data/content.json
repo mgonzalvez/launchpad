@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "this-fight-is-staged",
+      "title": "This Fight Is Staged! Challenges Expansion",
+      "summary": "This Fight Is Staged! is a cooperative strategy game for two players, played with two decks of playing cards. Work together with limited information to sequence your number cards correctly and impress the audience of face cards! This is the Challenges expansion.",
+      "image": "https://i.kickstarter.com/assets/053/605/572/4389b64983b13aca2ecfc12a644ef389_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1777995211&width=1024&sig=Bd2oNHyZrKOxEMA3S8ZDVQeNlG229AAWJ31I%2FkXigxY%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-05",
+      "endDate": "2026-05-18",
+      "primaryUrl": "https://www.kickstarter.com/projects/jamiesabriel/this-fight-is-staged-challenges-expansion",
+      "designer": "Jamie Sabriel",
+      "publisher": "Triple Rainbow Games",
+      "promoDetails": "Cooperative strategy for 2 players using two decks of playing cards. Challenges expansion."
+    },
+    {
       "slug": "roll-4-more-rum",
       "title": "Roll 4 MORE Rum!",
       "summary": "The tavern is louder, the sea is rougher, and the treasure is buried deeper. Welcome back to the world of Roll4Rum. This expansion brings deeper mechanics, specialized crew, and a brand-new way to command your ship — not just a map, but a career on the high seas.",
@@ -1222,6 +1235,12 @@
       "bio": ""
     },
     {
+      "slug": "jamie-sabriel",
+      "name": "Jamie Sabriel",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
       "slug": "bob-whitely",
       "name": "Bob Whitely",
       "bggUrl": "",
@@ -1466,6 +1485,12 @@
     {
       "slug": "printandgame",
       "name": "PRINTANDGAME",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "triple-rainbow-games",
+      "name": "Triple Rainbow Games",
       "bggUrl": "",
       "bio": ""
     },
