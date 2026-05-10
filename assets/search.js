@@ -612,8 +612,16 @@
 
   // ── Init ─────────────────────────────────────────────────────────
 
-  // Run at module scope
-  initSearch();
+  // The header is rendered by PNPL.header() in the inline script AFTER
+  // search.js loads, so we can't query it at module scope. Use an
+  // observer to wait for the header to appear, then inject the search UI.
+  var searchObserver = new MutationObserver(function () {
+    if (document.querySelector('.site-header .inner')) {
+      searchObserver.disconnect();
+      initSearch();
+    }
+  });
+  searchObserver.observe(document.body, { childList: true, subtree: true });
 
   // Also expose for potential programmatic use
   window.PNPLSearch = {

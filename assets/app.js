@@ -641,6 +641,8 @@ function setMainLinksNewTab(root = document) {
 function estimateImageTone(img) {
   const src = img.currentSrc || img.src || '';
   if (src && IMAGE_TONE_CACHE.has(src)) return IMAGE_TONE_CACHE.get(src);
+  // Skip cross-origin images — they taint the canvas
+  if (img.crossOrigin !== 'anonymous') return '';
   try {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
