@@ -2,7 +2,7 @@
 
 ## Git
 - Branch: `main`, remote: `origin/main`
-- `.gitignore` excludes `AGENTS.md`, `voice-samples/`, `new/`, `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — these are local/dev-only. `blog/` is commented out (not ignored).
+- `.gitignore` excludes `AGENTS.md`, `voice-samples/`, `new/` — these are local/dev-only. `blog/` is commented out (not ignored).
 - `uploads/` is NOT in `.gitignore` — files must be tracked. A `pre-commit` hook auto-stages all files in `uploads/` so new images are included in every commit without manual `git add`.
 
 ## Project Overview
@@ -126,8 +126,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - **Adding projects:** See `docs/adding-projects.md` for a complete step-by-step guide with field reference, examples, and common pitfalls.
 
 ## Planning Docs (not implemented)
-- `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake via Google Sheets + GitHub Actions. Not yet implemented.
-- `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — detailed sync plan for converting approved Google Sheet rows into `data/content.json`. Not yet implemented.
+- `AUTOMATED_SUBMISSION_WORKFLOW.md` — proposed future workflow for automated project intake. Not yet implemented.
 
 ## Creating a 3x3 Image Collage
 - See `docs/create-collage.md` for full instructions.
@@ -141,4 +140,4 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps
-- `AUTOMATED_SUBMISSION_WORKFLOW.md` and `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` are planning docs (not yet implemented).
+- `AUTOMATED_SUBMISSION_WORKFLOW.md` is a planning doc (not yet implemented).
