@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "midtown-mall",
+      "title": "Midtown Mall",
+      "summary": "A solo roll-and-write game where you run your own mall! Build up the reputation and stores of your mall while managing different resources to get the highest amount of sales. Designed to be played solo in about 20 minutes with just 5+ dice.",
+      "image": "https://i.kickstarter.com/assets/053/568/393/1502ebdbcb3e62b1b6a14c79d2ddce5a_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1777705543&width=1024&sig=adHO%2Bp3a4n%2FynAaVQB7tF1x0ma8pclm%2B2D9nSKaiJD0%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-07",
+      "endDate": "2026-06-06",
+      "primaryUrl": "https://www.kickstarter.com/projects/dozensofus/midtown-mall-solo-roll-and-write-collection/posts",
+      "designer": "Romino Poul",
+      "publisher": "Dozens of Us",
+      "promoDetails": "Solo roll-and-write mall management game. ~20 min playtime, 5+ dice."
+    },
+    {
       "slug": "red-dungeon",
       "title": "Red Dungeon",
       "summary": "A standard-deck print-and-play dungeon crawler where players rebel against cursed-mine guards in a compact card-driven system.",
@@ -953,6 +966,12 @@
       "bio": "- Born in 1983 in Karlsruhe/Germany - Studied System Engineering and works as a Consultant in the field of Concept Development E/E-Systems"
     },
     {
+      "slug": "romino-poul",
+      "name": "Romino Poul",
+      "bggUrl": "https://boardgamegeek.com/profile/RominoPoul",
+      "bio": ""
+    },
+    {
       "slug": "florian-fiedler",
       "name": "Florian Fiedler",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/165788/florian-fiedler",
@@ -1395,6 +1414,12 @@
     {
       "slug": "pagepunk",
       "name": "pagepunk",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "dozens-of-us",
+      "name": "Dozens of Us",
       "bggUrl": "",
       "bio": ""
     },
