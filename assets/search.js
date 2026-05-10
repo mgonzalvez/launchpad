@@ -404,6 +404,9 @@
       searchContainer.style.display = 'none';
       searchBtn.classList.remove('active');
       document.body.classList.remove('search-open');
+      // Clear the input value
+      var input = searchContainer.querySelector('.search-input');
+      if (input) input.value = '';
     }
 
     searchBtn.addEventListener('keydown', function (e) {
