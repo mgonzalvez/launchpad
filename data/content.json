@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "roll-4-more-rum",
+      "title": "Roll 4 MORE Rum!",
+      "summary": "The tavern is louder, the sea is rougher, and the treasure is buried deeper. Welcome back to the world of Roll4Rum. This expansion brings deeper mechanics, specialized crew, and a brand-new way to command your ship — not just a map, but a career on the high seas.",
+      "image": "/uploads/roll_4_more_rum.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/roll-4-more-rum",
+      "designer": "Florian Fiedler",
+      "publisher": "Florian Fiedler",
+      "promoDetails": "Streamlined version with new art. Expands the Roll4Rum world with deeper mechanics, specialized crew, and a new way to command your ship."
+    },
+    {
       "slug": "the-lost-island-secret-valley",
       "title": "The Lost Island + The Secret Valley",
       "summary": "Award-winning games from Argentina make their English debut. The Lost Island is a roll-and-write map-making game for 1-4 players (~30 min). The Secret Valley is a drafting and tableau-building card game for 2-4 players. The Machaqa expansion adds a solo mode and extra cards. $9 PnP pledge tier available.",
