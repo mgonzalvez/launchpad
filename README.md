@@ -63,7 +63,6 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
 - `assets/styles.css` - styling
 - `data/content.json` - projects + designer/publisher profiles
 - `uploads/` - local image assets
-- `scripts/` - optional helper scripts for extraction/profile updates
 
 ## Editing Content
 

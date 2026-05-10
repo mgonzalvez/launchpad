@@ -465,17 +465,6 @@ function projectTile(p) {
   `;
 }
 
-function issueCard(issue) {
-  return `
-    <article class="issue-item">
-      <h3><a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}" target="_blank" rel="noreferrer noopener">${issue.title}</a></h3>
-      <p class="meta">${fmt.format(parseDate(issue.weekStart))} to ${fmt.format(parseDate(issue.weekEnd))}</p>
-      <p>${issue.intro}</p>
-      <a href="${withBase(`issue.html?slug=${encodeURIComponent(issue.slug)}`)}" target="_blank" rel="noreferrer noopener">View this week</a>
-    </article>
-  `;
-}
-
 async function loadContent() {
   const res = await fetch(withBase('data/content.json'), { cache: 'no-store' });
   if (!res.ok) throw new Error('Could not load content.json');
@@ -754,7 +743,6 @@ window.PNPL = {
   projectIsEndingSoon,
   projectCard,
   projectTile,
-  issueCard,
   loadContent,
   byWeekDesc,
   byEndAsc,

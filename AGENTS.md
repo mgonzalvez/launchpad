@@ -140,6 +140,4 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps
-- `issueCard()` function exists in `app.js` but `issue.html` page does not exist in the repo.
-- `scripts/` directory is mentioned in `README.md` but does not exist.
-- `issue.html` is referenced in `issueCard()` output but is not a page in this repo.
+- `AUTOMATED_SUBMISSION_WORKFLOW.md` and `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` are planning docs (not yet implemented).
