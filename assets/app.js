@@ -632,7 +632,7 @@ function estimateImageTone(img) {
   if (src && IMAGE_TONE_CACHE.has(src)) return IMAGE_TONE_CACHE.get(src);
   // Skip cross-origin images — they taint the canvas
   if (img.crossOrigin !== 'anonymous') return '';
-  return PNPL.safeCanvasOperation(() => {
+  try {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) return '';
@@ -654,7 +654,9 @@ function estimateImageTone(img) {
     const tone = `rgb(${Math.round(r / px)}, ${Math.round(g / px)}, ${Math.round(b / px)})`;
     if (src) IMAGE_TONE_CACHE.set(src, tone);
     return tone;
-  }, '');
+  } catch (_err) {
+    return '';
+  }
 }
 
 function applySmartImageFit(root = document) {
@@ -758,5 +760,65 @@ window.PNPL = {
   clearWatchlist,
   refreshWatchButtons,
   getViewMode,
-  setViewMode
+  setViewMode,
+
+  // ── DOM Utilities ──────────────────────────────────────────────
+
+  /**
+   * Wait for an element matching selector to appear in the DOM,
+   * then call the callback with the element. Uses MutationObserver.
+   * Returns a cleanup function.
+   */
+  waitFor(selector, callback, options) {
+    options = options || {};
+    var maxWait = options.timeout || 10000;
+    var intervalMs = options.pollInterval || 100;
+
+    var el = document.querySelector(selector);
+    if (el) {
+      callback(el);
+      return function () {};
+    }
+
+    var observer = new MutationObserver(function () {
+      var found = document.querySelector(selector);
+      if (found) {
+        observer.disconnect();
+        clearTimeout(timer);
+        callback(found);
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    var timer = setTimeout(function () {
+      observer.disconnect();
+      var fallback = document.querySelector(selector);
+      if (fallback) {
+        callback(fallback);
+      } else {
+        console.warn('[PNPL waitFor] Timed out waiting for "' + selector + '"');
+      }
+    }, maxWait);
+
+    return function () {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
+  },
+
+  /**
+   * Wrap a canvas pixel operation in try/catch, silently handling
+   * SecurityError (tainted canvas from cross-origin images).
+   */
+  safeCanvasOperation(fn, defaultValue) {
+    try {
+      return fn();
+    } catch (err) {
+      if (err.name === 'SecurityError' || err.code === 18) {
+        return defaultValue;
+      }
+      throw err;
+    }
+  }
 };
