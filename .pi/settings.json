@@ -1,0 +1,7 @@
+{
+  "autoCompact": {
+    "enabled": true,
+    "thresholdPercent": 85,
+    "compactInstructions": "Focus on preserving project context, file operations, and current task state. Keep the summary concise but complete."
+  }
+}
