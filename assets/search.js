@@ -413,9 +413,10 @@
       if (e.key === 'Escape') closeSearch();
     });
 
-    // Close on outside click
+    // Close on outside click (but not on close button)
     document.addEventListener('click', function (e) {
       if (!searchState.open) return;
+      if (e.target.closest('.search-close')) return;
       if (searchContainer.contains(e.target)) return;
       if (searchBtn.contains(e.target)) return;
       closeSearch();
@@ -447,6 +448,15 @@
 
       // Bind input events
       bindSearchInput(input);
+
+      // Bind close button
+      var closeBtn = searchContainer.querySelector('.search-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          closeSearch();
+        });
+      }
 
       // Bind result clicks
       bindResultClicks();
