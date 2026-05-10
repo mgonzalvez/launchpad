@@ -91,8 +91,23 @@
   }
 
   // ── Expose on window.PNPL ────────────────────────────────────────
+  // PNPL may not exist yet (app.js loads after this). Attach to whatever
+  // is there, or set up a one-time listener for when PNPL appears.
   if (window.PNPL) {
     window.PNPL.waitFor = waitFor;
     window.PNPL.safeCanvasOperation = safeCanvasOperation;
+  } else {
+    // PNPL hasn't been defined yet — wait for it
+    var pnplCheck = setInterval(function () {
+      if (window.PNPL) {
+        clearInterval(pnplCheck);
+        window.PNPL.waitFor = waitFor;
+        window.PNPL.safeCanvasOperation = safeCanvasOperation;
+      }
+    }, 50);
+    // Safety timeout: give up after 5 seconds
+    setTimeout(function () {
+      clearInterval(pnplCheck);
+    }, 5000);
   }
 })();
