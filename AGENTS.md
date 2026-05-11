@@ -125,6 +125,33 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - Blog posts have corresponding `.txt` Facebook post drafts in `blog/`.
 - **Adding projects:** See `docs/adding-projects.md` for a complete step-by-step guide with field reference, examples, and common pitfalls.
 
+## Data Guardrails
+### Validation Script
+- `scripts/validate-content.js` — validates `content.json` for structural integrity.
+- Checks: no duplicate slugs, required fields present, image files exist, date format valid, date ordering, designer/publisher references exist in their arrays, pre-order consistency.
+- Run: `node scripts/validate-content.js`
+- Exit 0 = valid, exit 1 = errors found.
+- Warnings (non-blocking): unknown platforms, designer/publisher not in reference arrays.
+
+### Pre-commit Hook
+- `.git/hooks/pre-commit` — runs `scripts/validate-content.js` before every commit.
+- Blocks commits if validation errors are found.
+- Installed automatically when the repo is cloned (copy from `scripts/pre-commit`).
+
+### Add-Project Script
+- `scripts/add-project.js` — safe way to add new projects via CLI.
+- Validates all fields before writing, generates slug from title, checks for duplicates, verifies image files exist.
+- Usage: `node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...`
+- **Never hand-edit `content.json` to add projects** — always use the add-project script or the validation script before committing.
+
+## Pi Coding Agent Instructions
+When modifying `content.json`:
+1. **Always run `node scripts/validate-content.js`** before committing.
+2. **Never add entries by hand-editing the JSON** — use `scripts/add-project.js` or manually ensure no duplicate slugs, correct image references, and proper date format.
+3. **Verify image URLs match the project** — cross-check the Kickstarter/project URL against the image URL before committing.
+4. **Check for duplicate slugs** — if a project already exists, update the existing entry instead of adding a new one.
+5. **After adding/updating a project**, verify it appears in the correct status section (Upcoming, Live, Preview, etc.) by checking dates.
+
 ## Planning Docs (not implemented)
 None currently.
 

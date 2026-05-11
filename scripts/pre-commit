@@ -1,0 +1,19 @@
+#!/bin/sh
+# Pre-commit hook: validate content.json before allowing commits
+# Usage: cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+echo "🔍 Validating content.json..."
+
+cd "$(dirname "$0")/.." 2>/dev/null || true
+
+if [ -f "scripts/validate-content.js" ]; then
+  node scripts/validate-content.js
+  if [ $? -ne 0 ]; then
+    echo ""
+    echo "❌ Validation failed. Fix errors before committing."
+    exit 1
+  fi
+  echo "✅ Validation passed."
+else
+  echo "⚠️  scripts/validate-content.js not found, skipping validation."
+fi
