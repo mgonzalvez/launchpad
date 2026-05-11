@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "courage-and-cunning",
+      "title": "Courage & Cunning",
+      "summary": "Enter the Maw — a mysterious dungeon full of ancient loot — and beat your friends using courage or cunning to snag the prize! With gameplay described as 'fencing on rocket skates,' take advantage of turn order, playing multiple cards, and unique hero abilities to grab more loot than your opponent before the end of 6 rounds. Includes a digital story mode book expansion and a 6-card hero pack expansion.",
+      "image": "https://i.kickstarter.com/assets/053/605/572/4389b64983b13aca2ecfc12a644ef389_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1777995211&width=1024&sig=Bd2oNHyZrKOxEMA3S8ZDVQeNlG229AAWJ31I%2FkXigxY%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-19",
+      "endDate": "2026-06-18",
+      "primaryUrl": "https://www.kickstarter.com/projects/johnathansorce/courage-and-cunning",
+      "designer": "Johnathan Sorce",
+      "promoDetails": "2-4 players, $3 PNP. 36 cards, rule sheet, printable tuck box. Includes digital story mode book and 6-card hero pack expansions."
+    },
+    {
       "slug": "this-fight-is-staged",
       "title": "This Fight Is Staged! Challenges Expansion",
       "summary": "This Fight Is Staged! is a cooperative strategy game for two players, played with two decks of playing cards. Work together with limited information to sequence your number cards correctly and impress the audience of face cards! This is the Challenges expansion.",
