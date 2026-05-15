@@ -96,7 +96,7 @@ if (opts.endDate < opts.launchDate) {
 }
 
 // --- Validate platform ---
-const validPlatforms = ['Kickstarter', 'Indiegogo', 'Store', 'Patreon', 'Other'];
+const validPlatforms = ['Kickstarter', 'Indiegogo', 'Backerkit', 'Store', 'Patreon', 'Other'];
 if (!validPlatforms.includes(opts.platform)) {
   console.error(`ERROR: Unknown platform "${opts.platform}". Valid: ${validPlatforms.join(', ')}`);
   process.exit(1);
