@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "rope-walkers",
+      "title": "Rope Walkers",
+      "summary": "Rope Walkers is a joyful dice-rolling pocket game about balance, bravery, and keeping the world together. In this solo-only game, you play as a rope walker attending a festival to celebrate the day the world was split in two by a comet but held together by a single rope.",
+      "image": "https://cf.geekdo-images.com/vo7_h8bm7pGFOwC5PloPPw__original/img/a0JKsWOuSesWbKbN4l0KxLksH20=/0x0/filters:format(jpeg)/pic9567109.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-04",
+      "endDate": "2026-05-25",
+      "primaryUrl": "https://www.kickstarter.com/projects/arcurry/rope-walkers",
+      "designer": "A. R. Curry",
+      "promoDetails": ""
+    },
+    {
       "slug": "courage-and-cunning",
       "title": "Courage & Cunning",
       "summary": "Enter the Maw — a mysterious dungeon full of ancient loot — and beat your friends using courage or cunning to snag the prize! With gameplay described as 'fencing on rocket skates,' take advantage of turn order, playing multiple cards, and unique hero abilities to grab more loot than your opponent before the end of 6 rounds. Includes a digital story mode book expansion and a 6-card hero pack expansion.",
@@ -1317,6 +1329,12 @@
       "slug": "alex-ivanov",
       "name": "Alex Ivanov",
       "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "a-r-curry",
+      "name": "A. R. Curry",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/151524/a-r-curry",
       "bio": ""
     },
     {
