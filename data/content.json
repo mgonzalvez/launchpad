@@ -309,12 +309,11 @@
       "summary": "A card-based survival game about surviving in the wilderness.",
       "image": "/uploads/bravery.png",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-06-09",
       "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/bravery",
       "designer": "Radek Ignatow",
-      "promoDetails": "Submitted as a preview crowdfunding project."
+      "promoDetails": "Submitted as a preview crowdfunding project.",
+      "endDate": "2026-07-09"
     },
     {
       "slug": "byteshift",
