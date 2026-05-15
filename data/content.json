@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "red-panda-surprise",
+      "title": "Red Panda Surprise",
+      "summary": "Fast card game! Red pandas try to scare each other, but are too cute!",
+      "image": "https://cf.geekdo-images.com/M1LI5Hn02nYnh15c3HaJkw__opengraph/img/umYVLKDs050pmPiRurFsD3Wx-0M=/0x0:1181x620/fit-in/1200x630/filters:strip_icc()/pic3989570.png",
+      "platform": "Backerkit",
+      "launchDate": "2026-05-07",
+      "endDate": "2026-05-28",
+      "primaryUrl": "https://www.backerkit.com/c/projects/dylancoyle/red-panda-surprise",
+      "designer": "Dylan Coyle",
+      "publisher": "",
+      "promoDetails": ""
+    },
+    {
       "slug": "rope-walkers",
       "title": "Rope Walkers",
       "summary": "Rope Walkers is a joyful dice-rolling pocket game about balance, bravery, and keeping the world together. In this solo-only game, you play as a rope walker attending a festival to celebrate the day the world was split in two by a comet but held together by a single rope.",
@@ -1339,6 +1352,12 @@
     {
       "slug": "petter-schanke-olsen",
       "name": "Petter Schanke Olsen",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "dylan-coyle",
+      "name": "Dylan Coyle",
       "bggUrl": "",
       "bio": ""
     }
