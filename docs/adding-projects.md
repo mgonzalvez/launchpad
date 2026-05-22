@@ -153,6 +153,24 @@ A 24-hour grace period after the end date provides timezone safety.
 
 ---
 
+## Blog Posts
+
+Blog posts live in `blog/` as static HTML files (excluded from git). Naming convention: `blog-<topic>-YYYY-MM-DD.html`.
+
+### Checklist — every new blog post requires:
+
+1. **Write the HTML post** in `blog/` using `PNPL.header()` / `PNPL.footer()` for consistent layout.
+2. **Create a 3x3 collage** (`uploads/blog-collage-*.jpg`) if one doesn't already exist — see `docs/create-collage.md`.
+3. **Update `blog/index.html`** — add the new post as the first `<article>` block (before the existing latest post), with the collage image, date, title, summary, and "Read the full post" link.
+4. **Write a Facebook post draft** (`blog/facebook-post-YYYY-MM-DD.txt`) for cross-promotion.
+5. **Commit all files** — the HTML post, collage image, updated `index.html`, and the `.txt` draft.
+
+### Notes
+
+- Posts link to projects via their Kickstarter/Gamefound URLs.
+- Each post has a corresponding `.txt` Facebook post draft in `blog/`.
+- Posts use template literals via `PNPL.header()` and `PNPL.footer()` for consistent layout.
+
 ## Related
 
 - `AGENTS.md` — full project architecture and code reference
