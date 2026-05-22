@@ -159,17 +159,19 @@ Blog posts live in `blog/` as static HTML files (excluded from git). Naming conv
 
 ### Checklist — every new blog post requires:
 
-1. **Write the HTML post** in `blog/` using `PNPL.header()` / `PNPL.footer()` for consistent layout.
-2. **Create a 3x3 collage** (`uploads/blog-collage-*.jpg`) if one doesn't already exist — see `docs/create-collage.md`.
-3. **Update `blog/index.html`** — add the new post as the first `<article>` block (before the existing latest post), with the collage image, date, title, summary, and "Read the full post" link.
-4. **Write a Facebook post draft** (`blog/facebook-post-YYYY-MM-DD.txt`) for cross-promotion.
-5. **Commit all files** — the HTML post, collage image, updated `index.html`, and the `.txt` draft.
+1. **Gather project data** — look up each project in `data/content.json` to get the correct title, designer, platform, dates, and `primaryUrl`.
+2. **Write the HTML post** in `blog/` using `PNPL.header()` / `PNPL.footer()` for consistent layout. Link every game name to its crowdfunding URL.
+3. **Create a 3x3 collage** (`uploads/blog-collage-YYYY-MM-DD.jpg`) if one doesn't already exist — see `docs/create-collage.md`. Use the same 9 projects featured in the post.
+4. **Update `blog/index.html`** — add the new post as the first `<article class="blog-post-card blog-post-full">` block (before the existing latest post), with the collage image, date, title, summary paragraph, and "Read the full post" link.
+5. **Write a Facebook post draft** (`blog/facebook-post-YYYY-MM-DD.txt`) for cross-promotion — emoji-formatted summary of each project with a link to the full blog post.
+6. **Commit all files** — the HTML post, collage image, updated `index.html`, and the `.txt` draft.
 
 ### Notes
 
-- Posts link to projects via their Kickstarter/Gamefound URLs.
+- Posts link to projects via their Kickstarter/Gamefound URLs — always link game names, not just the "Read the full post" CTA.
 - Each post has a corresponding `.txt` Facebook post draft in `blog/`.
 - Posts use template literals via `PNPL.header()` and `PNPL.footer()` for consistent layout.
+- Collage images use a version query string (`?v=YYYYMMDDa`) in `index.html` to bust cache.
 
 ## Related
 
