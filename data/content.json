@@ -974,6 +974,31 @@
       "primaryUrl": "https://www.kickstarter.com/projects/tompet/crown-and-courage",
       "designer": "Petter Schanke Olsen",
       "promoDetails": "You can download a free PnP of our upcoming solo game Crown & Courage at the kickstarter preview link below. Many members of this group made awesome builds of our previous game, Halls of Hegra. I can't wait to see what you do this time. Let me know if you have any questions."
+    },
+    {
+      "slug": "roll-breakers",
+      "title": "Roll Breakers",
+      "summary": "A numbers-up game where you watch your scores climb. If you like watching your numbers go up, check out Roll Breakers!",
+      "image": "https://i.kickstarter.com/assets/053/613/134/565356111756026bb599596977a9173d_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1778034728&width=1024&sig=dU1D0GyITaL3i9183ZWIpWHTa3342ilxGvspdtiKRdg%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/rawrgames/roll-breakers",
+      "designer": "Alexz Martínez",
+      "publisher": "RAWR! Games"
+    },
+    {
+      "slug": "dragon-vs-kingdom-2",
+      "title": "Dragon vs. Kingdom 2nd Edition",
+      "summary": "A dual-role pass-and-play game with 9 ways to play on a hex grid. Build or burn — score points as the Kingdom or as the Dragon.",
+      "image": "https://i.kickstarter.com/assets/053/562/155/39a3495afa8f4685e92ccc6397366a7c_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1777654525&width=1024&sig=g3FJkO80KWEnmVhtgPwtUri7dRg7zGQNaf8TnNtIRVo%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-25",
+      "endDate": "2026-06-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/1896208066/dragon-vs-kingdom-2",
+      "designer": "Chris Backe",
+      "publisher": "Shiny Pigeon Printables"
     }
   ],
   "designers": [
