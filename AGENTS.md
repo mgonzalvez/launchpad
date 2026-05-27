@@ -87,7 +87,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - **View mode:** `getViewMode(page)` / `setViewMode(mode)` — stores `full`/`compact` preference in `pnpl_view_mode_v1`, with per-page defaults defined in `PAGE_DEFAULT_VIEW`.
 - **Smart Image Fit:** Canvas pixel sampling (`estimateImageTone`) sets `--img-fit`/`--img-pos` CSS vars. Managed by MutationObserver + debounced resize. Cross-origin images skipped to avoid tainted canvas.
 - **Navigation:** `initSiteHeader()` — hamburger toggle, close-on-outside-click. `initContentLinkBehavior()` — card/tile clicks open `data-url` in new tab.
-- **Search:** `assets/search.js` — IIFE module that uses `PNPL.waitFor('.site-header .inner', ...)` to inject a search icon into the header. On click, opens a top dropdown panel with real-time filtering. Searches project titles, summaries, designers, publishers, and platforms. Results grouped by status (Live Now, Upcoming, Preview, Ended). Designer/publisher matches link to profile pages. Top 20 results with "Show more". Recent search history in localStorage. Close via Escape, click outside, or × button. Body scroll lock when open.
+- **Search:** `assets/search.js` — IIFE module that uses `PNPL.waitFor('.site-header .inner', ...)` to inject a search icon into the header. On click, opens a top dropdown panel with real-time filtering. Searches project titles, summaries, designers, publishers, and platforms. Results grouped by status (Live Now, Upcoming, Preview, Ended). Designer/publisher matches link to profile pages. Top 20 results with "Show more". Recent search history in localStorage. Close via Escape, click outside, or × button. Body scroll lock when open. DOM utilities (`waitFor`, `safeCanvasOperation`) are defined in `app.js` as part of `window.PNPL`.
 - **URL helpers:** `withBase(path)` — auto-detects GitHub Pages subpath from hostname; `slugify(value)` — Unicode-normalized, lowercase ASCII hyphen-separated.
 
 ### Event Flow
@@ -105,6 +105,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - CSS: `is-` prefix for state classes.
 - All project images use `loading="lazy"` (except first carousel slide = `eager`).
 - Cloudflare Web Analytics beacon in header (token: `15b3fbb1839542c9a2d8c7e4bf6df634`).
+- Platform values: `Kickstarter`, `Gamefound`, `Itch.io`, `Crowdfunding`, `Store`, `Promo`, `Backerkit`.
 
 ## submit.html Gotchas
 - Form submits via `formsubmit.co` to `mgonzalvez@gmail.com` + best-effort Google Sheets webhook (`postToGoogleSheets()` runs before `form.submit()`).
@@ -142,18 +143,20 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - `scripts/add-project.js` — safe way to add new projects via CLI.
 - Validates all fields before writing, generates slug from title, checks for duplicates, verifies image files exist.
 - Usage: `node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...`
-- **Never hand-edit `content.json` to add projects** — always use the add-project script or the validation script before committing.
+- Note: Projects can also be added by manually editing `content.json` (see `docs/adding-projects.md`). Always run `scripts/validate-content.js` before committing.
 
 ## Pi Coding Agent Instructions
 When modifying `content.json`:
 1. **Always run `node scripts/validate-content.js`** before committing.
-2. **Never add entries by hand-editing the JSON** — use `scripts/add-project.js` or manually ensure no duplicate slugs, correct image references, and proper date format.
+2. **Run the pre-commit hook** — `.git/hooks/pre-commit` runs validation automatically.
 3. **Verify image URLs match the project** — cross-check the Kickstarter/project URL against the image URL before committing.
 4. **Check for duplicate slugs** — if a project already exists, update the existing entry instead of adding a new one.
 5. **After adding/updating a project**, verify it appears in the correct status section (Upcoming, Live, Preview, etc.) by checking dates.
 
 ## Planning Docs (not implemented)
-None currently.
+- `AUTOMATED_SUBMISSION_WORKFLOW.md` — not yet implemented (Google Sheets → content.json)
+- `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md` — not yet implemented
+- Note: `submit.html` submit flow is fully implemented (formsubmit.co + Google Sheets webhook). The above docs refer to automating content.json updates from submissions.
 
 ## Creating a 3x3 Image Collage
 - See `docs/create-collage.md` for full instructions.

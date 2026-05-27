@@ -34,7 +34,7 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
   - Dynamic "days left" counters in launch/roundup posts
 - Submit flow:
   - `submit.html` includes required-field validation
-  - Supports image URL or image upload
+  - Accepts image URL only (no file upload)
   - Includes preview and late-pledge options
 - Client-side search:
   - Search icon in site header opens a top dropdown panel
@@ -81,9 +81,10 @@ Important project fields:
 - `launchDate`
 - `endDate`
 - `primaryUrl`
-- Optional: `isPreview`, `isPromo`, `isLatePledge`, `latePledgeUrl`, `designer`, `publisher`, `imagePosition`
+- Optional: `isPreview`, `isPromo`, `isLatePledge`, `latePledgeUrl`, `isPreOrder`, `hasPreOrder`, `preOrderUrl`, `designer`, `publisher`, `imagePosition`, `designers`
 
 ## Notes
 
 - Blog nav uses `/blog/` (folder index), not `blog.html`.
 - Date logic is day-based (start/end of local day) for status transitions.
+- Platform values: `Kickstarter`, `Gamefound`, `Itch.io`, `Crowdfunding`, `Store`, `Promo`, `Backerkit`.

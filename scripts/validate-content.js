@@ -37,7 +37,7 @@ if (errors.length) {
 
 // --- Validate projects ---
 const slugs = new Set();
-const validPlatforms = ['Kickstarter', 'Indiegogo', 'Store', 'Patreon', 'Other'];
+const validPlatforms = ['Kickstarter', 'Gamefound', 'Itch.io', 'Crowdfunding', 'Store', 'Promo', 'Backerkit', 'Indiegogo', 'Patreon', 'Other'];
 
 data.projects.forEach((p, i) => {
   const prefix = `projects[${i}] (${p.slug || '<missing slug>'})`;
