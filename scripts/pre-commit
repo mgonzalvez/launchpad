@@ -4,7 +4,9 @@
 
 echo "🔍 Validating content.json..."
 
-cd "$(dirname "$0")/.." 2>/dev/null || true
+# Resolve repo root from the hooks directory
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || REPO_ROOT="$(dirname "$0")./.." || REPO_ROOT="$(dirname "$0")/../.."
+cd "$REPO_ROOT" 2>/dev/null || true
 
 if [ -f "scripts/validate-content.js" ]; then
   node scripts/validate-content.js
