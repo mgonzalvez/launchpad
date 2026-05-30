@@ -508,7 +508,7 @@
       "image": "/uploads/minomancer.png",
       "platform": "Gamefound",
       "launchDate": "2026-05-05",
-      "endDate": "",
+      "endDate": "2026-05-26",
       "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/minomancer---the-roll--write-dungeon-crawler-dynamic-pnp-of-the-month--gamebook",
       "designer": "Robin Metz",
       "publisher": "pagepunk",
@@ -999,6 +999,19 @@
       "primaryUrl": "https://www.kickstarter.com/projects/1896208066/dragon-vs-kingdom-2",
       "designer": "Chris Backe",
       "publisher": "Shiny Pigeon Printables"
+    },
+    {
+      "title": "100 Little Dungeons",
+      "slug": "100-little-dungeons",
+      "summary": "A collection of hand-drawn word puzzles where your vocabulary is the only thing standing between you and the exit. Dungeon crawler. Play digitally or print & play.",
+      "image": "https://images.backerkit.com/active_storage/backerkit_production/blob/bh239db8687ddm402dko6rc6f0ht?ixlib=rails-4.3.1&auto=compress%2Cformat&cs=srgb&ar=16%3A9&fit=crop&w=896&dpr=1&q=75",
+      "platform": "Backerkit",
+      "launchDate": "2026-03-28",
+      "endDate": "2026-05-28",
+      "primaryUrl": "https://www.backerkit.com/c/projects/whatifgames/100-little-dungeons",
+      "designer": "Joe Shimwell",
+      "designers": [],
+      "publisher": "What If? Games"
     }
   ],
   "designers": [
