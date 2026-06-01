@@ -326,7 +326,7 @@
       "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/bravery",
       "designer": "Radek Ignatow",
       "promoDetails": "Submitted as a preview crowdfunding project.",
-      "endDate": "2026-06-23"
+      "endDate": "2026-06-18"
     },
     {
       "slug": "byteshift",
@@ -632,7 +632,7 @@
       "title": "Shinobi Spy & Supply",
       "platform": "Kickstarter",
       "launchDate": "2026-05-05",
-      "endDate": "2026-05-31",
+      "endDate": "2026-06-03",
       "primaryUrl": "https://www.kickstarter.com/projects/orcaislandgames/shinobi-spy-and-supply",
       "designers": [
         "Leslie Kolke",
@@ -880,7 +880,7 @@
       "image": "https://i.kickstarter.com/assets/053/087/828/a02ce28d289de37249cc70906564a3d9_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1774425199&width=1024&sig=tvNI7eyAnZtWrGegKu0AS4R3En5Ygt1SXwSyUYDd96I%3D",
       "platform": "Kickstarter",
       "launchDate": "2026-05-02",
-      "endDate": "2026-05-31",
+      "endDate": "2026-06-07",
       "primaryUrl": "https://www.kickstarter.com/projects/tholen/flock-and-squabble",
       "designer": "Shane Thol",
       "promoDetails": "Part of MicroMay. Submitted as a preview crowdfunding project."
@@ -892,7 +892,7 @@
       "image": "https://i.kickstarter.com/assets/053/476/790/89586de9b1f4276f2197af5ebd8e0462_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1777080011&width=1024&sig=icD0jadLHxlWDKhWU1wpQ8nN7vhM%2FJL1U3RU8S0Jv1A%3D",
       "platform": "Kickstarter",
       "launchDate": "2026-05-02",
-      "endDate": "2026-05-31",
+      "endDate": "2026-06-04",
       "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/iron-protocol-exodus?ref=4ftgv4",
       "designer": "Denis Kurdiukov",
       "publisher": "NukaZombee Games",
@@ -946,6 +946,8 @@
       "launchDate": "2026-05-01",
       "endDate": "2026-05-31",
       "primaryUrl": "https://www.kickstarter.com/projects/edugamingcollective/bee-the-buzz",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/edugamingcollective/bee-the-buzz",
       "designer": "Ahmad Salahuddin",
       "publisher": "EduGaming Collective",
       "promoDetails": "We've got an educational card game (PnP available) about native Aussie bees! It's a dexterity game where you throw or flick the bees cards to try and land on flower cards while avoiding pesticides. We're even working with scientists to get accurate scientific content on the cards!"
