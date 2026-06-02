@@ -1003,6 +1003,17 @@
       "publisher": "Shiny Pigeon Printables"
     },
     {
+      "slug": "one-card-maze-s4",
+      "title": "One Card Maze Season 4",
+      "summary": "A maze that twists and turns around a single card (bookmark, coaster, greeting card, or t-shirt). Travel through the maze by rotating and flipping the card to unlock doors. Over 12,000 copies sold worldwide!",
+      "image": "",
+      "platform": "Kickstarter",
+      "launchDate": "2026-05-26",
+      "endDate": "2026-06-02",
+      "primaryUrl": "https://www.kickstarter.com/projects/simonroy/one-card-maze-s4",
+      "designer": "Simon Roy"
+    },
+    {
       "title": "100 Little Dungeons",
       "slug": "100-little-dungeons",
       "summary": "A collection of hand-drawn word puzzles where your vocabulary is the only thing standing between you and the exit. Dungeon crawler. Play digitally or print & play.",
@@ -1040,6 +1051,12 @@
       "name": "Radek Ignatow",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/126631/radoslaw-ignatow",
       "bio": "Polish game designer known as &quot;GameMaker&quot;"
+    },
+    {
+      "slug": "simon-roy",
+      "name": "Simon Roy",
+      "bggUrl": "",
+      "bio": "Italian-Canadian game designer, music teacher, and singer. Enjoys board games, music, longboarding, and yoga."
     },
     {
       "slug": "martin-van-rossum",
