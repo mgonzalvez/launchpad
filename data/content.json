@@ -1025,6 +1025,20 @@
       "designer": "Joe Shimwell",
       "designers": [],
       "publisher": "What If? Games"
+    },
+    {
+      "slug": "dungeon-kings",
+      "title": "Dungeon Kings",
+      "summary": "Dungeon Kings is a game about seasoned raiders navigating two-level dungeons that offer diverse strategic routes and high replayability through 81 unique hero-dungeon combinations. The game features intuitive mechanics, including a lightweight inventory system and skill trees, alongside unique narrative endings that replace abstract scoring with immersive storytelling.",
+      "image": "https://i.imgur.com/lRhMyr4.jpeg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-06-12",
+      "endDate": "2026-07-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/dungeon-kings-tactical-dungeon-crawler-game?ref=c9fgm7",
+      "designer": "Denis Kurdiukov",
+      "publisher": "NukaZombee Games",
+      "isLatePledge": false,
+      "promoDetails": "Crowdfunding project"
     }
   ],
   "designers": [
