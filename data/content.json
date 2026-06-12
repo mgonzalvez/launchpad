@@ -71,6 +71,33 @@
       "promoDetails": "Streamlined version with new art. Expands the Roll4Rum world with deeper mechanics, specialized crew, and a new way to command your ship."
     },
     {
+      "slug": "tower-exe",
+      "title": "Tower.exe",
+      "summary": "Glitchy one-bit roguelike dice poker. Climb 10 brutal levels of the Tower of Questionable Engineering, crafting wild combos, hoarding cursed loot, and throwing hands (and dice) with pixel chickens, grumpy orcs, and mildly offended ghosts.",
+      "image": "https://cf.geekdo-images.com/C4Lv81Q4QuU5TimeazNCzA__original/img/5wHlLDTuVxU-idqZorgEiakPFlM=/0x0/filters:format(jpeg)/pic9617731.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/tower-exe-poker-dice-rogue-like",
+      "designer": "Robin Metz",
+      "publisher": "Robin Metz",
+      "promoDetails": ""
+    },
+    {
+      "slug": "race-to-tunis",
+      "title": "Race To Tunis",
+      "summary": "WW2 roll & write game set during the Allied Tunisian Campaign in North Africa. Mechanics include dice allocation, roll & write, dynamic events, and multiple paths to victory.",
+      "image": "https://cf.geekdo-images.com/H5Ay_efQvfiUOAOaEsRhpQ__original/img/dbOjK5ZftsiaOAedsa8tWjnUtcc=/0x0/filters:format(jpeg)/pic9607325.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-06-03",
+      "endDate": "2026-06-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/race-to-tunis-a-ww2-roll-write-game",
+      "designer": "Martin Melbardis",
+      "publisher": "",
+      "promoDetails": ""
+    },
+    {
       "slug": "the-lost-island-secret-valley",
       "title": "The Lost Island + The Secret Valley",
       "summary": "Award-winning games from Argentina make their English debut. The Lost Island is a roll-and-write map-making game for 1-4 players (~30 min). The Secret Valley is a drafting and tableau-building card game for 2-4 players. The Machaqa expansion adds a solo mode and extra cards. $9 PnP pledge tier available.",
