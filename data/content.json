@@ -556,18 +556,6 @@
       "promoDetails": "Kickstarter campaign launched March 14, 2026 and ends April 23, 2026 at 10:28 AM PDT."
     },
     {
-      "slug": "forgetify",
-      "title": "Forgetify",
-      "platform": "Kickstarter",
-      "launchDate": "2026-05-12",
-      "endDate": "2026-06-11",
-      "primaryUrl": "https://www.kickstarter.com/projects/nonymousgames/forgetify-recall-recite-repeat-0",
-      "designer": "Tony Diaz",
-      "publisher": "Nonymous Games",
-      "summary": "Forgetify is a quick memory game where you challenge your opponent to recall a growing sequence of card items, quantities, and colors. Players take turns revealing cards and reciting the full sequence in order, with the winner taking the most rounds out of five.",
-      "image": "https://cf.geekdo-images.com/U7MYOIcJ9t1JdgKCq27iAg__original/img/kdpebO3Xy9O1CxqFu13hSqD9r9Q=/0x0/filters:format(png)/pic9468394.png"
-    },
-    {
       "slug": "dino-farmers",
       "title": "Dino Farmers",
       "platform": "Kickstarter",
