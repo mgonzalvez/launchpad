@@ -695,6 +695,17 @@
       "promoDetails": "Submitted as a crowdfunding project."
     },
     {
+      "slug": "pnp-bundle-1",
+      "title": "PnP Bundle #1",
+      "summary": "A curated bundle of three PnP games: the winner of a community design contest plus two original titles by Florian Fiedler. Zero shipping, zero wait — just printable fun supporting indie designers.",
+      "image": "/uploads/pnp_bundle.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-07-14",
+      "endDate": "2026-07-29",
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/pnp-bundle-1",
+      "designer": "Florian Fiedler"
+    },
+    {
       "slug": "dungeon-legacy-a-roll-and-crawl-pnp-adventure",
       "title": "Dungeon Legacy: A Roll & Crawl PnP Adventure",
       "platform": "Kickstarter",
