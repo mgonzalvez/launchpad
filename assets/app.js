@@ -163,10 +163,6 @@ function header(active = '') {
             <span>PnP Launchpad</span>
           </a>
         </h1>
-        <a class="sponsor-badge" href="https://t.me/PnPSeeker" target="_blank" rel="noreferrer noopener" title="PnPSeeker on Telegram">
-          <img class="sponsor-logo" src="${withBase('uploads/pnpseeker_logo.jpg')}" alt="PnPSeeker" />
-          <span class="sponsor-text">PnPSeeker</span>
-        </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-panel" aria-label="Open navigation menu">
           <span></span>
           <span></span>
@@ -206,7 +202,7 @@ function footer() {
         ${tools.map(([href, label]) => `<a href="${href}" target="_blank" rel="noreferrer noopener">${label}</a>`).join('')}
       </nav>
       <hr />
-      <p class="footer-thanks">Thanks to Silvestre Castro and <a href="https://t.me/PnPSeeker" target="_blank" rel="noreferrer noopener">PnPSeeker</a> for additional PnP crowdfunding data.</p>
+      <p class="footer-thanks"><img class="footer-pnpseeker-logo" src="${withBase('uploads/pnpseeker_logo.jpg')}" alt="PnPSeeker" /> Thanks to Silvestre Castro and <a href="https://t.me/PnPSeeker" target="_blank" rel="noreferrer noopener">PnPSeeker</a> for additional PnP crowdfunding data.</p>
       <p>Copyright 2026 by <a href="mailto:help@pnpfinder.com">Martin Gonzalvez</a>.<br />If you find this site helpful, <a href="https://ko-fi.com/marting" target="_blank" rel="noreferrer noopener">why not buy me a coffee?</a></p>
     </footer>
   `;
