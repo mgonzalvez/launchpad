@@ -758,20 +758,6 @@
       "promoDetails": "Funded on Gamefound."
     },
     {
-      "slug": "like-herding-cats",
-      "title": "Like Herding Cats",
-      "platform": "Store",
-      "launchDate": "2026-06-01",
-      "isPreOrder": true,
-      "preOrderUrl": "https://www.rncgames.com/lhc",
-      "primaryUrl": "https://www.rncgames.com/lhc",
-      "designer": "Benjamin Morayta Franklin",
-      "publisher": "RNC Games",
-      "summary": "Professional print-and-play pre-orders are open for Like Herding Cats: The Definitive Cat Herding Game.",
-      "image": "/uploads/like_herding_cats.jpg",
-      "promoDetails": "Professional PnP pre-orders are currently available direct from the publisher site."
-    },
-    {
       "slug": "print-and-crawl",
       "title": "Print & Crawl: The print & play dungeon crawler",
       "platform": "Gamefound",
@@ -914,18 +900,6 @@
       "publisher": "NukaZombee Games",
       "isLatePledge": true,
       "latePledgeUrl": "https://www.kickstarter.com/projects/nukazombee/iron-protocol-exodus?ref=4ftgv4"
-    },
-    {
-      "slug": "tribe-harsh-lands",
-      "title": "Tribe: Harsh Lands",
-      "summary": "A strategic card-driven prehistoric survival game where you guide a fragile tribe through ever-changing biomes where danger lurks in every round. Drought, frost, and pestilence reshape the land — only the strongest tribe will endure. Expand your tribe across shifting environments, use unique abilities, and outmaneuver your opponent through smart positioning and tactical movement. A micro card game (24 cards) inspired by Evo 2nd Edition.",
-      "image": "https://img.itch.zone/aW1hZ2UvNDQ3NjM3My8yNjY5MTEzNi5wbmc=/original/fqYC49.png",
-      "platform": "Itch.io",
-      "launchDate": "2026-06-01",
-      "primaryUrl": "https://small-table-games.itch.io/tribe-harsh-lands",
-      "designer": "Dragos Cilibiu",
-      "publisher": "Small Table Games",
-      "promoDetails": "Released on itch.io. 2 players (+ automata for solo). ~15 mins. $2 USD."
     },
     {
       "slug": "glory-driven-delving-heroes",
