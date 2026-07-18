@@ -167,6 +167,8 @@ When modifying `content.json`:
 ## Docs
 - `docs/adding-projects.md` — step-by-step guide for adding projects to `content.json`
 - `docs/create-collage.md` — creating 3x3 image collages with ImageMagick
+- `docs/blog-workflow.md` — blog post types, structure, HTML template, and publishing workflow
+- `docs/VOICE.md` — writing voice and tone guide for blog posts
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps
