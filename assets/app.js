@@ -43,7 +43,9 @@ const basePath = (() => {
 function withBase(path = '') {
   if (/^https?:\/\//i.test(path)) return path;
   const clean = String(path).replace(/^\/+/, '');
-  return clean ? `${basePath}/${clean}` : `${basePath}/`;
+  if (!clean) return `${basePath}/`;
+  const encoded = clean.split('/').map(encodeURIComponent).join('/');
+  return `${basePath}/${encoded}`;
 }
 
 function slugify(value = '') {
