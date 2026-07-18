@@ -1215,6 +1215,49 @@
       "primaryUrl": "https://www.kickstarter.com/projects/getyourchadon/backstab-solo-dungeon-crawler-board-game/description",
       "designer": "Chad Randall Maniccia",
       "publisher": "Chad Randall Maniccia"
+    },
+    {
+      "slug": "the-cultists-challenge",
+      "title": "The Cultist's Challenge",
+      "summary": "A solo Lovecraftian roll-and-write: you are the problem. Complete rituals and summon an ancient entity before the Investigator wins.",
+      "image": "/uploads/cultist_challenge.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-06-30",
+      "endDate": "2026-07-20",
+      "primaryUrl": "https://www.kickstarter.com/projects/rapsodagames/the-cultists-challenge",
+      "publisher": "Rapsoda Games",
+      "designer": "Raul Tomas Barrado"
+    },
+    {
+      "slug": "miskatonic-expeditions",
+      "title": "Miskatonic Expeditions",
+      "summary": "A Lovecraftian tile-laying roguelite with deck-building elements. Draft the rooms of an ever-shifting university, fight creatures from the Great Beyond, and perform the Unveiling Ritual to banish the All-in-One.",
+      "image": "/uploads/miskatonic_expeditions.png",
+      "platform": "Gamefound",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
+      "publisher": "Paper Tigers"
+    },
+    {
+      "slug": "anima-hunters",
+      "title": "Anima Hunters",
+      "summary": "A solo, weapon-building dungeon crawling adventure PnP. Choose your weapon, slay bizarre aquatic creatures, use their Anima to upgrade, and challenge the final boss.",
+      "image": "/uploads/anima_hunters.png",
+      "platform": "Gamefound",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/giza-games/anima-hunters",
+      "publisher": "Giza Games"
+    },
+    {
+      "slug": "showrunner-solo-game-of-the-month",
+      "title": "Showrunner [Solo Game of the Month]",
+      "summary": "Climb the ratings by hooking as many viewers as possible each week. Find ways to keep viewers coming back while competing against other shows on the air.",
+      "image": "https://cf.geekdo-images.com/10fMd-fyuWKJ3Lqu36-HFw__original/img/whrhR3dnjy9EE_QM_rYp0az9hsQ=/0x0/filters:format(png)/pic9689129.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-07-14",
+      "endDate": "2026-07-31",
+      "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/showrunner-solo-game-of-the-month",
+      "designer": "Gabe-Barrett"
     }
   ],
   "designers": [

@@ -156,5 +156,59 @@ designer Chad Randall Maniccia
 
 self published
 
+image in uploads
+
+---
+https://www.kickstarter.com/projects/rapsodagames/the-cultists-challenge?ref=discover_saved_projects&category_id=34
+
+The Cultist’s Challenge
+A solo Lovecraftian roll-and-write: you’re the problem. Complete rituals and summon an ancient entity before the Investigator wins.
+
+june 30-july 20
+
+publisher: RAPSODA GAMES
+
+designer: RAUL TOMAS BARRADO
+
+image in uploads
+
+---
+https://gamefound.com/en/projects/papertigers/miskatonic-expeditions?ref=homepage_discover_upcoming-coming-soon_17
+
+Miskatonic Expeditions
+by 
+Paper Tigers
+A Lovecraftian tile-laying roguelite with deck-building elements, for 1 to 4 players. Draft the rooms of an ever-shifting university, fight things from the Great Beyond, gather forbidden books, and perform the Unveiling Ritual to banish the All-in-One from our reality. Just try not to lose your last shred of sanity in the process.
+
+coming soon
+
+image in uploads
+
+---
+
+https://gamefound.com/en/projects/giza-games/anima-hunters?ref=homepage_discover_upcoming-coming-soon_20
+
+Anima Hunters
+by 
+Giza Games
+Anima Hunters is a solo, weapon-building dungeon crawling adventure Print-and-Play (PnP) where your choice of weapon forges your survival. As an elite hunter chosen for the ancient Cosmic Hunt, you will delve into a deep-sea dungeon to slay bizarre aquatic creatures, use their Anima to upgrade your weapons. Challenge the final boss to claim the legendary weapon and wield the ultimate power of the cosmos.
+
+coming soon
+
+image in uploads
+
+---
+
+https://gamefound.com/en/projects/gabe-barrett/showrunner-solo-game-of-the-month?ref=notification_7
+
+Showrunner [Solo Game of the Month]
+by 
+Gabe-Barrett
+As a showrunner, you have one main task: climb the ratings by hooking as many viewers as possible each week. However, you're not the only show on the air, so you'll have to find ways to keep your viewers coming back for more. Can you run a show that dominates primetime?
+
+july 14 - ends 13 days from july 18
+
+bgg image url: https://cf.geekdo-images.com/10fMd-fyuWKJ3Lqu36-HFw__original/img/whrhR3dnjy9EE_QM_rYp0az9hsQ=/0x0/filters:format(png)/pic9689129.png
+
 
 
