@@ -55,7 +55,9 @@ data.projects.forEach((p, i) => {
   slugs.add(p.slug);
 
   // Required fields
-  for (const field of ['title', 'image', 'platform', 'primaryUrl']) {
+  const requiredFields = ['title', 'platform', 'primaryUrl'];
+  if (!p.isPreview) requiredFields.push('image');
+  for (const field of requiredFields) {
     if (!p[field] || typeof p[field] !== 'string' || !p[field].trim()) {
       errors.push(`${prefix}: missing or empty required field "${field}"`);
     }

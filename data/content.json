@@ -1159,6 +1159,62 @@
       "primaryUrl": "https://www.kickstarter.com/projects/konari/one-sheet-kitchen/description",
       "designer": "Konari Vizcarra Pérez",
       "publisher": "Konari Vizcarra Pérez"
+    },
+    {
+      "slug": "out-of-print",
+      "title": "Out Of Print",
+      "summary": "A bookish modular solo game by Button Shy. Lock the pages in place to escape classic books before it is too late.",
+      "image": "",
+      "platform": "Kickstarter",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/239309591/out-of-print"
+    },
+    {
+      "slug": "royalty-stacks",
+      "title": "Royalty Stacks",
+      "summary": "A Game of Patents, Licenses & Leverage.",
+      "image": "/uploads/royalty_stacks.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-06-16",
+      "endDate": "2026-07-17",
+      "primaryUrl": "https://www.kickstarter.com/projects/idea2dough/royalty-stacks/description",
+      "designer": "Guru Venkatesan"
+    },
+    {
+      "slug": "star-marshal-the-paper-trails",
+      "title": "Star Marshal: The Paper Trails",
+      "summary": "Card based solo-play game. The arbiter of Justice or the disciple of Chaos, which will you decide to be?",
+      "image": "/uploads/star_marshal.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-06-23",
+      "endDate": "2026-07-20",
+      "primaryUrl": "https://www.kickstarter.com/projects/thegrinningfrog/star-marshal-the-paper-trails?ref=discover_saved_projects",
+      "designer": "Stephen Hart",
+      "publisher": "The Grinning Frog"
+    },
+    {
+      "slug": "glitch-the-card-game",
+      "title": "GLITCH",
+      "summary": "The Card Game Where Everyone Slowly Malfunctions. Race to clear your hand, while performing ridiculous and difficult Glitches, in this 3-6 player chaotic card game!",
+      "image": "/uploads/glitch.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-15",
+      "endDate": "2026-08-14",
+      "primaryUrl": "https://www.kickstarter.com/projects/yellowdicegames/glitch-the-card-game-where-everyone-slowly-malfunctions/description",
+      "designer": "Anisha Karkhanis",
+      "publisher": "Yellow Dice Games"
+    },
+    {
+      "slug": "backstab-solo-dungeon-crawler",
+      "title": "Backstab — Solo Dungeon Crawler",
+      "summary": "A premium vertical side-scrolling solo dungeon crawler handcrafted with modular magnetic tiles. The ultimate tactical tabletop puzzle.",
+      "image": "/uploads/backstab.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-07",
+      "endDate": "2026-08-06",
+      "primaryUrl": "https://www.kickstarter.com/projects/getyourchadon/backstab-solo-dungeon-crawler-board-game/description",
+      "designer": "Chad Randall Maniccia",
+      "publisher": "Chad Randall Maniccia"
     }
   ],
   "designers": [
