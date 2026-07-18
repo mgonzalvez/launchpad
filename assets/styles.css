@@ -76,13 +76,22 @@ a:hover { color: #8f3209; }
   box-shadow: 0 4px 0 #1f5b7233;
 }
 
+.footer-pnpseeker-credit {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
 .footer-pnpseeker-logo {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
   object-fit: cover;
-  vertical-align: middle;
-  margin-right: 4px;
+  margin-bottom: 8px;
+}
+
+.footer-thanks {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 .nav-toggle {
