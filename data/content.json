@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "legends-of-mana-island",
+      "title": "Legends of Mana Island",
+      "summary": "Summon familiars, cast combos and hatch eggs into mythical creatures to become a Legendary Wizard in this magical Print & Play game!",
+      "image": "https://cf.geekdo-images.com/o9n0en8Jap7k5pT3Lv0tVg__original/img/4HVqn8MgLesgWsXHpYyjBblFziE=/0x0/filters:format(jpeg)/pic9479009.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/kinroku/legends-of-mana-island",
+      "designer": "Kinroku",
+      "publisher": "Kinroku",
+      "promoDetails": ""
+    },
+    {
       "slug": "red-panda-surprise",
       "title": "Red Panda Surprise",
       "summary": "Fast card game! Red pandas try to scare each other, but are too cute!",
@@ -1616,6 +1630,12 @@
       "name": "Dylan Coyle",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/111989/dylan-coyle",
       "bio": "Dylan is a tabletop designer based in Shanghai, China. They make games that are good for 1-8 players by focusing on fun and fast mechanisms that scale well. They founded the Charming Games Collective to bring more transparency, community, and accessibility to games and toys."
+    },
+    {
+      "slug": "kinroku",
+      "name": "Kinroku",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1880,6 +1900,12 @@
     {
       "slug": "edugaming-collective",
       "name": "EduGaming Collective",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kinroku",
+      "name": "Kinroku",
       "bggUrl": "",
       "bio": ""
     }
