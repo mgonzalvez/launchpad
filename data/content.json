@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "millrat-pack",
+      "title": "MILLRAT Pack!",
+      "summary": "4 Games Made for Game Night. Simple rules. Endless fun. You just won game night.",
+      "image": "https://cf.geekdo-images.com/5OLHmIwyWWbOKqdObUmwxQ__original/img/hkOOKAVWYH7sYGbOrUf0OnO0WwA=/0x0/filters:format(jpeg)/pic9561341.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-14",
+      "endDate": "2026-08-13",
+      "primaryUrl": "https://www.kickstarter.com/projects/millratstudio/millrat-pack",
+      "designer": "Adam Khoury",
+      "publisher": "Millrat Studio",
+      "promoDetails": ""
+    },
+    {
       "slug": "legends-of-mana-island",
       "title": "Legends of Mana Island",
       "summary": "Summon familiars, cast combos and hatch eggs into mythical creatures to become a Legendary Wizard in this magical Print & Play game!",
@@ -1640,6 +1653,12 @@
       "name": "Kinroku",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "adam-khoury",
+      "name": "Adam Khoury",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1910,6 +1929,12 @@
     {
       "slug": "kinroku",
       "name": "Kinroku",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "millrat-studio",
+      "name": "Millrat Studio",
       "bggUrl": "",
       "bio": ""
     }
