@@ -2,11 +2,13 @@
 
 ## Git
 - Branch: `main`, remote: `origin/main`
-- `.gitignore` excludes `AGENTS.md`, `voice-samples/`, `new/` — these are local/dev-only. `blog/` is commented out (not ignored).
+- `.gitignore` excludes `AGENTS.md`, `CONTEXT.md`, `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md`, `.pi/`, `voice-samples/`, `new/` — these are local/dev-only. `blog/` is commented out (not ignored).
 - `uploads/` is NOT in `.gitignore` — files must be tracked. A `pre-commit` hook auto-stages all files in `uploads/` so new images are included in every commit without manual `git add`.
 
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. Hosted on GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
+
+Local/dev-only files (in `.gitignore`): `AGENTS.md`, `CONTEXT.md`, `GOOGLE_SHEETS_GITHUB_SYNC_PLAN.md`, `.pi/` (Pi agent settings), `voice-samples/`, `new/`. Root-level markdown files like `social-blurb-collage-july-2026.md` and `new pnp projects july 2026.md` are also local-only.
 
 All pages share `assets/app.js` (core logic + DOM utilities) and `assets/search.js` (client-side search), both exported via `window.PNPL`. Each HTML page contains inline rendering scripts that call `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
 
@@ -70,6 +72,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 | `assets/search.js` | Client-side search module — top dropdown panel, real-time filtering, grouped by status |
 | `assets/styles.css` | Complete styling |
 | `assets/logo.svg` | Site logo |
+| `assets/blog-collage-feb-8-15-2026.svg` | Blog collage SVG asset |
 | `data/content.json` | Source of truth for all content |
 | `uploads/` | Local image assets (referenced as `/uploads/...`) |
 
@@ -164,11 +167,17 @@ When modifying `content.json`:
 - Group into 3 rows of 3, then stack vertically with `-append` (not all 9 at once with `+append` which makes a single row).
 - No text annotations — Ghostscript is not installed. Use `.miff` for intermediates to avoid quality loss.
 
+## Scripts
+- `scripts/validate-content.js` — validates `content.json` for structural integrity.
+- `scripts/add-project.js` — safe CLI tool to add new projects.
+- `scripts/kicktraq-check.js` — cross-references `content.json` project statuses against Kicktraq feeds. Usage: `node scripts/kicktraq-check.js [--fix] [--verbose]`.
+- `scripts/pre-commit` — pre-commit hook template (auto-installed to `.git/hooks/pre-commit`).
+
 ## Docs
 - `docs/adding-projects.md` — step-by-step guide for adding projects to `content.json`
 - `docs/create-collage.md` — creating 3x3 image collages with ImageMagick
 - `docs/blog-workflow.md` — blog post types, structure, HTML template, and publishing workflow
-- `docs/VOICE.md` — writing voice and tone guide for blog posts
+- `VOICE.md` — writing voice and tone guide for blog posts (root-level)
 - `assets/search.js` — client-side search module (no backend, blazing fast, grouped by status)
 
 ## Known Gaps
