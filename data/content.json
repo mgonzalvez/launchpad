@@ -1170,7 +1170,9 @@
       "endDate": "2026-07-20",
       "primaryUrl": "https://www.kickstarter.com/projects/thegrinningfrog/star-marshal-the-paper-trails?ref=discover_saved_projects",
       "designer": "Stephen Hart",
-      "publisher": "The Grinning Frog"
+      "publisher": "The Grinning Frog",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/thegrinningfrog/star-marshal-the-paper-trails?ref=discover_saved_projects"
     },
     {
       "slug": "glitch-the-card-game",
@@ -1206,7 +1208,9 @@
       "endDate": "2026-07-20",
       "primaryUrl": "https://www.kickstarter.com/projects/rapsodagames/the-cultists-challenge",
       "publisher": "Rapsoda Games",
-      "designer": "Raul Tomas Barrado"
+      "designer": "Raul Tomas Barrado",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/rapsodagames/the-cultists-challenge"
     },
     {
       "slug": "miskatonic-expeditions",
