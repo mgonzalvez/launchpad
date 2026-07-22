@@ -129,6 +129,13 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - Blog posts have corresponding `.txt` Facebook post drafts in `blog/`.
 - **Adding projects:** See `docs/adding-projects.md` for a complete step-by-step guide with field reference, examples, and common pitfalls.
 
+## Blog Posts
+- Blog posts are static HTML files under `blog/` (e.g., `blog/blog-july-22-2026.html`).
+- Each post follows the existing template: `blog-on-the-launchpad-*.html` or `blog-*.html` pattern.
+- **Always update `blog/index.html` after creating a new blog post.** Add a new `<article class="blog-post-card blog-post-full">` block at the top of the file (before the existing entries), with the post's title, date, summary, collage image, and link to the full post. The blog index is manually maintained — it is not generated from a list.
+- Facebook post drafts go in `blog/facebook-post-*.txt` (local-only, excluded from git).
+- Collage images go in `uploads/` and are referenced as `/uploads/filename.jpg`.
+
 ## Data Guardrails
 ### Validation Script
 - `scripts/validate-content.js` — validates `content.json` for structural integrity.
