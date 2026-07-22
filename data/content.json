@@ -1228,11 +1228,12 @@
     {
       "slug": "miskatonic-expeditions",
       "title": "Miskatonic Expeditions",
-      "summary": "A Lovecraftian tile-laying roguelite with deck-building elements. Draft the rooms of an ever-shifting university, fight creatures from the Great Beyond, and perform the Unveiling Ritual to banish the All-in-One.",
-      "image": "/uploads/miskatonic_expeditions.jpg",
+      "summary": "A Lovecraftian tile-laying roguelite with deck-building elements, for 1 to 4 players. Draft the rooms of an ever-shifting university, fight things from the Great Beyond, gather forbidden books, and perform the Unveiling Ritual to banish the All-in-One from our reality. Just try not to lose your last shred of sanity in the process.",
+      "image": "https://imgcdn.gamefound.com/projectupdate/projects/6650/f5766433-0773-4332-ab51-3f4e6da50af2.png",
       "platform": "Gamefound",
       "isPreview": true,
       "primaryUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
+      "designer": "Paper Tigers",
       "publisher": "Paper Tigers"
     },
     {
