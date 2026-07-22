@@ -1268,6 +1268,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/clearlysharpgames/doodle-bash-an-app-assisted-1-page-print-and-play",
       "designer": "Daniel Young",
       "publisher": "Self Published"
+    },
+    {
+      "slug": "master-of-coin",
+      "title": "Master of Coin",
+      "summary": "Flip coins to manage the fortunes of a fledgling fantasy kingdom. Can you balance the books and be crowned Master of Coin?",
+      "image": "https://cf.geekdo-images.com/_Sbr456_USczSvXAecdR3Q__original/img/0l7_9Z-XgbyeF3lXCMPDFO7g56I=/0x0/filters:format(jpeg)/pic9649121.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-21",
+      "endDate": "2026-08-02",
+      "primaryUrl": "https://www.kickstarter.com/projects/postmarkgames/master-of-coin",
+      "designer": "Rory Muldoon",
+      "publisher": "Postmark Games"
     }
   ],
   "designers": [
