@@ -1303,6 +1303,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/michalkujawa/thief-in-da-building",
       "designer": "Michał Kujawa",
       "publisher": "Michał Kujawa"
+    },
+    {
+      "slug": "battlestations-lightspeed",
+      "title": "Battlestations: Lightspeed",
+      "summary": "Are you ready for heroic starship adventures across the galaxy? An easy-to-learn and quick-to-play cooperative board game for 1 to 4.",
+      "image": "/uploads/battlestations-lightspeed.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-21",
+      "endDate": "2026-08-11",
+      "primaryUrl": "https://www.kickstarter.com/projects/gorillagames/battlestations-lightspeed/description",
+      "designer": "Jeffrey Siadek",
+      "publisher": "Jeffrey Siadek"
     }
   ],
   "designers": [
@@ -1725,6 +1737,12 @@
       "name": "Gabriel Arjona",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "jeffrey-siadek",
+      "name": "Jeffrey Siadek",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2019,6 +2037,12 @@
     {
       "slug": "jaragua-games",
       "name": "Jaragua Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jeffrey-siadek",
+      "name": "Jeffrey Siadek",
       "bggUrl": "",
       "bio": ""
     }
