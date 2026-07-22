@@ -1280,6 +1280,17 @@
       "primaryUrl": "https://www.kickstarter.com/projects/postmarkgames/master-of-coin",
       "designer": "Rory Muldoon",
       "publisher": "Postmark Games"
+    },
+    {
+      "slug": "the-undervaults",
+      "title": "The Undervaults",
+      "summary": "A solo print-and-play dungeon crawler — the paper you love, minus the bookkeeping you don't. A guided companion handles the rest.",
+      "image": "/uploads/the-undervaults.png",
+      "platform": "Kickstarter",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/jaraguagames/theundervaults",
+      "designer": "Gabriel Arjona",
+      "publisher": "Jaragua Games"
     }
   ],
   "designers": [
@@ -1690,6 +1701,12 @@
       "name": "Daniel Young",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/152325/daniel-w-young",
       "bio": ""
+    },
+    {
+      "slug": "gabriel-arjona",
+      "name": "Gabriel Arjona",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1972,6 +1989,12 @@
     {
       "slug": "self-published",
       "name": "Self Published",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jaragua-games",
+      "name": "Jaragua Games",
       "bggUrl": "",
       "bio": ""
     }
