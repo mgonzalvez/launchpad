@@ -1049,7 +1049,7 @@ small { color: var(--muted); }
 
 .blog-post-full {
   max-width: 980px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
 }
 
 .blog-collage {
