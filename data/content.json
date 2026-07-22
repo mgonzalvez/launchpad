@@ -1255,6 +1255,18 @@
       "endDate": "2026-07-31",
       "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/showrunner-solo-game-of-the-month",
       "designer": "Gabe-Barrett"
+    },
+    {
+      "slug": "doodle-bash",
+      "title": "Doodle Bash",
+      "summary": "Doodle Bash is an app-assisted drawing game. Start by adding basic shapes to your notebook, then merge them into increasingly detailed doodles for your Portfolio. When you learn a doodle, it gets shuffled in with the others, allowing it to be more easily drawn in the future! Continue drawing and merging symbols until your Notebook is full of a wide variety of doodles. Position them in clever ways to take advantage of powerful scoring synergies!",
+      "image": "https://i.ibb.co/whdwWj6d/Artboard-7-copy.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-28",
+      "endDate": "2026-08-11",
+      "primaryUrl": "https://www.kickstarter.com/projects/clearlysharpgames/doodle-bash-an-app-assisted-1-page-print-and-play",
+      "designer": "Daniel Young",
+      "publisher": "Self Published"
     }
   ],
   "designers": [
@@ -1659,6 +1671,12 @@
       "name": "Adam Khoury",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "daniel-young",
+      "name": "Daniel Young",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/152325/daniel-w-young",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -1935,6 +1953,12 @@
     {
       "slug": "millrat-studio",
       "name": "Millrat Studio",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "self-published",
+      "name": "Self Published",
       "bggUrl": "",
       "bio": ""
     }
