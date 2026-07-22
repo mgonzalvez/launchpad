@@ -1315,6 +1315,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/gorillagames/battlestations-lightspeed/description",
       "designer": "Jeffrey Siadek",
       "publisher": "Jeffrey Siadek"
+    },
+    {
+      "slug": "shadowdark-triple-feature",
+      "title": "Shadowdark Triple Feature",
+      "summary": "Three one-shot adventure zines by Joseph R. Lewis.",
+      "image": "/uploads/shadowdark-triple-feature.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-14",
+      "endDate": "2026-07-28",
+      "primaryUrl": "https://www.kickstarter.com/projects/josephrlewis/shadowdark-triple-feature/description",
+      "designer": "Joseph R. Lewis",
+      "publisher": "Joseph R. Lewis"
     }
   ],
   "designers": [
@@ -1743,6 +1755,12 @@
       "name": "Jeffrey Siadek",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "joseph-r-lewis",
+      "name": "Joseph R. Lewis",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2043,6 +2061,12 @@
     {
       "slug": "jeffrey-siadek",
       "name": "Jeffrey Siadek",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "joseph-r-lewis",
+      "name": "Joseph R. Lewis",
       "bggUrl": "",
       "bio": ""
     }
