@@ -1327,6 +1327,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/josephrlewis/shadowdark-triple-feature/description",
       "designer": "Joseph R. Lewis",
       "publisher": "Joseph R. Lewis"
+    },
+    {
+      "slug": "medieval-command-battle-of-varna",
+      "title": "Medieval Command: Battle of Varna, 1444",
+      "summary": "Lead the final European Crusade against the Ottoman Empire in this tense solo PNP wargame about the battle of Varna in 1444.",
+      "image": "/uploads/medieval-command-battle-of-varna.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-22",
+      "endDate": "2026-07-30",
+      "primaryUrl": "https://www.kickstarter.com/projects/105281170/medieval-command-battle-of-varna-1444",
+      "designer": "Martin Melbardis",
+      "publisher": "Solo Wargame"
     }
   ],
   "designers": [
