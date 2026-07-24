@@ -133,6 +133,7 @@ All content lives in `data/content.json`: `{ projects[], designers[], publishers
 - Blog posts are static HTML files under `blog/` (e.g., `blog/blog-july-22-2026.html`).
 - Each post follows the existing template: `blog-on-the-launchpad-*.html` or `blog-*.html` pattern.
 - **Always update `blog/index.html` after creating a new blog post.** Add a new `<article class="blog-post-card blog-post-full">` block at the top of the file (before the existing entries), with the post's title, date, summary, collage image, and link to the full post. The blog index is manually maintained — it is not generated from a list.
+- **Link every game to its project page on first mention.** When a game is first named in the body text (not in a parenthetical list or the live rail section), wrap the game title in an `<a href="...">` tag pointing to its Kickstarter/Gamefound/Backerkit URL. Use the `primaryUrl` from `data/content.json`. This applies to both the main body paragraphs and the bottom-line summary. Games already linked in the live rail section do not need additional links there.
 - Facebook post drafts go in `blog/facebook-post-*.txt` (local-only, excluded from git).
 - Collage images go in `uploads/` and are referenced as `/uploads/filename.jpg`.
 

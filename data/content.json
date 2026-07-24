@@ -1,6 +1,50 @@
 {
   "projects": [
     {
+      "slug": "cassette-zombies",
+      "title": "Cassette Zombies!",
+      "summary": "A simple, tactical and endlessly addictive game of survival terror packed in a cassette tape case! 1–2 players, 15 min playtime.",
+      "image": "/uploads/cassette-zombies.jpg",
+      "platform": "Gamefound",
+      "launchDate": "2025-10-26",
+      "endDate": "2025-11-25",
+      "primaryUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies",
+      "designer": "themoongrel",
+      "publisher": "cassette-games",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies",
+      "promoDetails": "Campaign ended Nov 25. Late pledge available."
+    },
+    {
+      "slug": "the-30s",
+      "title": "The 30s",
+      "summary": "A solo or 2-player cooperative descent into Lovecraftian horror. Explore a 1930s house, uncover forbidden secrets, and manage your sanity and health as psychological pressure mounts. Find the girl and escape — if you can.",
+      "image": "/uploads/the-30s.jpg",
+      "platform": "Gamefound",
+      "launchDate": "2026-05-26",
+      "endDate": "2026-06-25",
+      "primaryUrl": "https://gamefound.com/pt/projects/darkkena/the-30s",
+      "designer": "Darkkenda",
+      "publisher": "Darkkenda",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/pt/projects/darkkena/the-30s",
+      "promoDetails": "Campaign ended June 25. Late pledge available."
+    },
+    {
+      "slug": "locked-in",
+      "title": "Locked In",
+      "summary": "A pocket-sized print-and-play escape puzzle for solo and simultaneous multiplayer. Roll 3 dice, choose your pace, collect clues, and solve 4 riddles before the House seals too many rooms shut. 12 hours. 4 riddles. 1 way out.",
+      "image": "/uploads/locked-in.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/dadu/locked-in-0",
+      "designer": "Dade",
+      "publisher": "Dade",
+      "promoDetails": ""
+    },
+    {
       "slug": "millrat-pack",
       "title": "MILLRAT Pack!",
       "summary": "4 Games Made for Game Night. Simple rules. Endless fun. You just won game night.",
@@ -1773,6 +1817,24 @@
       "name": "Joseph R. Lewis",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "dade",
+      "name": "Dade",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "darkkenda",
+      "name": "Darkkenda",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "themoongrel",
+      "name": "themoongrel",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2079,6 +2141,24 @@
     {
       "slug": "joseph-r-lewis",
       "name": "Joseph R. Lewis",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "dade",
+      "name": "Dade",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "darkkenda",
+      "name": "Darkkenda",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "cassette-games",
+      "name": "Cassette Games",
       "bggUrl": "",
       "bio": ""
     }
