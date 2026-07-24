@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "atlas-rush",
+      "title": "Atlas Rush",
+      "summary": "A strategic sci-fi print-and-play game for 1–4 players. Pilot your faction across real-world locations in our solar system, collect resources, modify dice rolls, build settlements, and race to activate the warp gates!",
+      "image": "/uploads/atlas-rush.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/b-up-games/atlas-rush",
+      "designer": "B+Up Games",
+      "publisher": "B+Up Games",
+      "promoDetails": ""
+    },
+    {
       "slug": "neon-blood",
       "title": "Neon Blood - Retro PNP Action RPG",
       "summary": "A solo roll & write action RPG set in a neon-soaked 80s crime city. You are a ghost — no file, no face, no mercy. Roll dice, plan your route, manage your arsenal and mark your path room by floor by floor. Just print, grab two dice and play.",
@@ -1863,6 +1877,12 @@
       "name": "themoongrel",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "b-up-games",
+      "name": "B+Up Games",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2187,6 +2207,12 @@
     {
       "slug": "cassette-games",
       "name": "Cassette Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "b-up-games",
+      "name": "B+Up Games",
       "bggUrl": "",
       "bio": ""
     }
