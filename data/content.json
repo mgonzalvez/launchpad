@@ -1,6 +1,34 @@
 {
   "projects": [
     {
+      "slug": "neon-blood",
+      "title": "Neon Blood - Retro PNP Action RPG",
+      "summary": "A solo roll & write action RPG set in a neon-soaked 80s crime city. You are a ghost — no file, no face, no mercy. Roll dice, plan your route, manage your arsenal and mark your path room by floor by floor. Just print, grab two dice and play.",
+      "image": "/uploads/neon-blood.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/printandgame/neon-blood-retro-pnp-action-rpg",
+      "designer": "PRINTANDGAME",
+      "publisher": "PRINTANDGAME",
+      "promoDetails": ""
+    },
+    {
+      "slug": "dead-draw",
+      "title": "Dead Draw - Print and Play",
+      "summary": "A Print & Play card game of Wild West duels for 2–4 players. Choose your gunslinger, equip the right weapon, and face your rivals in dusty streets, lively saloons, and other dangerous locations. Every character has unique abilities, every weapon changes the way you play, and every card can determine the outcome of a duel.",
+      "image": "/uploads/dead-draw.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/printandgame/dead-draw-print-and-play",
+      "designer": "PRINTANDGAME",
+      "publisher": "PRINTANDGAME",
+      "promoDetails": ""
+    },
+    {
       "slug": "cassette-zombies",
       "title": "Cassette Zombies!",
       "summary": "A simple, tactical and endlessly addictive game of survival terror packed in a cassette tape case! 1–2 players, 15 min playtime.",
