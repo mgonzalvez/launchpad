@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "legend-of-hexdom-2",
+      "title": "Legend of Hexdom 2",
+      "summary": "A sandbox print-and-play roll and write adventure action RPG set in a medieval kingdom. Portable boardgame — battle monsters and bosses across hexagonal tiles.",
+      "image": "/uploads/legend-of-hexdom-2.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/papermage/legend-of-hexdom-2",
+      "designer": "papermage-games",
+      "publisher": "papermage-games",
+      "promoDetails": ""
+    },
+    {
       "slug": "tribal-clash",
       "title": "Tribal Clash",
       "summary": "A single sheet print and play game. Paweł Kardis's debut Kickstarter project.",
@@ -1903,6 +1917,12 @@
       "name": "Paweł Kardis",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "papermage-games",
+      "name": "Papermage Games",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2239,6 +2259,12 @@
     {
       "slug": "pawel-kardis",
       "name": "Paweł Kardis",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "papermage-games",
+      "name": "Papermage Games",
       "bggUrl": "",
       "bio": ""
     }
