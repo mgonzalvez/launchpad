@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "tribal-clash",
+      "title": "Tribal Clash",
+      "summary": "A single sheet print and play game. Paweł Kardis's debut Kickstarter project.",
+      "image": "/uploads/tribal-clash.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/pawelkardis/tribal-clash",
+      "designer": "pawel-kardis",
+      "publisher": "pawel-kardis",
+      "promoDetails": ""
+    },
+    {
       "slug": "atlas-rush",
       "title": "Atlas Rush",
       "summary": "A strategic sci-fi print-and-play game for 1–4 players. Pilot your faction across real-world locations in our solar system, collect resources, modify dice rolls, build settlements, and race to activate the warp gates!",
@@ -1883,6 +1897,12 @@
       "name": "B+Up Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "pawel-kardis",
+      "name": "Paweł Kardis",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2213,6 +2233,12 @@
     {
       "slug": "b-up-games",
       "name": "B+Up Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "pawel-kardis",
+      "name": "Paweł Kardis",
       "bggUrl": "",
       "bio": ""
     }
