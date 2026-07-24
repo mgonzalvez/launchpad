@@ -48,13 +48,15 @@
       "summary": "A simple, tactical and endlessly addictive game of survival terror packed in a cassette tape case! 1–2 players, 15 min playtime.",
       "image": "/uploads/cassette-zombies.jpg",
       "platform": "Gamefound",
-      "launchDate": "",
-      "endDate": "",
+      "launchDate": "2025-10-26",
+      "endDate": "2025-11-25",
       "primaryUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies",
       "designer": "themoongrel",
       "publisher": "cassette-games",
-      "promoDetails": "",
-      "isPreview": true
+      "promoDetails": "Campaign ended Nov 25. Late pledge available.",
+      "isPreview": false,
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies"
     },
     {
       "slug": "the-30s",
