@@ -48,14 +48,13 @@
       "summary": "A simple, tactical and endlessly addictive game of survival terror packed in a cassette tape case! 1–2 players, 15 min playtime.",
       "image": "/uploads/cassette-zombies.jpg",
       "platform": "Gamefound",
-      "launchDate": "2025-10-26",
-      "endDate": "2025-11-25",
+      "launchDate": "",
+      "endDate": "",
       "primaryUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies",
       "designer": "themoongrel",
       "publisher": "cassette-games",
-      "isLatePledge": true,
-      "latePledgeUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies",
-      "promoDetails": "Campaign ended Nov 25. Late pledge available."
+      "promoDetails": "",
+      "isPreview": true
     },
     {
       "slug": "the-30s",
@@ -63,14 +62,13 @@
       "summary": "A solo or 2-player cooperative descent into Lovecraftian horror. Explore a 1930s house, uncover forbidden secrets, and manage your sanity and health as psychological pressure mounts. Find the girl and escape — if you can.",
       "image": "/uploads/the-30s.jpg",
       "platform": "Gamefound",
-      "launchDate": "2026-05-26",
-      "endDate": "2026-06-25",
+      "launchDate": "",
+      "endDate": "",
       "primaryUrl": "https://gamefound.com/pt/projects/darkkena/the-30s",
       "designer": "Darkkenda",
       "publisher": "Darkkenda",
-      "isLatePledge": true,
-      "latePledgeUrl": "https://gamefound.com/pt/projects/darkkena/the-30s",
-      "promoDetails": "Campaign ended June 25. Late pledge available."
+      "promoDetails": "",
+      "isPreview": true
     },
     {
       "slug": "locked-in",
