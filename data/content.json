@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "terra-mortis",
+      "title": "Terra Mortis | Solo Post-Apocalyptic Deckbuilding RPG",
+      "summary": "From the creator of Wrath of the Wyvern. Explore, build your deck, and survive a brutal solo post-apocalyptic RPG.",
+      "image": "/uploads/terra_mortis.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-07",
+      "endDate": "2026-08-06",
+      "primaryUrl": "https://www.kickstarter.com/projects/lionbanner/terra-mortis-cyberpunk-solo-rpg/description",
+      "designer": "Richard Carroll",
+      "publisher": "Lion Banner Games"
+    },
+    {
       "slug": "ghost-kitchen-trial-by-fire",
       "title": "Ghost Kitchen: Trial by Fire",
       "summary": "Rush around the kitchen, collect ingredients and construct orders before it's too late! The Ghost Kitchen depends on you!",
@@ -1935,6 +1947,18 @@
       "name": "Papermage Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "lion-banner-games",
+      "name": "Lion Banner Games",
+      "bggUrl": "",
+      "bio": "We're passionate RPG gamers dedicated to creating Dark Fantasy and Sci-Fi RPG adventures and battlemaps. We've launched several successful Kickstarter projects, including Wrath of the Wyvern, Tomb of the Colossus Gods, Multiverse Battlemaps, HellWatch RPG, and more."
+    },
+    {
+      "slug": "richard-carroll",
+      "name": "Richard Carroll",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2279,6 +2303,12 @@
       "name": "Papermage Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "lion-banner-games",
+      "name": "Lion Banner Games",
+      "bggUrl": "",
+      "bio": "We're passionate RPG gamers dedicated to creating Dark Fantasy and Sci-Fi RPG adventures and battlemaps. We've launched several successful Kickstarter projects, including Wrath of the Wyvern, Tomb of the Colossus Gods, Multiverse Battlemaps, HellWatch RPG, and more."
     }
   ]
 }
