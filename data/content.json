@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "ghost-kitchen-trial-by-fire",
+      "title": "Ghost Kitchen: Trial by Fire",
+      "summary": "Rush around the kitchen, collect ingredients and construct orders before it's too late! The Ghost Kitchen depends on you!",
+      "image": "/uploads/ghost_kitchen.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/ghost-kitchen",
+      "publisher": "Beaverlicious Games"
+    },
+    {
       "slug": "legend-of-hexdom-2",
       "title": "Legend of Hexdom 2",
       "summary": "A sandbox print-and-play roll and write adventure action RPG set in a medieval kingdom. Portable boardgame — battle monsters and bosses across hexagonal tiles.",
@@ -2032,7 +2044,7 @@
       "slug": "beaverlicious-games",
       "name": "Beaverlicious Games",
       "bggUrl": "https://boardgamegeek.com/boardgamepublisher/52961/beaverlicious",
-      "bio": "Beaverlicious is an indie card and tabletop game studio based in Frankfurt, Germany. Run by a small team of two people and one clever cat, Beaverlicious focuses on creating extremely small, cartridge-format games that fit in your pocket."
+      "bio": "Beaverlicious is an indie card and tabletop game studio based in Frankfurt, Germany. Run by a small team of two people and one clever cat, Beaverlicious focuses on creating extremely small, cartridge-format games that fit in your pocket. Despite their compact size, these games are filled with strategy and cleverness, offering engaging and tactical challenges."
     },
     {
       "slug": "red-stache-games",
