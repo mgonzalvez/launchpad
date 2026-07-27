@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "lightning-quest-volume-2",
+      "title": "Lightning Quest - Volume 2",
+      "summary": "A fast paced solo RPG/puzzle game, designed to be played in less than 10 minutes.",
+      "image": "https://i.kickstarter.com/assets/054/551/622/bf077c0755385b22765d063772c8eff9_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1784970880&width=1024&sig=z05ibDOHNlD8ySqIPwnmFLjNkTZPgq58LcBfeaMr08M%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-27",
+      "endDate": "2026-08-26",
+      "primaryUrl": "https://www.kickstarter.com/projects/adventuresquared/lightning-quest-volume-2",
+      "designer": "Scott Knowles",
+      "publisher": "Adventure Squared",
+      "promoDetails": ""
+    },
+    {
       "slug": "terra-mortis",
       "title": "Terra Mortis | Solo Post-Apocalyptic Deckbuilding RPG",
       "summary": "From the creator of Wrath of the Wyvern. Explore, build your deck, and survive a brutal solo post-apocalyptic RPG.",
