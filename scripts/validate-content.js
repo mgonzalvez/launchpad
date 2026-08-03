@@ -97,20 +97,26 @@ data.projects.forEach((p, i) => {
     }
   }
 
-  // Designer/publisher validation
+  // Designer/publisher validation (check both name and slug)
   const designerNames = (p.designers || [p.designer]).filter(Boolean);
   if (designerNames.length > 0) {
-    const designerSlugs = data.designers.map(d => d.slug);
+    const designerLookup = new Set([
+      ...data.designers.map(d => d.name),
+      ...data.designers.map(d => d.slug)
+    ]);
     for (const name of designerNames) {
-      if (!designerSlugs.some(s => s.toLowerCase() === name.toLowerCase())) {
+      if (!designerLookup.has(name)) {
         warnings.push(`${prefix}: designer "${name}" not found in designers array`);
       }
     }
   }
 
   if (p.publisher) {
-    const publisherSlugs = data.publishers.map(pu => pu.slug);
-    if (!publisherSlugs.some(s => s.toLowerCase() === p.publisher.toLowerCase())) {
+    const publisherLookup = new Set([
+      ...data.publishers.map(pu => pu.name),
+      ...data.publishers.map(pu => pu.slug)
+    ]);
+    if (!publisherLookup.has(p.publisher)) {
       warnings.push(`${prefix}: publisher "${p.publisher}" not found in publishers array`);
     }
   }

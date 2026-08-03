@@ -1996,6 +1996,156 @@
       "name": "Mateusz Bakalarski",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "scott-knowles",
+      "name": "Scott Knowles",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "giza-games",
+      "name": "Giza Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "anthony-hobday",
+      "name": "Anthony Hobday",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "hafiz-printer",
+      "name": "Hafiz Printer",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "benno-th-nelt",
+      "name": "Benno Thönelt",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "wombatroll",
+      "name": "WombatRoll",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "teleport-hole-games",
+      "name": "Teleport Hole Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "smart-flamingo",
+      "name": "Smart Flamingo",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "mariano-gutsu",
+      "name": "Mariano Gutsu",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "alexz-mart-nez",
+      "name": "Alexz Martínez",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "matthew-kambic",
+      "name": "Matthew Kambic",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "david-beach",
+      "name": "David Beach",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kari-jo-freudigmann",
+      "name": "Kari Jo Freudigmann",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "enigmailed-puzzles",
+      "name": "Enigmailed Puzzles",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "pulga-escapista",
+      "name": "Pulga Escapista",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "martina-pellecchia",
+      "name": "Martina Pellecchia",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kamil-sklorz",
+      "name": "Kamil Sklorz",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "konari-vizcarra-p-rez",
+      "name": "Konari Vizcarra Pérez",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "guru-venkatesan",
+      "name": "Guru Venkatesan",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "stephen-hart",
+      "name": "Stephen Hart",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "anisha-karkhanis",
+      "name": "Anisha Karkhanis",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "chad-randall-maniccia",
+      "name": "Chad Randall Maniccia",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "raul-tomas-barrado",
+      "name": "Raul Tomas Barrado",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "gabe-barrett",
+      "name": "Gabe-Barrett",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rory-muldoon",
+      "name": "Rory Muldoon",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2350,6 +2500,156 @@
     {
       "slug": "polterdice",
       "name": "Polterdice",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "adventure-squared",
+      "name": "Adventure Squared",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "robin-metz",
+      "name": "Robin Metz",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "giza-games",
+      "name": "Giza Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "anthony-hobday",
+      "name": "Anthony Hobday",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "printer-ink-games",
+      "name": "Printer Ink Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "wombatroll",
+      "name": "WombatRoll",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "teleport-hole-games",
+      "name": "Teleport Hole Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "smart-flamingo",
+      "name": "Smart Flamingo",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rawr-games",
+      "name": "RAWR! Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "shiny-pigeon-printables",
+      "name": "Shiny Pigeon Printables",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "what-if-games",
+      "name": "What If? Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "maka-games",
+      "name": "MaKa Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "david-beach",
+      "name": "David Beach",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rage-kage-games",
+      "name": "Rage Kage Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "enigmailed-puzzles",
+      "name": "Enigmailed Puzzles",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "gamefiesta",
+      "name": "GameFiesta!",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "marti-menta",
+      "name": "Marti Menta",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "dicetiki",
+      "name": "DiceTiki",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "konari-vizcarra-p-rez",
+      "name": "Konari Vizcarra Pérez",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "the-grinning-frog",
+      "name": "The Grinning Frog",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "yellow-dice-games",
+      "name": "Yellow Dice Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "chad-randall-maniccia",
+      "name": "Chad Randall Maniccia",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "rapsoda-games",
+      "name": "Rapsoda Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "paper-tigers",
+      "name": "Paper Tigers",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "postmark-games",
+      "name": "Postmark Games",
       "bggUrl": "",
       "bio": ""
     }
