@@ -130,12 +130,14 @@
       "image": "/uploads/the-30s.jpg",
       "platform": "Gamefound",
       "launchDate": "",
-      "endDate": "",
+      "endDate": "2026-06-25",
       "primaryUrl": "https://gamefound.com/pt/projects/darkkena/the-30s",
       "designer": "Darkkenda",
       "publisher": "Darkkenda",
       "promoDetails": "",
-      "isPreview": true
+      "isPreview": false,
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/pt/projects/darkkena/the-30s"
     },
     {
       "slug": "locked-in",
