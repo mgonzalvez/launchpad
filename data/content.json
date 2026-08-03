@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "western-roll",
+      "title": "Western Roll",
+      "summary": "",
+      "image": "https://i.kickstarter.com/assets/054/566/875/0cda9e7a8b142d96ca35e024ac5f6425_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785151807&width=1024&sig=TWqWlKtr7HJDGzPdcpcKsEmwbEjBuNgIvYD2tt3Jo1M%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-07-28",
+      "endDate": "2026-08-10",
+      "primaryUrl": "https://www.kickstarter.com/projects/964821646/western-roll",
+      "designer": "Magdalena Matusik",
+      "publisher": "Carrotpen",
+      "promoDetails": ""
+    },
+    {
       "slug": "the-priest",
       "title": "The Priest",
       "summary": "The dead are rising, and the Priest stands as the last line of defense. As the undead horde surrounds the sacred grounds, the Priest must hold back the darkness long enough to complete the holy ritual.",
@@ -2161,6 +2174,12 @@
       "name": "Rory Muldoon",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "magdalena-matusik",
+      "name": "Magdalena Matusik",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2665,6 +2684,12 @@
     {
       "slug": "postmark-games",
       "name": "Postmark Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "carrotpen",
+      "name": "Carrotpen",
       "bggUrl": "",
       "bio": ""
     }
