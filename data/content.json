@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "mazefold-the-endless-dungeon-print-and-play-board-game",
+      "title": "MazeFold: The Endless Dungeon - Print & Play (PNP)",
+      "summary": "Survive a folding 3D dungeon. Use tactical dice management, draft cards, escape the dragon, and forge your strength to defeat it. (PnP)",
+      "image": "https://i.kickstarter.com/assets/054/448/381/c29d22ba2ce14b4fee87fec60e83c8a4_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1784131299&width=1024&sig=RPdmovj4sKfFN0LXE0gnuZB6fTBE2GcKeTu67gztbKo%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "primaryUrl": "https://www.kickstarter.com/projects/madchest/mazefold-the-endless-dungeon-print-and-play-board-game",
+      "isPreview": true,
+      "designer": "Oscar Becerra",
+      "publisher": "Mad Chest Games"
+    },
+    {
       "slug": "western-roll",
       "title": "Western Roll",
       "summary": "",
@@ -2180,6 +2193,12 @@
       "name": "Magdalena Matusik",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "oscar-becerra",
+      "name": "Oscar Becerra",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2690,6 +2709,12 @@
     {
       "slug": "carrotpen",
       "name": "Carrotpen",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "mad-chest-games",
+      "name": "Mad Chest Games",
       "bggUrl": "",
       "bio": ""
     }
