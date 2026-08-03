@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "reroll-the-world",
+      "title": "Reroll the World",
+      "summary": "",
+      "image": "https://i.kickstarter.com/assets/054/613/809/04b14c04f37b0382cca9e54fc5e9988f_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785496946&width=1024&sig=MC%2FvVC7isuUKjZCtXJ%2Fqfb7lYbeGHsbJB5w5ab2Jxo4%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-02",
+      "endDate": "2026-08-17",
+      "primaryUrl": "https://www.kickstarter.com/projects/1229556238/reroll-the-world",
+      "designer": "Mateusz Bakalarski",
+      "publisher": "Polterdice",
+      "promoDetails": ""
+    },
+    {
       "slug": "lightning-quest-volume-2",
       "title": "Lightning Quest - Volume 2",
       "summary": "A fast paced solo RPG/puzzle game, designed to be played in less than 10 minutes.",
@@ -1977,6 +1990,12 @@
       "name": "Richard Carroll",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "mateusz-bakalarski",
+      "name": "Mateusz Bakalarski",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2327,6 +2346,12 @@
       "name": "Lion Banner Games",
       "bggUrl": "",
       "bio": "We're passionate RPG gamers dedicated to creating Dark Fantasy and Sci-Fi RPG adventures and battlemaps. We've launched several successful Kickstarter projects, including Wrath of the Wyvern, Tomb of the Colossus Gods, Multiverse Battlemaps, HellWatch RPG, and more."
+    },
+    {
+      "slug": "polterdice",
+      "name": "Polterdice",
+      "bggUrl": "",
+      "bio": ""
     }
   ]
 }
