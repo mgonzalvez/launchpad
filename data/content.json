@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "slug": "the-priest",
+      "title": "The Priest",
+      "summary": "The dead are rising, and the Priest stands as the last line of defense. As the undead horde surrounds the sacred grounds, the Priest must hold back the darkness long enough to complete the holy ritual.",
+      "image": "https://i.imgur.com/booqCug.jpeg",
+      "platform": "Crowdfunding",
+      "launchDate": "",
+      "endDate": "",
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/the-priest-0",
+      "isPreview": true,
+      "designer": "Denis Kurdiukov",
+      "publisher": "NukaZombee Games",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/nukazombee/the-priest-0"
+    },
+    {
       "slug": "reroll-the-world",
       "title": "Reroll the World",
       "summary": "",
