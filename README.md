@@ -87,4 +87,4 @@ Important project fields:
 
 - Blog nav uses `/blog/` (folder index), not `blog.html`.
 - Date logic is day-based (start/end of local day) for status transitions.
-- Platform values: `Kickstarter`, `Gamefound`, `Itch.io`, `Crowdfunding`, `Store`, `Promo`, `Backerkit`.
+- Platform values: `Kickstarter`, `Gamefound`, `Itch.io`, `Crowdfunding`, `Store`, `Promo`, `Backerkit`, `Indiegogo`, `Patreon`, `Other`.

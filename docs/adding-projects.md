@@ -18,7 +18,7 @@ Create a new JSON object with the following fields:
 | `title` | string | `"My New Game"` | Display name shown on the site. |
 | `summary` | string | `"A short description..."` | 1-3 sentences describing the game. |
 | `image` | string | See below | Direct URL or `/uploads/filename.ext` |
-| `platform` | string | `"Kickstarter"` | One of: Kickstarter, Gamefound, Itch.io, Crowdfunding, Store, Promo, Backerkit |
+| `platform` | string | `"Kickstarter"` | One of: Kickstarter, Gamefound, Itch.io, Crowdfunding, Store, Promo, Backerkit, Indiegogo, Patreon, Other |
 | `launchDate` | string | `"2026-06-15"` | ISO date `YYYY-MM-DD`. Use `""` for previews. |
 | `endDate` | string | `"2026-07-15"` | ISO date `YYYY-MM-DD`. Use `""` for previews. |
 | `primaryUrl` | string | `"https://..."` | Full URL to the campaign/store page. |
