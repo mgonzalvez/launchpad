@@ -1504,18 +1504,6 @@
       "publisher": "Jaragua Games"
     },
     {
-      "slug": "thief-in-da-building",
-      "title": "Thief in Da Building",
-      "summary": "Pursuit in the Print and Play game! Take on the role of a police officer or a thief! Catch him before he robs the entire block!",
-      "image": "/uploads/thief-in-da-building.png",
-      "platform": "Kickstarter",
-      "launchDate": "2026-07-11",
-      "endDate": "2026-08-07",
-      "primaryUrl": "https://www.kickstarter.com/projects/michalkujawa/thief-in-da-building",
-      "designer": "Michał Kujawa",
-      "publisher": "Michał Kujawa"
-    },
-    {
       "slug": "battlestations-lightspeed",
       "title": "Battlestations: Lightspeed",
       "summary": "Are you ready for heroic starship adventures across the galaxy? An easy-to-learn and quick-to-play cooperative board game for 1 to 4.",
@@ -1550,6 +1538,54 @@
       "primaryUrl": "https://www.kickstarter.com/projects/105281170/medieval-command-battle-of-varna-1444",
       "designer": "Martin Melbardis",
       "publisher": "Solo Wargame"
+    },
+    {
+      "slug": "poll-and-write-clacton",
+      "title": "Poll & Write Clacton",
+      "summary": "Play out the Binface by-election: print-and-play to defeat the establishment!",
+      "image": "https://i.kickstarter.com/assets/054/630/965/bd0e018eb1d0b1c6e206a69936953e25_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785685651&width=1024&sig=zcWIotFR79LEMt0BV%2BkfJqRKzeVQnRqV91cDGiOrK0I%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-05",
+      "endDate": "2026-08-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/samphiregames/poll-and-write-clacton",
+      "designer": "Samuel Francis",
+      "publisher": "Samphire Games"
+    },
+    {
+      "slug": "two-souls",
+      "title": "Two Souls",
+      "summary": "18+ solo horror gamebook.",
+      "image": "https://i.kickstarter.com/assets/054/640/512/30d28cb09878a468beb1e58defc0ca2c_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785769874&width=1024&sig=lLtHoJRn3Sl20atbCJk4vCNh3prRbUQD%2BEqv8tvMuhY%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-06",
+      "endDate": "2026-08-27",
+      "primaryUrl": "https://www.kickstarter.com/projects/a4play/two-souls-0",
+      "designer": "Sergius Junczyc",
+      "publisher": "Fern Flower Press"
+    },
+    {
+      "slug": "rise-of-the-forest",
+      "title": "Rise of the Forest",
+      "summary": "Construct your board, build your defenses, and battle against your friends in this tower defense card game.",
+      "image": "https://i.kickstarter.com/assets/054/575/482/4a75947c7ea84eb8e4efbb64d663d9ce_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785209330&width=1024&sig=cMt%2Bvk9bTqfmFw4XyiTNRGNk39LLfbM8Dd6JmkzFWxs%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-04",
+      "endDate": "2026-09-03",
+      "primaryUrl": "https://www.kickstarter.com/projects/heymira/rise-of-the-forest",
+      "designer": "Quinn Wuebker",
+      "publisher": "Quinn Wuebker"
+    },
+    {
+      "slug": "pegasus-and-palaces",
+      "title": "Pegasus and Palaces",
+      "summary": "Stretch out in this dexterity game of bringing the Pegasi home to their Palaces.",
+      "image": "https://i.kickstarter.com/assets/048/541/668/04c72689a2615e32aa3bcdc41e1170e5_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1742122133&width=1024&sig=qI8BJMu86Jkrvvlq%2FuFP2ksNyo%2B8vtfSqpBMaQkU5Mo%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-03",
+      "endDate": "2026-08-18",
+      "primaryUrl": "https://www.kickstarter.com/projects/rollnwriterevolution/pegasus-and-palaces",
+      "designer": "Benjamin Sperling",
+      "publisher": "Benjamin Sperling"
     }
   ],
   "designers": [
@@ -2200,6 +2236,30 @@
       "name": "Oscar Becerra",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "samuel-francis",
+      "name": "Samuel Francis",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "sergius-junczyc",
+      "name": "Sergius Junczyc",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "quinn-wuebker",
+      "name": "Quinn Wuebker",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "benjamin-sperling",
+      "name": "Benjamin Sperling",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2716,6 +2776,30 @@
     {
       "slug": "mad-chest-games",
       "name": "Mad Chest Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "samphire-games",
+      "name": "Samphire Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "fern-flower-press",
+      "name": "Fern Flower Press",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "quinn-wuebker",
+      "name": "Quinn Wuebker",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "benjamin-sperling",
+      "name": "Benjamin Sperling",
       "bggUrl": "",
       "bio": ""
     }
