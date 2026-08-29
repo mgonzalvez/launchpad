@@ -2,13 +2,15 @@
 
 ## Git
 - Branch: `main`, remote: `origin/main`
-- `.gitignore` excludes `AGENTS.md` itself, `CONTEXT.md`, `.pi/`, `voice-samples/`, `new/` — local/dev-only. `blog/` is commented out (not ignored).
-- `uploads/` is NOT ignored — files must be tracked. A `pre-commit` hook auto-stages all `uploads/` files.
+- `.gitignore` excludes: `AGENTS.md`, `CONTEXT.md`, `.pi/`, `voice-samples/`, `new/`. `blog/` is **not ignored** (the `# blog/` line is commented out — blog posts are tracked in git).
+- `uploads/` is tracked. A `pre-commit` hook auto-stages all `uploads/` files.
 
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
 
 All pages share `assets/app.js` (core logic + DOM utilities) and `assets/search.js` (client-side search), exported via `window.PNPL`. Each HTML page has an inline script calling `PNPL.loadContent()` → `PNPL.enrichProjects(data)` → render functions.
+
+Pages: `index.html` (home), `live.html`, `upcoming.html`, `preview.html`, `archive.html`, `watchlist.html`, `submit.html`, `designer.html`, `publisher.html`, `blog/index.html`.
 
 ## Data Model
 All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
@@ -17,7 +19,7 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 - `designer` (string) is legacy; `designers` (string[]) is modern. `enrichProjects()` resolves both into `designerItems[]`.
 - Designer/publisher names in projects must match `name` fields in `designers[]`/`publishers[]` for profile links to resolve.
 
-### Key fields
+### Key project fields
 | Field | Type | Notes |
 |---|---|---|
 | `slug` | string | Unique identifier |
@@ -61,7 +63,7 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 - Uses `actions/configure-pages@v5`, `actions/upload-pages-artifact@v3`, `actions/deploy-pages@v4`.
 
 ## Blog Workflow
-- Posts are static HTML in `blog/` (excluded from git by default).
+- Posts are static HTML in `blog/` (tracked in git). `blog/index.html` is the blog landing page.
 - **Always update `blog/index.html`** after creating a new post — add a new `<article class="blog-post-card blog-post-full">` block at the top.
 - **Link every game to its project page on first mention** in body text (not in parenthetical lists or live rail). Use `primaryUrl` from `content.json`.
 - Facebook post drafts go in `blog/facebook-post-*.txt` (local-only).
@@ -71,6 +73,7 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 ## Scripts
 - `node scripts/validate-content.js` — validates `content.json`. Exit 0 = valid, 1 = errors. Run before every commit.
 - `node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...` — safe CLI for adding projects.
+  - **Limitation:** platform list in this script is `Kickstarter, Indiegogo, Backerkit, Store, Patreon, Other` — it will reject `Gamefound`, `Itch.io`, `Crowdfunding`, `Promo`. For those, edit `content.json` directly.
 - `node scripts/kicktraq-check.js [--fix] [--verbose]` — cross-references statuses against Kicktraq.
 - Pre-commit hook: `cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit`
 
