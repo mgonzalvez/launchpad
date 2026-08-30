@@ -1653,6 +1653,18 @@
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/teetotum/vacations-to-greek-islands-corfu-and-rhodes",
       "publisher": "Teetotum Game Studios"
+    },
+    {
+      "slug": "forgotten-paths",
+      "title": "Forgotten Paths",
+      "summary": "Enter the mist as a Mistwalker in a solo print-and-play campaign of exploration, dangerous encounters, and meaningful choices. Choose from a selection of characters and let the Storybook guide you through your adventure on the Misty Isle. Complete quests, purchase items, unlock talents and discover where your choices will lead. The Misty Isle needs a Mistwalker. Will you answer the call?",
+      "image": "/uploads/forgotten_paths.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-09-08",
+      "endDate": "2026-10-08",
+      "primaryUrl": "https://gamefound.com/en/projects/tabletop-for-world/forgotten-paths",
+      "designer": "Spiros Kallos",
+      "publisher": "Tabletop for World"
     }
   ],
   "designers": [
