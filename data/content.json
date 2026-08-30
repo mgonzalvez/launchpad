@@ -1629,6 +1629,30 @@
       "primaryUrl": "https://www.kickstarter.com/projects/paulbamberger/what-you-buried",
       "designer": "Paul Bamberger",
       "publisher": "Paul Bamberger"
+    },
+    {
+      "slug": "streets-of-revenge-season-2-darkscry",
+      "title": "Streets of Revenge Season 2 - DARKSCRY",
+      "summary": "Classic arcade beat 'em ups strike back on your tabletop! This second season channels the raw energy of the classic VHS horror movies.",
+      "image": "https://i.kickstarter.com/assets/054/045/770/2f26ec17e790f2594de3c98c512a3f2f_original.webp?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1781013635&width=1024&sig=%2FK5B74rZ3dru7Pg0cldJgE2bLkoa8heND0ZyppYahME%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/150011281/streets-of-revenge-season-2-darkscry",
+      "designer": "Oscar G. Novo"
+    },
+    {
+      "slug": "vacations-to-greek-islands-corfu-and-rhodes",
+      "title": "Vacations to Greek Islands: Corfu and Rhodes",
+      "summary": "Summer in Greece is full of beach, fun and food experiences. Do you want to live it? Take a three-day vacation to a Greek island.",
+      "image": "https://i.kickstarter.com/assets/054/455/521/843bdb7f5ab4e3a89f79e2b4ef7b5594_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1784192931&width=1024&sig=HEFVxKiwnQb389vEB3jDHiB8LPBAxP4qbR7pQ1U0n18%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/teetotum/vacations-to-greek-islands-corfu-and-rhodes",
+      "publisher": "Teetotum Game Studios"
     }
   ],
   "designers": [
@@ -2315,6 +2339,12 @@
       "name": "Kyle Baker",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "oscar-g-novo",
+      "name": "Oscar G. Novo",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2867,6 +2897,12 @@
     {
       "slug": "lazersquad-games",
       "name": "LazerSquad Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "teetotum-game-studios",
+      "name": "Teetotum Game Studios",
       "bggUrl": "",
       "bio": ""
     }
