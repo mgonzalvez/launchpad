@@ -1593,6 +1593,30 @@
       "primaryUrl": "https://www.kickstarter.com/projects/rollnwriterevolution/pegasus-and-palaces",
       "designer": "Benjamin Sperling",
       "publisher": "Benjamin Sperling"
+    },
+    {
+      "slug": "six-eyes",
+      "title": "Six Eyes: Uncover the truth",
+      "summary": "Solve mysteries and uncover conspiracies in a narrative roll-and-write.",
+      "image": "https://cf.geekdo-images.com/kSiJnNZ4Tm5XMarl4BChSg__original/img/TaNzKjbJGPdgcPwasZNBbPmHAx4=/0x0/filters:format(jpeg)/pic9706960.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-19",
+      "endDate": "2026-09-18",
+      "primaryUrl": "https://www.kickstarter.com/projects/imnotshouting/six-eyes",
+      "designer": "Mark Wendelborn",
+      "publisher": "I'm Not Shouting"
+    },
+    {
+      "slug": "cloaked-cryptids",
+      "title": "Cloaked Cryptids™: The Card Game",
+      "summary": "A hidden-identity card game of deception, sabotage, and legendary creatures.",
+      "image": "/uploads/cloaked_cryptids.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-14",
+      "endDate": "2026-10-13",
+      "primaryUrl": "https://www.kickstarter.com/projects/lazersquadgames/cloaked-cryptidstm-the-card-game-0",
+      "designer": "Kyle Baker",
+      "publisher": "LazerSquad Games"
     }
   ],
   "designers": [
@@ -2267,6 +2291,18 @@
       "name": "Benjamin Sperling",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "mark-wendelborn",
+      "name": "Mark Wendelborn",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kyle-baker",
+      "name": "Kyle Baker",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -2807,6 +2843,18 @@
     {
       "slug": "benjamin-sperling",
       "name": "Benjamin Sperling",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "im-not-shouting",
+      "name": "I'm Not Shouting",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "lazersquad-games",
+      "name": "LazerSquad Games",
       "bggUrl": "",
       "bio": ""
     }
