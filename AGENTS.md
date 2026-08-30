@@ -3,7 +3,7 @@
 ## Git
 - Branch: `main`, remote: `origin/main`
 - `.gitignore` excludes: `AGENTS.md`, `CONTEXT.md`, `.pi/`, `voice-samples/`, `new/`. `blog/` is **not ignored** (the `# blog/` line is commented out — blog posts are tracked in git).
-- `uploads/` is tracked. A `pre-commit` hook auto-stages all `uploads/` files.
+- `uploads/` is tracked, but the `pre-commit` hook only validates `content.json` — it does **not** auto-stage `uploads/`. Always `git add` new/changed image files explicitly, or they won't deploy and images will 404.
 
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
@@ -48,8 +48,8 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 - `projectIsJustLaunched(p, now)` / `projectIsEndingSoon(p, now)` — same-day detection.
 - `personLink(type, name, customSlug)` — generates profile page links.
 - `watchButton(project, compact)` — localStorage-backed watchlist (`pnpl_watchlist_v1`), synced via `storage` event.
-- `getViewMode(page)` / `setViewMode(mode)` — per-page view preference (`pnpl_view_mode_v1`).
-- Sorting: `byEndAsc`, `byLaunchDesc`, `byWeekDesc`, `byArchivePriority`.
+- `getViewMode(page)` / `setViewMode(mode)` — per-page view preference (`pnpl_view_mode_v1`).- `getSortMode(page)` / `setSortMode(mode)` — per-page sort preference (`pnpl_sort_mode_v1`), also supports URL `?sort=` param.
+- Sorting: `byEndAsc`, `byEndDesc`, `byLaunchAsc`, `byLaunchDesc`, `byTitleAsc`, `byTitleDesc`, `byPlatform`, `byStatusCategory`, `byWeekDesc`, `byArchivePriority`.
 
 ## submit.html Gotchas
 - Submits via `formsubmit.co` to `mgonzalvez@gmail.com` + Google Sheets webhook (`postToGoogleSheets()` before `form.submit()`).

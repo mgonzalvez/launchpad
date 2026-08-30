@@ -44,6 +44,11 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
   - Designer/publisher matches link to their profile pages
   - Top 20 results with "Show more" option
   - Recent search history in localStorage
+- Archive page:
+  - Sort dropdown: end date, launch date, title, platform, status category
+  - Sort preference persisted in localStorage
+  - "Load more" pagination: 20 items initially, 20 more per click
+  - View toggle: compact / full
 
 ## Project Structure
 
