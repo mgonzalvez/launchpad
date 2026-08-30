@@ -1768,6 +1768,18 @@
       "primaryUrl": "https://gamefound.com/en/projects/giza-games/wild-fjords--runic-isles-expansions",
       "designer": "Giza Games",
       "publisher": "Giza Games"
+    },
+    {
+      "slug": "of-oil-and-iron-fractured-frontiers",
+      "title": "Of Oil and Iron: Fractured Frontiers",
+      "summary": "A major expansion for the definitive 3D-printable dieselpunk mech wargame, introducing new Rigs, manufacturers, terrain and more on the fractured frontier.",
+      "image": "/uploads/fractured_frontiers.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/scoutsifer-studio/of-oil-and-iron-fractured-frontiers",
+      "publisher": "Scoutsifer Studio"
     }
   ],
   "designers": [
@@ -3044,6 +3056,12 @@
       "name": "MoD Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "scoutsifer-studio",
+      "name": "Scoutsifer Studio",
+      "bggUrl": "",
+      "bio": "Developer of Of Oil and Iron, a 3D-printable dieselpunk mech wargame."
     }
   ]
 }
