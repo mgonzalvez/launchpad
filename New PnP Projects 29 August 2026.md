@@ -58,4 +58,37 @@ Ending date: 8th of October
 - description: Suit up. Save the world. Turn the page. Repeat.
 - designer: Gabe Barrett
 - publisher: Best with One Games
+- started 8/3, ends 9/2
+- imaqge url: herobound.png in /uploads
+
+---
+- https://gamefound.com/en/projects/mod-games/overclock
+- Overclock [A Solo 4x Card Game]
+by 
+MoD Games
+A 4x solo game set in a cyberpunk world - all packed into 36 cards!
+- launched 6/6, ends in 22 days
+- image url: https://cf.geekdo-images.com/2Bbx1O_gfdWYhCyqbsJ5Zg__original/img/IU8UUoeVH29FPrfDZBinwrg7cs8=/0x0/filters:format(png)/pic9656775.png
+
+---
+- project: https://www.kickstarter.com/projects/keepersoffun/lords-of-the-dungeon-a-roll-and-build-print-and-play-game?ref=discover_saved_projects&category_id=34
+- Launching soon
+Lords of the Dungeon: A Roll & Build Print and Play Game
+Draft dice, build rooms, and become the richest lord in the dungeon. Probably the only roll-and-write with Random Production mechanism!
+Keepers of Fun
+Keepers of Fun
+9 created • 20 backed
+- image url: https://i.kickstarter.com/assets/054/835/004/27fc793b5ac77493774f6ab2d1a1eb47_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787305393&width=1024&sig=QaSlL5dnETfat1TY7JtFLTwPorsMwtD%2Bz3DnzENFU6Y%3D
+
+---
+
+- project: https://www.kickstarter.com/projects/thegrinningfrog/final-quest-odyssey
+- title: Final Quest: Odyssey
+- desc: Before Arvion, there was Graecia. Survive the monsters of ancient Greece in this standalone prequel to the Final Quest solo game series
+- started 8/20, ends 9/7
+- designer: Stephen Hart
+- Publisher: The Grinning Frog
+- Image URL: https://i.kickstarter.com/assets/054/827/901/3cb43a67d4ecb55c8552c21fc2ed83cc_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787250959&width=1024&sig=CyMgbI2akllViTCpYpFdYgyPStH6FBuqXWgpmMR5cg4%3D
+
+---
 - 
