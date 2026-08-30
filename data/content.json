@@ -1617,6 +1617,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/lazersquadgames/cloaked-cryptidstm-the-card-game-0",
       "designer": "Kyle Baker",
       "publisher": "LazerSquad Games"
+    },
+    {
+      "slug": "what-you-buried",
+      "title": "What You Buried",
+      "summary": "Seven invitations. One forgotten past. And someone knows what you buried. A Murder Mystery Roleplaying Game set on an isolated island.",
+      "image": "/uploads/what_you_buried.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-18",
+      "endDate": "2026-09-17",
+      "primaryUrl": "https://www.kickstarter.com/projects/paulbamberger/what-you-buried",
+      "designer": "Paul Bamberger",
+      "publisher": "Paul Bamberger"
     }
   ],
   "designers": [
