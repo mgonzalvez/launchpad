@@ -1780,6 +1780,55 @@
       "isPreview": true,
       "primaryUrl": "https://gamefound.com/en/projects/scoutsifer-studio/of-oil-and-iron-fractured-frontiers",
       "publisher": "Scoutsifer Studio"
+    },
+    {
+      "slug": "buccaneer-heroes",
+      "title": "Buccaneer Heroes",
+      "summary": "A high seas pirate print-and-play adventure in a living, shared Caribbean sandbox world.",
+      "image": "https://i.kickstarter.com/assets/052/047/644/e35e37013ec7bd4fca883e3672715ff4_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1766767349&width=1024&sig=GqlqwfewCZFku0lH0Ze8GfNPK5Pm9xDmr4LUMamHFZU%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/redhotbandits/buccaneer-heroes",
+      "publisher": "RedHotBandits"
+    },
+    {
+      "slug": "erra-resistance-2nd-campaign",
+      "title": "Erra - Resistance (2nd campaign)",
+      "summary": "Welcome to the World of Erra! Again... The Resistance is like a Phoenix, even though there are no Phoenixes in our Universe.",
+      "image": "/uploads/erra.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/pt/projects/oakgames/erra-resistance-2nd-campaign",
+      "publisher": "OakGames"
+    },
+    {
+      "slug": "around-the-world-in-80-dice",
+      "title": "Around the World in 80 Dice",
+      "summary": "Race against time and travel the world like Phileas Fogg in this Roll-&-Write Print-&-Play game! No cutting required!",
+      "image": "https://i.kickstarter.com/assets/054/922/762/3aef30a9873876cdb7b315af90ee3672_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787960844&width=1024&sig=A%2FixpdzeaEi1sz4LudX3jxvxVMaAxTjna8bpXpz0MB8%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/twoacornsgames/around-the-world-in-80-dice",
+      "publisher": "Two Acorns Games"
+    },
+    {
+      "slug": "moon-garden",
+      "title": "Moon Garden",
+      "summary": "Grow your Blooms. Shape your garden. Master the elements and complete magical Formulas in this ever-changing garden-building card game.",
+      "image": "https://cf.geekdo-images.com/qvRdGCof28lInnf5VnS3Pg__original/img/UGKhz7V9wJBK1d9rJR8ADXBN3bU=/0x0/filters:format(jpeg)/pic9774404.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/hungryflower/moon-garden",
+      "designer": "Krzysztof Matusik",
+      "publisher": "Hungry Flower"
     }
   ],
   "designers": [
@@ -2484,6 +2533,12 @@
       "name": "Giampaolo Razzino",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/125101/giampaolo-razzino",
       "bio": "Italian board game designer and artist known for One Card Dungeon, Fall, and Hens."
+    },
+    {
+      "slug": "krzysztof-matusik",
+      "name": "Krzysztof Matusik",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/6948/krzysztof-matusik",
+      "bio": "Polish board game designer known for Black & White, Amber Route, and Moon Garden."
     }
   ],
   "publishers": [
@@ -3062,6 +3117,24 @@
       "name": "Scoutsifer Studio",
       "bggUrl": "",
       "bio": "Developer of Of Oil and Iron, a 3D-printable dieselpunk mech wargame."
+    },
+    {
+      "slug": "redhotbandits",
+      "name": "RedHotBandits",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "oakgames",
+      "name": "OakGames",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "hungry-flower",
+      "name": "Hungry Flower",
+      "bggUrl": "",
+      "bio": ""
     }
   ]
 }
