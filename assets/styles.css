@@ -1196,6 +1196,64 @@ small { color: var(--muted); }
   background: #f0e7ce;
 }
 
+/* ── Archive Controls ─────────────────────────────────────────── */
+
+.archive-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.sort-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-select label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sort-select select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23655f50' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px;
+}
+
+.sort-select select:hover {
+  border-color: var(--accent);
+}
+
+.sort-select select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.load-more-container {
+  text-align: center;
+  padding: 24px 0 40px;
+}
+
+.load-more-container .btn {
+  min-width: 200px;
+}
+
 /* ── Search Component ─────────────────────────────────────────── */
 
 .search-trigger {

@@ -2,6 +2,7 @@ const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
 const fmtDateTime = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' });
 const WATCHLIST_STORAGE_KEY = 'pnpl_watchlist_v1';
 const VIEW_MODE_STORAGE_KEY = 'pnpl_view_mode_v1';
+const SORT_MODE_STORAGE_KEY = 'pnpl_sort_mode_v1';
 const IMAGE_TONE_CACHE = new Map();
 
 const PAGE_DEFAULT_VIEW = {
@@ -29,6 +30,27 @@ function setViewMode(mode) {
   } catch (_err) { /* noop */ }
   const params = new URLSearchParams(window.location.search);
   params.set('view', mode);
+  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  window.history.replaceState({}, '', newUrl);
+}
+
+function getSortMode(page) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlSort = urlParams.get('sort');
+  if (urlSort) return urlSort;
+  try {
+    const stored = localStorage.getItem(SORT_MODE_STORAGE_KEY);
+    if (stored) return stored;
+  } catch (_err) { /* noop */ }
+  return 'endDesc';
+}
+
+function setSortMode(mode) {
+  try {
+    localStorage.setItem(SORT_MODE_STORAGE_KEY, mode);
+  } catch (_err) { /* noop */ }
+  const params = new URLSearchParams(window.location.search);
+  params.set('sort', mode);
   const newUrl = `${window.location.pathname}?${params.toString()}`;
   window.history.replaceState({}, '', newUrl);
 }
@@ -488,6 +510,41 @@ function byEndAsc(a, b) {
   return parseDate(a.endDate).getTime() - parseDate(b.endDate).getTime();
 }
 
+function byEndDesc(a, b) {
+  if (!hasIsoDate(a.endDate) && !hasIsoDate(b.endDate)) return 0;
+  if (!hasIsoDate(a.endDate)) return 1;
+  if (!hasIsoDate(b.endDate)) return -1;
+  return parseDate(b.endDate).getTime() - parseDate(a.endDate).getTime();
+}
+
+function byLaunchAsc(a, b) {
+  if (!hasIsoDate(a.launchDate) && !hasIsoDate(b.launchDate)) return 0;
+  if (!hasIsoDate(a.launchDate)) return 1;
+  if (!hasIsoDate(b.launchDate)) return -1;
+  return parseDate(a.launchDate).getTime() - parseDate(b.launchDate).getTime();
+}
+
+function byTitleAsc(a, b) {
+  return String(a.title || '').localeCompare(String(b.title || ''));
+}
+
+function byTitleDesc(a, b) {
+  return String(b.title || '').localeCompare(String(a.title || ''));
+}
+
+function byPlatform(a, b) {
+  return String(a.platform || '').localeCompare(String(b.platform || ''));
+}
+
+function byStatusCategory(a, b) {
+  const statusA = projectStatus(a, new Date());
+  const statusB = projectStatus(b, new Date());
+  const order = { 'late-pledge': 0, 'pre-order': 1, 'archived': 2, 'promo': 3 };
+  const diff = (order[statusA] ?? 99) - (order[statusB] ?? 99);
+  if (diff !== 0) return diff;
+  return parseDate(b.endDate).getTime() - parseDate(a.endDate).getTime();
+}
+
 function byLaunchDesc(a, b) {
   if (!hasIsoDate(a.launchDate) && !hasIsoDate(b.launchDate)) return 0;
   if (!hasIsoDate(a.launchDate)) return 1;
@@ -752,7 +809,13 @@ window.PNPL = {
   loadContent,
   byWeekDesc,
   byEndAsc,
+  byEndDesc,
+  byLaunchAsc,
   byLaunchDesc,
+  byTitleAsc,
+  byTitleDesc,
+  byPlatform,
+  byStatusCategory,
   byArchivePriority,
   parseDate,
   withBase,
@@ -767,6 +830,8 @@ window.PNPL = {
   refreshWatchButtons,
   getViewMode,
   setViewMode,
+  getSortMode,
+  setSortMode,
 
   // ── DOM Utilities ──────────────────────────────────────────────
 

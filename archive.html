@@ -24,6 +24,31 @@
         const defaultView = 'compact';
         const currentView = PNPL.getViewMode('archive.html');
         const isCompact = currentView === 'compact';
+        const currentSort = PNPL.getSortMode('archive.html');
+        const ITEMS_PER_PAGE = 20;
+        let displayedCount = ITEMS_PER_PAGE;
+
+        const sortOptions = [
+          { value: 'endDesc', label: 'End date (newest first)' },
+          { value: 'endAsc', label: 'End date (oldest first)' },
+          { value: 'launchDesc', label: 'Launch date (newest first)' },
+          { value: 'launchAsc', label: 'Launch date (oldest first)' },
+          { value: 'titleAsc', label: 'Title (A–Z)' },
+          { value: 'titleDesc', label: 'Title (Z–A)' },
+          { value: 'platform', label: 'Platform' },
+          { value: 'statusCategory', label: 'Status category' },
+        ];
+
+        const sortSelect = archived.length ? `
+          <div class="sort-select">
+            <label for="archive-sort">Sort by:</label>
+            <select id="archive-sort">
+              ${sortOptions.map((opt) =>
+                `<option value="${opt.value}"${currentSort === opt.value ? ' selected' : ''}>${opt.label}</option>`
+              ).join('')}
+            </select>
+          </div>
+        ` : '';
 
         const viewToggle = archived.length ? `
           <div class="view-toggle" role="group" aria-label="View mode">
@@ -32,15 +57,51 @@
           </div>
         ` : '';
 
+        function getSortedProjects() {
+          const sorted = [...archived];
+          switch (currentSort) {
+            case 'endAsc': sorted.sort(PNPL.byEndAsc); break;
+            case 'endDesc': sorted.sort(PNPL.byEndDesc); break;
+            case 'launchAsc': sorted.sort(PNPL.byLaunchAsc); break;
+            case 'launchDesc': sorted.sort(PNPL.byLaunchDesc); break;
+            case 'titleAsc': sorted.sort(PNPL.byTitleAsc); break;
+            case 'titleDesc': sorted.sort(PNPL.byTitleDesc); break;
+            case 'platform': sorted.sort(PNPL.byPlatform); break;
+            case 'statusCategory': sorted.sort(PNPL.byStatusCategory); break;
+            default: sorted.sort(PNPL.byArchivePriority); break;
+          }
+          return sorted;
+        }
+
+        function renderGrid() {
+          const sorted = getSortedProjects();
+          const shown = sorted.slice(0, displayedCount);
+          const hasMore = displayedCount < sorted.length;
+
+          return {
+            html: shown.length
+              ? `<div class="grid${isCompact ? ' compact-grid' : ''}">${shown.map((p) => PNPL.projectCard(p, { compactView: isCompact })).join('')}</div>`
+              : '<p>No archived projects match the current filters.</p>',
+            hasMore,
+            total: sorted.length,
+          };
+        }
+
+        const { html: gridHtml, hasMore: initialHasMore, total: totalCount } = renderGrid();
+
         el.innerHTML = `
           ${PNPL.header('Ended')}
           <main>
             <section class="hero">
               <h1>Ended Projects</h1>
-              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders available are shown first.</p>
-              ${viewToggle}
+              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders are shown first by default.</p>
+              <div class="archive-controls">
+                ${sortSelect}
+                ${viewToggle}
+              </div>
             </section>
-            ${archived.length ? `<div class="grid${isCompact ? ' compact-grid' : ''}">${archived.map((p) => PNPL.projectCard(p, { compactView: isCompact })).join('')}</div>` : '<p>No archived projects yet.</p>'}
+            <div id="archive-grid">${gridHtml}</div>
+            ${initialHasMore ? `<div class="load-more-container"><button type="button" id="load-more-btn" class="btn btn-secondary">Load more (${totalCount - displayedCount} remaining)</button></div>` : ''}
           </main>
           ${PNPL.footer()}
         `;
@@ -53,6 +114,32 @@
               window.location.reload();
             });
           });
+
+          const sortEl = document.getElementById('archive-sort');
+          if (sortEl) {
+            sortEl.addEventListener('change', () => {
+              const mode = sortEl.value;
+              PNPL.setSortMode(mode);
+              window.location.reload();
+            });
+          }
+
+          const loadMoreBtn = document.getElementById('load-more-btn');
+          if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+              displayedCount += ITEMS_PER_PAGE;
+              const { html: newGridHtml, hasMore: more } = renderGrid();
+              const gridEl = document.getElementById('archive-grid');
+              gridEl.innerHTML = newGridHtml;
+
+              if (more) {
+                const remaining = totalCount - displayedCount;
+                loadMoreBtn.textContent = `Load more (${remaining} remaining)`;
+              } else {
+                loadMoreBtn.parentElement.remove();
+              }
+            });
+          }
         }
       })();
     </script>
