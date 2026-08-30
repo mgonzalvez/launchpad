@@ -1498,7 +1498,9 @@
       "endDate": "2026-08-01",
       "primaryUrl": "https://www.kickstarter.com/projects/postmarkgames/master-of-coin",
       "designer": "Rory Muldoon",
-      "publisher": "Postmark Games"
+      "publisher": "Postmark Games",
+      "isPreOrder": true,
+      "preOrderUrl": "https://www.postmarkgames.com/master-of-coin"
     },
     {
       "slug": "the-undervaults",
@@ -1557,7 +1559,9 @@
       "endDate": "2026-08-12",
       "primaryUrl": "https://www.kickstarter.com/projects/samphiregames/poll-and-write-clacton",
       "designer": "Samuel Francis",
-      "publisher": "Samphire Games"
+      "publisher": "Samphire Games",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/samphiregames/poll-and-write-clacton"
     },
     {
       "slug": "two-souls",
@@ -1714,6 +1718,56 @@
       "primaryUrl": "https://www.kickstarter.com/projects/thegrinningfrog/final-quest-odyssey",
       "designer": "Stephen Hart",
       "publisher": "The Grinning Frog"
+    },
+    {
+      "slug": "steel-whisper",
+      "title": "Steel Whisper",
+      "summary": "Take control of a combat mech on a desperate assault: draw the enemy in, inflict as much damage as possible, and survive long enough for resistance teams to secure desperately needed supplies.",
+      "image": "https://cf.geekdo-images.com/Q_Q740qC6n-XXoJHaKN_Ng__large/img/ws59ueX7ADyGEE7S-HeSlw1eU04=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic9744480.png",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/steel-whisper",
+      "designer": "Radek Ignatow",
+      "publisher": "Radek Ignatow"
+    },
+    {
+      "slug": "otsuki",
+      "title": "Otsuki",
+      "summary": "A trick-taking game where you play as an animal balancing their relationship to the four elements while attempting to reveal their spiritual potential.",
+      "image": "https://cf.geekdo-images.com/VJ9O37Jtuhh3q7lr04Db0g__large/img/p_qtVBc54g0KuaYl-i9JniZsP5E=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic9401164.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-08-04",
+      "endDate": "2026-09-03",
+      "primaryUrl": "https://www.kickstarter.com/projects/otsuki/otsuki-the-trick-taking-game-of-balance-and-revelation",
+      "designer": "Andy Farkas"
+    },
+    {
+      "slug": "z-horde",
+      "title": "Z Horde",
+      "summary": "A solo dice-placement survival game that condenses a full zombie apocalypse into a pocket-sized experience. Based on the acclaimed One Card Dungeon system, Z Horde introduces a new setting, new mechanics, and a campaign of twelve increasingly challenging scenarios.",
+      "image": "https://cf.geekdo-images.com/-veoGBxUq9i5laSKm3IlPg__large/img/sKL7IF69QDq9ENcDF0TN9BbrXSM=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic9632215.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/littlerocketgames/z-horde",
+      "designer": "Giampaolo Razzino",
+      "publisher": "Little Rocket Games"
+    },
+    {
+      "slug": "wild-fjords-runic-isles-expansions",
+      "title": "Wild Fjords & Runic Isles Expansions - Iron Quest",
+      "summary": "Expand your voyage in Iron Quest: The First Ember with 2 new expansions featuring 10 new maps, fresh game mechanics and legendary Norse challenges!",
+      "image": "https://cf.geekdo-images.com/AW9MWyQFXxU6DCfPYn-HBw__original/img/7lUvK-Pv3hdp9IVd72DIcluWFeE=/0x0/filters:format(jpeg)/pic9508281.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/giza-games/wild-fjords--runic-isles-expansions",
+      "designer": "Giza Games",
+      "publisher": "Giza Games"
     }
   ],
   "designers": [
@@ -2406,6 +2460,18 @@
       "name": "Oscar G. Novo",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "andy-farkas",
+      "name": "Andy Farkas",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/173315/andy-farkas",
+      "bio": "Designer and artist of Otsuki, a trick-taking game of balance and revelation."
+    },
+    {
+      "slug": "giampaolo-razzino",
+      "name": "Giampaolo Razzino",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/125101/giampaolo-razzino",
+      "bio": "Italian board game designer and artist known for One Card Dungeon, Fall, and Hens."
     }
   ],
   "publishers": [
