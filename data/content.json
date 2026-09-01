@@ -1829,6 +1829,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/hungryflower/moon-garden",
       "designer": "Krzysztof Matusik",
       "publisher": "Hungry Flower"
+    },
+    {
+      "slug": "misbehave-solo-rpg",
+      "title": "Misbehave Solo RPG",
+      "summary": "A fantasy adventure where you are the monster (sort of).",
+      "image": "/uploads/misbehave.png",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-01",
+      "endDate": "2026-09-30",
+      "primaryUrl": "https://www.kickstarter.com/projects/hexy/misbehave",
+      "designer": "Tomasz Bar",
+      "publisher": "Hexy Studio"
     }
   ],
   "designers": [
@@ -2539,6 +2551,12 @@
       "name": "Krzysztof Matusik",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/6948/krzysztof-matusik",
       "bio": "Polish board game designer known for Black & White, Amber Route, and Moon Garden."
+    },
+    {
+      "slug": "tomasz-bar",
+      "name": "Tomasz Bar",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3133,6 +3151,12 @@
     {
       "slug": "hungry-flower",
       "name": "Hungry Flower",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "hexy-studio",
+      "name": "Hexy Studio",
       "bggUrl": "",
       "bio": ""
     }
