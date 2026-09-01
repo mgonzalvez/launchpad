@@ -1841,6 +1841,18 @@
       "primaryUrl": "https://www.kickstarter.com/projects/hexy/misbehave",
       "designer": "Tomasz Bar",
       "publisher": "Hexy Studio"
+    },
+    {
+      "slug": "murder-she-crows",
+      "title": "Murder, She Crows",
+      "summary": "Score murders of crows with a triangle deck.",
+      "image": "https://i.kickstarter.com/assets/054/631/310/06b20996ddf6f8ad8dba4f645f2f7c6f_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785689228&width=1024&sig=XB%2ByvWJS%2FKWCoG96TRrq5Stjc0fZ4G4jZJ5x0Jlao30%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-01",
+      "endDate": "2026-09-16",
+      "primaryUrl": "https://www.kickstarter.com/projects/rollnwriterevolution/murder-she-crows",
+      "designer": "Benjamin Sperling",
+      "publisher": "Benjamin Sperling"
     }
   ],
   "designers": [
