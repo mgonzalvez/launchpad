@@ -88,7 +88,7 @@ When modifying `content.json`:
 When creating blog posts:
 1. Gather project data from `data/content.json` (title, designer, platform, dates, `primaryUrl`).
 2. Write HTML using `PNPL.header('Blog')` / `PNPL.footer()` for consistent layout.
-3. Build a 3x3 collage with ImageMagick if needed (`-resize 400x400^ -gravity center -extent 400x400`, group into 3 rows of 3, `-append`, use `.miff` intermediates).
+3. Build a 3x3 collage with ImageMagick + Python/Pillow: resize each cell to 400x400 (`-resize 400x400^ -gravity center -extent 400x400`), add a semi-transparent black lower-third bar with the game title in white Helvetica 30pt text (Python/Pillow — ImageMagick `-annotate` requires Ghostscript which is not installed), group into 3 rows of 3 with `+append`, then stack rows vertically with `-append`. Shorten titles by stripping taglines/subtitles so they fit within 400px. Use `.png` intermediates. See `docs/create-collage.md` for full details.
 4. Update `blog/index.html` manually — add as first full card.
 5. Write companion `blog/facebook-post-*.txt` draft.
 6. Follow `VOICE.md` for tone guidelines.

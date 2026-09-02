@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - **ImageMagick** must be installed (`magick` command available)
-- **No Ghostscript** — do not use `-annotate` for text overlays (it requires Ghostscript which is not installed)
+- **Python 3** with **Pillow** must be installed (`python3 -c "from PIL import Image"`)
 - All source images must be in the `uploads/` directory
 
 ## Image Layout
@@ -27,7 +27,7 @@ Ensure all 9 images exist in `uploads/`. Download any missing images from their 
 Each image must be **zoomed and center-cropped** to fill a uniform 400x400px cell. Use `resize` with the `^` flag (force dimensions) followed by `-extent` to crop to center:
 
 ```bash
-magick input.jpg -resize 400x400^ -gravity center -extent 400x400 output.miff
+magick input.jpg -resize 400x400^ -gravity center -extent 400x400 output.png
 ```
 
 - `-resize 400x400^` — scales the image so that **both** dimensions are at least 400px (the smaller dimension fills 400px, the larger one exceeds it)
@@ -35,49 +35,79 @@ magick input.jpg -resize 400x400^ -gravity center -extent 400x400 output.miff
 
 **Do NOT use** `-resize 400x400` alone — this fits the image within 400x400 while preserving aspect ratio, resulting in different-sized cells with letterboxing.
 
-**Do NOT use** `-annotate` for labels — Ghostscript is not available and will cause errors.
+### 3. Add game title lower-third labels
 
-### 3. Assemble 3 horizontal rows
+Each cell must have a semi-transparent black bar at the bottom with the game title in white text. Use Python/Pillow (ImageMagick `-annotate` requires Ghostscript which is not installed):
 
-```bash
-magick cell1.miff cell2.miff cell3.miff +append row1.miff
+```python
+from PIL import Image, ImageDraw, ImageFont
+import os
+
+font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 30)
+
+for title, fname in projects:
+    img = Image.open(fname).convert("RGBA")
+    draw = ImageDraw.Draw(img)
+    # Semi-transparent black bar at bottom (80px tall)
+    draw.rectangle([(0, 320), (400, 400)], fill=(0, 0, 0, 184))
+    # Center text in the bar
+    bbox = draw.textbbox((0, 0), title, font=font)
+    tw = bbox[2] - bbox[0]
+    th = bbox[3] - bbox[1]
+    x = (400 - tw) // 2
+    y = 320 + (80 - th) // 2
+    draw.text((x, y), title, fill=(255, 255, 255, 255), font=font)
+    img.convert("RGB").save(out, "PNG")
 ```
 
-### 4. Stack rows vertically into the final grid
+**Title shortening rules:**
+- Strip taglines, subtitles, and secondary descriptors in brackets/colons (e.g., `[A Solo 4x Card Game]`, `: The Card Game`, `: Uncover the truth`)
+- Keep the core game name only (e.g., "Overclock", "Cloaked Cryptids", "Six Eyes")
+- If a title is still too long, abbreviate further
+- The text must fit within the 400px cell width without truncation
+
+### 4. Assemble 3 horizontal rows
 
 ```bash
-magick row1.miff row2.miff row3.miff -append \
-  -bordercolor black -border 4 \
-  uploads/pnp-collage-3x3.jpg
+magick cell1.png cell2.png cell3.png +append row1.png
 ```
 
-### 5. Verify
+### 5. Stack rows vertically into the final grid
 
 ```bash
-identify uploads/pnp-collage-3x3.jpg
-# Expected: 1208x1208 (3x400 + 4px borders on all sides)
+magick row1.png row2.png row3.png -append \
+  uploads/pnp-collage-3x3-live-sep-2.png
+```
+
+### 6. Verify
+
+```bash
+identify uploads/pnp-collage-3x3-live-sep-2.png
+# Expected: 1200x1200 (3x400, no borders)
 ```
 
 ## Full Example
 
 ```bash
-# Resize all 9 images
+# Step 2: Resize all 9 images to 400x400
 for img in uploads/img1.jpg uploads/img2.jpg uploads/img3.jpg \
            uploads/img4.jpg uploads/img5.jpg uploads/img6.jpg \
            uploads/img7.jpg uploads/img8.jpg uploads/img9.jpg; do
-  base=$(basename "$img" | sed 's/\.[^.]*$//')
-  magick "$img" -resize 400x400^ -gravity center -extent 400x400 "/tmp/collage/${base}.miff"
+   base=$(basename "$img" | sed 's/\.[^.]*$//')
+   magick "$img" -resize 400x400^ -gravity center -extent 400x400 "/tmp/collage/${base}.png"
 done
 
-# Build rows
-magick /tmp/collage/img1.miff /tmp/collage/img2.miff /tmp/collage/img3.miff +append /tmp/collage/row1.miff
-magick /tmp/collage/img4.miff /tmp/collage/img5.miff /tmp/collage/img6.miff +append /tmp/collage/row2.miff
-magick /tmp/collage/img7.miff /tmp/collage/img8.miff /tmp/collage/img9.miff +append /tmp/collage/row3.miff
+# Step 3: Add labels via Python (see label script above)
+# Produces labeled_final_*.png files
 
-# Assemble grid
-magick /tmp/collage/row1.miff /tmp/collage/row2.miff /tmp/collage/row3.miff -append \
-  -bordercolor black -border 4 \
-  uploads/pnp-collage-3x3.jpg
+# Step 4: Build 3 horizontal rows
+magick /tmp/collage/labeled_img1.png /tmp/collage/labeled_img2.png /tmp/collage/labeled_img3.png +append /tmp/collage/row1.png
+magick /tmp/collage/labeled_img4.png /tmp/collage/labeled_img5.png /tmp/collage/labeled_img6.png +append /tmp/collage/row2.png
+magick /tmp/collage/labeled_img7.png /tmp/collage/labeled_img8.png /tmp/collage/labeled_img9.png +append /tmp/collage/row3.png
+
+# Step 5: Assemble grid
+magick /tmp/collage/row1.png /tmp/collage/row2.png /tmp/collage/row3.png -append \
+  uploads/pnp-collage-3x3-live-sep-2.png
 ```
 
 ## Common Mistakes to Avoid
@@ -86,5 +116,11 @@ magick /tmp/collage/row1.miff /tmp/collage/row2.miff /tmp/collage/row3.miff -app
 |---------|--------|-----|
 | `-resize 400x400` without `^` | Different-sized cells with padding | Use `-resize 400x400^ -gravity center -extent 400x400` |
 | `+append` for all 9 images at once | Single horizontal row of 9 | Group into 3 rows of 3, then `-append` the rows |
-| `-annotate` for text labels | Ghostscript errors, broken output | Skip text labels entirely |
-| Using `.jpg` intermediate format | Quality loss on each step | Use `.miff` for intermediate files |
+| `-annotate` for text labels | Ghostscript errors, broken output | Use Python/Pillow instead (see Step 3) |
+| Using `.jpg` intermediate format | Quality loss on each step | Use `.png` for intermediate files |
+| Truncated labels | Title cut off at edges | Shorten title by removing taglines/subtitles |
+| Using `.miff` intermediates | Not needed with PNG pipeline | Use `.png` throughout |
+
+## Filename Convention
+
+Collage files follow the pattern: `pnp-collage-3x3-live-<month>-<day>.png` (e.g., `pnp-collage-3x3-live-sep-2.png`). Use the current month abbreviation and day number.
