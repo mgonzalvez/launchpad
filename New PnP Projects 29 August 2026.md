@@ -91,4 +91,54 @@ Keepers of Fun
 - Image URL: https://i.kickstarter.com/assets/054/827/901/3cb43a67d4ecb55c8552c21fc2ed83cc_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787250959&width=1024&sig=CyMgbI2akllViTCpYpFdYgyPStH6FBuqXWgpmMR5cg4%3D
 
 ---
-- 
+- project: https://www.kickstarter.com/projects/redhotbandits/buccaneer-heroes
+- Buccaneer Heroes
+- A high seas pirate print-and-play adventure in a living, shared Caribbean sandbox world
+- published by RedHotBandits
+- https://i.kickstarter.com/assets/052/047/644/e35e37013ec7bd4fca883e3672715ff4_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1766767349&width=1024&sig=GqlqwfewCZFku0lH0Ze8GfNPK5Pm9xDmr4LUMamHFZU%3D
+
+---
+
+- https://gamefound.com/pt/projects/oakgames/erra-resistance-2nd-campaign?ref=explore
+- Erra - Resistance (2nd campaign)
+- Welcome to the World of Erra! Again... The Resistance is like a Phoenix, even though there are no Phoenixes in our Universe
+- Publisher: OakGames
+- /uploads/erra.png
+
+---
+
+- https://www.kickstarter.com/projects/twoacornsgames/around-the-world-in-80-dice
+- Around the World in 80 Dice
+- Race against time and travel the world like Phileas Fogg in this Roll-&-Write Print-&-Play game! No cutting required!
+- Publisher: Two Acorns Games
+- https://i.kickstarter.com/assets/054/922/762/3aef30a9873876cdb7b315af90ee3672_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787960844&width=1024&sig=A%2FixpdzeaEi1sz4LudX3jxvxVMaAxTjna8bpXpz0MB8%3D
+
+---
+
+- https://www.kickstarter.com/projects/hungryflower/moon-garden/description
+- Moon Garden
+- Grow your Blooms. Shape your garden. Master the elements and complete magical Formulas in this ever-changing garden-building card game.
+- Publisher: Hungry Flower
+- Designer: Krzysztof Matusik
+- https://cf.geekdo-images.com/qvRdGCof28lInnf5VnS3Pg__original/img/UGKhz7V9wJBK1d9rJR8ADXBN3bU=/0x0/filters:format(jpeg)/pic9774404.jpg
+
+---
+project: https://www.kickstarter.com/projects/hexy/misbehave
+title: Misbehave Solo RPG
+description: A fantasy adventures where you are the monster (sort of).
+publisher: Hexy Studio
+desginer: Tomasz Bar
+start: 9/1
+end: 9/30
+image: /uploads/misbehave.png
+
+---
+
+project: https://www.kickstarter.com/projects/rollnwriterevolution/murder-she-crows/description
+title: Murder, She Crows
+description: Score murders of crows with a triangle deck
+publisher: Benjamin Sperling
+designer: Benjamin Sperling
+start: 9/1
+end: 9/16
+image: https://i.kickstarter.com/assets/054/631/310/06b20996ddf6f8ad8dba4f645f2f7c6f_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785689228&width=1024&sig=XB%2ByvWJS%2FKWCoG96TRrq5Stjc0fZ4G4jZJ5x0Jlao30%3D
