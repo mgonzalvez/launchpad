@@ -2628,6 +2628,42 @@
       "name": "Tomasz Bar",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "monica-rodriguez",
+      "name": "Monica Rodriguez",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "christopher-roberson",
+      "name": "christopher roberson",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "michael-shane-mecham",
+      "name": "Michael Shane Mecham",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "xinxin-hu",
+      "name": "Xinxin Hu",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "joshua-mcmurray",
+      "name": "Joshua McMurray",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "brian-childs",
+      "name": "Brian Childs",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3228,6 +3264,36 @@
     {
       "slug": "hexy-studio",
       "name": "Hexy Studio",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kazmo-studios",
+      "name": "Kazmo Studios",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "msm-games",
+      "name": "MSM Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jay-and-lucy",
+      "name": "Jay and Lucy",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "impish-delights",
+      "name": "Impish Delights",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "joshua-mcmurray",
+      "name": "Joshua McMurray",
       "bggUrl": "",
       "bio": ""
     }
