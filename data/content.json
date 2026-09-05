@@ -150,14 +150,14 @@
     {
       "slug": "dead-draw",
       "title": "Dead Draw - Print and Play",
-      "summary": "A Print & Play card game of Wild West duels for 2–4 players. Choose your gunslinger, equip the right weapon, and face your rivals in dusty streets, lively saloons, and other dangerous locations. Every character has unique abilities, every weapon changes the way you play, and every card can determine the outcome of a duel.",
-      "image": "/uploads/dead-draw.jpg",
+      "summary": "A Print & Play card game of Wild West duels, where every decision—and every bullet—can be your last.",
+      "image": "https://i.kickstarter.com/assets/054/935/670/62b276148c31f5e4d0421127bf9ad280_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788101299&width=1024&sig=vAgVoSF7VZ6ZChmuXDlEkdLyR7zl6Gfi94EvgUxOr6g%3D",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-09-02",
+      "endDate": "2026-10-17",
+      "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/printandgame/dead-draw-print-and-play",
-      "designer": "PRINTANDGAME",
+      "designer": "Monica Rodriguez",
       "publisher": "PRINTANDGAME",
       "promoDetails": ""
     },
@@ -1851,6 +1851,67 @@
       "primaryUrl": "https://www.kickstarter.com/projects/rollnwriterevolution/murder-she-crows",
       "designer": "Benjamin Sperling",
       "publisher": "Benjamin Sperling"
+    },
+    {
+      "slug": "outside-the-wire",
+      "title": "Outside the Wire",
+      "summary": "A tactical sandbox tabletop RPG about modern military operations, solo or group play, and a decision-making campaign ecosystem",
+      "image": "https://i.kickstarter.com/assets/054/140/895/4a03a16203e8ab71af5b6404104be995_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1781694990&width=1024&sig=rTzzDRKJksIh4TqNoyHoWQkLNpglqdxqBo%2FMQYqIxm8%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-01",
+      "endDate": "2026-10-01",
+      "primaryUrl": "https://www.kickstarter.com/projects/1331324804/outside-the-wire/description",
+      "designer": "christopher roberson",
+      "publisher": "Kazmo Studios"
+    },
+    {
+      "slug": "my-five-year-almanac",
+      "title": "My Five Year Almanac",
+      "summary": "A solo print-and-play farming game played across five years were you create a personal Almanac recording what happened along the way.",
+      "image": "https://i.kickstarter.com/assets/054/939/863/0e9ddaf99e7f998aea4f4faf23131155_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788135051&width=1024&sig=%2BPG040wU9MPfIw5r956oiWdMyUzUHkOqDV5jnju06bw%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/myfiveyearalmanac/my-five-year-almanac",
+      "designer": "Michael Shane Mecham",
+      "publisher": "MSM Games"
+    },
+    {
+      "slug": "spartan-speech",
+      "title": "Spartan Speech",
+      "summary": "Give the shortest clue… and hope it's enough. A fast, laugh-out-loud word game.",
+      "image": "https://i.kickstarter.com/assets/054/452/866/a8b5522036bd20bd15e6531d23b34fcf_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1784167144&width=1024&sig=xnrWzDbx2gegF6%2FUjF4mIOJMLlhk2yO%2Fw3glqV6d5Uc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-03",
+      "endDate": "2026-10-03",
+      "primaryUrl": "https://www.kickstarter.com/projects/jay-and-lucy/spartan-speech/",
+      "designer": "Xinxin Hu",
+      "publisher": "Jay and Lucy"
+    },
+    {
+      "slug": "or-else-the-standoff-card-game",
+      "title": "OR ELSE! - The Standoff Card Game",
+      "summary": "20 ridiculous space guns. Do what the gun says, or grit your teeth and pray it malfunctions. A party card game for 3-6 goons.",
+      "image": "https://i.kickstarter.com/assets/054/865/817/6c4c8cd3ad99ae837d112d88ed10b5f8_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787584259&width=1024&sig=eLR7IaqOJS4TpMTgDVPyCYV%2FZc2njxBqOfGQVYgCmLU%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-03",
+      "endDate": "2026-10-03",
+      "primaryUrl": "https://www.kickstarter.com/projects/joshuamcmurray/or-else-the-standoff-card-game/description",
+      "designer": "Joshua McMurray",
+      "publisher": "Joshua McMurray"
+    },
+    {
+      "slug": "lappoys-flying-fortress",
+      "title": "Lappoy's Flying Fortress - A Mothership RPG Solo Adventure",
+      "summary": "A Mothership based, solo RPG hex crawl. This project includes: A printable 8 page bifold zine with core mechanics, hazard tables, clues tables, 14 resolutions, a 14 hex map with 7 detailed locations and a drawing of a brain stealing spider droid.",
+      "image": "https://images.backerkit.com/active_storage/backerkit_production/blob/orzigcz2vmxk7nldlx3dkfiyogg2?ixlib=rails-4.3.1&auto=compress",
+      "platform": "Backerkit",
+      "launchDate": "2026-09-01",
+      "endDate": "2026-09-25",
+      "primaryUrl": "https://www.backerkit.com/c/projects/impish-delights/lappoy-s-flying-fortress-a-mothership-rpg-solo-adventure",
+      "designer": "Brian Childs",
+      "publisher": "Impish Delights"
     }
   ],
   "designers": [
