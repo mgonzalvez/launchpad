@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "kosmo-taktiks",
+      "title": "Kosmo Taktiks",
+      "summary": "From the lead developer of Gaslands™, Glenn Ford. A small scale miniatures wargame set in a weird eldritch future!",
+      "image": "https://i.kickstarter.com/assets/053/752/592/6eb9709d27f540e012180ad6daccece4_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1778929846&width=1024&sig=lIunlGyZ2yZrsmCNTy6StjKBNLYdfi5fH2O6%2BRQW%2Fmg%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-04",
+      "endDate": "2026-10-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/386039219/kosmo-taktiks/description",
+      "designer": "Glenn Ford",
+      "promoDetails": ""
+    },
+    {
       "slug": "mazefold-the-endless-dungeon-print-and-play-board-game",
       "title": "MazeFold: The Endless Dungeon - Print & Play (PNP)",
       "summary": "Survive a folding 3D dungeon. Use tactical dice management, draft cards, escape the dragon, and forge your strength to defeat it. (PnP)",
@@ -2662,6 +2674,12 @@
     {
       "slug": "brian-childs",
       "name": "Brian Childs",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "glenn-ford",
+      "name": "Glenn Ford",
       "bggUrl": "",
       "bio": ""
     }
