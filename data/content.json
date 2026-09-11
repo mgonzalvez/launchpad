@@ -1,6 +1,176 @@
 {
   "projects": [
     {
+      "slug": "aetherfall-the-war-of-the-elements",
+      "title": "AetherFall - The War of the Elements",
+      "summary": "An ancient prophecy has awakened the Wizards of Etherea. Choose your Wizard, conquer elemental zones, cast powerful spells, and outwit your rivals through tactics, memory, and bluffing. AetherFall is a strategic board game of area control and elemental conflict.",
+      "image": "/uploads/aetherfall.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-07-22",
+      "endDate": "2026-10-08",
+      "primaryUrl": "https://gamefound.com/en/projects/ranghosgames/aetherfall-the-war-of-the-elements",
+      "publisher": "RanghosGames"
+    },
+    {
+      "slug": "dead-trail",
+      "title": "Dead Trail",
+      "summary": "A Print & Play zombie survival game where every step could be your last.",
+      "image": "https://i.kickstarter.com/assets/055/040/315/6e985cc3d6ae409743636eacfe0c3ff4_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788853062&width=1024&sig=Rj6%2FCwG8o0VFP4wXLLaYYmsskLSUFArt1i0V8ii1ynQ%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/marcosalogni/dead-trail?ref=3gbddr",
+      "designer": "Marco Salogni",
+      "publisher": "Marco Salogni"
+    },
+    {
+      "slug": "froggycino-a-magical-cozy-cafe-game",
+      "title": "Froggycino: A Magical Cozy Cafe Game",
+      "summary": "A Cozy Print-at-Home Game of Coffee and Frog Magic!",
+      "image": "https://i.kickstarter.com/assets/054/941/707/dcbb699c651992eb155184f57562ef89_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788148900&width=1024&sig=jak0ww0RYWolwjXtun10%2FMBLyu%2FjwxiAoodoOcrnaas%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/kinroku/froggycino",
+      "designer": "Kinroku",
+      "publisher": "Kinroku"
+    },
+    {
+      "slug": "out-of-sorts-second-edition",
+      "title": "Out of Sorts - Second Edition",
+      "summary": "Work together to sort the strange books in an alien's library",
+      "image": "https://i.kickstarter.com/assets/055/047/441/343227c2f8c1702bd062105967556950_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788890939&width=1024&sig=6sszVazb0n%2FTrxYG%2Btf8iqdxFc5sivBwmPHMNSgSOhs%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-08",
+      "endDate": "2026-09-22",
+      "primaryUrl": "https://www.kickstarter.com/projects/always-awake-games/out-of-sorts-2nd-edition/description",
+      "designer": "Connor Wake",
+      "publisher": "Always Awake Games"
+    },
+    {
+      "slug": "shake-it-up",
+      "title": "Shake it UP!",
+      "summary": "A delicious Roll & Write game where dice, colors, and clever choices help you create the awesome milkshake in a retro diner.",
+      "image": "https://i.kickstarter.com/assets/055/002/255/4761169985922ecbe385b7257e15352a_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788527704&width=1024&sig=td4VPAc7kzb350xJMwOVciFjZwyHcgXwI7o%2B3g4I%2FIs%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-10",
+      "endDate": "2026-10-10",
+      "primaryUrl": "https://www.kickstarter.com/projects/552971206/shake-it-up-1",
+      "designer": "Kamil Sklorz",
+      "publisher": "DiceTiki"
+    },
+    {
+      "slug": "sage-council",
+      "title": "Sage Council",
+      "summary": "A card-based roleplaying game of local politics and city councils.",
+      "image": "https://i.kickstarter.com/assets/055/071/881/b0c2d149a791837e6268210811935191_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789043946&width=1024&sig=gOifw9%2FzNn350DggG6q6XHtQ8FPB0vPP4hfd7Hodp7M%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-07",
+      "endDate": "2026-10-07",
+      "primaryUrl": "https://www.kickstarter.com/projects/lotlwc/sage-council/description",
+      "designer": "Kelly Whyte",
+      "publisher": "Kelly Whyte"
+    },
+    {
+      "slug": "dungeonkids-educational-card-game",
+      "title": "DungeonKids - Educational Card Game",
+      "summary": "Play cards, build stories and put homework to the sword with 90+ unique challenges filled with dragons and dungeons - for kids!",
+      "image": "https://i.kickstarter.com/assets/052/781/086/d1fc5f18341f942fa9a93e5279ee0c51_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1772372722&width=1024&sig=FvK7f2%2FTA%2B1mEzezADERQfBNB8RtuDxKKP%2BhE%2FsxEd4%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-08",
+      "endDate": "2026-10-08",
+      "primaryUrl": "https://www.kickstarter.com/projects/709026843/dungeonkids-educational-card-game/description",
+      "designer": "Georgios Agathangelou",
+      "publisher": "Georgios Agathangelou"
+    },
+    {
+      "slug": "command-and-defend-modern-war-expansions",
+      "title": "Command & Defend: Modern War ➜ EXPANSIONS",
+      "summary": "A modular modern warfare strategy system inspired by classic RTS and TBS games.",
+      "image": "https://i.kickstarter.com/assets/054/929/909/ee5fa1381a0c295b9eb2f515bfc2194a_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788029066&width=1024&sig=7Jv1IHuGAPmbXg3HCRGewvG6LpXA5XIDTDyO0BDdzuI%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-08",
+      "endDate": "2026-09-22",
+      "primaryUrl": "https://www.kickstarter.com/projects/greenbox-shop/command-and-defend-modern-war-sea-wars-and-air-wars-expansion/description",
+      "designer": "Florian Martin",
+      "publisher": "Florian Martin"
+    },
+    {
+      "slug": "write-the-future-a-roll-and-write-odyssey",
+      "title": "Write the Future: A Roll & Write Odyssey",
+      "summary": "The world's first story-driven cyberpunk Roll & Write computer game!",
+      "image": "https://i.kickstarter.com/assets/055/017/741/bcba4a8a2eda266a6b8f1c4069e68928_original.webp?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788681149&width=1024&sig=xXqOLGMKoVP6Epwhv%2FbGdSky7GbqnGw%2FY2fo7bQfcDE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/allornonegames/write-the-future-a-roll-and-write-odyssey?ref=discover_saved_projects&category_id=35",
+      "publisher": "All Or None Games"
+    },
+    {
+      "slug": "dice-commandos-infestation",
+      "title": "Dice Commandos: Infestation [Solo Game of the Month]",
+      "summary": "The sequel to Dice Commandos, Infestation is a tactical dice puzzle game where you control a team of elite commandos facing an evolving alien threat.",
+      "image": "/uploads/dice commandos infestation.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/dice-commandos-2?ref=creator_1-731",
+      "designer": "Cole Munro-Chitty",
+      "publisher": "Best With 1 Games"
+    },
+    {
+      "slug": "ashen-front",
+      "title": "ASHEN FRONT",
+      "summary": "Bring your battlefield to life with 290 STL models, 300 printable cards and a bonus tabletop game. Download, print, paint and play.",
+      "image": "https://i.kickstarter.com/assets/055/076/193/1f0d9aae0cc12d5a9a7739d66eb4507e_original.webp?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789066021&width=1024&sig=gmgWsdnKrpHnp8FaW1eaLS4WoLDv6L92JmB58MU%2FxNU%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-10",
+      "endDate": "2026-10-10",
+      "primaryUrl": "https://www.kickstarter.com/projects/285807757/ashen-front-your-army-your-colours-your-story?ref=discover_saved_projects&category_id=400",
+      "designer": "Krzysztof Owczarek",
+      "publisher": "EARPICK TROLL STUDIO"
+    },
+    {
+      "slug": "castaway-survival",
+      "title": "CASTAWAY SURVIVAL",
+      "summary": "Survive the Island. Endure the Days. Find a Way Home.",
+      "image": "https://i.kickstarter.com/assets/055/086/522/305c43bd30e6a7d5dd79198ecc8f5d2b_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789138269&width=1024&sig=%2BrvUIqok%2FOBCIP41bB0UIaULiGQXhVJGMtrwJ2FHZxc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-11",
+      "endDate": "2026-09-23",
+      "primaryUrl": "https://www.kickstarter.com/projects/solofungame/castaway-survival-a-solo-print-and-play-survival-game/description",
+      "designer": "Paolo Bernardo Casareo",
+      "publisher": "Solofun Game"
+    },
+    {
+      "slug": "the-friday-5",
+      "title": "The Friday 5",
+      "summary": "A year's supply of unexpected questions: The ultimate Friday night family conversation starter.",
+      "image": "https://i.kickstarter.com/assets/055/015/055/46e940d1f6e33ff862e9fc1cb1c65612_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788642377&width=1024&sig=paSbC7wIpgcgybePZLsIr%2F0ZzQsRT3Cp1L2hsBkMyIg%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-09",
+      "endDate": "2026-10-09",
+      "primaryUrl": "https://www.kickstarter.com/projects/lta-garden/the-friday-5-a-family-card-game/description",
+      "designer": "James Ettwein",
+      "publisher": "James Ettwein"
+    },
+    {
+      "slug": "the-long-watch",
+      "title": "The Long Watch",
+      "summary": "The Long Watch is an uncanny solo RPG that sees players joining a mysterious and underfunded organisation. They'll tend their own transdimensional lighthouses — known as Beacons, assist strange beings, defend against threats, and investigate the weirdnesses that unfold.",
+      "image": "/uploads/long_watch.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/studiosquidink/the-long-watch?ref=homepage_discover_upcoming-coming-soon_3",
+      "publisher": "StudioSquidink"
+    },
+    {
       "slug": "kosmo-taktiks",
       "title": "Kosmo Taktiks",
       "summary": "From the lead developer of Gaslands™, Glenn Ford. A small scale miniatures wargame set in a weird eldritch future!",
@@ -2675,12 +2845,66 @@
     },
     {
       "slug": "glenn-ford",
-      "name": "Glenn Ford",
-      "bggUrl": "",
-      "bio": ""
-    }
-  ],
-  "publishers": [
+       "name": "Glenn Ford",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "cole-munro-chitty",
+       "name": "Cole Munro-Chitty",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "krzysztof-owczarek",
+       "name": "Krzysztof Owczarek",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "paolo-bernardo-casareo",
+       "name": "Paolo Bernardo Casareo",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "connor-wake",
+       "name": "Connor Wake",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "kelly-whyte",
+       "name": "Kelly Whyte",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "georgios-agathangelou",
+       "name": "Georgios Agathangelou",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "florian-martin",
+       "name": "Florian Martin",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "james-ettwein",
+       "name": "James Ettwein",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "marco-salogni",
+       "name": "Marco Salogni",
+       "bggUrl": "",
+       "bio": ""
+     }
+   ],
+   "publishers": [
     {
       "slug": "time-to-dice",
       "name": "Time to Dice",
@@ -3306,10 +3530,82 @@
       "bio": ""
     },
     {
-      "slug": "joshua-mcmurray",
-      "name": "Joshua McMurray",
-      "bggUrl": "",
-      "bio": ""
-    }
-  ]
+       "slug": "joshua-mcmurray",
+       "name": "Joshua McMurray",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "ranghosgames",
+       "name": "RanghosGames",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "marco-salogni",
+       "name": "Marco Salogni",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "always-awake-games",
+       "name": "Always Awake Games",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "kelly-whyte",
+       "name": "Kelly Whyte",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "georgios-agathangelou",
+       "name": "Georgios Agathangelou",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "florian-martin",
+       "name": "Florian Martin",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "all-or-none-games",
+       "name": "All Or None Games",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "best-with-1-games",
+       "name": "Best With 1 Games",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "earpick-troll-studio",
+       "name": "EARPICK TROLL STUDIO",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "solofun-game",
+       "name": "Solofun Game",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "james-ettwein",
+       "name": "James Ettwein",
+       "bggUrl": "",
+       "bio": ""
+     },
+     {
+       "slug": "studio-squidink",
+       "name": "StudioSquidink",
+       "bggUrl": "",
+       "bio": ""
+     }
+   ]
 }
