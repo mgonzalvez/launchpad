@@ -3,7 +3,7 @@
 ## Git
 - Branch: `main`, remote: `origin/main`
 - `.gitignore` excludes: `AGENTS.md`, `CONTEXT.md`, `.pi/`, `voice-samples/`, `new/`. `blog/` is **not ignored** (the `# blog/` line is commented out — blog posts are tracked in git).
-- `uploads/` is tracked, but the `pre-commit` hook only validates `content.json` — it does **not** auto-stage `uploads/`. Always `git add` new/changed image files explicitly, or they won't deploy and images will 404.
+- `uploads/` is tracked, but the `pre-commit` hook only validates `content.json` — it does **not** auto-stage `uploads/`. Always `git add` new/changed image files explicitly, commit them, and push to remote — otherwise images will 404 on the live site.
 
 ## Project Overview
 Static HTML/CSS/JS site for curated print-and-play board game crowdfunding projects. No build step, no npm, no frameworks. GitHub Pages with custom domain `launchpad.gonzhome.us` (set via `CNAME`).
@@ -84,6 +84,7 @@ When modifying `content.json`:
 3. Verify image URLs match the project — cross-check project URL against image URL.
 4. Check for duplicate slugs — update existing entries, don't add duplicates.
 5. Verify the project appears in the correct status section by checking dates.
+6. **SOP: Any new image added to `uploads/` must be `git add`'d, committed, and pushed to remote in the same commit as `content.json`. Untracked upload files will 404 on the live site.**
 
 When creating blog posts:
 1. Gather project data from `data/content.json` (title, designer, platform, dates, `primaryUrl`).

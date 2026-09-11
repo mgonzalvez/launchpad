@@ -47,7 +47,7 @@ Create a new JSON object with the following fields:
 **Option B — Local file:**
 1. Save the image to the `uploads/` directory
 2. Reference it as `/uploads/filename.ext` in the project object
-3. The `pre-commit` hook will auto-stage it — no manual `git add uploads/...` needed
+3. Manually `git add uploads/your-image.ext` — the pre-commit hook does **not** auto-stage uploads. Omitting this step causes 404s on the live site.
 
 ### 3. Add Designer/Publisher Entries (if new)
 
@@ -75,7 +75,7 @@ Add the project object to the `projects[]` array. Place it near the top (newest 
 
 ```bash
 git add data/content.json
-git add uploads/your-image.ext   # only if you added a local image
+git add uploads/your-image.ext   # REQUIRED — untracked upload files will 404 on the live site
 git commit -m "Add: My New Game"
 git push origin main
 ```
@@ -147,7 +147,7 @@ A 24-hour grace period after the end date provides timezone safety.
 - **Duplicate slugs:** Each `slug` must be unique across all projects.
 - **Date format:** Must be `YYYY-MM-DD` (ISO format). No other formats are accepted.
 - **Empty dates = preview:** If `launchDate` and `endDate` are both `""`, the project is treated as a preview regardless of `isPreview`.
-- **Local images:** Files in `uploads/` must be tracked in git. The `pre-commit` hook auto-stages them, but if you add files outside of git commits, they won't deploy.
+- **Local images:** Files in `uploads/` must be tracked in git. The `pre-commit` hook does **not** auto-stage them. Always `git add` new upload files explicitly, commit them, and push — otherwise they will 404 on the live site.
 - **Designer/publisher name matching:** The `designer`/`publisher` string in a project must match the `name` field in the corresponding `designers[]`/`publishers[]` entry for profile links to resolve correctly.
 - **JSON syntax:** Remember trailing commas are not valid JSON. Ensure the last item in any array does not have a trailing comma.
 
