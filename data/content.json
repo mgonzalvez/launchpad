@@ -4,12 +4,12 @@
       "slug": "aetherfall-the-war-of-the-elements",
       "title": "AetherFall - The War of the Elements",
       "summary": "An ancient prophecy has awakened the Wizards of Etherea. Choose your Wizard, conquer elemental zones, cast powerful spells, and outwit your rivals through tactics, memory, and bluffing. AetherFall is a strategic board game of area control and elemental conflict.",
-      "image": "/uploads/aetherfall.png",
       "platform": "Gamefound",
       "launchDate": "2026-07-22",
       "endDate": "2026-10-08",
       "primaryUrl": "https://gamefound.com/en/projects/ranghosgames/aetherfall-the-war-of-the-elements",
-      "publisher": "RanghosGames"
+      "publisher": "RanghosGames",
+      "image": "/uploads/aetherfall.png"
     },
     {
       "slug": "dead-trail",
@@ -1626,18 +1626,18 @@
       "latePledgeUrl": "https://www.kickstarter.com/projects/rapsodagames/the-cultists-challenge"
     },
     {
-       "slug": "miskatonic-expeditions",
-       "title": "Miskatonic Expeditions",
-       "summary": "A Lovecraftian tile-laying roguelite with deck-building elements, for 1 to 4 players. Draft the rooms of an ever-shifting university, fight things from the Great Beyond, gather forbidden books, and perform the Unveiling Ritual to banish the All-in-One from our reality. Just try not to lose your last shred of sanity in the process.",
-       "image": "https://imgcdn.gamefound.com/projectupdate/projects/6650/f5766433-0773-4332-ab51-3f4e6da50af2.png",
-       "platform": "Gamefound",
-       "launchDate": "2026-09-29",
-       "endDate": "2026-10-28",
-       "primaryUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
-       "isLatePledge": true,
-       "latePledgeUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
-       "designer": "Paper Tigers",
-       "publisher": "Paper Tigers"
+      "slug": "miskatonic-expeditions",
+      "title": "Miskatonic Expeditions",
+      "summary": "A Lovecraftian tile-laying roguelite with deck-building elements, for 1 to 4 players. Draft the rooms of an ever-shifting university, fight things from the Great Beyond, gather forbidden books, and perform the Unveiling Ritual to banish the All-in-One from our reality. Just try not to lose your last shred of sanity in the process.",
+      "image": "https://imgcdn.gamefound.com/projectupdate/projects/6650/f5766433-0773-4332-ab51-3f4e6da50af2.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-09-29",
+      "endDate": "2026-10-28",
+      "primaryUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
+      "designer": "Paper Tigers",
+      "publisher": "Paper Tigers"
     },
     {
       "slug": "anima-hunters",
@@ -2848,66 +2848,66 @@
     },
     {
       "slug": "glenn-ford",
-       "name": "Glenn Ford",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "cole-munro-chitty",
-       "name": "Cole Munro-Chitty",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "krzysztof-owczarek",
-       "name": "Krzysztof Owczarek",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "paolo-bernardo-casareo",
-       "name": "Paolo Bernardo Casareo",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "connor-wake",
-       "name": "Connor Wake",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "kelly-whyte",
-       "name": "Kelly Whyte",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "georgios-agathangelou",
-       "name": "Georgios Agathangelou",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "florian-martin",
-       "name": "Florian Martin",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "james-ettwein",
-       "name": "James Ettwein",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "marco-salogni",
-       "name": "Marco Salogni",
-       "bggUrl": "",
-       "bio": ""
-     }
-   ],
-   "publishers": [
+      "name": "Glenn Ford",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "cole-munro-chitty",
+      "name": "Cole Munro-Chitty",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "krzysztof-owczarek",
+      "name": "Krzysztof Owczarek",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "paolo-bernardo-casareo",
+      "name": "Paolo Bernardo Casareo",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "connor-wake",
+      "name": "Connor Wake",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kelly-whyte",
+      "name": "Kelly Whyte",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "georgios-agathangelou",
+      "name": "Georgios Agathangelou",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-martin",
+      "name": "Florian Martin",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "james-ettwein",
+      "name": "James Ettwein",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "marco-salogni",
+      "name": "Marco Salogni",
+      "bggUrl": "",
+      "bio": ""
+    }
+  ],
+  "publishers": [
     {
       "slug": "time-to-dice",
       "name": "Time to Dice",
@@ -3533,82 +3533,82 @@
       "bio": ""
     },
     {
-       "slug": "joshua-mcmurray",
-       "name": "Joshua McMurray",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "ranghosgames",
-       "name": "RanghosGames",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "marco-salogni",
-       "name": "Marco Salogni",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "always-awake-games",
-       "name": "Always Awake Games",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "kelly-whyte",
-       "name": "Kelly Whyte",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "georgios-agathangelou",
-       "name": "Georgios Agathangelou",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "florian-martin",
-       "name": "Florian Martin",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "all-or-none-games",
-       "name": "All Or None Games",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "best-with-1-games",
-       "name": "Best With 1 Games",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "earpick-troll-studio",
-       "name": "EARPICK TROLL STUDIO",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "solofun-game",
-       "name": "Solofun Game",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "james-ettwein",
-       "name": "James Ettwein",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "studio-squidink",
-       "name": "StudioSquidink",
-       "bggUrl": "",
-       "bio": ""
-     }
-   ]
+      "slug": "joshua-mcmurray",
+      "name": "Joshua McMurray",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "ranghosgames",
+      "name": "RanghosGames",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "marco-salogni",
+      "name": "Marco Salogni",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "always-awake-games",
+      "name": "Always Awake Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kelly-whyte",
+      "name": "Kelly Whyte",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "georgios-agathangelou",
+      "name": "Georgios Agathangelou",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-martin",
+      "name": "Florian Martin",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "all-or-none-games",
+      "name": "All Or None Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "best-with-1-games",
+      "name": "Best With 1 Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "earpick-troll-studio",
+      "name": "EARPICK TROLL STUDIO",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "solofun-game",
+      "name": "Solofun Game",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "james-ettwein",
+      "name": "James Ettwein",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "studio-squidink",
+      "name": "StudioSquidink",
+      "bggUrl": "",
+      "bio": ""
+    }
+  ]
 }
