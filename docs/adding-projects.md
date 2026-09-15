@@ -82,6 +82,16 @@ git push origin main
 
 The site auto-deploys via GitHub Actions on push to `main`.
 
+### CLI Helper: `add-project.js`
+
+A safe CLI exists for adding projects without editing JSON by hand:
+
+```bash
+node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...
+```
+
+**Limitation:** The platform list in this script is `Kickstarter, Indiegogo, Backerkit, Store, Patreon, Other` — it will reject `Gamefound`, `Itch.io`, `Crowdfunding`, `Promo`. For those platforms, edit `content.json` directly.
+
 ---
 
 ## Status Computation (Automatic)
@@ -142,6 +152,38 @@ A 24-hour grace period after the end date provides timezone safety.
 
 ---
 
+## Site Sorting and View Modes
+
+Projects are rendered with client-side sorting and view preferences, persisted in `localStorage` per page. URLs also support `?sort=` and `?view=` params.
+
+### Sort Modes
+
+| Mode | Description |
+|---|---|
+| `byEndAsc` | End date, soonest first (default for live/upcoming) |
+| `byEndDesc` | End date, latest first (default for archive) |
+| `byLaunchAsc` | Launch date, soonest first |
+| `byLaunchDesc` | Launch date, latest first |
+| `byTitleAsc` | Alphabetical A–Z |
+| `byTitleDesc` | Alphabetical Z–A |
+| `byPlatform` | Grouped by platform |
+| `byStatusCategory` | Grouped by status (live → upcoming → preview → archived) |
+| `byWeekDesc` | Reverse week of year (archive only) |
+| `byArchivePriority` | Priority ordering for archive page (default) |
+
+Sort is stored under `pnpl_sort_mode_v1` in localStorage and also reflected as `?sort=` in the URL.
+
+### View Modes
+
+| Mode | Description |
+|---|---|
+| `full` | Full cards with summary, designer/publisher metadata (default) |
+| `compact` | Compact tiles without body text |
+
+View preference is stored under `pnpl_view_mode_v1` and also reflected as `?view=` in the URL. The archive page uses a toggle switch; other pages default to `full`.
+
+---
+
 ## Common Pitfalls
 
 - **Duplicate slugs:** Each `slug` must be unique across all projects.
@@ -155,7 +197,7 @@ A 24-hour grace period after the end date provides timezone safety.
 
 ## Blog Posts
 
-Blog posts live in `blog/` as static HTML files (excluded from git). Naming convention: `blog-<topic>-YYYY-MM-DD.html`.
+Blog posts live in `blog/` as static HTML files (tracked in git). Naming convention: `blog-<topic>-YYYY-MM-DD.html`.
 
 ### Checklist — every new blog post requires:
 

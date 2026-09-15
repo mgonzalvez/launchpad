@@ -220,9 +220,7 @@ For launch alerts, a single project cover image is fine.
 5. **Save the HTML file** — to `blog/blog-[slug]-YYYY-MM-DD.html`
 6. **Write the Facebook draft** — save as `blog/facebook-post-[date-slug].txt`
 7. **Update `blog/index.html`** — add the new post as a featured card, push older posts down
-8. **Commit** — blog posts are excluded from git (`.gitignore`), so these are local-only unless you choose to track them
-
-**Note:** Blog posts are NOT committed to git by default (the `blog/` directory is commented out in `.gitignore`). They are local-only files. If you want them deployed, you need to uncomment `blog/` in `.gitignore` or add them explicitly.
+8. **Commit** — blog posts are tracked in git (the `blog/` entry is commented out in `.gitignore`, so they commit alongside the rest of the repo). No special handling needed.
 
 ---
 
