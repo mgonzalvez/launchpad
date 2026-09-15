@@ -1626,18 +1626,18 @@
       "latePledgeUrl": "https://www.kickstarter.com/projects/rapsodagames/the-cultists-challenge"
     },
     {
-       "slug": "miskatonic-expeditions",
-       "title": "Miskatonic Expeditions",
-       "summary": "A Lovecraftian tile-laying roguelite with deck-building elements, for 1 to 4 players. Draft the rooms of an ever-shifting university, fight things from the Great Beyond, gather forbidden books, and perform the Unveiling Ritual to banish the All-in-One from our reality. Just try not to lose your last shred of sanity in the process.",
-       "image": "https://imgcdn.gamefound.com/projectupdate/projects/6650/f5766433-0773-4332-ab51-3f4e6da50af2.png",
-       "platform": "Gamefound",
-       "launchDate": "2026-09-29",
-       "endDate": "2026-10-28",
-       "primaryUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
-       "isLatePledge": true,
-       "latePledgeUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
-       "designer": "Paper Tigers",
-       "publisher": "Paper Tigers"
+      "slug": "miskatonic-expeditions",
+      "title": "Miskatonic Expeditions",
+      "summary": "A Lovecraftian tile-laying roguelite with deck-building elements, for 1 to 4 players. Draft the rooms of an ever-shifting university, fight things from the Great Beyond, gather forbidden books, and perform the Unveiling Ritual to banish the All-in-One from our reality. Just try not to lose your last shred of sanity in the process.",
+      "image": "https://imgcdn.gamefound.com/projectupdate/projects/6650/f5766433-0773-4332-ab51-3f4e6da50af2.png",
+      "platform": "Gamefound",
+      "launchDate": "2026-09-29",
+      "endDate": "2026-10-28",
+      "primaryUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/en/projects/papertigers/miskatonic-expeditions",
+      "designer": "Paper Tigers",
+      "publisher": "Paper Tigers"
     },
     {
       "slug": "anima-hunters",
@@ -1907,9 +1907,9 @@
       "summary": "Take control of a combat mech on a desperate assault: draw the enemy in, inflict as much damage as possible, and survive long enough for resistance teams to secure desperately needed supplies.",
       "image": "https://cf.geekdo-images.com/Q_Q740qC6n-XXoJHaKN_Ng__large/img/ws59ueX7ADyGEE7S-HeSlw1eU04=/fit-in/1024x1024/filters:no_upscale():strip_icc()/pic9744480.png",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-09-22",
+      "endDate": "2026-10-06",
+      "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/steel-whisper",
       "designer": "Radek Ignatow",
       "publisher": "Radek Ignatow"
@@ -2093,6 +2093,32 @@
       "primaryUrl": "https://www.backerkit.com/c/projects/impish-delights/lappoy-s-flying-fortress-a-mothership-rpg-solo-adventure",
       "designer": "Brian Childs",
       "publisher": "Impish Delights"
+    },
+    {
+      "slug": "bratva-a-russian-mafia-strategy-game",
+      "title": "Bratva: A Russian Mafia Strategy Game",
+      "summary": "BRATVA is a 1–3 player crime strategy game set in the post-Soviet 1990s. Build your gang, take control, and outsmart rivals and police.",
+      "image": "https://i.kickstarter.com/assets/055/064/654/4480a06a987079750f4929967fe1b754_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788992966&width=1024&sig=dIVKnbjG9XMz5Wh%2Ffco3C%2Fx8331Hfh4mPN12RX5mGBE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/bratva-a-russian-mafia-strategy-game",
+      "designer": "NukaZombee Games",
+      "publisher": "NukaZombee Games"
+    },
+    {
+      "slug": "deathmancer",
+      "title": "Deathmancer",
+      "summary": "A dark fantasy engine-building card game. Command the Living. Raise the Dead.",
+      "image": "https://i.kickstarter.com/assets/054/656/073/809430678eb35b31941ca00465d0375a_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1785872368&width=1024&sig=ImmymZ0tHv2u1BEE3w2x4hmfF0Cy%2FR%2BzAxZYlTTgZgg%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/deathmancer/deathmancer?ref=discover_saved_projects&category_id=34",
+      "designer": "Gamingtography",
+      "publisher": "Gamingtography"
     }
   ],
   "designers": [
@@ -2848,66 +2874,78 @@
     },
     {
       "slug": "glenn-ford",
-       "name": "Glenn Ford",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "cole-munro-chitty",
-       "name": "Cole Munro-Chitty",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "krzysztof-owczarek",
-       "name": "Krzysztof Owczarek",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "paolo-bernardo-casareo",
-       "name": "Paolo Bernardo Casareo",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "connor-wake",
-       "name": "Connor Wake",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "kelly-whyte",
-       "name": "Kelly Whyte",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "georgios-agathangelou",
-       "name": "Georgios Agathangelou",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "florian-martin",
-       "name": "Florian Martin",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "james-ettwein",
-       "name": "James Ettwein",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "marco-salogni",
-       "name": "Marco Salogni",
-       "bggUrl": "",
-       "bio": ""
-     }
-   ],
-   "publishers": [
+      "name": "Glenn Ford",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "cole-munro-chitty",
+      "name": "Cole Munro-Chitty",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "krzysztof-owczarek",
+      "name": "Krzysztof Owczarek",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "paolo-bernardo-casareo",
+      "name": "Paolo Bernardo Casareo",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "connor-wake",
+      "name": "Connor Wake",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kelly-whyte",
+      "name": "Kelly Whyte",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "georgios-agathangelou",
+      "name": "Georgios Agathangelou",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-martin",
+      "name": "Florian Martin",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "james-ettwein",
+      "name": "James Ettwein",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "marco-salogni",
+      "name": "Marco Salogni",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "gregg-jewell",
+      "name": "Gregg Jewell",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "gamingtography",
+      "name": "Gamingtography",
+      "bggUrl": "",
+      "bio": ""
+    }
+  ],
+  "publishers": [
     {
       "slug": "time-to-dice",
       "name": "Time to Dice",
@@ -3533,82 +3571,88 @@
       "bio": ""
     },
     {
-       "slug": "joshua-mcmurray",
-       "name": "Joshua McMurray",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "ranghosgames",
-       "name": "RanghosGames",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "marco-salogni",
-       "name": "Marco Salogni",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "always-awake-games",
-       "name": "Always Awake Games",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "kelly-whyte",
-       "name": "Kelly Whyte",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "georgios-agathangelou",
-       "name": "Georgios Agathangelou",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "florian-martin",
-       "name": "Florian Martin",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "all-or-none-games",
-       "name": "All Or None Games",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "best-with-1-games",
-       "name": "Best With 1 Games",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "earpick-troll-studio",
-       "name": "EARPICK TROLL STUDIO",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "solofun-game",
-       "name": "Solofun Game",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "james-ettwein",
-       "name": "James Ettwein",
-       "bggUrl": "",
-       "bio": ""
-     },
-     {
-       "slug": "studio-squidink",
-       "name": "StudioSquidink",
-       "bggUrl": "",
-       "bio": ""
-     }
-   ]
+      "slug": "joshua-mcmurray",
+      "name": "Joshua McMurray",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "ranghosgames",
+      "name": "RanghosGames",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "marco-salogni",
+      "name": "Marco Salogni",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "always-awake-games",
+      "name": "Always Awake Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kelly-whyte",
+      "name": "Kelly Whyte",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "georgios-agathangelou",
+      "name": "Georgios Agathangelou",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "florian-martin",
+      "name": "Florian Martin",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "all-or-none-games",
+      "name": "All Or None Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "best-with-1-games",
+      "name": "Best With 1 Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "earpick-troll-studio",
+      "name": "EARPICK TROLL STUDIO",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "solofun-game",
+      "name": "Solofun Game",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "james-ettwein",
+      "name": "James Ettwein",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "studio-squidink",
+      "name": "StudioSquidink",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "gamingtography",
+      "name": "Gamingtography",
+      "bggUrl": "",
+      "bio": ""
+    }
+  ]
 }
