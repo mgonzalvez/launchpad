@@ -2104,7 +2104,7 @@
       "endDate": "",
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/bratva-a-russian-mafia-strategy-game",
-      "designer": "NukaZombee Games",
+      "designer": "Denis Kurdiukov",
       "publisher": "NukaZombee Games"
     },
     {
@@ -2927,10 +2927,10 @@
       "bio": ""
     },
     {
-       "slug": "marco-salogni",
-       "name": "Marco Salogni",
-       "bggUrl": "",
-       "bio": ""
+      "slug": "marco-salogni",
+      "name": "Marco Salogni",
+      "bggUrl": "",
+      "bio": ""
     },
     {
       "slug": "gregg-jewell",
@@ -3643,10 +3643,10 @@
       "bio": ""
     },
     {
-       "slug": "studio-squidink",
-       "name": "StudioSquidink",
-       "bggUrl": "",
-       "bio": ""
+      "slug": "studio-squidink",
+      "name": "StudioSquidink",
+      "bggUrl": "",
+      "bio": ""
     },
     {
       "slug": "gamingtography",
