@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "barrow-looter",
+      "title": "Barrow Looter",
+      "summary": "One player builds the dungeon and summons mound-things, while the other tries to loot it.",
+      "image": "https://i.kickstarter.com/assets/054/863/860/e86901ef851dc9ed6269a188bba93dcb_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1787575049&width=1024&sig=bJyOESlwfWJnsxKvp4n7qJRoW83OoTV3JovFPlJflJE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-01",
+      "endDate": "2026-10-01",
+      "primaryUrl": "https://www.kickstarter.com/projects/shieldicestudio/barrow-looter",
+      "designer": "Jamie Merritt",
+      "publisher": "Jamie Merritt",
+      "promoDetails": ""
+    },
+    {
       "slug": "aetherfall-the-war-of-the-elements",
       "title": "AetherFall - The War of the Elements",
       "summary": "An ancient prophecy has awakened the Wizards of Etherea. Choose your Wizard, conquer elemental zones, cast powerful spells, and outwit your rivals through tactics, memory, and bluffing. AetherFall is a strategic board game of area control and elemental conflict.",
@@ -2943,6 +2956,12 @@
       "name": "Gamingtography",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "jamie-merritt",
+      "name": "Jamie Merritt",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3651,6 +3670,12 @@
     {
       "slug": "gamingtography",
       "name": "Gamingtography",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jamie-merritt",
+      "name": "Jamie Merritt",
       "bggUrl": "",
       "bio": ""
     }
