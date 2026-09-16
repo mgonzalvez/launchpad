@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "perennial",
+      "title": "Perennial",
+      "summary": "A puzzly build-your-own polyomino tile-laying game of prairie gardening from the team that brought you Calico, Cascadia, and Verdant!.",
+      "image": "https://i.kickstarter.com/assets/054/938/567/a94363802a7caca2b1b0cdc16fa05e6f_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788123584&width=1024&sig=uOpGaWZSCF5KVjZG8odvSl%2FY%2FOr6cMr%2BsDtB%2BcWavGA%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-15",
+      "endDate": "2026-11-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/flatoutgames/perennial-0",
+      "designer": "Emily Vincent",
+      "publisher": "Flatout Games",
+      "promoDetails": ""
+    },
+    {
       "slug": "barrow-looter",
       "title": "Barrow Looter",
       "summary": "One player builds the dungeon and summons mound-things, while the other tries to loot it.",
@@ -2961,6 +2974,12 @@
       "slug": "jamie-merritt",
       "name": "Jamie Merritt",
       "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "emily-vincent",
+      "name": "Emily Vincent",
+      "bggUrl": "https://boardgamegeek.com/boardgamedesigner/161639/emily-vincent",
       "bio": ""
     }
   ],
