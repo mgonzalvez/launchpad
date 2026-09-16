@@ -309,8 +309,8 @@
       "endDate": "",
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/papermage/legend-of-hexdom-2",
-      "designer": "papermage-games",
-      "publisher": "papermage-games",
+      "designer": "Papermage Games",
+      "publisher": "Papermage Games",
       "promoDetails": ""
     },
     {
@@ -323,8 +323,8 @@
       "endDate": "",
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/pawelkardis/tribal-clash",
-      "designer": "pawel-kardis",
-      "publisher": "pawel-kardis",
+      "designer": "Paweł Kardis",
+      "publisher": "Paweł Kardis",
       "promoDetails": ""
     },
     {
@@ -337,8 +337,8 @@
       "endDate": "",
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/b-up-games/atlas-rush",
-      "designer": "b-up-games",
-      "publisher": "b-up-games",
+      "designer": "B+Up Games",
+      "publisher": "B+Up Games",
       "promoDetails": ""
     },
     {
@@ -379,7 +379,7 @@
       "endDate": "2025-11-25",
       "primaryUrl": "https://gamefound.com/en/projects/themoongrel/cassette_zombies",
       "designer": "themoongrel",
-      "publisher": "cassette-games",
+      "publisher": "Cassette Games",
       "promoDetails": "Campaign ended Nov 25. Late pledge available.",
       "isPreview": false,
       "isLatePledge": true,
@@ -1234,7 +1234,7 @@
       "endDate": "2026-05-23",
       "primaryUrl": "https://www.kickstarter.com/projects/1617006368/greetings-from-earth-a-roll-and-write-outa-world-tour",
       "designer": "Benno Thönelt",
-      "publisher": "sloppygames",
+      "publisher": "Sloppy Games",
       "summary": "Collect the world - one landmark at a time. Travel light years with just one die and a pen in this Print & Play Game.",
       "image": "https://sloppygames.de/wp-content/uploads/2026/02/gra_Map_Paris.jpg",
       "promoDetails": "Roll & Write game with a world tour theme."
@@ -1865,7 +1865,8 @@
       "launchDate": "2026-09-08",
       "endDate": "2026-09-25",
       "primaryUrl": "https://www.kickstarter.com/projects/teetotum/vacations-to-greek-islands-corfu-and-rhodes",
-      "publisher": "Teetotum Game Studios"
+      "publisher": "Teetotum Game Studios",
+      "designer": "Antonios Yannopoulos"
     },
     {
       "slug": "forgotten-paths",
@@ -2981,6 +2982,12 @@
       "name": "Emily Vincent",
       "bggUrl": "https://boardgamegeek.com/boardgamedesigner/161639/emily-vincent",
       "bio": ""
+    },
+    {
+      "slug": "antonios-yannopoulos",
+      "name": "Antonios Yannopoulos",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3221,12 +3228,6 @@
     {
       "slug": "benno-thonelt",
       "name": "Benno Thönelt",
-      "bggUrl": "",
-      "bio": ""
-    },
-    {
-      "slug": "sloppygames",
-      "name": "SloppyGames",
       "bggUrl": "",
       "bio": ""
     },
@@ -3695,6 +3696,12 @@
     {
       "slug": "jamie-merritt",
       "name": "Jamie Merritt",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "sloppy-games",
+      "name": "Sloppy Games",
       "bggUrl": "",
       "bio": ""
     }
