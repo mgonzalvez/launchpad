@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "slug": "pirates-behaving-badly",
+      "title": "Pirates Behaving Badly — The Card Game",
+      "summary": "A cutthroat quick game of plunder, betrayal, and poor life choices for 2–5. Guard your Captain while stealing cargo for the win.",
+      "image": "https://i.kickstarter.com/assets/054/326/761/8b584d9d7eda9617005020edce0f404c_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1783114533&width=1024&sig=09NEIi1DpswSI0GLy5F0L7EI0cQsGIGYYHEaelT5TfU%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-15",
+      "endDate": "2026-10-15",
+      "primaryUrl": "https://www.kickstarter.com/projects/taylorhayward/pirates-behaving-badly-the-card-game/description",
+      "designers": [
+        "Taylor Hayward"
+      ],
+      "publisher": "Green Meadow Games",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/taylorhayward/pirates-behaving-badly-the-card-game/description"
+    },
+    {
       "slug": "dead-net",
       "title": "Dead Net — A Solo Tabletop RPG for High-Tech Low-Lifes",
       "summary": "Dive the Dead Net, snag the paydata, survive the churn. A solo tabletop RPG for one high-tech low-life navigating a data-soaked wasteland.",
@@ -3026,6 +3042,12 @@
       "name": "Shawn Drake",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "taylor-hayward",
+      "name": "Taylor Hayward",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3746,6 +3768,12 @@
     {
       "slug": "a-couple-of-drakes",
       "name": "A Couple of Drakes",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "green-meadow-games",
+      "name": "Green Meadow Games",
       "bggUrl": "",
       "bio": ""
     }
