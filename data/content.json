@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "slug": "quest-o-graphs-vol-2",
+      "title": "Quest-O-Graphics Vol. 2: Trouble at the Tower!",
+      "summary": "The sophomore installment of Old Schrader Creek pencil board games as zine-sized (4x6\") puzzle books. All you need is a pencil.",
+      "image": "https://i.kickstarter.com/assets/055/133/313/09979a1817bdbe297a2f7894ed4ce86e_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789479400&width=1024&sig=hUGASsQ7SlTacSJx5dTKWbZruAcFe%2BGdr0xQzmEsPHc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-16",
+      "endDate": "2026-10-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/tcharleshowser/quest-o-graphs-vol-2-trouble-at-the-tower/description",
+      "designers": [
+        "Timothy Hussar"
+      ],
+      "publisher": "T. Charles Howser",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/tcharleshowser/quest-o-graphs-vol-2-trouble-at-the-tower/description"
+    },
+    {
       "slug": "return-to-syndr",
       "title": "Return to SYND'R",
       "summary": "A solo print-and-play goblin couriering game. Deliver packages in a world gone wrong, one suspicious package at a time.",
@@ -3060,6 +3076,12 @@
       "name": "Taylor Hayward",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "timothy-hussar",
+      "name": "Timothy Hussar",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3792,6 +3814,12 @@
     {
       "slug": "nightbird-games",
       "name": "Nightbird Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "t-charles-howser",
+      "name": "T. Charles Howser",
       "bggUrl": "",
       "bio": ""
     }
