@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "slug": "dead-net",
+      "title": "Dead Net — A Solo Tabletop RPG for High-Tech Low-Lifes",
+      "summary": "Dive the Dead Net, snag the paydata, survive the churn. A solo tabletop RPG for one high-tech low-life navigating a data-soaked wasteland.",
+      "image": "https://i.kickstarter.com/assets/054/992/674/7be576f7d206077bb30f2bb23b104c87_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788457072&width=1024&sig=d%2FT6zi44nBfeZzffei4xAG4tmgBfsaCjmfH%2BnUFMz9Q%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-15",
+      "endDate": "2026-10-14",
+      "primaryUrl": "https://www.kickstarter.com/projects/acoupleofdrakes/dead-net/description",
+      "designers": [
+        "Shawn Drake"
+      ],
+      "publisher": "A Couple of Drakes",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/acoupleofdrakes/dead-net/description"
+    },
+    {
       "slug": "midway-1022",
       "title": "Midway 1022",
       "summary": "Command American carrier forces at the Battle of Midway in a solo PNP game of dice drafting and carefully timed air strikes.",
@@ -3004,6 +3020,12 @@
       "name": "Antonios Yannopoulos",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "shawn-drake",
+      "name": "Shawn Drake",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3718,6 +3740,12 @@
     {
       "slug": "sloppy-games",
       "name": "Sloppy Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "a-couple-of-drakes",
+      "name": "A Couple of Drakes",
       "bggUrl": "",
       "bio": ""
     }
