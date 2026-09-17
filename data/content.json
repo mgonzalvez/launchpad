@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "return-to-syndr",
+      "title": "Return to SYND'R",
+      "summary": "A solo print-and-play goblin couriering game. Deliver packages in a world gone wrong, one suspicious package at a time.",
+      "image": "https://i.kickstarter.com/assets/055/158/261/72672b8ef7b23a866e8e8b55c0fb9ef5_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789625302&width=1024&sig=9OoJ%2BqHUQh%2FeWoq8wWCKJdy4BcW7vXvs1SVVndZXRQQ%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "primaryUrl": "https://www.kickstarter.com/projects/nightbirdgames/return-to-syndr?ref=discover_saved_projects&category_id=399",
+      "publisher": "Nightbird Games",
+      "isPreview": true
+    },
+    {
       "slug": "pirates-behaving-badly",
       "title": "Pirates Behaving Badly — The Card Game",
       "summary": "A cutthroat quick game of plunder, betrayal, and poor life choices for 2–5. Guard your Captain while stealing cargo for the win.",
@@ -3774,6 +3786,12 @@
     {
       "slug": "green-meadow-games",
       "name": "Green Meadow Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "nightbird-games",
+      "name": "Nightbird Games",
       "bggUrl": "",
       "bio": ""
     }
