@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "shadow-madness",
+      "title": "Shadow & Madness: A Samurai Horror Playing Card Deck",
+      "summary": "Welcome to a realm where honor meets cosmic dread.",
+      "image": "https://i.kickstarter.com/assets/055/019/818/90367644f1c51ee1aa79714658cac542_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1788705956&width=1024&sig=KUulkx%2F%2FFEFsNf27tNryp%2Bbp%2FQEMB5symnpY1OaFYTE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-13",
+      "endDate": "2026-10-13",
+      "primaryUrl": "https://www.kickstarter.com/projects/elreinooscuro/baraja-de-poker-samurais-vs-horrores-cosmicos-print-and-play/description",
+      "designers": [
+        "Aurora Mendez Mazano"
+      ],
+      "publisher": "Aurora"
+    },
+    {
       "slug": "50-to-1",
       "title": "50 to 1: A game of survival (solo) - PnP",
       "summary": "As your army of 50 warrior tokens explores different challenges, can your warrior token be one of the few surviving at the end?",
@@ -233,7 +247,7 @@
       "image": "/uploads/dice commandos infestation.png",
       "platform": "Gamefound",
       "launchDate": "2026-09-15",
-      "endDate": "2026-10-15",
+      "endDate": "2026-10-02",
       "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/dice-commandos-2?ref=creator_1-731",
       "designer": "Cole Munro-Chitty",
       "publisher": "Best With 1 Games"
@@ -3100,6 +3114,12 @@
       "name": "John Kohn",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "aurora-mendez-mazano",
+      "name": "Aurora Mendez Mazano",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3844,6 +3864,12 @@
     {
       "slug": "john-kohn",
       "name": "John Kohn",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "aurora",
+      "name": "Aurora",
       "bggUrl": "",
       "bio": ""
     }
