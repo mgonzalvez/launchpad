@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "slug": "50-to-1",
+      "title": "50 to 1: A game of survival (solo) - PnP",
+      "summary": "As your army of 50 warrior tokens explores different challenges, can your warrior token be one of the few surviving at the end?",
+      "image": "https://i.kickstarter.com/assets/055/142/092/97803509237ee044d1ed516fb91f4ec9_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789525553&width=1024&sig=Vz30b6ng2A2iTjxf0msrcF5rNdSowccuCtIPEUvl8Ks%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-16",
+      "endDate": "2026-10-11",
+      "primaryUrl": "https://www.kickstarter.com/projects/1438234520/50-to-1-a-game-of-survival-solo-pnp?ref=activity",
+      "designers": [
+        "John Kohn"
+      ],
+      "publisher": "John Kohn",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/1438234520/50-to-1-a-game-of-survival-solo-pnp?ref=activity"
+    },
+    {
       "slug": "quest-o-graphs-vol-2",
       "title": "Quest-O-Graphics Vol. 2: Trouble at the Tower!",
       "summary": "The sophomore installment of Old Schrader Creek pencil board games as zine-sized (4x6\") puzzle books. All you need is a pencil.",
@@ -3082,6 +3098,12 @@
       "name": "Timothy Hussar",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "john-kohn",
+      "name": "John Kohn",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3820,6 +3842,12 @@
     {
       "slug": "t-charles-howser",
       "name": "T. Charles Howser",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "john-kohn",
+      "name": "John Kohn",
       "bggUrl": "",
       "bio": ""
     }
