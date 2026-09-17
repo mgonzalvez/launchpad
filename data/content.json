@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "slug": "midway-1022",
+      "title": "Midway 1022",
+      "summary": "Command American carrier forces at the Battle of Midway in a solo PNP game of dice drafting and carefully timed air strikes.",
+      "image": "https://i.kickstarter.com/assets/055/161/371/5bf948b20374c970a1ef3d7351e67b01_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789641608&width=1024&sig=OpH%2F6%2F1%2Fedlt2HIptyTOQY%2BCIZsxtiCAO7gfMXs0SFY%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-17",
+      "endDate": "2026-09-24",
+      "primaryUrl": "https://www.kickstarter.com/projects/105281170/midway-1022-a-solitaire-carrier-battle-game?ref=activity",
+      "designers": [
+        "Martin Melbardis"
+      ],
+      "publisher": "Solo Wargame",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://www.kickstarter.com/projects/105281170/midway-1022-a-solitaire-carrier-battle-game?ref=activity"
+    },
+    {
       "slug": "perennial",
       "title": "Perennial",
       "summary": "A puzzly build-your-own polyomino tile-laying game of prairie gardening from the team that brought you Calico, Cascadia, and Verdant!.",
