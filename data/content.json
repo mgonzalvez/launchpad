@@ -1,6 +1,34 @@
 {
   "projects": [
     {
+      "slug": "the-squirrels-of-wildwood",
+      "title": "The Squirrels of Wildwood",
+      "summary": "A print-and-play hex-grid dungeon crawler for 1–2 players, with tactical combat, an eight-scenario campaign, and squirrels.",
+      "image": "https://i.kickstarter.com/assets/055/160/452/95b66cff37fe8906d7a595465ea74593_original.png?fit=scale-down&origin=ugc&q=100&v=1789637008&width=700&sig=IgyS18%2BMyyiFdDNijeRHcXPAcBopu8dJ%2F72Z741drlM%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/ahobday/the-squirrels-of-wildwood",
+      "designers": [
+        "Anthony Hobday"
+      ]
+    },
+    {
+      "slug": "avast-ye-buccaneers-and-cutthroats",
+      "title": "Avast ye Buccaneers & Cutthroats",
+      "summary": "A cinematic, sandbox-style swashbuckling tabletop miniature skirmish wargame set during the Golden Age of Piracy.",
+      "image": "https://i.kickstarter.com/assets/055/186/185/2adaabbbe2a91a7f350637d5db183840_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789815064&width=1024&sig=3jpNeKb1KS23sYJ95FjLizbCRieHYSZ3u1LrJZDsihI%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-19",
+      "endDate": "2026-10-04",
+      "primaryUrl": "https://www.kickstarter.com/projects/avast/avast-ye-buccaneers-and-cutthroats/description",
+      "designers": [
+        "Allen Mitchell"
+      ],
+      "publisher": "Allen Mitchell"
+    },
+    {
       "slug": "shadow-madness",
       "title": "Shadow & Madness: A Samurai Horror Playing Card Deck",
       "summary": "Welcome to a realm where honor meets cosmic dread.",
@@ -3120,6 +3148,12 @@
       "name": "Aurora Mendez Mazano",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "allen-mitchell",
+      "name": "Allen Mitchell",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3870,6 +3904,12 @@
     {
       "slug": "aurora",
       "name": "Aurora",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "allen-mitchell",
+      "name": "Allen Mitchell",
       "bggUrl": "",
       "bio": ""
     }
