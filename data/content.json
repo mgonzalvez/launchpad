@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "slug": "solo-haunting",
+      "title": "Solo Haunting",
+      "summary": "A single player ghost hunting card game. Explore a haunted house, uncover clues to identify the ghost you're facing, then expel it with a ritual, all while staying sane.",
+      "image": "https://i.kickstarter.com/assets/055/200/265/6687657892793c9e5cd244bea3ebce59_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789945253&width=1024&sig=ojLkyUp7ELNhfNZPE0UZ2xmOIlZwoacFSI7tn0zhxNc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/samkent/solo-haunting",
+      "designers": [
+        "Samuel McKinney"
+      ],
+      "publisher": "Samuel McKinney"
+    },
+    {
       "slug": "the-squirrels-of-wildwood",
       "title": "The Squirrels of Wildwood",
       "summary": "A print-and-play hex-grid dungeon crawler for 1–2 players, with tactical combat, an eight-scenario campaign, and squirrels.",
@@ -2103,6 +2118,8 @@
       "platform": "Gamefound",
       "launchDate": "2026-09-11",
       "endDate": "2026-09-14",
+      "isLatePledge": true,
+      "latePledgeUrl": "https://gamefound.com/en/projects/giza-games/wild-fjords--runic-isles-expansions",
       "primaryUrl": "https://gamefound.com/en/projects/giza-games/wild-fjords--runic-isles-expansions",
       "designer": "Giza Games",
       "publisher": "Giza Games"
@@ -3154,6 +3171,12 @@
       "name": "Allen Mitchell",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "samuel-mckinney",
+      "name": "Samuel McKinney",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3910,6 +3933,12 @@
     {
       "slug": "allen-mitchell",
       "name": "Allen Mitchell",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "samuel-mckinney",
+      "name": "Samuel McKinney",
       "bggUrl": "",
       "bio": ""
     }
