@@ -2292,6 +2292,30 @@
       "primaryUrl": "https://www.kickstarter.com/projects/deathmancer/deathmancer?ref=discover_saved_projects&category_id=34",
       "designer": "Gamingtography",
       "publisher": "Gamingtography"
+    },
+    {
+      "slug": "punkin-fight-limited-edition",
+      "title": "Punkin Fight! (Limited Edition)",
+      "summary": "A new, limited edition version of the classic Halloween-themed, attack and defend card game for 2-4 players.",
+      "image": "https://i.kickstarter.com/assets/055/202/888/bb0d95b2d3e6d18006b486951d54d5b5_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789965796&width=1024&sig=sTzNjLBHEK8lF3xrGoyMtJLqfNUJ39GN5RNhrQoji%2B8%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-21",
+      "endDate": "2026-09-28",
+      "primaryUrl": "https://www.kickstarter.com/projects/joshuamason/punkin-fight-limited-edition?ref=discover_saved_projects&category_id=34",
+      "designer": "Joshua Mason",
+      "publisher": "Joshua Mason"
+    },
+    {
+      "slug": "color-jam-a-print-and-puzzle-coloring-game",
+      "title": "Color Jam: A Print-and-Puzzle Coloring Game",
+      "summary": "Enjoy cozy and clever coloring at your next game night. Craft the story of each hand-illustrated picture with creative color choices!",
+      "image": "https://i.kickstarter.com/assets/055/214/957/5f6064e06bbea93b4941420c4c51e309_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790036484&width=1024&sig=F7r5fI8SI9rAx7SI%2BGME%2BUg7kB1F0jZNQcfzeMgO6fs%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-22",
+      "endDate": "2026-10-17",
+      "primaryUrl": "https://www.kickstarter.com/projects/lunarpunkgames/colorjam?ref=activity",
+      "designer": "Matthew Hocker",
+      "publisher": "Lunarpunk Games"
     }
   ],
   "designers": [
@@ -3176,6 +3200,18 @@
       "name": "Samuel McKinney",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "joshua-mason",
+      "name": "Joshua Mason",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "matthew-hocker",
+      "name": "Matthew Hocker",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -3938,6 +3974,18 @@
     {
       "slug": "samuel-mckinney",
       "name": "Samuel McKinney",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "joshua-mason",
+      "name": "Joshua Mason",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "lunarpunk-games",
+      "name": "Lunarpunk Games",
       "bggUrl": "",
       "bio": ""
     }
