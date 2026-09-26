@@ -445,7 +445,7 @@ function projectCard(p, options = {}) {
   return `
     <article class="card card-click${compact ? ' compact' : ''}${compactView ? ' compact-view' : ''}" data-url="${cardUrl}">
       <a class="smart-image-frame" href="${cardUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
+        <img src="${withBase(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
       <div class="card-body">
         <div class="card-top-row">
@@ -456,8 +456,8 @@ function projectCard(p, options = {}) {
           ${watchButton(p, compactView)}
         </div>
         ${countdownChip(status, p, now)}
-        <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h3>
-        ${compactView ? '' : `<p>${p.summary}</p>`}
+        <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${escapeHtml(p.title)}</a></h3>
+        ${compactView || !p.summary ? '' : `<p>${escapeHtml(p.summary)}</p>`}
         <p class="meta">${dateMeta}</p>
         ${compactView ? '' : `${status === 'late-pledge' ? '<p class="meta"><strong>Late pledge is available.</strong></p>' : ''}`}
         ${compactView ? '' : `${status === 'pre-order' ? '<p class="meta"><strong>Pre-order is available.</strong></p>' : ''}`}
@@ -479,7 +479,7 @@ function projectTile(p) {
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
       <a class="tile-image-link smart-image-frame" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${p.title}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
+        <img src="${withBase(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
       <div class="tile-body">
         <div class="tile-top-row">
@@ -487,7 +487,7 @@ function projectTile(p) {
           ${watchButton(p, true)}
         </div>
         ${countdownChip(status, p, now)}
-        <h4><a href="${tileUrl}" target="_blank" rel="noreferrer noopener">${p.title}</a></h4>
+        <h4><a href="${tileUrl}" target="_blank" rel="noreferrer noopener">${escapeHtml(p.title)}</a></h4>
       </div>
     </article>
   `;
