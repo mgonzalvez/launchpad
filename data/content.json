@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "slug": "killer-cases-murder-at-nexatech-murder-mystery-case-file",
+      "title": "Killer Cases: Murder at NexaTech – Murder Mystery Case File",
+      "summary": "🔎 An immersive murder mystery where you play detective. Investigate the case, examine clues, and solve the crime!",
+      "image": "https://i.kickstarter.com/assets/048/008/135/b825d19ab2568e377a691d12b5697193_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1738256599&width=1024&sig=XwmkwAr7cSYPS4A1tozsq%2F19dZLYZ1harN%2BZqhkP%2FSw%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/connorthomas3d/killer-cases-murder-at-nexatech-murder-mystery-case-file",
+      "designer": "Connor Thomas",
+      "publisher": "Connor Thomas",
+      "promoDetails": ""
+    },
+    {
       "slug": "xolo",
       "title": "Xolo!",
       "summary": "Abstract board game in print and play format.",
@@ -3236,6 +3250,12 @@
       "name": "Matthew Hocker",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "connor-thomas",
+      "name": "Connor Thomas",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -4022,6 +4042,12 @@
     {
       "slug": "pulprint-games",
       "name": "Pulprint Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "connor-thomas",
+      "name": "Connor Thomas",
       "bggUrl": "",
       "bio": ""
     }
