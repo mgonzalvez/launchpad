@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "xolo",
+      "title": "Xolo!",
+      "summary": "Abstract board game in print and play format.",
+      "image": "https://i.kickstarter.com/assets/055/247/425/4d0e2d900541e6bcd2c7f34217f2cc2e_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790223993&width=1024&sig=mxDQAnZh%2FBouIL1sdnL0C2613J%2BWlOUXKfE3NBwUMvY%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/pulprintgames/xolo",
+      "publisher": "Pulprint Games"
+    },
+    {
       "slug": "soccer-manager-print-and-play",
       "title": "Soccer Manager - Print & Play boardgame",
       "summary": "Build your dream soccer club, sign superstar players, play epic matches, and compete for glory in this print & play board game!",
@@ -4004,6 +4016,12 @@
     {
       "slug": "titan-boardgames",
       "name": "Titan Boardgames",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "pulprint-games",
+      "name": "Pulprint Games",
       "bggUrl": "",
       "bio": ""
     }
