@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "slug": "soccer-manager-print-and-play",
+      "title": "Soccer Manager - Print & Play boardgame",
+      "summary": "Build your dream soccer club, sign superstar players, play epic matches, and compete for glory in this print & play board game!",
+      "image": "https://i.kickstarter.com/assets/055/185/425/a565633102e95f0a398e9eaf15b1d32c_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789807728&width=1024&sig=TTqAP6j62uzP9cHofqQT7jb5za9cLeNzF0Ws%2FRqrj7A%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/titanboardgames/soccer-manager-print-and-play-boardgame",
+      "publisher": "Titan Boardgames"
+    },
+    {
       "slug": "solo-haunting",
       "title": "Solo Haunting",
       "summary": "A single player ghost hunting card game. Explore a haunted house, uncover clues to identify the ghost you're facing, then expel it with a ritual, all while staying sane.",
@@ -3986,6 +3998,12 @@
     {
       "slug": "lunarpunk-games",
       "name": "Lunarpunk Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "titan-boardgames",
+      "name": "Titan Boardgames",
       "bggUrl": "",
       "bio": ""
     }
