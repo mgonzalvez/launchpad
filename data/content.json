@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "word-dungeon-two",
+      "title": "Word Dungeon Two",
+      "summary": "More wordy adventures in the Word Dungeon universe. Three brand new maps: Rumpledonk's Ruins, Dragon's Castle and A Day at the Zoo.",
+      "image": "https://i.kickstarter.com/assets/055/229/517/debc70d0e452b5c07eecba19a4a4e22d_original.jpeg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790111873&width=1024&sig=BawvOapuZGMisI12LSQH7djT3PLAb41Lt%2F463bOIRLs%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-28",
+      "endDate": "2026-10-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/what-if-games/word-dungeon-two?ref=activity",
+      "designer": "Joe Shimwell",
+      "publisher": "Joe Shimwell",
+      "promoDetails": ""
+    },
+    {
       "slug": "killer-cases-murder-at-nexatech-murder-mystery-case-file",
       "title": "Killer Cases: Murder at NexaTech – Murder Mystery Case File",
       "summary": "🔎 An immersive murder mystery where you play detective. Investigate the case, examine clues, and solve the crime!",
@@ -3255,6 +3268,12 @@
       "name": "Connor Thomas",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "joe-shimwell",
+      "name": "Joe Shimwell",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -4047,6 +4066,12 @@
     {
       "slug": "connor-thomas",
       "name": "Connor Thomas",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "joe-shimwell",
+      "name": "Joe Shimwell",
       "bggUrl": "",
       "bio": ""
     }
