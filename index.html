@@ -38,13 +38,22 @@
               return PNPL.byEndAsc(a, b);
             });
           const justLaunched = liveAndPromo.filter((p) => PNPL.projectIsJustLaunched(p, now));
-          // Featured carousel: up to 9 projects, randomly selected and ordered on each load.
-          // The live strip below keeps the strict end-date ordering.
-          const featured = liveAndPromo
-            .map((p) => [Math.random(), p])
-            .sort((a, b) => a[0] - b[0])
-            .map((pair) => pair[1])
-            .slice(0, 9);
+          // Featured carousel: up to 9 projects on each load.
+          // Ending-soon projects are guaranteed a slot (first, by end date),
+          // remaining slots filled with random picks. The live strip below
+          // keeps the strict end-date ordering.
+          const featured = (() => {
+            const cap = 9;
+            const endingSoon = liveAndPromo
+              .filter((p) => isEndingSoon(p))
+              .sort(PNPL.byEndAsc);
+            const pool = liveAndPromo.filter((p) => !isEndingSoon(p));
+            const randomPool = pool
+              .map((p) => [Math.random(), p])
+              .sort((a, b) => a[0] - b[0])
+              .map((pair) => pair[1]);
+            return [...endingSoon, ...randomPool].slice(0, cap);
+          })();
           const upcoming = projects
             .filter((p) => PNPL.projectStatus(p, now) === 'upcoming')
             .sort((a, b) => PNPL.parseDate(a.launchDate) - PNPL.parseDate(b.launchDate));
