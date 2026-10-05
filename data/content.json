@@ -2482,6 +2482,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "scattered-nexus-solis-wars",
+      "title": "Scattered Nexus: Solis Wars",
+      "summary": "Our stand-alone, expandable battle-style card game is usually based on indie comics, but this time we based it on an indie card game.",
+      "image": "https://i.kickstarter.com/assets/055/154/563/9ff9a89ed7f0eb3b32b964cbe35d4356_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789594837&width=1024&sig=skWlh8y29x4vAPV21ooabQwVheYdMHaJCuUsW06iXHE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/slimstudio/scattered-nexus-solis-wars",
+      "designers": [
+        "Eli"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -3400,6 +3423,12 @@
     {
       "slug": "benjamin-benny-sperling",
       "name": "Benjamin Benny Sperling",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "eli",
+      "name": "Eli",
       "links": [],
       "notes": []
     }
