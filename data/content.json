@@ -2459,6 +2459,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "skeleton-shuffle",
+      "title": "Skeleton Shuffle",
+      "summary": "Help the mixed up musicians get put back together!",
+      "image": "https://i.kickstarter.com/assets/055/272/471/3712b4b30052c76317613c31ce2d5573_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790383020&width=1024&sig=bNLp9qObCKK%2BEl69o%2FL2UVK5qIJVmHI3M4OGKj%2Bi4J4%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-05",
+      "endDate": "2026-10-20",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/rollnwriterevolution/skeleton-shuffle",
+      "designers": [
+        "Benjamin Benny Sperling"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -3371,6 +3394,12 @@
     {
       "slug": "kaika-games",
       "name": "Kaika Games",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "benjamin-benny-sperling",
+      "name": "Benjamin Benny Sperling",
       "links": [],
       "notes": []
     }
