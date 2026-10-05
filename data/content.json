@@ -2528,6 +2528,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "air-oh-plane",
+      "title": "Air-Oh-Plane",
+      "summary": "A (print and play) dexterity paper airplane throwing game",
+      "image": "https://i.kickstarter.com/assets/055/354/765/a2f436e0a14ce6cc79eaac9549dc0265_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790929054&width=1024&sig=SsUtILog2md4lBnNbY17phVrX36IqVLp2Vc%2F4gcQSYc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/mazinggames/air-oh-plane",
+      "designers": [
+        "Mazing Games"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -3458,6 +3481,12 @@
     {
       "slug": "dicecream",
       "name": "DiceCream",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "mazing-games",
+      "name": "Mazing Games",
       "links": [],
       "notes": []
     }
