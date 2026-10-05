@@ -2436,6 +2436,29 @@
       "isPreview": true,
       "launchDate": "",
       "endDate": ""
+    },
+    {
+      "slug": "la-familia-unfinished-business",
+      "title": "La Familia - Unfinished Business In Palermo, Chicago & New York",
+      "summary": "A print & play DICE DRAFTING turf war where cutthroat capos carve up the city streets.",
+      "image": "/uploads/la-familia-unfinished-business.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/la-familia-unfinished-business",
+      "designers": [
+        "Florian Fiedler"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
