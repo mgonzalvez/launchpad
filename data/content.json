@@ -2391,6 +2391,29 @@
       "primaryUrl": "https://www.kickstarter.com/projects/thegrinningfrog/starship-scavengers-ghosts-of-voidspire",
       "designer": "Stephen Hart",
       "publisher": "The Grinning Frog"
+    },
+    {
+      "slug": "secret-base-moonfall",
+      "title": "Secret Base: Moonfall",
+      "summary": "Explore an abandoned research station at the Moon's South Pole, complete your mission, face unseen horrors lurking in the darkness, and fight to escape before time runs out in this solo sci-fi dungeon crawler Print-and-Play game.",
+      "image": "/uploads/secret-base-moonfall.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://gamefound.com/en/projects/kaika-games/secret-base-moonfall",
+      "designers": [
+        "Kaika Games"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -3299,6 +3322,12 @@
       "name": "Joe Shimwell",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "kaika-games",
+      "name": "Kaika Games",
+      "links": [],
+      "notes": []
     }
   ],
   "publishers": [
