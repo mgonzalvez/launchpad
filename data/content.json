@@ -2423,6 +2423,19 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "biozero-tokyo",
+      "title": "Biozero: Tokyo",
+      "summary": "In this solo survival Print-and-Play (PnP) game, you are one of six survivors fighting your way across an infected Tokyo, scavenging for weapons, battling zombies, and searching for a route out before it's too late.",
+      "image": "/uploads/biozero-tokyo.jpg",
+      "platform": "Gamefound",
+      "publisher": "Giza Games",
+      "designers": [],
+      "primaryUrl": "https://www.gamefound.com/en/projects/giza-games/biozero-tokyo",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
     }
   ],
   "designers": [
