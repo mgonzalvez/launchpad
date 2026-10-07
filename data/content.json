@@ -2615,6 +2615,27 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "deli-dash",
+      "title": "Deli Dash: The Sandwich-Building Card Game",
+      "summary": "Build sandwiches, dish out sabotage, and make the most money by the end of the lunch rush!",
+      "image": "https://i.kickstarter.com/assets/055/420/608/229a4cce85d7983c4f7b7430b807f34e_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1791380511&width=1024&sig=gFwW8hRzcum2d8r06dbRmnbjxl4AlgZuf%2FrJv8fRVVU%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-06",
+      "endDate": "2026-11-05",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/goodcluckgames/deli-dash",
+      "designers": [],
+      "publisher": "Good Cluck Games",
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -4385,6 +4406,12 @@
     {
       "slug": "sbg-editions",
       "name": "SBG Editions",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "good-cluck-games",
+      "name": "Good Cluck Games",
       "links": [],
       "notes": []
     }
