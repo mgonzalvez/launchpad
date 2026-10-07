@@ -2592,6 +2592,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "fireteam-zero-the-reboot",
+      "title": "Fireteam Zero - The Reboot",
+      "summary": "Co-op squad tactics and horror set in the last days of WW2 - revisited with new explosive content.",
+      "image": "/uploads/fireteam-zero-the-reboot.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://gamefound.com/en/projects/chris-loizou/fireteam-zero---the-reboot",
+      "designers": [
+        "Chris Loizou"
+      ],
+      "publisher": "SBG Editions",
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -3538,6 +3561,12 @@
       "summary": "",
       "primaryUrl": "https://gamefound.com/pt/projects/punk-this-studios",
       "projects": []
+    },
+    {
+      "slug": "chris-loizou",
+      "name": "Chris Loizou",
+      "links": [],
+      "notes": []
     }
   ],
   "publishers": [
@@ -4350,6 +4379,12 @@
     {
       "slug": "raybox-games",
       "name": "RayBox Games",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "sbg-editions",
+      "name": "SBG Editions",
       "links": [],
       "notes": []
     }
