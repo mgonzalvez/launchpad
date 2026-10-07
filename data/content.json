@@ -2569,6 +2569,29 @@
       "launchDate": "2026-10-07",
       "endDate": "2026-10-30",
       "primaryUrl": "https://gamefound.com/pt/projects/punk-this-studios/warbonds-battle-for-vitoria"
+    },
+    {
+      "slug": "afrikakorpse-41",
+      "title": "AfrikaKorpse '41",
+      "summary": "World War Two through the cracked lens of the supernatural. Two theatres, two undead legions to face. AfrikaKorpse '41 drags you into a desert tomb; U-Boot Z seals you inside a doomed submarine. Both are solo/co-op tactical wargames delivering narrative campaign stories and dozens of scenarios of horrific, escalating combat.",
+      "image": "/uploads/afrikakorpse-41.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://gamefound.com/en/projects/rayboxgames/afrikakorpse-41",
+      "designers": [
+        "Marco Pecota"
+      ],
+      "publisher": "RayBox Games",
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -4323,6 +4346,12 @@
       "summary": "",
       "primaryUrl": "https://gamefound.com/pt/projects/punk-this-studios",
       "projects": []
+    },
+    {
+      "slug": "raybox-games",
+      "name": "RayBox Games",
+      "links": [],
+      "notes": []
     }
   ]
 }
