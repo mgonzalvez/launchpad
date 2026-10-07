@@ -2551,6 +2551,24 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "warbonds-battle-for-vitoria",
+      "title": "WarBonds: Battle For Vitoria",
+      "summary": "A strategy board game of medieval fantasy warfare; where leadership influences the loyalty of ally and enemy units. Units without loyalty are susceptible to leaving your army; or worse, be persuaded to join the enemy.",
+      "image": "/uploads/warbonds.jpg",
+      "platform": "Gamefound",
+      "designer": "",
+      "designers": [
+        "Punk This Studios"
+      ],
+      "publisher": "Punk This Studios",
+      "publishers": [
+        "Punk This Studios"
+      ],
+      "launchDate": "2026-10-07",
+      "endDate": "2026-10-30",
+      "primaryUrl": "https://gamefound.com/pt/projects/punk-this-studios/warbonds-battle-for-vitoria"
     }
   ],
   "designers": [
@@ -3489,6 +3507,14 @@
       "name": "Mazing Games",
       "links": [],
       "notes": []
+    },
+    {
+      "name": "Punk This Studios",
+      "slug": "punk-this-studios",
+      "image": "",
+      "summary": "",
+      "primaryUrl": "https://gamefound.com/pt/projects/punk-this-studios",
+      "projects": []
     }
   ],
   "publishers": [
@@ -4289,6 +4315,14 @@
       "name": "Joe Shimwell",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "name": "Punk This Studios",
+      "slug": "punk-this-studios",
+      "image": "",
+      "summary": "",
+      "primaryUrl": "https://gamefound.com/pt/projects/punk-this-studios",
+      "projects": []
     }
   ]
 }
