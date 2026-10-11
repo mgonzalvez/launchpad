@@ -2659,6 +2659,27 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "lithomachy-the-12-divine-trials",
+      "title": "Lithomachy: The 12 Divine Trials",
+      "summary": "A solo mythological Roll & Write game. Defeat monsters and endure 48 chapters of ancient trials in a complete digital Print & Play epic",
+      "image": "https://i.kickstarter.com/assets/055/444/967/403c8daf722c477bad1e4f2ece2777b7_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1791532341&width=1024&sig=RxlIYjtO1zTGVby532gB6a97vOZ0olmc%2FSU6oqrRQFc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-09",
+      "endDate": "2026-11-08",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/pantheonboardgames/lithomachy-the-12-divine-trials",
+      "designers": [],
+      "publisher": "Pantheon Games",
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -4435,6 +4456,12 @@
     {
       "slug": "good-cluck-games",
       "name": "Good Cluck Games",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "pantheon-games",
+      "name": "Pantheon Games",
       "links": [],
       "notes": []
     }
