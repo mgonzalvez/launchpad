@@ -2636,6 +2636,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "spooky-triple-feature-solo-game-of-the-month",
+      "title": "Spooky Triple Feature [Solo Game of the Month]",
+      "summary": "A trio of spooky solo games",
+      "image": "/uploads/spooky-triple-feature-solo-game-of-the-month.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/spooky-triple-feature-solo-game-of-the-month",
+      "designers": [
+        "Gabe-Barrett"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
