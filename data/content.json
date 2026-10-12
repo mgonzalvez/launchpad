@@ -2680,6 +2680,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "hue-wanna-fight",
+      "title": "Hue Wanna Fight? – A Very Sketchy Brawler",
+      "summary": "Hue Wanna Fight is a chaotic arena brawler where fighters, magical dojos, and configurable arenas collide. Mix and match abilities, draw hazards directly onto the arena, and push your opponent out before they push you.",
+      "image": "/uploads/hue-wanna-fight.jpg",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "isPromo": false,
+      "primaryUrl": "https://gamefound.com/en/projects/beaverlicious-games/hue-wanna-fight",
+      "designers": [
+        "Robin Metz"
+      ],
+      "publisher": "Beaverlicious Games",
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
