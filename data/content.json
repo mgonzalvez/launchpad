@@ -505,19 +505,17 @@
       "publisher": "Beaverlicious Games"
     },
     {
-      "slug": "legends-of-hexdom",
-      "title": "Legends of Hexdom",
-      "summary": "A sandbox print-and-play roll and write adventure action RPG set in a medieval kingdom. Portable boardgame — battle monsters and bosses across hexagonal tiles.",
-      "image": "/uploads/legend-of-hexdom-2.jpg",
+      "slug": "legend-of-hexdom-ii",
+      "title": "Legend of Hexdom II: Factions of Hexia - Print and Play",
+      "summary": "A roll-and-write roguelike adventure for 1–4 players: four factions, 17 heroes, three campaigns and 72 maps to print and play! PNP",
+      "image": "/uploads/legend-of-hexdom-ii.jpg",
       "platform": "Kickstarter",
       "launchDate": "2026-10-05",
       "endDate": "2026-11-04",
       "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/papermage/legend-of-hexdom-2",
-      "promoDetails": "",
-      "designers": [
-        "Papermage Games"
-      ]
+      "designers": [],
+      "publisher": "Papermade Games"
     },
     {
       "slug": "tribal-clash",
