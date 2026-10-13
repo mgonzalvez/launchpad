@@ -505,18 +505,19 @@
       "publisher": "Beaverlicious Games"
     },
     {
-      "slug": "legend-of-hexdom-2",
-      "title": "Legend of Hexdom 2",
+      "slug": "legends-of-hexdom",
+      "title": "Legends of Hexdom",
       "summary": "A sandbox print-and-play roll and write adventure action RPG set in a medieval kingdom. Portable boardgame — battle monsters and bosses across hexagonal tiles.",
       "image": "/uploads/legend-of-hexdom-2.jpg",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-10-05",
+      "endDate": "2026-11-04",
+      "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/papermage/legend-of-hexdom-2",
-      "designer": "Papermage Games",
-      "publisher": "Papermage Games",
-      "promoDetails": ""
+      "promoDetails": "",
+      "designers": [
+        "Papermage Games"
+      ]
     },
     {
       "slug": "tribal-clash",
