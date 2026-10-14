@@ -2040,18 +2040,6 @@
       "publisher": "I'm Not Shouting"
     },
     {
-      "slug": "cloaked-cryptids",
-      "title": "Cloaked Cryptids™: The Card Game",
-      "summary": "A hidden-identity card game of deception, sabotage, and legendary creatures.",
-      "image": "/uploads/cloaked_cryptids.png",
-      "platform": "Kickstarter",
-      "launchDate": "2026-08-14",
-      "endDate": "2026-10-13",
-      "primaryUrl": "https://www.kickstarter.com/projects/lazersquadgames/cloaked-cryptidstm-the-card-game-0",
-      "designer": "Kyle Baker",
-      "publisher": "LazerSquad Games"
-    },
-    {
       "slug": "what-you-buried",
       "title": "What You Buried",
       "summary": "Seven invitations. One forgotten past. And someone knows what you buried. A Murder Mystery Roleplaying Game set on an isolated island.",
@@ -3499,12 +3487,6 @@
       "bio": ""
     },
     {
-      "slug": "kyle-baker",
-      "name": "Kyle Baker",
-      "bggUrl": "",
-      "bio": ""
-    },
-    {
       "slug": "oscar-g-novo",
       "name": "Oscar G. Novo",
       "bggUrl": "",
@@ -4339,12 +4321,6 @@
     {
       "slug": "im-not-shouting",
       "name": "I'm Not Shouting",
-      "bggUrl": "",
-      "bio": ""
-    },
-    {
-      "slug": "lazersquad-games",
-      "name": "LazerSquad Games",
       "bggUrl": "",
       "bio": ""
     },
