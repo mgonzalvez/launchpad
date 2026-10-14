@@ -2702,6 +2702,29 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "dungeons-of-numera",
+      "title": "Dungeons of Numera",
+      "summary": "A Sudoku inspired dungeon delver roll and write game.",
+      "image": "https://i.kickstarter.com/assets/055/330/808/93e3cfd6f1e67581b98d6ce99dbdbe2c_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790782185&width=1024&sig=FKp5Wps54B4piZy8jU3mG%2Fi21CAN8%2FbhaCzpjfCiGBI%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-09-29",
+      "endDate": "2026-10-15",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/dwaldman/dungeons-of-numera/description",
+      "designers": [
+        "David Waldman"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
@@ -3652,6 +3675,12 @@
     {
       "slug": "chris-loizou",
       "name": "Chris Loizou",
+      "links": [],
+      "notes": []
+    },
+    {
+      "slug": "david-waldman",
+      "name": "David Waldman",
       "links": [],
       "notes": []
     }
