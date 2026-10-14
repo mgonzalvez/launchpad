@@ -2201,9 +2201,9 @@
       "summary": "A major expansion for the definitive 3D-printable dieselpunk mech wargame, introducing new Rigs, manufacturers, terrain and more on the fractured frontier.",
       "image": "/uploads/fractured_frontiers.png",
       "platform": "Gamefound",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-10-13",
+      "endDate": "2026-11-04",
+      "isPreview": false,
       "primaryUrl": "https://gamefound.com/en/projects/scoutsifer-studio/of-oil-and-iron-fractured-frontiers",
       "publisher": "Scoutsifer Studio"
     },
