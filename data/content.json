@@ -2725,6 +2725,98 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "rune-rite-flip-and-write",
+      "title": "Rune Rite: Flip and Write Game",
+      "summary": "A flip-and-write game",
+      "image": "https://i.kickstarter.com/assets/placeholder.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-13",
+      "endDate": "",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/seahorse-hummingbird/rune-rite-flip-and-write-game",
+      "designers": [
+        "Seahorse Hummingbird"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
+    },
+    {
+      "slug": "a-sliver-of-evidence",
+      "title": "A Sliver of Evidence",
+      "summary": "A Print-and-Play game",
+      "image": "https://i.kickstarter.com/assets/placeholder.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-13",
+      "endDate": "",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/cairnpress/a-sliver-of-evidence",
+      "designers": [
+        "Cairn Press"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
+    },
+    {
+      "slug": "battle-brothers-the-board-game",
+      "title": "Battle Brothers: The Board Game",
+      "summary": "Card-based tactical board game based on the cult video game Battle Brothers. Go to battle as a mercenary company or an orc warband!",
+      "image": "https://i.kickstarter.com/assets/placeholder.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-13",
+      "endDate": "",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/bbboardgame/battle-brothers-the-board-game",
+      "designers": [
+        "Nodice"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
+    },
+    {
+      "slug": "orb-tyrants",
+      "title": "Orb Tyrants",
+      "summary": "A Gruesome Skirmish Game of Floating Horrors fighting for dungeon supremacy. A 3rd-party Forbidden Psalm game! by Brian Shutter",
+      "image": "https://i.kickstarter.com/assets/placeholder.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-13",
+      "endDate": "",
+      "isPreview": false,
+      "isPromo": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/neonlordsrpg/orb-tyrants",
+      "designers": [
+        "Brian Shutter"
+      ],
+      "publisher": null,
+      "isLatePledge": false,
+      "hasLatePledge": false,
+      "latePledgeUrl": null,
+      "isPreOrder": false,
+      "hasPreOrder": false,
+      "preOrderUrl": null,
+      "notes": []
     }
   ],
   "designers": [
