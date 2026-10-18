@@ -2805,6 +2805,21 @@
       "hasPreOrder": false,
       "preOrderUrl": null,
       "notes": []
+    },
+    {
+      "slug": "three-2-player-card-games",
+      "title": "Three 2-Player Card Games",
+      "summary": "Three small-box two-player card games from Bighead Games, by designer Michael Scott. Bighead Games' second Kickstarter campaign.",
+      "image": "/uploads/three-2-player-card-games.png",
+      "platform": "Kickstarter",
+      "publisher": "Bighead Games",
+      "designers": [
+        "Michael Scott"
+      ],
+      "primaryUrl": "https://www.kickstarter.com/projects/jmzero/three-2-player-card-games-from-bighead-games",
+      "isPreview": false,
+      "launchDate": "2026-10-16",
+      "endDate": "2026-11-02"
     }
   ],
   "designers": [
@@ -3781,6 +3796,10 @@
       "name": "Brian Shutter",
       "links": [],
       "notes": []
+    },
+    {
+      "name": "Michael Scott",
+      "slug": "michael-scott"
     }
   ],
   "publishers": [
@@ -4607,6 +4626,10 @@
       "name": "Pantheon Games",
       "links": [],
       "notes": []
+    },
+    {
+      "name": "Bighead Games",
+      "slug": "bighead-games"
     }
   ]
 }
