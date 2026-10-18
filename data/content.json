@@ -2834,6 +2834,21 @@
       "isPreview": false,
       "launchDate": "2026-10-15",
       "endDate": "2026-11-04"
+    },
+    {
+      "slug": "my-zombie-army-pnp-stl-miniatures",
+      "title": "My Zombie Army - Print & Play with STL Miniatures (Optional)",
+      "summary": "Collect sets of zombies and attack your opponents to take theirs as you build the ultimate Zombie Army.",
+      "image": "/uploads/my-zombie-army.jpg",
+      "platform": "Kickstarter",
+      "publisher": "Squirrelcat Games",
+      "designers": [
+        "Daniel Hayles"
+      ],
+      "primaryUrl": "https://www.kickstarter.com/projects/myzombiearmy/my-zombie-army-print-and-play-with-miniatures",
+      "isPreview": false,
+      "launchDate": "2026-10-16",
+      "endDate": "2026-10-30"
     }
   ],
   "designers": [
@@ -3818,6 +3833,10 @@
     {
       "name": "John H. Kohn",
       "slug": "john-h-kohn"
+    },
+    {
+      "name": "Daniel Hayles",
+      "slug": "daniel-hayles"
     }
   ],
   "publishers": [
@@ -4648,6 +4667,10 @@
     {
       "name": "Bighead Games",
       "slug": "bighead-games"
+    },
+    {
+      "name": "Squirrelcat Games",
+      "slug": "squirrelcat-games"
     }
   ]
 }
