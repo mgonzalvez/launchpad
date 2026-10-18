@@ -2849,6 +2849,20 @@
       "isPreview": false,
       "launchDate": "2026-10-16",
       "endDate": "2026-10-30"
+    },
+    {
+      "slug": "wholesome-adventure",
+      "title": "Wholesome Adventure",
+      "summary": "A tabletop roguelike where players can make the WHOLESOME or UN-WHOLESOME choice! 1-4 players, ages 10+, 30-60 minute playtime.",
+      "image": "/uploads/wholesome_adventure.png",
+      "platform": "Gamefound",
+      "designers": [
+        "Jason Anarchy"
+      ],
+      "primaryUrl": "https://gamefound.com/en/projects/jason-anarchy/wholesome-adventure",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
     }
   ],
   "designers": [
@@ -3837,6 +3851,10 @@
     {
       "name": "Daniel Hayles",
       "slug": "daniel-hayles"
+    },
+    {
+      "name": "Jason Anarchy",
+      "slug": "jason-anarchy"
     }
   ],
   "publishers": [
