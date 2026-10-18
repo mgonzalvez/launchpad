@@ -2820,6 +2820,20 @@
       "isPreview": false,
       "launchDate": "2026-10-16",
       "endDate": "2026-11-02"
+    },
+    {
+      "slug": "chain-reaction-mine-field-assault-solo",
+      "title": "Chain Reaction Mine Field Assault! (solo)",
+      "summary": "Your team must complete a mission by rushing a mine field that's alternative explosive's timed to go off independently upon your exit!",
+      "image": "/uploads/chain-reaction-mine-field-assault.jpg",
+      "platform": "Kickstarter",
+      "designers": [
+        "John H. Kohn"
+      ],
+      "primaryUrl": "https://www.kickstarter.com/projects/1438234520/chain-reaction-mine-field-assault-solo-manufactured",
+      "isPreview": false,
+      "launchDate": "2026-10-15",
+      "endDate": "2026-11-04"
     }
   ],
   "designers": [
@@ -3800,6 +3814,10 @@
     {
       "name": "Michael Scott",
       "slug": "michael-scott"
+    },
+    {
+      "name": "John H. Kohn",
+      "slug": "john-h-kohn"
     }
   ],
   "publishers": [
