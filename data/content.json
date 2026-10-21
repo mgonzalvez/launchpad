@@ -2888,6 +2888,18 @@
       "launchDate": "",
       "endDate": "",
       "primaryUrl": "https://www.kickstarter.com/projects/rollingrhinogames/hollandchateau"
+    },
+    {
+      "slug": "age-of-adventure",
+      "title": "Age of Adventure",
+      "summary": "A complete print-and-play fantasy RPG adventure. Print the heroes, monsters, maps and cards, gather your friends, and start playing.",
+      "image": "https://i.kickstarter.com/assets/055/384/098/82d2034ac7ec52032f8f4d7d4c92b6d3_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1791173455&width=1024&sig=qEkmjxUciovnseCwTh7apOzdYYhJ0I8j9sboZ5AsHLo%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/steelcraftstudios/age-of-adventure",
+      "publisher": "Steel Craft Studios"
     }
   ],
   "designers": [
@@ -4714,6 +4726,12 @@
     {
       "name": "Squirrelcat Games",
       "slug": "squirrelcat-games"
+    },
+    {
+      "slug": "steel-craft-studios",
+      "name": "Steel Craft Studios",
+      "bggUrl": "",
+      "bio": ""
     }
   ]
 }
