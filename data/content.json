@@ -2900,6 +2900,18 @@
       "isPreview": true,
       "primaryUrl": "https://www.kickstarter.com/projects/steelcraftstudios/age-of-adventure",
       "publisher": "Steel Craft Studios"
+    },
+    {
+      "slug": "button-shy-micro-games-summer-2026-collection",
+      "title": "Button Shy Micro Games: Summer 2026 Collection",
+      "summary": "Choose from The Cursed Cat, Reawaken, Forest Rivals, or Crime Sprawl, or grab them all for one low price with some bonus freebies!",
+      "image": "/uploads/button-shy-summer-2026.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-10-22",
+      "endDate": "2026-10-30",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/239309591/button-shy-micro-games-summer-2026-collection",
+      "publisher": "Button Shy"
     }
   ],
   "designers": [
