@@ -2912,6 +2912,21 @@
       "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/239309591/button-shy-micro-games-summer-2026-collection",
       "publisher": "Button Shy"
+    },
+    {
+      "slug": "the-locked-room-murder-mystery-game",
+      "title": "The Locked Room Murder Mystery Game",
+      "summary": "Make your own murder mysteries with this hybrid board game and TTRPG!",
+      "image": "/uploads/the-locked-room-murder-mystery.jpg",
+      "platform": "Kickstarter",
+      "publisher": "Adam Bell",
+      "designers": [
+        "Adam Bell"
+      ],
+      "primaryUrl": "https://www.kickstarter.com/projects/adamebell/the-locked-room-murder-mystery-game",
+      "isPreview": false,
+      "launchDate": "2026-10-20",
+      "endDate": "2026-11-19"
     }
   ],
   "designers": [
@@ -3904,6 +3919,10 @@
     {
       "name": "Jason Anarchy",
       "slug": "jason-anarchy"
+    },
+    {
+      "name": "Adam Bell",
+      "slug": "adam-bell"
     }
   ],
   "publishers": [
@@ -4744,6 +4763,10 @@
       "name": "Steel Craft Studios",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "name": "Adam Bell",
+      "slug": "adam-bell"
     }
   ]
 }
