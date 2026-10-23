@@ -2939,6 +2939,20 @@
       "isPreview": true,
       "launchDate": "",
       "endDate": ""
+    },
+    {
+      "slug": "until-the-bitter-end-game-3",
+      "title": "Until the Bitter End Game 3",
+      "summary": "A print and play WW2 wargame for two players and solitaire that takes around half an hour to setup and play.",
+      "image": "/uploads/until-the-bitter-end-game-3.jpg",
+      "platform": "Kickstarter",
+      "designers": [
+        "Matt White"
+      ],
+      "primaryUrl": "https://www.kickstarter.com/projects/mattwhite-wargames/until-the-bitter-end-game-3",
+      "isPreview": false,
+      "launchDate": "2026-10-22",
+      "endDate": "2026-11-17"
     }
   ],
   "designers": [
@@ -3935,6 +3949,10 @@
     {
       "name": "Adam Bell",
       "slug": "adam-bell"
+    },
+    {
+      "name": "Matt White",
+      "slug": "matt-white"
     }
   ],
   "publishers": [
