@@ -2927,6 +2927,18 @@
       "isPreview": false,
       "launchDate": "2026-10-20",
       "endDate": "2026-11-19"
+    },
+    {
+      "slug": "one-page-quest",
+      "title": "One Page Quest",
+      "summary": "Endless SOLO Print & Play adventures. Looks like an old-school RPG. Plays like a roguelike. Rolls like Yahtzee.",
+      "image": "/uploads/one-page-quest.jpg",
+      "platform": "Kickstarter",
+      "publisher": "Grammes Edition",
+      "primaryUrl": "https://www.kickstarter.com/projects/grammesedition/one-page-quest",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
     }
   ],
   "designers": [
@@ -4767,6 +4779,10 @@
     {
       "name": "Adam Bell",
       "slug": "adam-bell"
+    },
+    {
+      "name": "Grammes Edition",
+      "slug": "grammes-edition"
     }
   ]
 }
