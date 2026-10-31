@@ -3002,6 +3002,18 @@
       "endDate": ""
     },
     {
+      "slug": "pro-patria-mori-high-seas",
+      "title": "Pro Patria Mori: High Seas",
+      "summary": "A tabletop roleplaying game set on a u-boat in the last days of World War 1.",
+      "image": "/uploads/pro_patria_mori.png",
+      "platform": "Kickstarter",
+      "publisher": "Nobile Press",
+      "primaryUrl": "https://www.kickstarter.com/projects/nobilepress/pro-patria-mori-high-seas",
+      "isPreview": false,
+      "launchDate": "2026-10-29",
+      "endDate": "2026-11-28"
+    },
+    {
       "slug": "until-the-bitter-end-game-3",
       "title": "Until the Bitter End Game 3",
       "summary": "A print and play WW2 wargame for two players and solitaire that takes around half an hour to setup and play.",
@@ -4017,6 +4029,12 @@
     }
   ],
   "publishers": [
+    {
+      "slug": "nobile-press",
+      "name": "Nobile Press",
+      "bggUrl": "",
+      "bio": ""
+    },
     {
       "slug": "rolling-elephant",
       "name": "Rolling Elephant",
