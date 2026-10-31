@@ -2977,6 +2977,18 @@
       "endDate": ""
     },
     {
+      "slug": "kardums-fate",
+      "title": "Kardum's Fate",
+      "summary": "Defend Kardum from Monsters - Print & Play Solo Game",
+      "image": "/uploads/kardums_fate.png",
+      "platform": "Kickstarter",
+      "publisher": "Rolling Elephant",
+      "primaryUrl": "https://www.kickstarter.com/projects/dmgame/kardums-fate",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
+    },
+    {
       "slug": "until-the-bitter-end-game-3",
       "title": "Until the Bitter End Game 3",
       "summary": "A print and play WW2 wargame for two players and solitaire that takes around half an hour to setup and play.",
@@ -3992,6 +4004,12 @@
     }
   ],
   "publishers": [
+    {
+      "slug": "rolling-elephant",
+      "name": "Rolling Elephant",
+      "bggUrl": "",
+      "bio": ""
+    },
     {
       "slug": "blue-ice-games",
       "name": "Blue Ice Games",
