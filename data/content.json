@@ -44,9 +44,9 @@
       "summary": "Build your dream soccer club, sign superstar players, play epic matches, and compete for glory in this print & play board game!",
       "image": "https://i.kickstarter.com/assets/055/185/425/a565633102e95f0a398e9eaf15b1d32c_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789807728&width=1024&sig=TTqAP6j62uzP9cHofqQT7jb5za9cLeNzF0Ws%2FRqrj7A%3D",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-10-20",
+      "endDate": "2026-12-04",
+      "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/titanboardgames/soccer-manager-print-and-play-boardgame",
       "publisher": "Titan Boardgames"
     },
@@ -2856,9 +2856,10 @@
       "image": "https://i.kickstarter.com/assets/055/563/755/0d61f7c5942e5af3b47e9ac8e71a941d_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1792365281&width=1024&sig=gS63GKg72WZsZ5GeITtqFX660OTl5Ei2FSFWHBWMtYM%3D",
       "platform": "Kickstarter",
       "publisher": "NukaZombee Games",
-      "isPreview": true,
+      "isPreview": false,
       "launchDate": "",
-      "endDate": "",
+      "endDate": "2026-11-17",
+      "endTime": "01:00",
       "primaryUrl": "https://www.kickstarter.com/projects/nukazombee/lands-of-legacy-egypt"
     },
     {
