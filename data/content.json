@@ -2965,6 +2965,18 @@
       "endDate": ""
     },
     {
+      "slug": "octo-elementis",
+      "title": "Octo Elementis",
+      "summary": "A highly interactive competitive game for 1 to 5 players for 30 minutes per game in print and play format.",
+      "image": "/uploads/octo_elementis.png",
+      "platform": "Kickstarter",
+      "publisher": "Blue Ice Games",
+      "primaryUrl": "https://www.kickstarter.com/projects/blue-ice-games/octo-elementis",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
+    },
+    {
       "slug": "until-the-bitter-end-game-3",
       "title": "Until the Bitter End Game 3",
       "summary": "A print and play WW2 wargame for two players and solitaire that takes around half an hour to setup and play.",
@@ -3980,6 +3992,12 @@
     }
   ],
   "publishers": [
+    {
+      "slug": "blue-ice-games",
+      "name": "Blue Ice Games",
+      "bggUrl": "",
+      "bio": ""
+    },
     {
       "slug": "time-to-dice",
       "name": "Time to Dice",
