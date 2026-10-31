@@ -2953,6 +2953,18 @@
       "endDate": ""
     },
     {
+      "slug": "midtown-casino",
+      "title": "Midtown Casino - A Casino Flip & Write Game",
+      "summary": "Run your own Casino in this strategic Solo Print & Play game",
+      "image": "/uploads/midtown_casino.png",
+      "platform": "Kickstarter",
+      "publisher": "Dozens of Us",
+      "primaryUrl": "https://www.kickstarter.com/projects/dozensofus/casino-central-a-casino-flip-and-write-game",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
+    },
+    {
       "slug": "until-the-bitter-end-game-3",
       "title": "Until the Bitter End Game 3",
       "summary": "A print and play WW2 wargame for two players and solitaire that takes around half an hour to setup and play.",
