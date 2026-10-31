@@ -2931,13 +2931,14 @@
     {
       "slug": "one-page-quest",
       "title": "One Page Quest",
-      "summary": "Endless SOLO Print & Play adventures. Looks like an old-school RPG. Plays like a roguelike. Rolls like Yahtzee.",
+      "summary": "Endless SOLO Print & Play adventures. Looks like an old-school RPG. Plays like a roguelike. Rolls like Yahtzee. Free PnP demo and full rules on BoardGameGeek.",
       "image": "/uploads/one-page-quest.jpg",
       "platform": "Kickstarter",
+      "designer": "Léandre Proust",
       "publisher": "Grammes Edition",
       "primaryUrl": "https://www.kickstarter.com/projects/grammesedition/one-page-quest",
-      "isPreview": true,
-      "launchDate": "",
+      "isPreview": false,
+      "launchDate": "2026-11-03",
       "endDate": ""
     },
     {
@@ -3029,6 +3030,12 @@
     }
   ],
   "designers": [
+    {
+      "slug": "leandre-proust",
+      "name": "Léandre Proust",
+      "bggUrl": "",
+      "bio": ""
+    },
     {
       "slug": "krzysiek-pietrzak",
       "name": "Krzysiek Pietrzak",
