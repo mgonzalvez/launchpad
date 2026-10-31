@@ -1107,21 +1107,6 @@
       "promoDetails": ""
     },
     {
-      "slug": "33-seconds-of-chaos",
-      "title": "33 Seconds of Chaos",
-      "summary": "33 Seconds of Chaos is a fast-paced social party game where you give clues under weird constraints. One turn, you do it as a movie announcer, or you have to use only adjectives and nouns. Sometimes there are duels. You might have to play Flip Card or rattle off three breakfast items faster than your opponent.",
-      "image": "/uploads/33_seconds.png",
-      "platform": "Crowdfunding",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
-      "primaryUrl": "https://www.mischievousvibes.com/",
-      "designer": "Yuriy Shikhanovich",
-      "publisher": "Mischievous Vibes Entertainment",
-      "isLatePledge": true,
-      "promoDetails": "Submitted as a preview crowdfunding project."
-    },
-    {
       "slug": "fort-douaumont",
       "title": "Fort Douaumont",
       "summary": "Fort Douaumont is a 2-player print-and-play strategy game set on the Verdun front, blending tense push-your-luck dice battles with positional control across six contested zones. Players fight for ground through brinkmanship, reinforcements, and tactical movement, while one-shot powers and sector control can swing key moments.",
@@ -3199,12 +3184,6 @@
       "bio": "Shawn Stankewich is a founding member of Flatout Games, based in Seattle, WA, and active in Playtest Northwest and the Seattle Board Game Designers group. He co-designs modern strategy titles and co-hosts the Flatout at the Table podcast on board game mechanics."
     },
     {
-      "slug": "yuriy-shikhanovich",
-      "name": "Yuriy Shikhanovich",
-      "bggUrl": "",
-      "bio": ""
-    },
-    {
       "slug": "davide-ghelfi",
       "name": "Davide Ghelfi",
       "bggUrl": "",
@@ -4179,12 +4158,6 @@
       "name": "Flatout Games",
       "bggUrl": "https://boardgamegeek.com/boardgamepublisher/42733/flatout-games",
       "bio": "Flatout Games is a design collaborative founded in 2017 by Molly Johnson, Robert Melvin, and Shawn Stankewich. They focus on elegant, puzzly, low-luck decision-making games with simple rules, high replayability, and strong strategic tension. Through the Flatout Games CoLab, they partner with established and emerging creators to build polished, collaborative tabletop experiences."
-    },
-    {
-      "slug": "mischievous-vibes-entertainment",
-      "name": "Mischievous Vibes Entertainment",
-      "bggUrl": "",
-      "bio": ""
     },
     {
       "slug": "lemery-games",
