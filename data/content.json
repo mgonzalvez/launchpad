@@ -2845,9 +2845,9 @@
         "Jason Anarchy"
       ],
       "primaryUrl": "https://gamefound.com/en/projects/jason-anarchy/wholesome-adventure",
-      "isPreview": true,
-      "launchDate": "",
-      "endDate": ""
+      "isPreview": false,
+      "launchDate": "2026-11-02",
+      "endDate": "2026-11-11"
     },
     {
       "slug": "lands-of-legacy-egypt",
