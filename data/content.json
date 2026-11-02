@@ -3045,6 +3045,21 @@
       "isPreview": false,
       "launchDate": "2026-11-02",
       "endDate": "2026-12-04"
+    },
+    {
+      "slug": "rock-paper-scissors-slam",
+      "title": "Rock Paper Scissors Slam!",
+      "summary": "Beat cards using Rock, Paper, or Scissors to be the winner!",
+      "image": "/uploads/rock_paper_scissors_slam.png",
+      "platform": "Kickstarter",
+      "designers": [
+        "Benjamin Sperling"
+      ],
+      "publisher": "Roll and Write Revolution",
+      "primaryUrl": "https://www.kickstarter.com/projects/rollnwriterevolution/rock-paper-scissors-slam",
+      "isPreview": false,
+      "launchDate": "2026-11-02",
+      "endDate": "2026-11-17"
     }
   ],
   "designers": [
@@ -4921,6 +4936,10 @@
     {
       "name": "Baseraider",
       "slug": "baseraider"
+    },
+    {
+      "name": "Roll and Write Revolution",
+      "slug": "roll-and-write-revolution"
     }
   ]
 }
