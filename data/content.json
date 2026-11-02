@@ -3013,6 +3013,23 @@
       "isPreview": false,
       "launchDate": "2026-10-22",
       "endDate": "2026-11-17"
+    },
+    {
+      "slug": "the-meridian-signal",
+      "title": "The Meridian Signal",
+      "summary": "A downloadable sci-fi evidence-puzzle game for 1-4 players (age 14+). Explore an abandoned observatory through seven connected puzzles, with an 11-page player dossier, separate hints and answers in Letter and A4, and an optional offline desktop-browser terminal for progress tracking.",
+      "image": "/uploads/the_meridian_signal.png",
+      "platform": "Itch.io",
+      "designers": [
+        "DigiiForge"
+      ],
+      "publisher": "DigiiForge",
+      "primaryUrl": "https://digiiforge.itch.io/the-meridian-signal",
+      "isPreview": false,
+      "isPromo": true,
+      "launchDate": "2026-11-01",
+      "endDate": "2026-11-04",
+      "promoDetails": "50% off through November 4, 2026 at 1 p.m. Eastern: $4.50 instead of $9. The first-puzzle prologue is free on the product page. Writing, illustration, layout and code are AI-assisted; playtime and difficulty are not independently validated."
     }
   ],
   "designers": [
@@ -4013,6 +4030,10 @@
     {
       "name": "Matt White",
       "slug": "matt-white"
+    },
+    {
+      "name": "DigiiForge",
+      "slug": "digiiforge"
     }
   ],
   "publishers": [
@@ -4873,6 +4894,10 @@
     {
       "name": "Grammes Edition",
       "slug": "grammes-edition"
+    },
+    {
+      "name": "DigiiForge",
+      "slug": "digiiforge"
     }
   ]
 }
