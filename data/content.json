@@ -3030,6 +3030,21 @@
       "launchDate": "2026-11-01",
       "endDate": "2026-11-04",
       "promoDetails": "50% off through November 4, 2026 at 1 p.m. Eastern: $4.50 instead of $9. The first-puzzle prologue is free on the product page. Writing, illustration, layout and code are AI-assisted; playtime and difficulty are not independently validated."
+    },
+    {
+      "slug": "bug-out-escape-your-paranoia",
+      "title": "Bug Out: Escape your Paranoia",
+      "summary": "A competitive survival game for 2-4 players. The neighborhood has gone quiet and something is coming. Build a road across an ever-changing map, search for supplies and deal with scavengers while everyone else makes their own escape plans. The first player into a bunker triggers the Final Escape — the best-prepared survivor wins.",
+      "image": "/uploads/bug_out.png",
+      "platform": "Gamefound",
+      "designers": [
+        "Baseraider"
+      ],
+      "publisher": "Baseraider",
+      "primaryUrl": "https://gamefound.com/en/projects/baseraider/bug-out-escape-your-paranoia",
+      "isPreview": false,
+      "launchDate": "2026-11-02",
+      "endDate": "2026-12-04"
     }
   ],
   "designers": [
@@ -4034,6 +4049,10 @@
     {
       "name": "DigiiForge",
       "slug": "digiiforge"
+    },
+    {
+      "name": "Baseraider",
+      "slug": "baseraider"
     }
   ],
   "publishers": [
@@ -4898,6 +4917,10 @@
     {
       "name": "DigiiForge",
       "slug": "digiiforge"
+    },
+    {
+      "name": "Baseraider",
+      "slug": "baseraider"
     }
   ]
 }
