@@ -3073,6 +3073,19 @@
       "isPreview": true,
       "launchDate": "",
       "endDate": ""
+    },
+    {
+      "slug": "payload-a-rocket-themed-tabletop-game",
+      "title": "Payload: A Rocket-Themed Tabletop Game",
+      "summary": "Experience the thrill of leading your own space company to victory!",
+      "image": "/uploads/payload.png",
+      "platform": "Kickstarter",
+      "designer": "Ashutosh Kumar",
+      "publisher": "Arjit Raj",
+      "primaryUrl": "https://www.kickstarter.com/projects/rajarjit/payload/description",
+      "launchDate": "2026-10-20",
+      "endDate": "2026-11-19",
+      "isPreview": false
     }
   ],
   "designers": [
@@ -4087,6 +4100,12 @@
       "name": "Joe Klipfel",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "ashutosh-kumar",
+      "name": "Ashutosh Kumar",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -4963,6 +4982,12 @@
     {
       "slug": "gabe-barrett",
       "name": "Gabe-Barrett",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "arjit-raj",
+      "name": "Arjit Raj",
       "bggUrl": "",
       "bio": ""
     }
