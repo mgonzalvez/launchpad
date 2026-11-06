@@ -3086,6 +3086,18 @@
       "launchDate": "2026-10-20",
       "endDate": "2026-11-19",
       "isPreview": false
+    },
+    {
+      "slug": "bumble-burglars",
+      "title": "Bumble Burglars",
+      "summary": "The Honey is Always Sweeter on the Other Hive!",
+      "image": "/uploads/bumble-burglars.png",
+      "platform": "Kickstarter",
+      "publisher": "Bumble Bros Games",
+      "primaryUrl": "https://www.kickstarter.com/projects/bumblebros/bumble-burglars/description",
+      "launchDate": "2026-11-03",
+      "endDate": "2026-12-03",
+      "isPreview": false
     }
   ],
   "designers": [
@@ -4988,6 +5000,12 @@
     {
       "slug": "arjit-raj",
       "name": "Arjit Raj",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "bumble-bros-games",
+      "name": "Bumble Bros Games",
       "bggUrl": "",
       "bio": ""
     }
