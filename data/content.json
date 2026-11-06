@@ -3060,6 +3060,19 @@
       "isPreview": false,
       "launchDate": "2026-11-02",
       "endDate": "2026-11-17"
+    },
+    {
+      "slug": "joe-klipfel-presents-solo-game-of-the-month",
+      "title": "Joe Klipfel Presents [Solo Game of the Month]",
+      "summary": "Best With 1 is ending 2026 with a bang! 4 great games; 4 collaborations of Joe Klipfel designs and Cole Munro-Chitty illustrations; 4 weeks of surprises, giveaways, and more 🙂",
+      "image": "/uploads/joe_klipfel_presents.png",
+      "platform": "Gamefound",
+      "designer": "Joe Klipfel",
+      "publisher": "Gabe-Barrett",
+      "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/joe-klipfel-presents-solo-game-of-the-month",
+      "isPreview": true,
+      "launchDate": "",
+      "endDate": ""
     }
   ],
   "designers": [
@@ -4068,6 +4081,12 @@
     {
       "name": "Baseraider",
       "slug": "baseraider"
+    },
+    {
+      "slug": "joe-klipfel",
+      "name": "Joe Klipfel",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -4940,6 +4959,12 @@
     {
       "name": "Roll and Write Revolution",
       "slug": "roll-and-write-revolution"
+    },
+    {
+      "slug": "gabe-barrett",
+      "name": "Gabe-Barrett",
+      "bggUrl": "",
+      "bio": ""
     }
   ]
 }
