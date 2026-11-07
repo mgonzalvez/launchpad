@@ -64,7 +64,8 @@
       "primaryUrl": "https://www.kickstarter.com/projects/ahobday/the-squirrels-of-wildwood",
       "designers": [
         "Anthony Hobday"
-      ]
+      ],
+      "isArchived": true
     },
     {
       "slug": "avast-ye-buccaneers-and-cutthroats",
@@ -2594,7 +2595,8 @@
       "isPreOrder": false,
       "hasPreOrder": false,
       "preOrderUrl": null,
-      "notes": []
+      "notes": [],
+      "isArchived": true
     },
     {
       "slug": "spooky-triple-feature-solo-game-of-the-month",
@@ -2739,7 +2741,7 @@
       "image": "https://i.kickstarter.com/assets/055/357/308/3ca8cde4d5a0b0d9a49689a229197a52_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1790947847&width=1024&sig=j7L05tD5ms80OSaaSgUcwl2Hyu7KCv86tHbnLnlH4LM%3D",
       "platform": "Kickstarter",
       "launchDate": "2026-10-13",
-      "endDate": "2026-11-06",
+      "endDate": "2026-11-05",
       "isPreview": false,
       "isPromo": false,
       "primaryUrl": "https://www.kickstarter.com/projects/bbboardgame/battle-brothers-the-board-game",
@@ -2753,7 +2755,8 @@
       "isPreOrder": false,
       "hasPreOrder": false,
       "preOrderUrl": null,
-      "notes": []
+      "notes": [],
+      "isArchived": true
     },
     {
       "slug": "orb-tyrants",
@@ -2776,7 +2779,8 @@
       "isPreOrder": false,
       "hasPreOrder": false,
       "preOrderUrl": null,
-      "notes": []
+      "notes": [],
+      "isArchived": true
     },
     {
       "slug": "three-2-player-card-games",

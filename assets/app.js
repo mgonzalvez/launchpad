@@ -244,6 +244,9 @@ function projectStatus(p, now = new Date()) {
   const isPreview = Boolean(p.isPreview) || (!hasIsoDate(p.launchDate) && !hasIsoDate(p.endDate));
   if (isPreview) return 'preview';
 
+  // Manual override for campaigns whose funding closed before the 24h grace window would archive them.
+  if (p.isArchived) return 'archived';
+
   const launch = parseProjectDateTime(p.launchDate, p.launchTime, 'start');
   // Keep projects active for an extra 24h after stated end date to avoid timezone cutoffs.
   const end = addHours(parseProjectDateTime(p.endDate, p.endTime, 'end'), 24);

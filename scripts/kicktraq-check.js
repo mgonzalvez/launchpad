@@ -331,15 +331,19 @@ async function main() {
     const isPreview = Boolean(project.isPreview) || (!project.launchDate && !project.endDate);
     let ourStatus = "preview";
     if (!isPreview) {
-      const launch = new Date(project.launchDate + "T00:00:00");
-      const end = new Date(project.endDate + "T23:59:59");
-      if (launch > now) ourStatus = "upcoming";
-      else if (end < now) {
-        if (project.isLatePledge || project.hasLatePledge || project.latePledgeUrl) ourStatus = "late-pledge";
-        else if (project.isPreOrder || project.hasPreOrder || project.preOrderUrl) ourStatus = "pre-order";
-        else ourStatus = "archived";
+      if (project.isArchived) {
+        ourStatus = "archived";
       } else {
-        ourStatus = "live";
+        const launch = new Date(project.launchDate + "T00:00:00");
+        const end = new Date(project.endDate + "T23:59:59");
+        if (launch > now) ourStatus = "upcoming";
+        else if (end < now) {
+          if (project.isLatePledge || project.hasLatePledge || project.latePledgeUrl) ourStatus = "late-pledge";
+          else if (project.isPreOrder || project.hasPreOrder || project.preOrderUrl) ourStatus = "pre-order";
+          else ourStatus = "archived";
+        } else {
+          ourStatus = "live";
+        }
       }
     }
 
