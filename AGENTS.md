@@ -39,7 +39,8 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 
 ### Status (computed, never stored)
 `preview` → `upcoming` → `live` → `late-pledge` / `pre-order` / `archived` / `promo`
-- 24h grace period after end date for timezone safety.
+- 24h grace period after end date for timezone safety (so a project listed with `endDate: 2026-11-05` stays `live` until 23:59 on 2026-11-06).
+- **Exception:** `isArchived: true` forces status `archived` immediately, overriding the date math. Use it when a campaign actually closed earlier than the grace window implies. Only use for ended campaigns — do not set it on live/upcoming projects.
 
 ## Rendering Functions (`assets/app.js`)
 - `projectCard(p, options)` — full card with badges, countdown, designer/publisher links.
@@ -99,3 +100,11 @@ When creating blog posts:
 - `docs/create-collage.md` — 3x3 image collage instructions
 - `docs/blog-workflow.md` — blog post types, structure, HTML template
 - `VOICE.md` — writing voice and tone guide
+
+## Registry & provenance rule (portfolio-wide)
+
+Personal project — completely separate from Apple work.
+
+- `.npmrc` pins `registry=https://registry.npmjs.org`. Never let Apple's internal npm mirror (`npm.apple.com`, `artifacts.apple.com/artifactory/...`) end up in `package-lock.json`; GitHub Actions can't reach it and CI fails with `ENOTFOUND`.
+- Audit before pushing: `../scripts/check-registry.sh` (add `--fix` to normalize).
+- No work credentials, internal hostnames, proprietary assets, or confidential material in this repo.
