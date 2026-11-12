@@ -2391,10 +2391,12 @@
       "image": "/uploads/biozero_tokyo.png",
       "platform": "Gamefound",
       "publisher": "Giza Games",
-      "designers": [],
+      "designers": [
+        "Zion Wu"
+      ],
       "primaryUrl": "https://www.gamefound.com/en/projects/giza-games/biozero-tokyo",
-      "isPreview": true,
-      "launchDate": "",
+      "isPreview": false,
+      "launchDate": "2026-11-16",
       "endDate": ""
     },
     {
@@ -3089,6 +3091,62 @@
       "launchDate": "2026-11-03",
       "endDate": "2026-12-03",
       "isPreview": false
+    },
+    {
+      "slug": "the-80s-vs-evil",
+      "title": "The 80s vs Evil",
+      "summary": "A standalone Dungeon Pages solo roll & write. Digital print & play with faster gameplay, unlikely heroes, and an 80s monster showdown.",
+      "image": "https://i.kickstarter.com/assets/055/818/336/b0ff372c33b78acfae82e4fcbaf957b1_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1794145452&width=1024&sig=q9JiVnjXoqbhg%2BiMXfgFi0tI4KV1a8r1azJA8TYDtUE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-24",
+      "endDate": "",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/jasongreeno/the80svsevil",
+      "designer": "Jason Greeno",
+      "publisher": "",
+      "promoDetails": ""
+    },
+    {
+      "slug": "ark-helior",
+      "title": "Ark Helior",
+      "summary": "Guide a generation ship through centuries of interstellar travel, managing its systems, ecosystem, and the lives of those who call it home.",
+      "image": "https://i.kickstarter.com/assets/055/788/234/b63f6205bbc92ca6f944e1d2a73773e2_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1793880839&width=1024&sig=b40KAYiv9s%2B56xo%2BcyVDWol3uKn%2FKJDSKXytdF4BQN4%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/ark-helior",
+      "designer": "Radek Ignatow",
+      "publisher": "Radek Ignatow",
+      "promoDetails": ""
+    },
+    {
+      "slug": "pantori",
+      "title": "Pantori",
+      "summary": "Build your way to steal all the food from the dungeon!",
+      "image": "https://i.kickstarter.com/assets/055/681/152/970f6930c5c38a71e53fa6a84088817c_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1793122987&width=1024&sig=lYoihPR9%2FDxHzqIOtIarKGwN2bmcKMozovdyKO1ADzc%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/radek-ignatow/pantori",
+      "designer": "Radek Ignatow",
+      "publisher": "Radek Ignatow",
+      "promoDetails": ""
+    },
+    {
+      "slug": "the-caroling-challenge",
+      "title": "The Caroling Challenge",
+      "summary": "Go door-to-door singing Christmas carols more clearly and in tune than anyone else. But be careful - the more you sing, the more grumpy neighbours will complain and try to stop you!",
+      "image": "/uploads/caroling_chalenge.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/teetotum-game-studios/the-caroling-challenge",
+      "designer": "Teetotum Game Studios",
+      "publisher": "Teetotum Game Studios",
+      "promoDetails": ""
     }
   ],
   "designers": [
@@ -4101,6 +4159,18 @@
     {
       "slug": "ashutosh-kumar",
       "name": "Ashutosh Kumar",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "teetotum-game-studios",
+      "name": "Teetotum Game Studios",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "zion-wu",
+      "name": "Zion Wu",
       "bggUrl": "",
       "bio": ""
     }
