@@ -3161,6 +3161,20 @@
       "designer": "Paper Tigers",
       "publisher": "Paper Tigers",
       "promoDetails": ""
+    },
+    {
+      "slug": "cattle-royale",
+      "title": "Cattle Royale",
+      "summary": "A quick-fire strategy game featuring two hyper-territorial herds that have serious beef!",
+      "image": "https://i.kickstarter.com/assets/055/584/016/123516320af64b47bbc5523913a9437d_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1792488597&width=1024&sig=fYoKlHj3SfWx33ikPIWWFolKyd19nZs8e2Y88Iq8%2BIU%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/robinson-games-ltd/cattle-royale",
+      "designer": "Robinson Games",
+      "publisher": "Robinson Games",
+      "promoDetails": ""
     }
   ],
   "designers": [
@@ -4187,6 +4201,12 @@
       "name": "Zion Wu",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "robinson-games",
+      "name": "Robinson Games",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -5069,6 +5089,12 @@
     {
       "slug": "bumble-bros-games",
       "name": "Bumble Bros Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "robinson-games",
+      "name": "Robinson Games",
       "bggUrl": "",
       "bio": ""
     }
