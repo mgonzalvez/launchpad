@@ -2928,9 +2928,9 @@
       "platform": "Kickstarter",
       "designer": "Marco Salogni",
       "primaryUrl": "https://www.kickstarter.com/projects/marcosalogni/depth-print-and-play",
-      "isPreview": true,
-      "launchDate": "",
-      "endDate": ""
+      "isPreview": false,
+      "launchDate": "2026-11-05",
+      "endDate": "2026-12-03"
     },
     {
       "slug": "midtown-casino",
