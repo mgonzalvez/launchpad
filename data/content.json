@@ -525,9 +525,9 @@
       "summary": "A strategic sci-fi print-and-play game for 1–4 players. Pilot your faction across real-world locations in our solar system, collect resources, modify dice rolls, build settlements, and race to activate the warp gates!",
       "image": "/uploads/atlas-rush.jpg",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-11-10",
+      "endDate": "2026-12-10",
+      "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/b-up-games/atlas-rush",
       "designer": "B+Up Games",
       "publisher": "B+Up Games",
@@ -2449,15 +2449,15 @@
       "slug": "scattered-nexus-solis-wars",
       "title": "Scattered Nexus: Solis Wars",
       "summary": "Our stand-alone, expandable battle-style card game is usually based on indie comics, but this time we based it on an indie card game.",
-      "image": "https://i.kickstarter.com/assets/055/154/563/9ff9a89ed7f0eb3b32b964cbe35d4356_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1789594837&width=1024&sig=skWlh8y29x4vAPV21ooabQwVheYdMHaJCuUsW06iXHE%3D",
+      "image": "/uploads/scattered_nexus.png",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-11-10",
+      "endDate": "2026-12-10",
+      "isPreview": false,
       "isPromo": false,
       "primaryUrl": "https://www.kickstarter.com/projects/slimstudio/scattered-nexus-solis-wars",
       "designers": [
-        "Eli"
+        "Eli Atkinson-Beaird"
       ],
       "publisher": null,
       "isLatePledge": false,
@@ -3146,6 +3146,20 @@
       "primaryUrl": "https://gamefound.com/en/projects/teetotum-game-studios/the-caroling-challenge",
       "designer": "Teetotum Game Studios",
       "publisher": "Teetotum Game Studios",
+      "promoDetails": ""
+    },
+    {
+      "slug": "ewolve",
+      "title": "Ewolve",
+      "summary": "A fast-paced print-and-play card game about backstabbing your friends.",
+      "image": "https://i.kickstarter.com/assets/055/786/657/d5abf3d3382e8dfa88ca82ec8a31f89e_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1793871595&width=1024&sig=1KHN2VWQsDqB8pMR%2BA9ncAmA9HebdesYHlLeMuyTnOE%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/papertigers/ewolve",
+      "designer": "Paper Tigers",
+      "publisher": "Paper Tigers",
       "promoDetails": ""
     }
   ],
@@ -4058,7 +4072,7 @@
     },
     {
       "slug": "eli",
-      "name": "Eli",
+      "name": "Eli Atkinson-Beaird",
       "links": [],
       "notes": []
     },
