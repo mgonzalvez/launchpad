@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "slug": "boss-bash-solo-print-and-play-boss-battler",
+      "title": "Boss Bash: Solo Print & Play Boss Battler",
+      "summary": "Print your battle sheets, grab 4 dice and take down giant monsters. A fast, tactical solo boss battler in 20 min.",
+      "image": "https://i.kickstarter.com/assets/055/870/939/391a1e4484d5b85b3e39bc1bdb860476_original.png?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1794487753&width=1024&sig=tW7CtDVoa3vCI8ntPpWXgOOXsj%2FgooT57B36iBPwPog%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/338183484/boss-bash-solo-print-and-play-boss-battler",
+      "designers": [
+        "KhiChou"
+      ],
+      "publisher": "KhiChou"
+    },
+    {
       "slug": "word-dungeon-two",
       "title": "Word Dungeon Two",
       "summary": "More wordy adventures in the Word Dungeon universe. Three brand new maps: Rumpledonk's Ruins, Dragon's Castle and A Day at the Zoo.",
