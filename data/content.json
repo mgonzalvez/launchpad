@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "prairie-dog-poker",
+      "title": "Prairie Dog Poker",
+      "summary": "Play Poker. Dig Rooms. Build the Best Burrow.",
+      "image": "https://i.kickstarter.com/assets/055/867/080/7960d9fd36159a7dd82fa7c4b801bb2b_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1794459885&width=1024&sig=ZEi0E3VKg2aziV6VBmIPZ%2FLJD9VjY0w1ekaH8a3zXE8%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-12",
+      "endDate": "2026-12-12",
+      "primaryUrl": "https://www.kickstarter.com/projects/msm-gameworks/prairie-dog-poker/",
+      "designer": "Michael Mecham",
+      "publisher": "MSM Gameworks",
+      "promoDetails": ""
+    },
+    {
       "slug": "case-blue-a-ww2-roll-write-game",
       "title": "Case Blue: A WW2 Roll & Write Game",
       "summary": "Command the German 1942 offensive toward Stalingrad and the Caucasus oilfields in this Print & Play solo WW2 roll-and-write wargame!",
@@ -4253,6 +4266,12 @@
       "name": "KhiChou",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "michael-mecham",
+      "name": "Michael Mecham",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -5147,6 +5166,12 @@
     {
       "slug": "kichou",
       "name": "KhiChou",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "msm-gameworks",
+      "name": "MSM Gameworks",
       "bggUrl": "",
       "bio": ""
     }
