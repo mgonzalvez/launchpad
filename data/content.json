@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "case-blue-a-ww2-roll-write-game",
+      "title": "Case Blue: A WW2 Roll & Write Game",
+      "summary": "Command the German 1942 offensive toward Stalingrad and the Caucasus oilfields in this Print & Play solo WW2 roll-and-write wargame!",
+      "image": "https://i.kickstarter.com/assets/055/869/251/9d131b360249bf5277c21c89c2b17427_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1794474154&width=1024&sig=rohjAK16VOYQ0427fsNx%2F9xdPse9C4SRF0J%2BRIytGE4%3D",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-16",
+      "endDate": "2026-11-25",
+      "primaryUrl": "https://www.kickstarter.com/projects/105281170/case-blue-a-ww2-roll-and-write-game",
+      "designer": "Martin Melbardis",
+      "publisher": "Solo Wargame",
+      "promoDetails": ""
+    },
+    {
       "slug": "die-dracula",
       "title": "Die Dracula",
       "summary": "A solo roguelike deck-building dice-crawler.",
