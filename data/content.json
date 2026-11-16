@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "die-dracula",
+      "title": "Die Dracula",
+      "summary": "A solo roguelike deck-building dice-crawler.",
+      "image": "/uploads/die_dracula.png",
+      "platform": "Gamefound",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://gamefound.com/en/projects/florianfiedler/die-dracula",
+      "designer": "Florian Fiedler",
+      "publisher": "Florian Fiedler"
+    },
+    {
       "slug": "boss-bash-solo-print-and-play-boss-battler",
       "title": "Boss Bash: Solo Print & Play Boss Battler",
       "summary": "Print your battle sheets, grab 4 dice and take down giant monsters. A fast, tactical solo boss battler in 20 min.",
@@ -4221,6 +4234,12 @@
       "name": "Robinson Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "kichou",
+      "name": "KhiChou",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -5109,6 +5128,12 @@
     {
       "slug": "robinson-games",
       "name": "Robinson Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "kichou",
+      "name": "KhiChou",
       "bggUrl": "",
       "bio": ""
     }
