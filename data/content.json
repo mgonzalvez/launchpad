@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "pirate-meowster",
+      "title": "Pirate Meowster: A Solo Sea Adventure Game",
+      "summary": "Recruit pirate cats, sail the Mana Seas, and hunt legendary treasures in this pirate Print-and-Play adventure!",
+      "image": "https://i.kickstarter.com/assets/055/853/511/cc54062e645f4b28fe10160e18c06a37_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1794372112&width=1024&sig=yDGeFF29T4X82QMep1lcQJ4FUwFLZo49xhItOUr46zA%3D",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/kinroku/pirate-meowster",
+      "designer": "Kinroku",
+      "publisher": "Kinroku"
+    },
+    {
       "slug": "prairie-dog-poker",
       "title": "Prairie Dog Poker",
       "summary": "Play Poker. Dig Rooms. Build the Best Burrow.",
