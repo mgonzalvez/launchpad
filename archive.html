@@ -6,6 +6,19 @@
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
     <link rel="shortcut icon" href="assets/logo.svg" />
     <title>Ended | PnP Launchpad</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('pnpl_theme_v1');
+          var theme = (stored === 'light' || stored === 'dark')
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (err) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>

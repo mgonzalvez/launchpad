@@ -6,9 +6,12 @@ dicemaker, prototyper and the gonzhome hub (token-based CSS, soft layered shadow
 1px borders, system fonts, light/dark theme).
 
 Each stage is small, independently shippable, and verified by
-`node scripts/ui-check.js` (static checks) plus the manual checklist listed
-under the stage. Run `node scripts/validate-content.js` before every commit
-that touches `data/content.json`.
+`node scripts/ui-check.js` (static checks: tokens, legacy-color removal,
+page bootstrap, toggle wiring) and `node scripts/ui-smoke.js` (headless
+chromium CDP: render, toggle, persistence — skips gracefully without
+chromium), plus the manual checklist listed under the stage.
+Run `node scripts/validate-content.js` before every commit that touches
+`data/content.json`.
 
 ## Stage 1 — Shared design tokens (DONE)
 

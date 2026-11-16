@@ -73,6 +73,8 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 
 ## Scripts
 - `node scripts/validate-content.js` — validates `content.json`. Exit 0 = valid, 1 = errors. Run before every commit.
+- `node scripts/ui-check.js` — static checks for the shared design system + dark mode (tokens, legacy colors, per-page theme bootstrap, toggle wiring). Exit 0 = pass.
+- `node scripts/ui-smoke.js` — headless chromium CDP smoke test (renders a page, toggles theme, verifies persistence). Skips gracefully if chromium is absent.
 - `node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...` — safe CLI for adding projects.
   - **Limitation:** platform list in this script is `Kickstarter, Indiegogo, Backerkit, Store, Patreon, Other` — it will reject `Gamefound`, `Itch.io`, `Crowdfunding`, `Promo`. For those, edit `content.json` directly.
 - `node scripts/kicktraq-check.js [--fix] [--verbose]` — cross-references statuses against Kicktraq.
