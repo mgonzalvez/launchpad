@@ -303,6 +303,52 @@ for (const p of dataJson.projects) {
 check('data: every local project image exists', missing === 0, `${missing} missing`);
 check('data: every local project image is under 900 KB', biggest <= 900 * 1024, `${biggestName} is ${(biggest / 1024).toFixed(0)} KB`);
 
+// ── 10. Stage 10: polish pass ──────────────────────────────
+
+check('CSS: card + tile hover lift is gated behind prefers-reduced-motion',
+  /@media \(prefers-reduced-motion: no-preference\)[\s\S]{0,600}?\.card:hover/.test(css));
+check('CSS: accent-filled controls darken on hover via --accent-strong',
+  /\.cta:hover\s*\{[^}]*var\(--accent-strong\)/.test(css) &&
+  /button:hover\s*\{[^}]*var\(--accent-strong\)/.test(css) &&
+  /\.nav-cta:hover\s*\{[^}]*var\(--accent-strong\)/.test(css));
+check('CSS: live-now badge shadow comes from a token, not a hard offset',
+  /\.badge\.live-now\s*\{[^}]*box-shadow:\s*var\(--live-badge-shadow\)/.test(css) &&
+  !/\.badge\.live-now\s*\{[^}]*#c32020/.test(css));
+check('CSS: focus-visible shows a real outline as well as a ring',
+  /:focus-visible\s*\{[^}]*outline:\s*2px solid var\(--accent\)/.test(css));
+check('CSS: nav pills tighten before the header wraps', /@media \(max-width: 1240px\)/.test(css));
+check('CSS: header nav drops to its own row rather than orphaning Tools',
+  /@media \(max-width: 1120px\) and \(min-width: 981px\)/.test(css) &&
+  /\.nav-panel \{ order: 3; width: 100%; \}/.test(css));
+check('CSS: header actions group present', /\.header-actions\s*\{/.test(css));
+check('JS header and submit page use the actions group', appJs.includes('class="header-actions"') && reads('submit.html').includes('class="header-actions"'));
+check('CSS: card badges share one wrapping row', /\.card-badges\s*\{[^}]*flex-wrap:\s*wrap/.test(css));
+check('CSS: platform badge is quieter than status badges', /\.badge\.platform\s*\{/.test(css));
+check('CSS: card CTA pill styles present', /\.card-link\s*\{/.test(css) && /\.card-link:hover\s*\{/.test(css));
+check('CSS: empty-state panel styles present', /\.empty-state\s*\{/.test(css));
+check('CSS: save button has a hover state', /\.watch-btn:hover\s*\{/.test(css));
+check('CSS: main padding adapts on small screens', /@media \(max-width: 600px\)[\s\S]{0,120}?main\s*\{\s*padding: 16px/.test(css));
+check('CSS: overlay + panel shadows are tokenised',
+  !/box-shadow: 0 8px 18px rgba\(0, 0, 0, 0\.14\)/.test(css) &&
+  !/box-shadow: 0 10px 22px rgba\(0, 0, 0, 0\.12\)/.test(css) &&
+  !/box-shadow: 0 8px 32px rgba\(0, 0, 0, 0\.12\)/.test(css));
+check('CSS: carousel + collage backdrops are tokenised',
+  /--carousel-bg:/.test(css) && /background: var\(--carousel-bg\)/.test(css) && /background: var\(--collage-bg\)/.test(css));
+check('JS: header renders a skip-to-content link', appJs.includes('class="skip-link" href="#main"'));
+check('CSS: skip-link styles + focus reveal present', /\.skip-link\s*\{/.test(css) && /\.skip-link:focus/.test(css));
+for (const page of [...pages, ...blogPosts]) {
+  check(`HTML ${page}: main landmark is a skip-link target`, reads(page).includes('<main id="main">'));
+}
+check('CSS: mobile badge chrome shrinks so rows stay tidy', /@media \(max-width: 600px\)[\s\S]{0,700}?\.badge\.live-now \{[^}]*font-size: 0\.8rem/.test(css));
+check('CSS: archive sort label never wraps mid-phrase', /\.sort-select label\s*\{[^}]*white-space: nowrap/.test(css));
+
+check('JS: emptyState helper defined', /function emptyState\(title, detail\)/.test(appJs));
+check('JS: emptyState exported on PNPL', /setSortMode,\n  emptyState,/.test(appJs));
+for (const page of ['index.html', 'live.html', 'upcoming.html', 'preview.html', 'watchlist.html', 'archive.html']) {
+  check(`HTML ${page}: renders a styled empty state`, reads(page).includes('PNPL.emptyState('));
+}
+check('HTML index.html: launch alert copy is plural-aware', /campaigns went live today/.test(reads('index.html')));
+
 // ── Report ──────────────────────────────────────────────────────
 
 let failed = 0;

@@ -82,7 +82,7 @@
 
         el.innerHTML = `
           ${PNPL.header('Archive')}
-          <main>
+          <main id="main">
             <section class="hero">
               <h1>Archived Projects</h1>
               <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders are shown first by default.</p>
@@ -98,7 +98,11 @@
           ${PNPL.footer()}
         `;
 
-        if (!archived.length) return;
+        if (!archived.length) {
+          document.getElementById('archive-grid').innerHTML = PNPL.emptyState('Nothing archived yet', 'Projects move here automatically once their campaign or promo end date passes.');
+          document.getElementById('archive-status').textContent = 'No archived projects to show yet';
+          return;
+        }
 
         const gridEl = document.getElementById('archive-grid');
         const pagerEl = document.getElementById('archive-pager');
@@ -137,7 +141,7 @@
 
           gridEl.innerHTML = shown.length
             ? `<div class="grid${isCompact ? ' compact-grid' : ''}">${shown.map((p) => PNPL.projectCard(p, { compactView: isCompact })).join('')}</div>`
-            : '<p>No archived projects match the current filters.</p>';
+            : PNPL.emptyState('No archived projects match this view', 'Try a different sort, or clear the search to see the full archive.');
           statusEl.textContent = `Showing ${shown.length} of ${sorted.length} archived projects`;
           pagerEl.innerHTML = hasMore
             ? `<button type="button" id="load-more-btn" class="btn btn-secondary">Load more (${sorted.length - displayedCount} remaining)</button><button type="button" id="back-to-top" class="back-to-top">Back to top</button>`

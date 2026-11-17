@@ -14,7 +14,7 @@ chromium), plus `node scripts/contrast-check.js` (WCAG ratios for both themes).
 Run `node scripts/validate-content.js` before every commit that touches
 `data/content.json`.
 
-Stages 1–9 are complete as of 2026-11-16.
+Stages 1–10 are complete as of 2026-11-17.
 
 ## Stage 1 — Shared design tokens (DONE)
 
@@ -192,3 +192,41 @@ debugging.
   hotlinks (Facebook posts, other gonzhome sites) may still point at them;
   `node scripts/optimize-images.js --report-unused` lists them if you want to
   prune.
+
+## Stage 10 — Polish pass (DONE)
+
+Small interaction + consistency fixes across every page.
+
+- **Header no longer orphans "Tools".** `assets/app.js` wraps the CTA in a
+  `.header-actions` group (mirrored in `submit.html`'s static header). Pills
+  tighten at ≤1240px, and between 981–1120px the nav drops onto its own row
+  (`order: 3; width: 100%`) instead of letting Tools wrap under Home.
+  Verified at 1280 / 1100 / 1024: nav renders on a single row.
+- **Hover states.** Cards and tiles lift 2px with a deeper `--shadow-hover`
+  (motion-gated). Buttons, `.cta`, `.nav-cta`, `.watch-btn` and `.card-link`
+  all transition. Accent-filled controls darken to `--accent-strong` on hover
+  instead of `--accent-hover`, which previously put accent-blue text on an
+  accent-blue background (≈1.7:1).
+- **Card chrome.** Status badge + platform badge + countdown chip now share one
+  wrapping `.card-badges` row; the platform badge is quieter (`--panel-strong`
+  ink-secondary) than status badges. `View project` became a `.card-link` pill.
+  Badge chrome shrinks below 600px so narrow cards keep two rows instead of four.
+- **Empty states.** New `PNPL.emptyState(title, detail)` helper renders a
+  dashed `.empty-state` panel; index, live, upcoming, preview, watchlist and
+  archive use it. The "Just Launched Today" alert copy is plural-aware, and its
+  yellow tint is softer.
+- **Skip link.** `.skip-link` in every header (hidden until focused), with
+  `<main id="main">` as the target on all 30 pages.
+- **Focus visibility.** `:focus-visible` keeps the soft ring and adds a 2px
+  outline, so focus is still visible in forced-colors / high-contrast modes.
+- **Token hygiene.** Legacy hard shadows (`0 2px 0 #8d1313`, `rgba(0,0,0,0.14)`,
+  `#0f2630`, `#111`) replaced by `--live-badge-shadow`, `--panel-shadow`,
+  `--carousel-bg`, `--collage-bg`. Removed the no-op `transition: object-fit`
+  on card images. Card/tile/carousel images are `decoding="async"`.
+- **Archive:** sort label no longer wraps mid-phrase.
+- Verification: `node scripts/ui-check.js` (328 checks, +31 new) and
+  `node scripts/ui-smoke.js` (headless CDP: header rows measured at three
+  widths, real `Input.dispatchMouseEvent` hover proves the lift, and the lift is
+  absent under `prefers-reduced-motion: reduce`; skip link hidden + targeted).
+  `node scripts/contrast-check.js` now also covers the live-now badge, accent
+  fills, the card CTA pill and the platform badge — all ≥ 4.5:1 in both themes.

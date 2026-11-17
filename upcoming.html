@@ -46,12 +46,12 @@
 
         el.innerHTML = `
           ${PNPL.header('Upcoming')}
-          <main>
+          <main id="main">
             <section class="hero">
               <h1>Upcoming Projects</h1>
               <p>Projects that have been announced and are not live yet.</p>
             </section>
-            ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
+            ${upcoming.length ? `<div class="grid">${upcoming.map((p) => PNPL.projectCard(p)).join('')}</div>` : PNPL.emptyState('No upcoming projects yet', 'Nothing has an announced launch date right now. New listings are added as campaigns are announced.')}
           </main>
           ${PNPL.footer()}
         `;

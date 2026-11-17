@@ -19,7 +19,11 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 
 const findBrowser = () => {
-  for (const bin of ['chromium', 'chromium-browser', 'google-chrome', 'google-chrome-stable']) {
+  const candidates = [
+    'chromium', 'chromium-browser', 'google-chrome', 'google-chrome-stable',
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  ];
+  for (const bin of candidates) {
     try {
       const r = spawnSync(bin, ['--version']);
       if (r.status === 0) return bin;
@@ -342,6 +346,76 @@ const check = (name, ok, detail = '') => {
     }
     const second = await featuredTitles();
     check('stage8: featured carousel is deterministic for the day', first.length > 1 && first.join('|') === second.join('|'), `seed ${seed1}`);
+
+    // ── Stage 10: polish pass ─────────────────────────────
+    await send('Page.navigate', { url: `${origin}/live.html` });
+    let liveReady = false;
+    for (let i = 0; i < 40 && !liveReady; i++) {
+      liveReady = await evalJs(`!!document.querySelector('.card .card-badges')`);
+      if (!liveReady) await sleep(250);
+    }
+    check('stage10: live page renders cards with a badge row', liveReady);
+    for (const width of [1280, 1100, 1024]) {
+      await send('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: false });
+      await sleep(400);
+      const navRows = await evalJs(`new Set(Array.from(document.querySelectorAll('.nav > a, .tools-menu summary')).map((el) => Math.round(el.getBoundingClientRect().top))).size`);
+      check(`stage10: header nav stays on one row at ${width}px`, navRows === 1, `${navRows} row(s)`);
+    }
+    await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 900, deviceScaleFactor: 1, mobile: true });
+    await sleep(400);
+    check('stage10: at 390px the hamburger is shown and the nav is collapsed', await evalJs(`(function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const panel = document.querySelector('.nav-panel');
+      const cta = document.querySelector('.nav-cta');
+      return toggle.offsetParent !== null && panel.offsetParent === null && cta.offsetParent !== null;
+    })()`));
+    await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+    await sleep(300);
+    const cardState = () => evalJs(`(function () {
+      const card = document.querySelector('.card');
+      const cs = getComputedStyle(card);
+      return JSON.stringify({ transform: cs.transform, shadow: cs.boxShadow });
+    })()`);
+    const badgeRow = JSON.parse(await evalJs(`(function () {
+      const row = document.querySelector('.card-badges');
+      if (!row) return null;
+      const kids = Array.from(row.children).filter((k) => k.offsetParent !== null);
+      const centers = kids.map((k) => {
+        const r = k.getBoundingClientRect();
+        return Math.round(r.top + r.height / 2);
+      });
+      return JSON.stringify({ rows: new Set(kids.map((k) => Math.round(k.getBoundingClientRect().top))).size, count: kids.length });
+    })()`));
+    check('stage10: badge row wraps into at most two tidy rows', badgeRow && badgeRow.rows <= 2, JSON.stringify(badgeRow));
+    const linkBox = JSON.parse(await evalJs(`(function () { const a = document.querySelector('.card-link'); if (!a) return null; const r = a.getBoundingClientRect(); const cs = getComputedStyle(a); return JSON.stringify({ h: Math.round(r.height), border: cs.borderRadius }); })()`));
+    check('stage10: card CTA is a >=34px pill', linkBox && linkBox.h >= 34 && linkBox.border === '999px', JSON.stringify(linkBox));
+
+    const beforeHover = await cardState();
+    const point = JSON.parse(await evalJs(`(function () { const r = document.querySelector('.card').getBoundingClientRect(); return JSON.stringify({ x: r.x + 12, y: r.y + 12 }); })()`));
+    await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: point.x, y: point.y });
+    await sleep(500);
+    const afterHover = await cardState();
+    check('stage10: cards lift + deepen shadow on hover', beforeHover !== afterHover, `before ${beforeHover} / after ${afterHover}`);
+    await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+    await sleep(400);
+    const reducedHover = await cardState();
+    check('stage10: hover lift is off under prefers-reduced-motion', reducedHover === beforeHover, reducedHover);
+    await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: '' }] });
+    await sleep(300);
+    const mobileBadgeStack = JSON.parse(await evalJs(`(function () {
+      const badges = document.querySelector('.card-badges');
+      const cs = getComputedStyle(badges);
+      return JSON.stringify({ flexWrap: cs.flexWrap });
+    })()`));
+    check('stage10: badge row wraps instead of overflowing on narrow cards', mobileBadgeStack.flexWrap === 'wrap');
+    const skip = JSON.parse(await evalJs(`(function () {
+      const link = document.querySelector('.skip-link');
+      if (!link) return null;
+      const target = document.querySelector('#main');
+      const cs = getComputedStyle(link);
+      return JSON.stringify({ hasTarget: !!target, transform: cs.transform, visible: link.getBoundingClientRect().top >= 0 });
+    })()`));
+    check('stage10: skip link exists, is hidden, and points at the main landmark', skip && skip.hasTarget && skip.transform !== 'none' && !skip.visible, JSON.stringify(skip));
 
     ws.close();
   } finally {

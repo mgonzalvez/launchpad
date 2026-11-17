@@ -45,13 +45,13 @@
 
         el.innerHTML = `
           ${PNPL.header('Watchlist')}
-          <main>
+          <main id="main">
             <section class="hero">
               <h1>Your Watchlist</h1>
               <p>Saved projects are stored locally in this browser only.</p>
               ${watched.length ? '<button type="button" id="clear-watchlist-btn">Clear watchlist</button>' : ''}
             </section>
-            ${watched.length ? `<div class="grid">${watched.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>You have not saved any projects yet. Use the Save button on any project card.</p>'}
+            ${watched.length ? `<div class="grid">${watched.map((p) => PNPL.projectCard(p)).join('')}</div>` : PNPL.emptyState('Your watchlist is empty', 'Use the Save button on any project card to keep it here for later.')}
           </main>
           ${PNPL.footer()}
         `;

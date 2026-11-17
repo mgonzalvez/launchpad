@@ -115,7 +115,7 @@
 
           el.innerHTML = `
             ${PNPL.header('Home')}
-            <main>
+            <main id="main">
               <section class="hero">
                 <h1>PnP Launchpad</h1>
                 <p>Hand-picked print-and-play crowdfunding, promos and late pledges, updated weekly by <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Martin's Print and Play Hideaway</a>.</p>
@@ -125,7 +125,7 @@
               ${justLaunched.length ? `
                 <section class="launch-alert">
                   <h2>Just Launched Today</h2>
-                  <p>Fresh campaign drop. This one just went live and early backing momentum matters.</p>
+                  <p>${justLaunched.length === 1 ? 'Fresh campaign drop. This one just went live and early backing momentum matters.' : `${justLaunched.length} campaigns went live today. Early backing momentum matters.`}</p>
                   <div class="grid featured">${justLaunched.map((p) => PNPL.projectCard(p)).join('')}</div>
                 </section>
               ` : ''}
@@ -143,7 +143,7 @@
                       <div class="carousel-dots" id="carousel-dots">${dots}</div>
                     ` : ''}
                   </div>
-                ` : '<p>No live or promo projects are available for featured rotation right now.</p>'}
+                ` : PNPL.emptyState('No featured projects right now', 'Nothing is live or on promo, so the carousel has nothing to rotate.')}
 
                 <div class="live-strip">
                   <h3>Live Now</h3>
@@ -153,7 +153,7 @@
                       <div class="tile-row" id="tile-row">${liveAndPromo.map((p) => PNPL.projectTile(p)).join('')}</div>
                       <button type="button" class="tile-handle" id="tile-next" aria-label="Scroll live projects right">&#8250;</button>
                     </div>
-                  ` : '<p>No active projects are listed right now.</p>'}
+                  ` : PNPL.emptyState('Nothing is live right now', 'Check the Archive for campaigns that just closed, or Upcoming for what is coming next.')}
                 </div>
               </section>
 
@@ -162,7 +162,7 @@
                   <h2>Upcoming Projects</h2>
                   <a class="more-link" href="${PNPL.withBase('upcoming.html')}" target="_blank" rel="noreferrer noopener">More upcoming</a>
                 </div>
-                ${upcomingHome.length ? `<div class="home-compact-row">${upcomingHome.map((p) => PNPL.projectCard(p, { compact: true })).join('')}</div>` : '<p>No upcoming projects are listed yet.</p>'}
+                ${upcomingHome.length ? `<div class="home-compact-row">${upcomingHome.map((p) => PNPL.projectCard(p, { compact: true })).join('')}</div>` : PNPL.emptyState('No upcoming projects yet', 'Nothing has an announced launch date. Browse the archive in the meantime.')}
               </section>
 
               <section>
@@ -171,7 +171,7 @@
                   <a class="more-link" href="${PNPL.withBase('preview.html')}" target="_blank" rel="noreferrer noopener">More preview</a>
                 </div>
                 <p class="meta">These projects are in preview mode and have not announced launch/end dates yet.</p>
-                ${previewHome.length ? `<div class="home-compact-row">${previewHome.map((p) => PNPL.projectCard(p, { compact: true })).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
+                ${previewHome.length ? `<div class="home-compact-row">${previewHome.map((p) => PNPL.projectCard(p, { compact: true })).join('')}</div>` : PNPL.emptyState('No preview projects right now', 'Preview listings show up here before launch dates are announced.')}
               </section>
             </main>
             ${PNPL.footer()}
@@ -309,7 +309,7 @@
 
           bindTileRowControls('tile-row', 'tile-prev', 'tile-next');
         } catch (err) {
-          el.innerHTML = '<main><p>Could not load site data. Please refresh or redeploy latest files.</p></main>';
+          el.innerHTML = '<main id="main"><p>Could not load site data. Please refresh or redeploy latest files.</p></main>';
           console.error(err);
         }
       })();

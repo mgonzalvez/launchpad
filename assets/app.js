@@ -224,6 +224,7 @@ function header(active = '') {
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"15b3fbb1839542c9a2d8c7e4bf6df634"}'></script>
     <!-- End Cloudflare Web Analytics -->
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="inner">
         <h1 class="brand">
@@ -253,7 +254,9 @@ function header(active = '') {
             <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           </button>
         </div>
-        <a class="nav-cta" href="${withBase('submit.html')}"${active === 'Submit a Project' ? ' aria-current="page"' : ''}>Submit a Project</a>
+        <div class="header-actions">
+          <a class="nav-cta" href="${withBase('submit.html')}"${active === 'Submit a Project' ? ' aria-current="page"' : ''}>Submit a Project</a>
+        </div>
       </div>
     </header>
   `;
@@ -491,17 +494,17 @@ function projectCard(p, options = {}) {
   return `
     <article class="card card-click${compact ? ' compact' : ''}${compactView ? ' compact-view' : ''}" data-url="${cardUrl}">
       <a class="smart-image-frame" href="${cardUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
+        <img src="${withBase(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" decoding="async" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
       <div class="card-body">
         <div class="card-top-row">
-          <div>
+          <div class="card-badges">
             ${statusBadge(status, p, now)}
-            <span class="badge">${p.platform}</span>
+            ${p.platform ? `<span class="badge platform">${escapeHtml(String(p.platform))}</span>` : ''}
+            ${countdownChip(status, p, now)}
           </div>
           ${watchButton(p, compactView)}
         </div>
-        ${countdownChip(status, p, now)}
         <h3><a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${escapeHtml(p.title)}</a></h3>
         ${compactView || !p.summary ? '' : `<p>${escapeHtml(p.summary)}</p>`}
         <p class="meta">${dateMeta}</p>
@@ -510,9 +513,18 @@ function projectCard(p, options = {}) {
         ${compactView ? '' : `${status === 'preview' ? '<p class="meta"><strong>Preview listing: dates not announced yet.</strong></p>' : ''}`}
         ${compactView ? '' : `${designerLinks ? `<p class="meta">Designer: ${designerLinks}</p>` : ''}`}
         ${compactView ? '' : `${p.publisher ? `<p class="meta">Publisher: ${personLink('publisher', p.publisher, p.publisherSlug)}</p>` : ''}`}
-        <a href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : (status === 'pre-order' ? 'Open pre-order' : 'View project')}</a>
+        <a class="card-link" href="${cardUrl}" target="_blank" rel="noreferrer noopener">${status === 'late-pledge' ? 'Open late pledge' : (status === 'pre-order' ? 'Open pre-order' : 'View project')}</a>
       </div>
     </article>
+  `;
+}
+
+function emptyState(title, detail) {
+  return `
+    <div class="empty-state">
+      <strong>${escapeHtml(title)}</strong>
+      <p>${escapeHtml(detail)}</p>
+    </div>
   `;
 }
 
@@ -525,7 +537,7 @@ function projectTile(p) {
   return `
     <article class="tile tile-click" data-url="${tileUrl}">
       <a class="tile-image-link smart-image-frame" href="${tileUrl}" target="_blank" rel="noreferrer noopener">
-        <img src="${withBase(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
+        <img src="${withBase(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy" decoding="async" data-smart-fit${p.imagePosition ? ` data-img-pos="${String(p.imagePosition).replace(/"/g, '&quot;')}"` : ''} />
       </a>
       <div class="tile-body">
         <div class="tile-top-row">
@@ -979,6 +991,7 @@ window.PNPL = {
   setViewMode,
   getSortMode,
   setSortMode,
+  emptyState,
 
   // ── DOM Utilities ──────────────────────────────────────────────
 

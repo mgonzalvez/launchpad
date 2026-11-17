@@ -86,13 +86,24 @@ html[data-theme="light"] {
   --watch-active-bg: #ffe5ef;
   --watch-active-ink: #8b1b53;
   --watch-active-border: #d69ab8;
-  --alert-bg: linear-gradient(135deg, #fff8de 0%, #ffeeb7 52%, #fff4ca 100%);
+  --alert-bg: linear-gradient(135deg, #fff9e7 0%, #fff2cd 52%, #fff7e4 100%);
   --alert-border: #d8b352;
   --alert-ink: #7b3b09;
   --alert-sub: #7a6544;
   --nav-current-bg: rgba(23, 105, 255, 0.1);
   --nav-current-border: #1769ff;
   --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2370798a' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E");
+  /* Polish-pass tokens (stage 10) */
+  --live-badge-bg: #c32020;
+  --live-badge-ink: #ffffff;
+  --live-badge-border: #8d1313;
+  --live-badge-shadow: 0 6px 14px rgba(195, 32, 32, 0.22);
+  --accent-strong: #075bea;
+  --button-ink: #ffffff;
+  --shadow-hover: 0 26px 60px rgba(37, 50, 75, 0.14), 0 4px 12px rgba(37, 50, 75, 0.08);
+  --panel-shadow: 0 8px 18px rgba(37, 50, 75, 0.10);
+  --carousel-bg: #0f2630;
+  --collage-bg: #111111;
 }
 
 html[data-theme="dark"] {
@@ -187,6 +198,17 @@ html[data-theme="dark"] {
   --nav-current-bg: rgba(101, 146, 255, 0.16);
   --nav-current-border: #6592ff;
   --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238e98a8' d='M6 8.5L1 3.5h10z'/%3E%3C/svg%3E");
+  /* Polish-pass tokens (stage 10) */
+  --live-badge-bg: #b32a2a;
+  --live-badge-ink: #ffffff;
+  --live-badge-border: rgba(255, 255, 255, 0.22);
+  --live-badge-shadow: 0 6px 14px rgba(179, 42, 42, 0.38);
+  --accent-strong: #3f6bd6;
+  --button-ink: #ffffff;
+  --shadow-hover: 0 28px 62px rgba(0, 0, 0, 0.42), 0 4px 14px rgba(0, 0, 0, 0.30);
+  --panel-shadow: 0 8px 22px rgba(0, 0, 0, 0.36);
+  --carousel-bg: #0b1418;
+  --collage-bg: #0a0d10;
 }
 
 * { box-sizing: border-box; }
@@ -212,8 +234,28 @@ a { color: var(--accent); }
 a:hover { color: var(--accent-hover); }
 
 :focus-visible {
-  outline: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
   box-shadow: var(--focus);
+}
+
+/* Skip link: hidden until a keyboard user focuses it. */
+.skip-link {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--accent-strong);
+  color: var(--button-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+  z-index: 30;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .site-header {
@@ -305,7 +347,32 @@ a:hover { color: var(--accent-hover); }
   gap: 10px;
 }
 
-.nav { display: flex; gap: 12px; flex-wrap: wrap; }
+.nav { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+/* Desktop header budget: tighten the pills, and when the header genuinely
+   cannot fit on one line, drop the nav onto its own row instead of letting
+   the Tools pill orphan awkwardly below Home. */
+@media (max-width: 1240px) {
+  .site-header .inner { gap: 12px; }
+  .nav { gap: 8px; }
+  .nav a,
+  .tools-menu summary { padding: 6px 10px; font-size: 0.92rem; }
+  .nav-cta { padding: 8px 13px; font-size: 0.92rem; }
+  .brand { font-size: 1.25rem; }
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .site-header .inner { flex-wrap: wrap; }
+  .nav-panel { order: 3; width: 100%; }
+  .nav-cta { margin-left: auto; }
+}
 
 .nav a {
   text-decoration: none;
@@ -349,7 +416,7 @@ a:hover { color: var(--accent-hover); }
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--panel);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  box-shadow: var(--panel-shadow);
   padding: 8px;
   display: grid;
   gap: 6px;
@@ -370,6 +437,25 @@ main {
   max-width: 1180px;
   margin: 0 auto;
   padding: 24px;
+}
+
+@media (max-width: 600px) {
+  main { padding: 16px; }
+  .hero { padding: 18px; }
+  /* Narrow cards: shrink badge chrome so the row wraps to two lines, not four. */
+  .badge {
+    font-size: 0.72rem;
+    padding: 3px 7px;
+  }
+  .badge.live-now {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  .countdown-chip {
+    font-size: 0.72rem;
+    padding: 3px 7px;
+  }
+  .card-link { min-height: 36px; }
 }
 
 .hero {
@@ -450,6 +536,58 @@ main {
   justify-content: space-between;
   align-items: baseline;
   gap: 10px;
+  margin-top: 26px;
+}
+
+.section-head h2 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+}
+
+.live-strip h3 {
+  font-size: 1.1rem;
+}
+
+/* Friendly empty states (stage 10) */
+.empty-state {
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  padding: 18px 20px;
+  color: var(--muted);
+}
+
+.empty-state strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+/* Card CTA pill (stage 10) */
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 6px 13px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.card-link:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--panel-solid);
 }
 
 .more-link {
@@ -477,9 +615,26 @@ main {
   object-position: var(--img-pos, center top);
   display: block;
   background: var(--img-placeholder);
-  transition: object-fit 160ms ease, object-position 160ms ease;
   position: relative;
   z-index: 2;
+}
+
+/* Cards and tiles lift slightly on hover — decorative, so motion-gated. */
+@media (prefers-reduced-motion: no-preference) {
+  .card,
+  .tile,
+  .blog-post-card,
+  .issue-item {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+  .card:hover,
+  .tile:hover,
+  .blog-post-card:hover,
+  .issue-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--line-strong);
+  }
 }
 
 .card-body { padding: 16px; }
@@ -510,12 +665,24 @@ main {
   gap: 8px;
 }
 
+/* Badges + countdown chip live in one wrapping row so narrow cards do not
+   stack them into a vertical column. */
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-badges .countdown-chip { margin-top: 0; margin-right: 0; }
+.card-badges .badge { margin-right: 0; }
+
 .badge {
   display: inline-block;
   font-size: 0.78rem;
   font-weight: 700;
   border-radius: 999px;
-  padding: 4px 9px;
+  padding: 4px 8px;
   margin-right: 6px;
   border: 1px solid var(--line);
 }
@@ -525,13 +692,20 @@ main {
 }
 
 .badge.live-now {
-  background: #c32020;
-  color: #fff;
-  border-color: #8d1313;
+  background: var(--live-badge-bg);
+  color: var(--live-badge-ink);
+  border-color: var(--live-badge-border);
   font-size: 0.86rem;
   letter-spacing: 0.03em;
   padding: 6px 12px;
-  box-shadow: 0 2px 0 #8d1313;
+  box-shadow: var(--live-badge-shadow);
+}
+
+/* Platform is metadata, not status — keep it visually quieter than status badges. */
+.badge.platform {
+  background: var(--panel-strong);
+  color: var(--ink-secondary);
+  border-color: var(--line);
 }
 
 .badge.upcoming {
@@ -636,8 +810,8 @@ main {
 }
 
 @keyframes pulse-live {
-  0%, 100% { transform: translateY(0); box-shadow: 0 2px 0 #8d1313; }
-  50% { transform: translateY(-1px); box-shadow: 0 3px 8px #c3202050; }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); box-shadow: var(--live-badge-shadow); }
 }
 
 @keyframes pulse-late {
@@ -675,11 +849,24 @@ main {
   margin-top: 12px;
   padding: 11px 15px;
   border-radius: 11px;
-  border: 1px solid var(--accent-hover);
+  border: 1px solid var(--accent-strong);
   background: var(--accent);
-  color: #fff;
+  color: var(--button-ink);
   text-decoration: none;
   font-weight: 700;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+/* Explicit hover: the generic `a:hover` would otherwise paint accent text on
+   an accent background. */
+.cta:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--button-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cta:hover { transform: translateY(-1px); }
 }
 
 .form-panel {
@@ -718,9 +905,15 @@ button {
   border-radius: 9px;
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: #fff;
+  color: var(--button-ink);
   font-weight: 700;
   cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+button:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
 }
 
 small { color: var(--muted); }
@@ -731,6 +924,7 @@ small { color: var(--muted); }
   color: var(--muted);
   padding: 24px;
   text-align: center;
+  font-size: 0.94rem;
 }
 
 .footer-tools {
@@ -798,7 +992,7 @@ small { color: var(--muted); }
     border: 1px solid var(--line);
     border-radius: 16px;
     background: var(--panel-solid);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--panel-shadow);
     padding: 12px;
     max-height: calc(100vh - 92px);
     overflow-y: auto;
@@ -900,7 +1094,7 @@ small { color: var(--muted); }
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  background: #0f2630;
+  background: var(--carousel-bg);
 }
 
 .carousel-track {
@@ -1180,6 +1374,12 @@ small { color: var(--muted); }
   white-space: nowrap;
 }
 
+.watch-btn:hover {
+  border-color: var(--accent);
+  background: var(--hover-bg);
+  color: var(--accent);
+}
+
 .watch-btn.compact {
   padding: 4px 8px;
   font-size: 0.75rem;
@@ -1266,7 +1466,7 @@ small { color: var(--muted); }
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, clamp(90px, 14vw, 145px));
   gap: 4px;
-  background: #111;
+  background: var(--collage-bg);
   border-bottom: 1px solid var(--line);
   width: 100%;
   max-width: 980px;
@@ -1397,8 +1597,8 @@ small { color: var(--muted); }
 }
 
 .view-toggle button.active {
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-strong);
+  color: var(--button-ink);
 }
 
 .view-toggle button:hover:not(.active) {
@@ -1425,6 +1625,7 @@ small { color: var(--muted); }
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .sort-select select {
@@ -1522,7 +1723,7 @@ small { color: var(--muted); }
   z-index: 1000;
   background: var(--panel-solid);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--panel-shadow);
   max-height: 70vh;
   overflow-y: auto;
 }
@@ -1845,7 +2046,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon { display: block; }
   align-items: center;
   flex: 0 0 auto;
   text-decoration: none;
-  color: #fff;
+  color: var(--button-ink);
   background: var(--accent);
   border: 1px solid var(--accent);
   border-radius: 999px;
@@ -1857,9 +2058,9 @@ html[data-theme="dark"] .theme-toggle .moon-icon { display: block; }
 }
 
 .nav-cta:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  color: #fff;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--button-ink);
 }
 
 .nav-cta[aria-current="page"] {
@@ -1904,8 +2105,8 @@ html[data-theme="dark"] .theme-toggle .moon-icon { display: block; }
   height: 19px;
   padding: 0 5px;
   border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-strong);
+  color: var(--button-ink);
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 1;

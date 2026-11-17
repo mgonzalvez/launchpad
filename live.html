@@ -48,7 +48,7 @@
 
         el.innerHTML = `
           ${PNPL.header('Live Now')}
-          <main>
+          <main id="main">
             <section class="hero">
               <h1>Projects Live Right Now</h1>
               <p>Campaigns currently active and accepting backers.</p>
@@ -60,7 +60,7 @@
                 <div class="grid featured">${justLaunched.map((p) => PNPL.projectCard(p)).join('')}</div>
               </section>
             ` : ''}
-            ${standardLive.length ? `<div class="grid featured">${standardLive.map((p) => PNPL.projectCard(p)).join('')}</div>` : (justLaunched.length ? '' : '<p>No projects are live right now.</p>')}
+            ${standardLive.length ? `<div class="grid featured">${standardLive.map((p) => PNPL.projectCard(p)).join('')}</div>` : (justLaunched.length ? '' : PNPL.emptyState('Nothing is live right now', 'Every campaign on the Launchpad has ended for the moment. The Archive lists the ones that just closed.'))}
           </main>
           ${PNPL.footer()}
         `;

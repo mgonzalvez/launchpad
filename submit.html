@@ -37,6 +37,7 @@
   </head>
   <body>
     <div id="app">
+      <a class="skip-link" href="#main">Skip to content</a>
       <header class="site-header">
         <div class="inner">
           <h1 class="brand"><a class="brand-link" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="PnP Launchpad logo" /><span>PnP Launchpad</span></a></h1>
@@ -76,10 +77,12 @@
               <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </button>
           </div>
-          <a class="nav-cta" href="submit.html" aria-current="page">Submit a Project</a>
+          <div class="header-actions">
+            <a class="nav-cta" href="submit.html" aria-current="page">Submit a Project</a>
+          </div>
         </div>
       </header>
-      <main>
+      <main id="main">
         <section class="hero">
           <h1>Submit a Project</h1>
           <p>Fill out this form to submit your project for Launchpad review. Submissions are reviewed by admin before publishing.</p>

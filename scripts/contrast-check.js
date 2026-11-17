@@ -124,6 +124,10 @@ const statusPairs = [
   ['ok badge', 'okbadge-ink', 'okbadge-bg'],
   ['warn badge', 'warnbadge-ink', 'warnbadge-bg'],
   ['neutral badge', 'neutbadge-ink', 'neutbadge-bg'],
+  ['live-now badge', 'live-badge-ink', 'live-badge-bg'],
+  ['accent fill (buttons, CTA)', 'button-ink', 'accent-strong'],
+  ['card CTA pill', 'accent-hover', 'accent-soft'],
+  ['platform badge', 'ink-secondary', 'panel-strong'],
 ];
 
 const generalPairs = [

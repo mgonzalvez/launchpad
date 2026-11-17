@@ -45,7 +45,7 @@
         const person = publishers.find((p) => p.slug === slug) || null;
 
         if (!person) {
-          el.innerHTML = `${PNPL.header('This Week')}<main><p>Publisher not found.</p></main>${PNPL.footer()}`;
+          el.innerHTML = `${PNPL.header('This Week')}<main id="main"><p>Publisher not found.</p></main>${PNPL.footer()}`;
           return;
         }
 
@@ -55,7 +55,7 @@
 
         el.innerHTML = `
           ${PNPL.header('This Week')}
-          <main>
+          <main id="main">
             <section class="hero profile-hero">
               <h1>${person.name}</h1>
               ${person.bio ? `<p>${person.bio}</p>` : '<p>No BGG write-up added yet.</p>'}

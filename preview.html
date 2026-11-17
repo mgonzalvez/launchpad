@@ -46,12 +46,12 @@
 
         el.innerHTML = `
           ${PNPL.header('Preview')}
-          <main>
+          <main id="main">
             <section class="hero">
               <h1>Preview Projects</h1>
               <p>Projects in preview mode can be showcased before launch and end dates are announced.</p>
             </section>
-            ${preview.length ? `<div class="grid">${preview.map((p) => PNPL.projectCard(p)).join('')}</div>` : '<p>No preview projects are listed right now.</p>'}
+            ${preview.length ? `<div class="grid">${preview.map((p) => PNPL.projectCard(p)).join('')}</div>` : PNPL.emptyState('No preview projects right now', 'Preview listings appear here before launch and end dates are announced.')}
           </main>
           ${PNPL.footer()}
         `;
