@@ -63,8 +63,8 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const getJSON = async (u) => (await fetch(u)).json();
 
 let failures = 0;
-const check = (name, ok) => {
-  console.log(`${ok ? '\x1b[32mPASS\x1b[0m' : '\x1b[31mFAIL\x1b[0m'}  ${name}`);
+const check = (name, ok, detail = '') => {
+  console.log(`${ok ? '\x1b[32mPASS\x1b[0m' : '\x1b[31mFAIL\x1b[0m'}  ${name}${detail ? ` — ${detail}` : ''}`);
   if (!ok) failures++;
 };
 
@@ -192,6 +192,117 @@ const check = (name, ok) => {
     const toolLabels = JSON.parse(await evalJs(`JSON.stringify(Array.from(document.querySelectorAll('.site-header .tools-list a')).map((a) => a.textContent.trim()))`));
     check('stage3: tools list includes BoardSplitter/TokenMaker/DiceMaker', ['BoardSplitter', 'TokenMaker', 'DiceMaker'].every((t) => toolLabels.includes(t)));
     check('stage3: footer tools list in sync', (await evalJs(`document.querySelectorAll('.footer-tools a').length`)) === toolLabels.length);
+
+    // ── Stage 4: home page tightening ───────────────────────────
+    const slideCount = await evalJs(`document.querySelectorAll('.carousel-slide').length`);
+    if (slideCount > 1) {
+    check('stage4: carousel exposes a carousel role + label',
+      (await evalJs(`document.querySelector('#featured-carousel')?.getAttribute('aria-roledescription')`)) === 'carousel' &&
+      (await evalJs(`!!document.querySelector('#featured-carousel[aria-label]')`)));
+    check('stage4: polite live region announces the active slide',
+      await evalJs(`!!document.querySelector('#carousel-live[aria-live="polite"]')`));
+    const announced = await evalJs(`document.querySelector('#carousel-live')?.textContent || ''`);
+    check('stage4: live region names the current slide', /^Slide \d+ of \d+: /.test(announced), announced);
+    const tapSizes = JSON.parse(await evalJs(`
+      JSON.stringify({
+        dots: Array.from(document.querySelectorAll('.carousel-dots button')).map((b) => [b.offsetWidth, b.offsetHeight]),
+        arrows: Array.from(document.querySelectorAll('.carousel-controls button')).map((b) => [b.offsetWidth, b.offsetHeight]),
+        handles: Array.from(document.querySelectorAll('.tile-handle')).map((b) => [b.offsetWidth, b.offsetHeight]),
+      })
+    `));
+    const atLeast44 = (list) => list.length > 0 && list.every(([w, h]) => w >= 44 && h >= 44);
+    check('stage4: carousel dots are >=44px tap targets', atLeast44(tapSizes.dots), JSON.stringify(tapSizes.dots.slice(0, 2)));
+    check('stage4: carousel arrows are >=44px tap targets', atLeast44(tapSizes.arrows));
+    check('stage4: live-strip handles are >=44px tap targets', atLeast44(tapSizes.handles));
+    check('stage4: hidden slides are inert (not focusable)',
+      await evalJs(`Array.from(document.querySelectorAll('.carousel-slide')).filter((s) => !s.classList.contains('active') && s.inert).length === document.querySelectorAll('.carousel-slide:not(.active)').length`));
+    const compactRows = JSON.parse(await evalJs(`
+      JSON.stringify(Array.from(document.querySelectorAll('.home-compact-row')).map((r) => getComputedStyle(r).overflowX))
+    `));
+    check('stage4: home compact rows no longer hidden-scroll', compactRows.every((v) => v !== 'auto'), JSON.stringify(compactRows));
+
+    // Hover pauses the rotation, and it resumes when the pointer leaves.
+    const slideIndex = () => evalJs(`Number(document.querySelector('.carousel-slide.active')?.dataset.index || -1)`);
+    await evalJs(`document.querySelector('#carousel-live') && document.querySelector('#featured-carousel').dispatchEvent(new MouseEvent('mouseenter')); true`);
+    const beforeHover = await slideIndex();
+    await sleep(5200);
+    check('stage4: rotation pauses while hovered', (await slideIndex()) === beforeHover, `slide ${beforeHover} -> ${await slideIndex()}`);
+    await evalJs(`document.querySelector('#featured-carousel').dispatchEvent(new MouseEvent('mouseleave')); true`);
+    await sleep(5200);
+    check('stage4: rotation resumes after hover ends', (await slideIndex()) !== beforeHover);
+
+    // Reduced motion: no auto-rotation at all, and no smooth tile scrolling.
+    await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+    await send('Page.navigate', { url: pageUrl });
+    for (let i = 0; i < 40; i++) {
+      if (await evalJs(`!!document.querySelector('.carousel-slide.active')`)) break;
+      await sleep(250);
+    }
+    const reducedStart = await slideIndex();
+    await sleep(6000);
+    check('stage4: no auto-rotation under prefers-reduced-motion', (await slideIndex()) === reducedStart);
+    check('stage4: hover/focus pause code is wired regardless of motion preference',
+      await evalJs(`!!document.querySelector('#carousel-live')`));
+    const badgeAnim = await evalJs(`getComputedStyle(document.querySelector('.badge.live-now') || document.body).animationName`);
+    check('stage4: badge pulses are off under reduced motion', badgeAnim === 'none', badgeAnim);
+    await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: '' }] });
+    } else {
+      console.log(`SKIP  stage4 carousel checks (only ${slideCount} featured slide rendered)`);
+    }
+
+    // ── Stage 6: search accessibility ───────────────────────────
+    let searchReady = false;
+    for (let i = 0; i < 20 && !searchReady; i++) {
+      searchReady = await evalJs(`!!document.querySelector('.search-trigger')`);
+      if (!searchReady) await sleep(250);
+    }
+    check('stage6: search trigger present', searchReady);
+    if (searchReady) {
+      check('stage6: trigger exposes dialog + expanded state',
+        (await evalJs(`document.querySelector('.search-trigger').getAttribute('aria-haspopup')`)) === 'dialog' &&
+        (await evalJs(`document.querySelector('.search-trigger').getAttribute('aria-expanded')`)) === 'false');
+      await evalJs(`document.querySelector('.search-trigger').click(); true`);
+      await sleep(400);
+      check('stage6: opening search puts focus in the input',
+        await evalJs(`document.activeElement?.classList.contains('search-input')`));
+      check('stage6: panel is a labelled dialog with expanded state',
+        (await evalJs(`document.querySelector('.search-container').getAttribute('role')`)) === 'dialog' &&
+        (await evalJs(`document.querySelector('.search-container').getAttribute('aria-expanded')`)) === 'true');
+      check('stage6: result rows are real anchors',
+        await evalJs(`document.querySelectorAll('a.search-result-item').length === document.querySelectorAll('.search-result-item').length`));
+      check('stage6: polite status region reports result counts',
+        await evalJs(`!!document.querySelector('.search-status[aria-live="polite"]')`));
+      const trapped = await evalJs(`(function () {
+        const panel = document.querySelector('.search-container');
+        const els = Array.from(panel.querySelectorAll('input, button, a[href]')).filter((e) => !e.disabled && e.offsetParent !== null);
+        if (!els.length) return false;
+        els[els.length - 1].focus();
+        panel.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true }));
+        return document.activeElement === els[0];
+      })()`);
+      check('stage6: Tab wraps focus back to the first element (trap)', trapped);
+      await evalJs(`document.querySelector('.search-close').click(); true`);
+      await sleep(300);
+      check('stage6: closing restores focus to the search trigger',
+        (await evalJs(`document.activeElement === document.querySelector('.search-trigger')`)) &&
+        (await evalJs(`document.querySelector('.search-trigger').getAttribute('aria-expanded')`)) === 'false');
+    }
+
+    // ── Stage 5: image robustness ───────────────────────────────
+    let imagesLoaded = false;
+    for (let i = 0; i < 20; i++) {
+      imagesLoaded = await evalJs(`Array.from(document.querySelectorAll('img')).every((i) => i.complete)`);
+      if (imagesLoaded) break;
+      await sleep(300);
+    }
+    const broken = JSON.parse(await evalJs(`JSON.stringify(Array.from(document.querySelectorAll('.card img, .tile img, .carousel-slide img, .blog-cover')).filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src))`));
+    check('stage5: no broken project images on the home page', broken.length === 0, broken.slice(0, 3).join(', '));
+    const remoteCount = await evalJs(`Array.from(document.querySelectorAll('.card img, .tile img, .carousel-slide img')).filter((i) => /^https:/.test(i.src)).length`);
+    const localCount = await evalJs(`Array.from(document.querySelectorAll('.card img, .tile img, .carousel-slide img')).filter((i) => i.src.includes('/uploads/')).length`);
+    check('stage5: featured/live imagery is served locally', localCount > 0 && remoteCount === 0, `${localCount} local, ${remoteCount} remote`);
+    const cardImg = JSON.parse(await evalJs(`JSON.stringify((function () { const img = document.querySelector('.card img'); if (!img) return null; const cs = getComputedStyle(img); return { aspect: cs.aspectRatio, minHeight: cs.minHeight }; })())`));
+    check('stage5: card images use aspect-ratio without a conflicting min-height',
+      Boolean(cardImg) && cardImg.aspect !== 'none' && ['auto', '0px'].includes(cardImg.minHeight), JSON.stringify(cardImg));
 
     ws.close();
   } finally {

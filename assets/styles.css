@@ -411,7 +411,6 @@ main {
 
 .grid.compact-grid .card img {
   aspect-ratio: 16 / 10;
-  min-height: 160px;
 }
 
 .grid.compact-grid .card-body {
@@ -474,7 +473,6 @@ main {
 .card img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  min-height: 280px;
   object-fit: var(--img-fit, cover);
   object-position: var(--img-pos, center top);
   display: block;
@@ -490,10 +488,6 @@ main {
 
 .card.compact {
   max-width: 300px;
-}
-
-.card.compact img {
-  min-height: 190px;
 }
 
 .card.compact .card-body {
@@ -538,7 +532,6 @@ main {
   letter-spacing: 0.03em;
   padding: 6px 12px;
   box-shadow: 0 2px 0 #8d1313;
-  animation: pulse-live 1.8s infinite ease-in-out;
 }
 
 .badge.upcoming {
@@ -561,7 +554,6 @@ main {
   border-color: var(--preview-border);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
-  animation: shimmer-preview 2.8s infinite linear;
 }
 
 .badge.late-pledge {
@@ -570,7 +562,6 @@ main {
   border-color: var(--late-border);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
-  animation: pulse-late 2.2s infinite ease-in-out;
 }
 
 .badge.pre-order {
@@ -579,7 +570,6 @@ main {
   border-color: var(--preorder-border);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
-  animation: pulse-late 2.2s infinite ease-in-out;
 }
 
 .badge.archived { background: var(--archived-bg); color: var(--archived-ink); }
@@ -590,7 +580,6 @@ main {
   border-color: var(--launched-border);
   letter-spacing: 0.03em;
   box-shadow: 0 0 10px rgba(240, 179, 94, 0.4);
-  animation: pulse-launch 1.7s infinite ease-in-out;
 }
 
 .badge.ending-soon {
@@ -599,7 +588,16 @@ main {
   border-color: var(--soon-border);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
-  animation: pulse-live 1.5s infinite ease-in-out;
+}
+
+/* Badge pulses are decorative — gated behind the reduced-motion preference. */
+@media (prefers-reduced-motion: no-preference) {
+  .badge.live-now { animation: pulse-live 1.8s infinite ease-in-out; }
+  .badge.preview { animation: shimmer-preview 2.8s infinite linear; }
+  .badge.late-pledge { animation: pulse-late 2.2s infinite ease-in-out; }
+  .badge.pre-order { animation: pulse-late 2.2s infinite ease-in-out; }
+  .badge.just-launched { animation: pulse-launch 1.7s infinite ease-in-out; }
+  .badge.ending-soon { animation: pulse-live 1.5s infinite ease-in-out; }
 }
 
 .countdown-chip {
@@ -851,7 +849,6 @@ small { color: var(--muted); }
 
 @media (max-width: 720px) {
   .form-grid { grid-template-columns: 1fr; }
-  .card img { min-height: 220px; }
 }
 
 .person-link {
@@ -986,8 +983,8 @@ small { color: var(--muted); }
   backdrop-filter: blur(3px);
   color: #fff;
   border-radius: 999px;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   font-size: 1.25rem;
   line-height: 1;
@@ -997,24 +994,52 @@ small { color: var(--muted); }
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 8px;
+  bottom: 4px;
   display: flex;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   z-index: 6;
 }
 
+/* 44x44 hit area with a 9px visible dot drawn inside it. */
 .carousel-dots button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  position: relative;
+}
+
+.carousel-dots button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  border: 0;
-  padding: 0;
   background: #ffffff77;
 }
 
-.carousel-dots button.active {
+.carousel-dots button.active::after {
   background: #fff;
+}
+
+.carousel-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide,
+  .smart-image-backdrop { transition: none; }
+  html { scroll-behavior: auto; }
 }
 
 .live-strip h3 {
@@ -1028,18 +1053,13 @@ small { color: var(--muted); }
 
 .home-compact-row {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(260px, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 14px;
-  overflow-x: auto;
-  padding-bottom: 6px;
   max-width: 100%;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
-.home-compact-row::-webkit-scrollbar {
-  display: none;
+.home-compact-row .card.compact {
+  max-width: none;
 }
 
 .tile-strip-wrap {
@@ -1051,8 +1071,8 @@ small { color: var(--muted); }
 }
 
 .tile-handle {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--panel);
@@ -1097,8 +1117,7 @@ small { color: var(--muted); }
   object-fit: var(--img-fit, cover);
   object-position: var(--img-pos, center top);
   display: block;
-  background:
-    radial-gradient(circle at 20% 20%, #fff8ea 0%, #f0e6d0 55%, #e6dbc2 100%);
+  background: var(--img-placeholder);
   position: relative;
   z-index: 2;
 }
@@ -1106,7 +1125,7 @@ small { color: var(--muted); }
 .smart-image-frame {
   position: relative;
   overflow: hidden;
-  background: #2a2a2a;
+  background: var(--img-placeholder);
 }
 
 .smart-image-backdrop {
@@ -1480,7 +1499,10 @@ small { color: var(--muted); }
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   max-height: 70vh;
   overflow-y: auto;
-  animation: searchSlideDown 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .search-container { animation: searchSlideDown 0.2s ease-out; }
 }
 
 @keyframes searchSlideDown {
@@ -1532,9 +1554,13 @@ small { color: var(--muted); }
   font-size: 1.6rem;
   color: var(--muted);
   cursor: pointer;
-  padding: 4px 8px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
   line-height: 1;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: color 0.15s, background 0.15s;
 }
 
@@ -1562,9 +1588,16 @@ small { color: var(--muted); }
   margin: 0;
 }
 
+.search-status {
+  margin: 0;
+  padding: 8px 20px 2px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .search-count {
   font-weight: 600;
-  color: var(--line);
+  color: var(--muted);
 }
 
 .search-result-item {
@@ -1574,6 +1607,12 @@ small { color: var(--muted); }
   cursor: pointer;
   transition: background 0.12s;
   border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.search-result-item:focus-visible {
+  background: var(--hover-bg);
+  border-left-color: var(--accent);
 }
 
 .search-result-item:hover {
@@ -1672,7 +1711,8 @@ small { color: var(--muted); }
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 4px 12px;
+  padding: 8px 14px;
+  min-height: 40px;
   font-size: 0.82rem;
   font-family: inherit;
   color: var(--ink);

@@ -162,6 +162,24 @@ data.publishers.forEach((p, i) => {
   }
 });
 
+// --- Image provenance: signed hotlinks expire (UI plan stage 5) ---
+const isoDate = (v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v);
+const isStillListed = (p) => {
+  if (p.isPreview || (!isoDate(p.launchDate) && !isoDate(p.endDate))) return true;
+  if (p.isArchived) return false;
+  if (!isoDate(p.endDate)) return true;
+  const end = new Date(`${p.endDate}T23:59:59`);
+  if (end.getTime() + 24 * 3600 * 1000 < Date.now()) {
+    return Boolean(p.isLatePledge || p.hasLatePledge || p.latePledgeUrl || p.isPreOrder || p.hasPreOrder || p.preOrderUrl);
+  }
+  return true;
+};
+for (const p of data.projects) {
+  if (isStillListed(p) && /sig=/.test(p.image || '')) {
+    warnings.push(`"${p.slug}": image is a signed hotlink that will expire — run node scripts/localize-images.js`);
+  }
+}
+
 // --- Report ---
 console.log(`\nValidating ${data.projects.length} projects, ${data.designers.length} designers, ${data.publishers.length} publishers...`);
 

@@ -100,6 +100,15 @@ Every blog post is a standalone HTML file in `blog/`. It follows this structure:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="[1-2 sentence summary, ~160 chars]" />
+    <meta property="og:title" content="[Post Title]" />
+    <meta property="og:description" content="[same summary]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://launchpad.gonzhome.us/blog/[filename].html" />
+    <meta property="og:image" content="https://launchpad.gonzhome.us/uploads/[collage-image.jpg]" />
+    <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#090b10" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://launchpad.gonzhome.us/blog/[filename].html" />
     <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
     <link rel="shortcut icon" href="../assets/logo.svg" />
     <title>[Post Title] | PnP Launchpad</title>
@@ -158,6 +167,7 @@ Every blog post is a standalone HTML file in `blog/`. It follows this structure:
 - Image `src` uses `../uploads/` for local files, full URLs for external
 - Add `?v=YYYYMMDDa` cache-busting query string to collage images
 - Days-left counters use `<span class="days-left" data-end-date="YYYY-MM-DD">` — the JS block at the bottom computes the value
+- `scripts/ui-check.js` fails if any page (including blog posts) is missing a meta description, OG tags, canonical URL or the two theme-color tags. `node scripts/add-meta-tags.js --posts --force` fills them in automatically from the post title, first paragraph and cover image.
 
 ---
 

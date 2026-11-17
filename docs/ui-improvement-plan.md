@@ -7,11 +7,21 @@ dicemaker, prototyper and the gonzhome hub (token-based CSS, soft layered shadow
 
 Each stage is small, independently shippable, and verified by
 `node scripts/ui-check.js` (static checks: tokens, legacy-color removal,
-page bootstrap, toggle wiring) and `node scripts/ui-smoke.js` (headless
-chromium CDP: render, toggle, persistence — skips gracefully without
-chromium), plus the manual checklist listed under the stage.
+page bootstrap, toggle wiring, aria/meta coverage — 258 checks) and
+`node scripts/ui-smoke.js` (headless chromium CDP: render, toggle, persistence,
+carousel behaviour, search focus, broken images — skips gracefully without
+chromium), plus `node scripts/contrast-check.js` (WCAG ratios for both themes).
 Run `node scripts/validate-content.js` before every commit that touches
 `data/content.json`.
+
+Stages 1–7 are complete as of 2026-11-16. Remaining nice-to-haves:
+
+- Stage 8 (unstarted): archive pagination currently loads 20 at a time with no
+  "back to top"; the carousel picks featured slides randomly on each load, so a
+  deterministic seed (like the family's determinism-first approach) would make
+  screenshots and tests reproducible.
+- Stage 9 (unstarted): `uploads/` is ~193 MB and growing; a one-off pass to
+  re-encode oversized PNGs as JPEG/WebP would trim it without touching layout.
 
 ## Stage 1 — Shared design tokens (DONE)
 
@@ -76,35 +86,79 @@ contrast, search overlay, forms, carousel. Reload persists choice.
   Chromium holds its profile's singleton lock and hung the test for 30+
   minutes), plus a 15s per-command CDP timeout and a 120s global watchdog.
 
-## Stage 4 — Home page tightening
+## Stage 4 — Home page tightening (DONE)
 
-- Hero: cut the welcome paragraph to one sentence + CTA.
-- Carousel: pause auto-rotation on hover, respect `prefers-reduced-motion`,
-  add `aria-roledescription="carousel"` + polite live region, expand dot
-  touch targets to ≥44px (padded hit area).
-- Upcoming/Preview home rows: add scroll handles (or switch to 2×2 grids) —
-  currently hidden-scrollbar scroll with no affordance.
-- Gate badge keyframe animations (pulse-live, shimmer-preview, pulse-late,
-  pulse-launch) behind `prefers-reduced-motion`.
+- Hero: welcome paragraph cut to one sentence + the CTA.
+- Carousel (`index.html`):
+  - `role="region" aria-roledescription="carousel" aria-label="Featured live projects"`.
+  - Polite live region (`#carousel-live`) announces "Slide n of m: Title".
+  - Auto-rotation pauses on hover (`mouseenter`/`mouseleave`) and while any
+    element inside the carousel has focus (`focusin`/`focusout`), and never
+    starts when `prefers-reduced-motion: reduce` is set.
+  - Arrow keys inside the carousel move slides (Left/Right).
+  - Inactive slides get the `inert` attribute (feature-detected) so they are
+    neither focusable nor in the a11y tree.
+  - Dots are 44x44 buttons with the 9px dot drawn by `::after`;
+    carousel arrows are 44px.
+- Upcoming/Preview home rows: replaced the hidden-scrollbar row with a
+  wrapping `grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))` — no
+  scrolling to discover content. The live tile strip keeps its handles
+  (now 44px).
+- Badge pulses (`pulse-live`, `pulse-late`, `pulse-launch`,
+  `shimmer-preview`) and the search slide-in are declared only inside
+  `@media (prefers-reduced-motion: no-preference)`; the `reduce` block also
+  kills the slide/backdrop transitions and smooth scrolling.
+- Tile scrolling uses `behavior: 'auto'` under reduced motion.
+- Verification: `ui-check.js` (hero text, carousel aria, 44px targets, every
+  `animation:` inside the motion gate) + `ui-smoke.js` (live region content,
+  measured tap sizes, hover pause measured over a 5.2s window, rotation does
+  not advance when chromium is emulated with `prefers-reduced-motion: reduce`,
+  badge `animation-name` resolves to `none`).
 
-## Stage 5 — Image robustness
+## Stage 5 — Image robustness (DONE)
 
-- `content.json` hotlinks signed `i.kickstarter.com` URLs (`sig=`/`v=`
-  params) that **expire** → 404s over time. Download images into `uploads/`
-  for live + launch-wave projects and point `image` at local files. (git
-  add/upload SOP applies.)
-- `.card img`: drop the `min-height` + `aspect-ratio` conflict (use
-  aspect-ratio only).
-- Image placeholder gradient already tokenized — verify under both themes.
+- New script `scripts/localize-images.js` downloads the image for every
+  non-archived project into `uploads/<slug>.<ext>` and rewrites `image` to
+  the local path. Run it after adding projects with hotlinked Kickstarter art.
+  - `--dry-run`, `--all` (include archived), `--concurrency=6`, `--verbose`.
+  - Skips files already in `uploads/`, dedupes identical URLs, and leaves the
+    remote URL in place if a download fails.
+  - 2026-11-16 run: 46 active images localized, 13 already present, 0 failed.
+- `validate-content.js` now warns when a still-listed project points at a
+  signed hotlink (`sig=`) that will expire.
+- `.card img`, `.grid.compact-grid .card img` and `.card.compact img`: the
+  `min-height` values are gone; aspect-ratio alone controls the geometry.
+- `.tile img` and `.smart-image-frame` now use the themed `--img-placeholder`
+  token instead of hardcoded warm/dark gradients.
+- Verification: `ui-smoke.js` waits for all images to finish loading and fails
+  if any card/tile/carousel image has `naturalWidth === 0`; it also asserts the
+  home imagery is local (0 remote) and that `.card img` computes
+  `aspect-ratio: 4 / 3` with no min-height.
+- SOP still applies: new `uploads/` files must be `git add`'d in the same
+  commit as `content.json`.
 
-## Stage 6 — Accessibility details
+## Stage 6 — Accessibility details (DONE)
 
-- Search overlay: focus trap while open, restore focus to trigger on close.
-- Carousel dots / tile handles: ≥44px touch targets.
-- Contrast pass on both themes (badges, muted text, links).
+- Search overlay (`assets/search.js`):
+  - Trigger button: `aria-haspopup="dialog"` + `aria-expanded` kept in sync;
+    panel has `role="dialog"` and an `aria-label`.
+  - Tab is trapped inside the open panel (wraps last → first and first → last
+    with Shift+Tab).
+  - Closing returns focus to the trigger.
+  - Result rows are real `<a href>` links instead of click-handler divs, so
+    they are keyboard reachable and show as links.
+  - Polite status region reports "n result(s)" as the query changes.
+  - Close button is 44x44; history pills are 40px tall.
+- Contrast pass: `scripts/contrast-check.js` composites the translucent
+  surfaces over the page background and computes WCAG ratios for every
+  text/surface token pair in both themes (56 pairs, all ≥ 4.5:1 on 2026-11-16).
+  It fixes the case where a border token was used as a text color
+  (`.search-count` used `var(--line)`).
+- Verification: `ui-check.js` (static wiring) + `ui-smoke.js` (opens search,
+  checks focus lands in the input, dispatches a Tab keydown from the last
+  focusable element and confirms focus wraps, clicks close and confirms focus
+  returns to the trigger).
 
-## Stage 7 — SEO/meta
-
-- `meta description` + OG tags on all pages (only index.html has them).
-- `meta name="theme-color"` per theme (gonzhome pattern).
-- Canonical URLs.
+Manual remaining: eyeball badge contrast in dark mode on a phone, and confirm
+the carousel pause feels right on a touch device (touch pause was already there;
+hover pause is desktop-only).

@@ -20,6 +20,30 @@ const check = (name, ok, detail = '') => {
 
 // ── CSS helpers ──────────────────────────────────────────────────
 
+// Extract the body of every block whose selector matches `selectorRe`.
+function extractAllBlocks(css, selectorRe) {
+  const blocks = [];
+  let from = 0;
+  while (from < css.length) {
+    const start = css.slice(from).search(selectorRe);
+    if (start === -1) break;
+    const open = css.indexOf('{', from + start);
+    if (open === -1) break;
+    let depth = 0;
+    let i = open;
+    for (; i < css.length; i++) {
+      if (css[i] === '{') depth++;
+      else if (css[i] === '}') {
+        depth--;
+        if (depth === 0) break;
+      }
+    }
+    blocks.push(css.slice(open + 1, i));
+    from = i + 1;
+  }
+  return blocks;
+}
+
 // Extract the body of the first top-level block whose selector line matches `selectorRe`.
 function extractBlock(css, selectorRe) {
   const start = css.search(selectorRe);
@@ -165,6 +189,82 @@ check('HTML submit.html: theme toggle present', submitHtml.includes('data-theme-
 check('HTML submit.html: renamed Archive link', submitHtml.includes('<a href="archive.html">Archive</a>'));
 check('HTML submit.html: no legacy "Ended" nav link', !submitHtml.includes('<a href="archive.html">Ended</a>'));
 check('HTML submit.html: tools list includes new tools', submitHtml.includes('boardsplitter.gonzhome.us') && submitHtml.includes('tokenmaker.gonzhome.us') && submitHtml.includes('dicemaker.gonzhome.us'));
+
+// ── 6. Stage 4: home page tightening ──────────────────────────
+
+check('CSS: badge pulses gated behind prefers-reduced-motion: no-preference',
+  /@media \(prefers-reduced-motion: no-preference\)/.test(css) &&
+  /\.badge\.live-now \{ animation: pulse-live/.test(css) &&
+  /\.badge\.preview \{ animation: shimmer-preview/.test(css) &&
+  /\.badge\.just-launched \{ animation: pulse-launch/.test(css));
+check('CSS: reduced-motion block present', /@media \(prefers-reduced-motion: reduce\)/.test(css));
+const gates = extractAllBlocks(css, /@media \(prefers-reduced-motion: no-preference\)/);
+const gatedCount = gates.reduce((n, block) => n + (block.match(/animation:/g) || []).length, 0);
+const totalAnimations = (css.match(/animation:/g) || []).length;
+check('CSS: every animation is gated behind prefers-reduced-motion', gatedCount === totalAnimations, `${gatedCount} gated / ${totalAnimations} total`);
+check('CSS: reduced-motion gate covers badge pulses + search overlay', gatedCount >= 7);
+
+const carouselDotBlock = extractBlock(css, /^\.carousel-dots button\s*\{/m);
+check('CSS: carousel dots are 44px touch targets',
+  carouselDotBlock && /width:\s*44px/.test(carouselDotBlock) && /height:\s*44px/.test(carouselDotBlock));
+check('CSS: dot visual drawn by ::after pseudo-element', /\.carousel-dots button::after\s*\{/.test(css));
+const carouselControlBlock = extractBlock(css, /^\.carousel-controls button\s*\{/m);
+check('CSS: carousel arrows are 44px touch targets',
+  carouselControlBlock && /width:\s*44px/.test(carouselControlBlock) && /height:\s*44px/.test(carouselControlBlock));
+const tileHandleBlock = extractBlock(css, /^\.tile-handle\s*\{/m);
+check('CSS: live-strip handles are 44px touch targets',
+  tileHandleBlock && /width:\s*44px/.test(tileHandleBlock) && /height:\s*44px/.test(tileHandleBlock));
+
+const homeRowBlock = extractBlock(css, /^\.home-compact-row\s*\{/m);
+check('CSS: home compact rows wrap instead of hidden scrolling',
+  homeRowBlock && !/overflow-x:\s*auto/.test(homeRowBlock) && /grid-template-columns:\s*repeat\(auto-fit/.test(homeRowBlock));
+check('CSS: no hidden-scrollbar rule for home compact rows', !/\.home-compact-row::-webkit-scrollbar/.test(css));
+
+const indexHtml = reads('index.html');
+check('HTML index.html: hero trimmed to a single sentence',
+  !indexHtml.includes('Welcome to PnP Launchpad, your connection to') &&
+  /<p>Hand-picked print-and-play crowdfunding/.test(indexHtml));
+check('HTML index.html: carousel has aria-roledescription + label',
+  /aria-roledescription="carousel"/.test(indexHtml) && /aria-label="Featured live projects"/.test(indexHtml));
+check('HTML index.html: polite carousel live region',
+  /class="carousel-live"[^>]*aria-live="polite"/.test(indexHtml) && /id="carousel-live"/.test(indexHtml));
+check('JS index.html: carousel pauses on hover', /addEventListener\('mouseenter', stop\)/.test(indexHtml));
+check('JS index.html: carousel pauses on focus', /addEventListener\('focusin', stop\)/.test(indexHtml));
+check('JS index.html: reduced-motion respected', /prefers-reduced-motion: reduce/.test(indexHtml) && /if \(reducedMotion\) return;/.test(indexHtml) && /scrollBehavior/.test(indexHtml));
+check('JS index.html: inactive slides made inert', /s\.inert = i !== current/.test(indexHtml));
+
+// ── 7. Stage 6: search accessibility + touch targets ──────────
+
+const searchJs = reads('assets/search.js');
+check('JS search: focus trap while the panel is open', /if \(e\.key !== 'Tab' \|\| !searchState\.open\) return;/.test(searchJs));
+check('JS search: focus returns to the trigger on close', /searchBtn\.focus\(\);/.test(searchJs));
+check('JS search: trigger aria-expanded kept in sync',
+  searchJs.includes("setAttribute('aria-expanded', 'true')") && searchJs.includes("setAttribute('aria-expanded', 'false')"));
+check('JS search: search trigger has aria-haspopup dialog', searchJs.includes("setAttribute('aria-haspopup', 'dialog')"));
+check('JS search: panel marked as a labelled dialog', searchJs.includes("setAttribute('role', 'dialog')") && searchJs.includes("setAttribute('aria-label', 'Site search')"));
+check('JS search: result rows are real links (keyboard reachable)',
+  /<a class="search-result-item search-result-project" href=/.test(searchJs) &&
+  /<a class="search-result-item search-result-person" href=/.test(searchJs));
+check('JS search: polite status region announces result counts',
+  /aria-live="polite"/.test(searchJs) && /function updateSearchStatus\(\)/.test(searchJs));
+const searchCloseBlock = extractBlock(css, /^\.search-close\s*\{/m);
+check('CSS: search close button is a 44px touch target',
+  searchCloseBlock && /width:\s*44px/.test(searchCloseBlock) && /height:\s*44px/.test(searchCloseBlock));
+const searchCountBlock = extractBlock(css, /^\.search-count\s*\{/m);
+check('CSS: search result count is not drawn with a border color',
+  searchCountBlock && !/color:\s*var\(--line\)/.test(searchCountBlock));
+
+// ── 8. Stage 7: SEO / meta coverage ───────────────────────────
+
+const blogPosts = fs.readdirSync(path.join(ROOT, 'blog')).filter((f) => f.endsWith('.html')).map((f) => `blog/${f}`);
+for (const page of new Set([...pages, ...blogPosts])) {
+  const html = reads(page);
+  check(`HTML ${page}: meta description`, /<meta name="description" content="[^"]{20,}"/.test(html));
+  check(`HTML ${page}: Open Graph title + description`, html.includes('og:title') && html.includes('og:description') && html.includes('og:image'));
+  check(`HTML ${page}: canonical URL`, /<link rel="canonical" href="https:\/\/launchpad\.gonzhome\.us\//.test(html));
+  check(`HTML ${page}: theme-color for both themes`,
+    /theme-color" content="#f4f7fb"/.test(html) && /theme-color" content="#090b10"/.test(html));
+}
 
 // ── Report ──────────────────────────────────────────────────────
 

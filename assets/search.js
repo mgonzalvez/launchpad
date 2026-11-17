@@ -254,6 +254,10 @@
     html += '<button type="button" class="search-close" aria-label="Close search">&times;</button>';
     html += '</div>';
 
+    html += '<p class="search-status" aria-live="polite">' +
+      (query.length < 2 ? 'Type at least 2 characters to search' : searchState.results.length + ' result(s)') +
+      '</p>';
+
     // Results area
     html += '<div class="search-results">';
 
@@ -309,23 +313,23 @@
     var statusLabel = status.charAt(0).toUpperCase() + status.slice(1).replace('-', ' ');
     var url = item.primaryUrl || '#';
 
-    return '<div class="search-result-item search-result-project" data-url="' + escapeHtml(url) + '">' +
+    return '<a class="search-result-item search-result-project" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
       '<div class="search-result-title">' + escapeHtml(item.title) + '</div>' +
       '<div class="search-result-meta">' +
         '<span class="search-status-badge ' + statusClass + '">' + escapeHtml(statusLabel) + '</span>' +
         (item.designer ? '<span class="search-result-designer">' + escapeHtml(item.designer) + '</span>' : '') +
       '</div>' +
-    '</div>';
+    '</a>';
   }
 
   function renderPersonResult(item) {
     var personUrl = PNPL.withBase((item.type === 'designer' ? 'designer' : 'publisher') + '.html?slug=' + encodeURIComponent(item.slug));
-    return '<div class="search-result-item search-result-person" data-url="' + escapeHtml(personUrl) + '">' +
+    return '<a class="search-result-item search-result-person" href="' + escapeHtml(personUrl) + '" target="_blank" rel="noopener noreferrer">' +
       '<div class="search-result-title">' + escapeHtml(item.name) + '</div>' +
       '<div class="search-result-meta">' +
         '<span class="search-person-type">' + (item.type === 'designer' ? 'Designer' : 'Publisher') + '</span>' +
       '</div>' +
-    '</div>';
+    '</a>';
   }
 
   // ── Search History ───────────────────────────────────────────────
@@ -372,6 +376,8 @@
     searchBtn.setAttribute('aria-label', 'Search projects');
     searchBtn.setAttribute('title', 'Search');
     searchBtn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>';
+    searchBtn.setAttribute('aria-haspopup', 'dialog');
+    searchBtn.setAttribute('aria-expanded', 'false');
 
     // Insert before the nav toggle so it sits between brand and hamburger
     var navToggle = headerEl.querySelector('.nav-toggle');
@@ -384,6 +390,8 @@
     // Create search panel container
     var searchContainer = document.createElement('div');
     searchContainer.className = 'search-container';
+    searchContainer.setAttribute('role', 'dialog');
+    searchContainer.setAttribute('aria-label', 'Site search');
     searchContainer.style.display = 'none';
     document.body.appendChild(searchContainer);
 
@@ -402,11 +410,15 @@
       searchState.results = [];
       searchState.showAll = false;
       searchContainer.style.display = 'none';
+      searchContainer.setAttribute('aria-expanded', 'false');
       searchBtn.classList.remove('active');
+      searchBtn.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('search-open');
       // Clear the input value
       var input = searchContainer.querySelector('.search-input');
       if (input) input.value = '';
+      // Return focus to the trigger so the keyboard position is not lost.
+      searchBtn.focus();
     }
 
     searchBtn.addEventListener('keydown', function (e) {
@@ -434,7 +446,9 @@
     function openSearch() {
       searchState.open = true;
       searchContainer.style.display = 'block';
+      searchContainer.setAttribute('aria-expanded', 'true');
       searchBtn.classList.add('active');
+      searchBtn.setAttribute('aria-expanded', 'true');
       document.body.classList.add('search-open');
 
       // Render panel
@@ -457,9 +471,6 @@
           closeSearch();
         });
       }
-
-      // Bind result clicks
-      bindResultClicks();
 
       // Bind history clicks
       bindHistoryClicks();
@@ -486,7 +497,7 @@
           var resultsEl = searchContainer.querySelector('.search-results');
           if (resultsEl) {
             resultsEl.innerHTML = renderResultsContent();
-            bindResultClicks();
+            updateSearchStatus();
             bindShowMore();
           }
         }, DEBOUNCE_MS);
@@ -513,6 +524,15 @@
           }
         }
       });
+    }
+
+    function updateSearchStatus() {
+      var statusEl = searchContainer.querySelector('.search-status');
+      if (!statusEl) return;
+      var query = searchState.query.trim();
+      statusEl.textContent = query.length < 2
+        ? 'Type at least 2 characters to search'
+        : searchState.results.length + ' result(s)';
     }
 
     function renderResultsContent() {
@@ -563,16 +583,26 @@
       return html;
     }
 
-    function bindResultClicks() {
-      searchContainer.querySelectorAll('.search-result-item').forEach(function (el) {
-        el.addEventListener('click', function () {
-          var url = el.getAttribute('data-url');
-          if (url) {
-            window.open(url, '_blank', 'noopener,noreferrer');
-          }
-        });
+    // Keep Tab navigation inside the open search panel.
+    searchContainer.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab' || !searchState.open) return;
+      var focusable = Array.from(searchContainer.querySelectorAll('input, button, a[href]')).filter(function (el) {
+        return !el.disabled && el.offsetParent !== null;
       });
-    }
+      if (focusable.length === 0) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (!searchContainer.contains(document.activeElement)) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
 
     function bindHistoryClicks() {
       searchContainer.querySelectorAll('.search-history-item').forEach(function (el) {
@@ -587,7 +617,7 @@
               var resultsEl = searchContainer.querySelector('.search-results');
               if (resultsEl) {
                 resultsEl.innerHTML = renderResultsContent();
-                bindResultClicks();
+                updateSearchStatus();
                 bindShowMore();
                 input.focus();
               }
@@ -605,7 +635,7 @@
           var resultsEl = searchContainer.querySelector('.search-results');
           if (resultsEl) {
             resultsEl.innerHTML = renderResultsContent();
-            bindResultClicks();
+            updateSearchStatus();
           }
         });
       }

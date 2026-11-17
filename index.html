@@ -3,9 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Weekly curated digest of paid print-and-play board game crowdfunding campaigns, promos, late pledges and previews." />
+    <meta property="og:title" content="PnP Launchpad | New PnP Projects Weekly" />
+    <meta property="og:description" content="Weekly curated digest of paid print-and-play board game crowdfunding campaigns, promos, late pledges and previews." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://launchpad.gonzhome.us/index.html" />
+    <meta property="og:image" content="https://launchpad.gonzhome.us/uploads/og-launchpad.jpg" />
+    <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#090b10" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://launchpad.gonzhome.us/index.html" />
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
     <link rel="shortcut icon" href="assets/logo.svg" />
-    <meta name="description" content="Weekly curated digest of paid print-and-play projects." />
     <title>PnP Launchpad | New PnP Projects Weekly</title>
     <script>
       if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
@@ -111,7 +119,7 @@
             <main>
               <section class="hero">
                 <h1>PnP Launchpad</h1>
-                <p>Welcome to PnP Launchpad, your connection to what's hot and fresh in print and play game projects! Discover the latest print and play game crowdfunding projects and promotions. Click on any image or tile to learn more. Bookmark this site and check it often for the latest print and play games. Brought to you by the hardworking team at <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Martin's Print and Play Hideaway</a>.</p>
+                <p>Hand-picked print-and-play crowdfunding, promos and late pledges, updated weekly by <a href="https://www.facebook.com/groups/pnphideaway" target="_blank" rel="noreferrer noopener">Martin's Print and Play Hideaway</a>.</p>
                 <a class="cta" href="submit.html" target="_blank" rel="noreferrer noopener">Submit your project for review</a>
               </section>
 
@@ -125,8 +133,9 @@
 
               <section class="home-stage">
                 ${featured.length ? `
-                  <div class="featured-carousel" id="featured-carousel">
+                  <div class="featured-carousel" id="featured-carousel" role="region" aria-roledescription="carousel" aria-label="Featured live projects">
                     <div class="carousel-track">${slides}</div>
+                    <div class="carousel-live" id="carousel-live" aria-live="polite" aria-atomic="true"></div>
                     ${featured.length > 1 ? `
                       <div class="carousel-controls">
                         <button type="button" id="carousel-prev" aria-label="Previous featured project">&#8249;</button>
@@ -170,18 +179,30 @@
           `;
 
           const carousel = document.getElementById('featured-carousel');
+          const reducedMotion = Boolean(
+            window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          );
           if (carousel && featured.length > 1) {
             const slideEls = Array.from(carousel.querySelectorAll('.carousel-slide'));
             const dotEls = Array.from(carousel.querySelectorAll('.carousel-dots button'));
             const prevBtn = document.getElementById('carousel-prev');
             const nextBtn = document.getElementById('carousel-next');
+            const liveRegion = document.getElementById('carousel-live');
+            const supportsInert = 'inert' in HTMLElement.prototype;
             let current = 0;
             let timer = null;
             let pausedByTouch = false;
 
             const renderActive = () => {
-              slideEls.forEach((s, i) => s.classList.toggle('active', i === current));
+              slideEls.forEach((s, i) => {
+                s.classList.toggle('active', i === current);
+                // Keep hidden slides out of the tab order and the a11y tree.
+                if (supportsInert) s.inert = i !== current;
+              });
               dotEls.forEach((d, i) => d.classList.toggle('active', i === current));
+              if (liveRegion) {
+                liveRegion.textContent = `Slide ${current + 1} of ${slideEls.length}: ${featured[current].title}`;
+              }
             };
 
             const goTo = (index) => {
@@ -190,6 +211,7 @@
             };
 
             const start = () => {
+              if (reducedMotion) return;
               if (timer) clearInterval(timer);
               timer = setInterval(() => goTo(current + 1), 5000);
             };
@@ -216,6 +238,27 @@
               });
             });
 
+            // Pause the rotation while the pointer or a focused element is inside
+            // the carousel, so a slide stays put long enough to read and click.
+            carousel.addEventListener('mouseenter', stop);
+            carousel.addEventListener('mouseleave', () => {
+              if (!pausedByTouch) start();
+            });
+            carousel.addEventListener('focusin', stop);
+            carousel.addEventListener('focusout', () => {
+              if (!pausedByTouch) start();
+            });
+            carousel.addEventListener('keydown', (event) => {
+              if (event.key === 'ArrowLeft') {
+                goTo(current - 1);
+              } else if (event.key === 'ArrowRight') {
+                goTo(current + 1);
+              } else {
+                return;
+              }
+              start();
+            });
+
             carousel.addEventListener('touchstart', () => {
               pausedByTouch = true;
               stop();
@@ -230,6 +273,7 @@
               }
             }, { passive: true });
 
+            renderActive();
             start();
           }
 
@@ -243,6 +287,7 @@
               const tile = tileRow.querySelector('.tile');
               return tile ? (tile.getBoundingClientRect().width + 12) : 240;
             };
+            const scrollBehavior = reducedMotion ? 'auto' : 'smooth';
 
             const updateHandles = () => {
               const maxLeft = tileRow.scrollWidth - tileRow.clientWidth;
@@ -251,11 +296,11 @@
             };
 
             tilePrev.addEventListener('click', () => {
-              tileRow.scrollBy({ left: -step() * 2, behavior: 'smooth' });
+              tileRow.scrollBy({ left: -step() * 2, behavior: scrollBehavior });
             });
 
             tileNext.addEventListener('click', () => {
-              tileRow.scrollBy({ left: step() * 2, behavior: 'smooth' });
+              tileRow.scrollBy({ left: step() * 2, behavior: scrollBehavior });
             });
 
             tileRow.addEventListener('scroll', updateHandles, { passive: true });
