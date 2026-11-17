@@ -3128,9 +3128,9 @@
       "designer": "Joe Klipfel",
       "publisher": "Gabe-Barrett",
       "primaryUrl": "https://gamefound.com/en/projects/gabe-barrett/joe-klipfel-presents-solo-game-of-the-month",
-      "isPreview": true,
-      "launchDate": "",
-      "endDate": ""
+      "isPreview": false,
+      "launchDate": "2026-11-17",
+      "endDate": "2026-12-18"
     },
     {
       "slug": "payload-a-rocket-themed-tabletop-game",
