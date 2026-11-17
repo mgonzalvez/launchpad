@@ -3005,9 +3005,9 @@
       "platform": "Kickstarter",
       "publisher": "Dozens of Us",
       "primaryUrl": "https://www.kickstarter.com/projects/dozensofus/casino-central-a-casino-flip-and-write-game",
-      "isPreview": true,
-      "launchDate": "",
-      "endDate": ""
+      "isPreview": false,
+      "launchDate": "2026-11-16",
+      "endDate": "2026-12-08"
     },
     {
       "slug": "octo-elementis",
