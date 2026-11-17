@@ -610,6 +610,53 @@ function byArchivePriority(a, b) {
   return parseDate(b.endDate).getTime() - parseDate(a.endDate).getTime();
 }
 
+// ── Determinism helpers ─────────────────────────────────────────
+// The featured carousel used to pick slides with Math.random(), so the home
+// page looked different on every load and screenshots/tests were
+// unreproducible. A day-keyed seed keeps the selection stable for the day
+// while still rotating daily.
+
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = (t ^ (t >>> 15)) >>> 0;
+    t = Math.imul(t, 2654435761);
+    t = (t ^ (t >>> 13)) >>> 0;
+    t = Math.imul(t, 2246822519);
+    return ((t ^ (t >>> 16)) >>> 0) / 4294967296;
+  };
+}
+
+function seedFromString(value) {
+  let h = 2166136261;
+  for (const ch of String(value)) {
+    h ^= ch.charCodeAt(0);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function daySeed(now = new Date()) {
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  return seedFromString(`pnpl-featured-${y}-${m}-${d}`);
+}
+
+function seededShuffle(items, seed) {
+  const rand = mulberry32(seed);
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    const tmp = out[i];
+    out[i] = out[j];
+    out[j] = tmp;
+  }
+  return out;
+}
+
 function enrichProjects(data) {
   const designers = data.designers || [];
   const publishers = data.publishers || [];
@@ -912,6 +959,10 @@ window.PNPL = {
   byPlatform,
   byStatusCategory,
   byArchivePriority,
+  mulberry32,
+  seedFromString,
+  daySeed,
+  seededShuffle,
   parseDate,
   withBase,
   slugify,

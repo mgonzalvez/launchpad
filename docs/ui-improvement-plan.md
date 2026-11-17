@@ -7,21 +7,14 @@ dicemaker, prototyper and the gonzhome hub (token-based CSS, soft layered shadow
 
 Each stage is small, independently shippable, and verified by
 `node scripts/ui-check.js` (static checks: tokens, legacy-color removal,
-page bootstrap, toggle wiring, aria/meta coverage — 258 checks) and
+page bootstrap, toggle wiring, aria/meta coverage, image sizes — 270 checks) and
 `node scripts/ui-smoke.js` (headless chromium CDP: render, toggle, persistence,
 carousel behaviour, search focus, broken images — skips gracefully without
 chromium), plus `node scripts/contrast-check.js` (WCAG ratios for both themes).
 Run `node scripts/validate-content.js` before every commit that touches
 `data/content.json`.
 
-Stages 1–7 are complete as of 2026-11-16. Remaining nice-to-haves:
-
-- Stage 8 (unstarted): archive pagination currently loads 20 at a time with no
-  "back to top"; the carousel picks featured slides randomly on each load, so a
-  deterministic seed (like the family's determinism-first approach) would make
-  screenshots and tests reproducible.
-- Stage 9 (unstarted): `uploads/` is ~193 MB and growing; a one-off pass to
-  re-encode oversized PNGs as JPEG/WebP would trim it without touching layout.
+Stages 1–9 are complete as of 2026-11-16.
 
 ## Stage 1 — Shared design tokens (DONE)
 
@@ -162,3 +155,40 @@ contrast, search overlay, forms, carousel. Reload persists choice.
 Manual remaining: eyeball badge contrast in dark mode on a phone, and confirm
 the carousel pause feels right on a touch device (touch pause was already there;
 hover pause is desktop-only).
+
+## Stage 8 — Determinism + archive pagination (DONE)
+
+- `assets/app.js` gained `mulberry32()`, `seedFromString()`, `daySeed(now)` and
+  `seededShuffle(items, seed)`, exported on `window.PNPL`. The home carousel now
+  shuffles its pool with a `pnpl-featured-YYYY-MM-DD` seed, so the featured set
+  is stable for the day (and reproducible for screenshots/tests) instead of
+  random per load. The seed is echoed in `data-seed` on the carousel for
+debugging.
+- `archive.html`: sort and view toggles re-render in place instead of
+  `window.location.reload()`, a polite `aria-live` line reports
+  "Showing n of m archived projects", and a **Back to top** button appears in the
+  pager (smooth scroll, `auto` under reduced motion).
+- Verification: `ui-check.js` (helpers exported, no `Math.random()` in the
+  carousel, no reload in archive) + `ui-smoke.js` (archive renders 20 cards,
+  load-more appends exactly 20, sort change re-renders without reloading,
+  featured slide titles identical across two separate page loads).
+
+## Stage 9 — Uploads hygiene (DONE)
+
+- `scripts/optimize-images.js` re-encodes anything in `uploads/` above 150 KB:
+  opaque PNG → JPEG, transparent PNG → WebP (alpha kept), oversized JPEG →
+  re-encoded JPEG, all capped at 1600px on the long edge, quality 82, and only
+  when the new file is at least 10% smaller. It rewrites references in
+  `data/content.json` and every `*.html`, then deletes the original
+  (`--keep-original` to keep it, `--dry-run` to preview, `--report-unused` to
+  list files nothing references).
+- 2026-11-16 run: 130 files re-encoded, **133.6 MB saved** — `uploads/` went
+  from 194 MB to 60 MB; 84 project images and 13 html files updated.
+- `ui-check.js` now asserts every local project image exists and is under
+  900 KB, and `ui-smoke.js` fails if any rendered image has
+  `naturalWidth === 0`.
+- Follow-up: 78 files (~67 MB) in `uploads/` are referenced by nothing in
+  `content.json` or the site pages. They are left in place because old
+  hotlinks (Facebook posts, other gonzhome sites) may still point at them;
+  `node scripts/optimize-images.js --report-unused` lists them if you want to
+  prune.

@@ -1454,13 +1454,39 @@ small { color: var(--muted); }
   outline-offset: 1px;
 }
 
+.archive-status {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .load-more-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   text-align: center;
   padding: 24px 0 40px;
 }
 
 .load-more-container .btn {
   min-width: 200px;
+}
+
+.back-to-top {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  min-height: 44px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  background: var(--hover-bg);
+  border-color: var(--accent);
 }
 
 /* ── Search Component ─────────────────────────────────────────── */

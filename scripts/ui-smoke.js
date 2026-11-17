@@ -36,7 +36,8 @@ if (!browser) {
 
 const port = 8317 + Math.floor(Math.random() * 40);
 const cdpPort = 9317 + Math.floor(Math.random() * 40);
-const pageUrl = `http://127.0.0.1:${port}/index.html`;
+const origin = `http://127.0.0.1:${port}`;
+const pageUrl = `${origin}/index.html`;
 
 // ── Local static server ─────────────────────────────────────────
 
@@ -85,7 +86,7 @@ const check = (name, ok, detail = '') => {
   const watchdog = setTimeout(() => {
     console.error('\x1b[31msmoke test global timeout (120s)\x1b[0m');
     process.exit(1);
-  }, 120000);
+  }, 180000);
 
   try {
     let target = null;
@@ -303,6 +304,44 @@ const check = (name, ok, detail = '') => {
     const cardImg = JSON.parse(await evalJs(`JSON.stringify((function () { const img = document.querySelector('.card img'); if (!img) return null; const cs = getComputedStyle(img); return { aspect: cs.aspectRatio, minHeight: cs.minHeight }; })())`));
     check('stage5: card images use aspect-ratio without a conflicting min-height',
       Boolean(cardImg) && cardImg.aspect !== 'none' && ['auto', '0px'].includes(cardImg.minHeight), JSON.stringify(cardImg));
+
+    // ── Stage 8: archive pagination + carousel determinism ─────
+    await send('Page.navigate', { url: `${origin}/archive.html` });
+    let archiveReady = false;
+    for (let i = 0; i < 40 && !archiveReady; i++) {
+      archiveReady = await evalJs(`!!document.querySelector('#archive-grid .card')`);
+      if (!archiveReady) await sleep(250);
+    }
+    check('stage8: archive renders the first 20 cards', await evalJs(`document.querySelectorAll('#archive-grid .card').length === 20`));
+    const archiveStatus = await evalJs(`document.querySelector('#archive-status')?.textContent || ''`);
+    check('stage8: archive status announces the count', /^Showing \d+ of \d+ archived projects$/.test(archiveStatus), archiveStatus);
+    const beforeMore = await evalJs(`document.querySelectorAll('#archive-grid .card').length`);
+    await evalJs(`document.getElementById('load-more-btn')?.click(); true`);
+    await sleep(400);
+    const afterMore = await evalJs(`document.querySelectorAll('#archive-grid .card').length`);
+    check('stage8: load more appends 20 cards without a reload', afterMore === beforeMore + 20, `${beforeMore} -> ${afterMore}`);
+    check('stage8: back-to-top control exists', await evalJs(`!!document.getElementById('back-to-top')`));
+    await evalJs(`const sel = document.getElementById('archive-sort'); sel.value = 'titleAsc'; sel.dispatchEvent(new Event('change')); true`);
+    await sleep(400);
+    const sortedTitles = JSON.parse(await evalJs(`JSON.stringify(Array.from(document.querySelectorAll('#archive-grid .card h3')).slice(0, 3).map((h) => h.textContent))`));
+    check('stage8: changing sort re-renders in place', await evalJs(`document.getElementById('archive-status').textContent.startsWith('Showing 20 of')`), sortedTitles.join(' | '));
+    check('stage8: sort select still reflects the chosen mode', (await evalJs(`document.getElementById('archive-sort').value`)) === 'titleAsc');
+
+    const featuredTitles = async () => JSON.parse(await evalJs(`JSON.stringify(Array.from(document.querySelectorAll('.carousel-slide h2')).map((h) => h.textContent))`));
+    await send('Page.navigate', { url: pageUrl });
+    for (let i = 0; i < 40; i++) {
+      if (await evalJs(`!!document.querySelector('.carousel-slide.active')`)) break;
+      await sleep(250);
+    }
+    const seed1 = await evalJs(`document.querySelector('#featured-carousel')?.getAttribute('data-seed') || ''`);
+    const first = await featuredTitles();
+    await send('Page.navigate', { url: pageUrl });
+    for (let i = 0; i < 40; i++) {
+      if (await evalJs(`!!document.querySelector('.carousel-slide.active')`)) break;
+      await sleep(250);
+    }
+    const second = await featuredTitles();
+    check('stage8: featured carousel is deterministic for the day', first.length > 1 && first.join('|') === second.join('|'), `seed ${seed1}`);
 
     ws.close();
   } finally {

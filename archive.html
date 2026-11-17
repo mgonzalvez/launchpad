@@ -43,12 +43,13 @@
         const archived = projects
           .filter((p) => ['archived', 'late-pledge', 'pre-order'].includes(PNPL.projectStatus(p, now)))
           .sort(PNPL.byArchivePriority);
-        const defaultView = 'compact';
-        const currentView = PNPL.getViewMode('archive.html');
-        const isCompact = currentView === 'compact';
-        const currentSort = PNPL.getSortMode('archive.html');
+        let isCompact = PNPL.getViewMode('archive.html') === 'compact';
+        let currentSort = PNPL.getSortMode('archive.html');
         const ITEMS_PER_PAGE = 20;
         let displayedCount = ITEMS_PER_PAGE;
+        const reducedMotion = Boolean(
+          window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        );
 
         const sortOptions = [
           { value: 'endDesc', label: 'End date (newest first)' },
@@ -79,6 +80,30 @@
           </div>
         ` : '';
 
+        el.innerHTML = `
+          ${PNPL.header('Archive')}
+          <main>
+            <section class="hero">
+              <h1>Archived Projects</h1>
+              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders are shown first by default.</p>
+              <div class="archive-controls">
+                ${sortSelect}
+                ${viewToggle}
+              </div>
+            </section>
+            <p class="archive-status" id="archive-status" aria-live="polite"></p>
+            <div id="archive-grid"></div>
+            <div class="load-more-container" id="archive-pager"></div>
+          </main>
+          ${PNPL.footer()}
+        `;
+
+        if (!archived.length) return;
+
+        const gridEl = document.getElementById('archive-grid');
+        const pagerEl = document.getElementById('archive-pager');
+        const statusEl = document.getElementById('archive-status');
+
         function getSortedProjects() {
           const sorted = [...archived];
           switch (currentSort) {
@@ -95,74 +120,60 @@
           return sorted;
         }
 
-        function renderGrid() {
+        function syncControls() {
+          el.querySelectorAll('.view-toggle button').forEach((btn) => {
+            const active = btn.dataset.view === (isCompact ? 'compact' : 'full');
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-pressed', String(active));
+          });
+          const sortEl = document.getElementById('archive-sort');
+          if (sortEl) sortEl.value = currentSort;
+        }
+
+        function renderArchive() {
           const sorted = getSortedProjects();
           const shown = sorted.slice(0, displayedCount);
           const hasMore = displayedCount < sorted.length;
 
-          return {
-            html: shown.length
-              ? `<div class="grid${isCompact ? ' compact-grid' : ''}">${shown.map((p) => PNPL.projectCard(p, { compactView: isCompact })).join('')}</div>`
-              : '<p>No archived projects match the current filters.</p>',
-            hasMore,
-            total: sorted.length,
-          };
+          gridEl.innerHTML = shown.length
+            ? `<div class="grid${isCompact ? ' compact-grid' : ''}">${shown.map((p) => PNPL.projectCard(p, { compactView: isCompact })).join('')}</div>`
+            : '<p>No archived projects match the current filters.</p>';
+          statusEl.textContent = `Showing ${shown.length} of ${sorted.length} archived projects`;
+          pagerEl.innerHTML = hasMore
+            ? `<button type="button" id="load-more-btn" class="btn btn-secondary">Load more (${sorted.length - displayedCount} remaining)</button><button type="button" id="back-to-top" class="back-to-top">Back to top</button>`
+            : `<button type="button" id="back-to-top" class="back-to-top">Back to top</button>`;
         }
 
-        const { html: gridHtml, hasMore: initialHasMore, total: totalCount } = renderGrid();
+        syncControls();
+        renderArchive();
 
-        el.innerHTML = `
-          ${PNPL.header('Archive')}
-          <main>
-            <section class="hero">
-              <h1>Archived Projects</h1>
-              <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders are shown first by default.</p>
-              <div class="archive-controls">
-                ${sortSelect}
-                ${viewToggle}
-              </div>
-            </section>
-            <div id="archive-grid">${gridHtml}</div>
-            ${initialHasMore ? `<div class="load-more-container"><button type="button" id="load-more-btn" class="btn btn-secondary">Load more (${totalCount - displayedCount} remaining)</button></div>` : ''}
-          </main>
-          ${PNPL.footer()}
-        `;
-
-        if (archived.length) {
-          el.querySelectorAll('.view-toggle button').forEach((btn) => {
-            btn.addEventListener('click', () => {
-              const mode = btn.dataset.view;
-              PNPL.setViewMode(mode);
-              window.location.reload();
-            });
+        el.querySelectorAll('.view-toggle button').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            isCompact = btn.dataset.view === 'compact';
+            PNPL.setViewMode(btn.dataset.view);
+            renderArchive();
           });
+        });
 
-          const sortEl = document.getElementById('archive-sort');
-          if (sortEl) {
-            sortEl.addEventListener('change', () => {
-              const mode = sortEl.value;
-              PNPL.setSortMode(mode);
-              window.location.reload();
-            });
+        const sortEl = document.getElementById('archive-sort');
+        sortEl.addEventListener('change', () => {
+          currentSort = sortEl.value;
+          PNPL.setSortMode(currentSort);
+          displayedCount = ITEMS_PER_PAGE;
+          renderArchive();
+        });
+
+        pagerEl.addEventListener('click', (event) => {
+          if (event.target.id === 'load-more-btn') {
+            displayedCount += ITEMS_PER_PAGE;
+            renderArchive();
+            const next = document.getElementById('load-more-btn');
+            if (next) next.focus();
+          } else if (event.target.id === 'back-to-top') {
+            const anchor = document.querySelector('.archive-controls') || document.body;
+            anchor.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
           }
-
-          const loadMoreBtn = document.getElementById('load-more-btn');
-          if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', () => {
-              displayedCount += ITEMS_PER_PAGE;
-              const { html: newGridHtml, hasMore: more } = renderGrid();
-              const gridEl = document.getElementById('archive-grid');
-              gridEl.innerHTML = newGridHtml;
-
-              if (more) {
-                const remaining = totalCount - displayedCount;
-                loadMoreBtn.textContent = `Load more (${remaining} remaining)`;
-              } else {
-                loadMoreBtn.parentElement.remove();
-              }
-            });
-          }
-        }
+        });
       })();
     </script>
   </body>

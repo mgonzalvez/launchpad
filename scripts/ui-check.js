@@ -266,6 +266,43 @@ for (const page of new Set([...pages, ...blogPosts])) {
     /theme-color" content="#f4f7fb"/.test(html) && /theme-color" content="#090b10"/.test(html));
 }
 
+// ── 9. Stage 8: determinism + archive pagination ──────────────
+
+check('JS: seeded PRNG helpers present',
+  /function mulberry32\(seed\)/.test(appJs) &&
+  /function seededShuffle\(items, seed\)/.test(appJs) &&
+  /function daySeed\(now = new Date\(\)\)/.test(appJs));
+check('JS: determinism helpers exported', appJs.includes('  daySeed,') && appJs.includes('  seededShuffle,') && appJs.includes('  mulberry32,'));
+check('JS index.html: carousel uses the day seed, not Math.random',
+  /PNPL\.seededShuffle\(pool, featuredSeed\)/.test(indexHtml) &&
+  !/\.map\(\(p\) => \[Math\.random\(\), p\]\)/.test(indexHtml));
+check('HTML index.html: carousel carries its seed for debugging', indexHtml.includes('data-seed="${featuredSeed}"'));
+
+const archivePage = reads('archive.html');
+check('HTML archive.html: polite "showing n of m" status', /class="archive-status"[^>]*aria-live="polite"/.test(archivePage));
+check('HTML archive.html: back-to-top control', /id="back-to-top" class="back-to-top"/.test(archivePage));
+check('HTML archive.html: sort/view re-render without a page reload',
+  !/window\.location\.reload\(\)/.test(archivePage) && /function renderArchive\(\)/.test(archivePage));
+check('HTML archive.html: back-to-top respects reduced motion', /reducedMotion \? 'auto' : 'smooth'/.test(archiveHtml));
+check('CSS: archive status + back-to-top styles present', /\.archive-status\s*\{/.test(css) && /\.back-to-top\s*\{/.test(css));
+
+// ── 10. Stage 9: uploads size discipline ────────────────
+
+check('script: optimize-images.js exists', fs.existsSync(path.join(ROOT, 'scripts', 'optimize-images.js')));
+const dataJson = JSON.parse(reads('data/content.json'));
+let biggest = 0;
+let biggestName = '';
+let missing = 0;
+for (const p of dataJson.projects) {
+  if (!p.image || !p.image.startsWith('/uploads/')) continue;
+  const file = path.join(ROOT, 'uploads', p.image.split('?')[0].replace('/uploads/', ''));
+  if (!fs.existsSync(file)) { missing++; continue; }
+  const size = fs.statSync(file).size;
+  if (size > biggest) { biggest = size; biggestName = p.image; }
+}
+check('data: every local project image exists', missing === 0, `${missing} missing`);
+check('data: every local project image is under 900 KB', biggest <= 900 * 1024, `${biggestName} is ${(biggest / 1024).toFixed(0)} KB`);
+
 // ── Report ──────────────────────────────────────────────────────
 
 let failed = 0;

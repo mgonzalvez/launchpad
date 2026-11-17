@@ -61,18 +61,17 @@
           const justLaunched = liveAndPromo.filter((p) => PNPL.projectIsJustLaunched(p, now));
           // Featured carousel: up to 9 projects on each load.
           // Ending-soon projects are guaranteed a slot (first, by end date),
-          // remaining slots filled with random picks. The live strip below
-          // keeps the strict end-date ordering.
+          // remaining slots filled with a day-seeded shuffle so the same set
+          // repeats for the whole day (reproducible screenshots/tests).
+          // The live strip below keeps the strict end-date ordering.
+          const featuredSeed = PNPL.daySeed(now);
           const featured = (() => {
             const cap = 9;
             const endingSoon = liveAndPromo
               .filter((p) => isEndingSoon(p))
               .sort(PNPL.byEndAsc);
             const pool = liveAndPromo.filter((p) => !isEndingSoon(p));
-            const randomPool = pool
-              .map((p) => [Math.random(), p])
-              .sort((a, b) => a[0] - b[0])
-              .map((pair) => pair[1]);
+            const randomPool = PNPL.seededShuffle(pool, featuredSeed);
             return [...endingSoon, ...randomPool].slice(0, cap);
           })();
           const upcoming = projects
@@ -133,7 +132,7 @@
 
               <section class="home-stage">
                 ${featured.length ? `
-                  <div class="featured-carousel" id="featured-carousel" role="region" aria-roledescription="carousel" aria-label="Featured live projects">
+                  <div class="featured-carousel" id="featured-carousel" role="region" aria-roledescription="carousel" aria-label="Featured live projects" data-seed="${featuredSeed}">
                     <div class="carousel-track">${slides}</div>
                     <div class="carousel-live" id="carousel-live" aria-live="polite" aria-atomic="true"></div>
                     ${featured.length > 1 ? `
