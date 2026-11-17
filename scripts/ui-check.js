@@ -342,6 +342,23 @@ for (const page of [...pages, ...blogPosts]) {
 check('CSS: mobile badge chrome shrinks so rows stay tidy', /@media \(max-width: 600px\)[\s\S]{0,700}?\.badge\.live-now \{[^}]*font-size: 0\.8rem/.test(css));
 check('CSS: archive sort label never wraps mid-phrase', /\.sort-select label\s*\{[^}]*white-space: nowrap/.test(css));
 
+
+// Every uploads/ reference in every page must resolve to a real file. This
+// catches the stage-9 failure mode: an image re-encoded under a new extension
+// while the <img>/og:image reference still points at the old one.
+const uploadRefs = new Set();
+for (const page of [...pages, ...blogPosts]) {
+  for (const m of reads(page).matchAll(/uploads\/([A-Za-z0-9._-]+\.(?:png|jpg|jpeg|webp|avif|gif))/g)) uploadRefs.add(m[1]);
+}
+for (const p of dataJson.projects) {
+  if (p.image && p.image.startsWith('/uploads/')) uploadRefs.add(p.image.split('?')[0].replace('/uploads/', ''));
+}
+for (const og of dataJson.designers.concat(dataJson.publishers)) {
+  if (og.image && og.image.startsWith('/uploads/')) uploadRefs.add(og.image.split('?')[0].replace('/uploads/', ''));
+}
+const missingRefs = [...uploadRefs].filter((name) => !fs.existsSync(path.join(ROOT, 'uploads', name)));
+check('data/html: every uploads/ reference resolves to a file', missingRefs.length === 0, missingRefs.join(', '));
+check('script: optimize-images.js reports dangling references', reads('scripts/optimize-images.js').includes('dangling reference'));
 check('JS: emptyState helper defined', /function emptyState\(title, detail\)/.test(appJs));
 check('JS: emptyState exported on PNPL', /setSortMode,\n  emptyState,/.test(appJs));
 for (const page of ['index.html', 'live.html', 'upcoming.html', 'preview.html', 'watchlist.html', 'archive.html']) {

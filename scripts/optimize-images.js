@@ -206,6 +206,14 @@ function main() {
   if (unreferenced.length) {
     console.log(`(${unreferenced.length} unreferenced file(s) still in uploads/ — run with --report-unused to list them)`);
   }
+
+  // Safety net: a reference that points at a file we no longer have means the
+  // rewrite missed a page (this bit us with blog collages re-encoded .png -> .jpg).
+  const dangling = [...collectReferences().keys()].filter((name) => !fs.existsSync(path.join(UPLOADS, name)));
+  if (dangling.length) {
+    console.log(`\nWARNING: ${dangling.length} dangling reference(s) point at files that no longer exist:`);
+    for (const name of dangling) console.log(`  uploads/${name}`);
+  }
   console.log('Remember: git add data/content.json and any changed html; deleted originals are staged with git add -A uploads.');
 }
 
