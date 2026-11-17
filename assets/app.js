@@ -161,6 +161,55 @@ function isSameLocalDay(a, b) {
     && a.getDate() === b.getDate();
 }
 
+const TOOLS_LINKS = [
+  ['http://pnpfinder.com', 'PnPFinder'],
+  ['https://pnptools.gonzhome.us', 'PnPTools'],
+  ['https://prototyper.gonzhome.us', 'Prototyper'],
+  ['https://formatter.gonzhome.us', 'Card Formatter'],
+  ['https://extractor.gonzhome.us', 'Card Extractor'],
+  ['https://boardsplitter.gonzhome.us', 'BoardSplitter'],
+  ['https://tokenmaker.gonzhome.us', 'TokenMaker'],
+  ['https://dicemaker.gonzhome.us', 'DiceMaker']
+];
+
+function toolsLinksHtml() {
+  return TOOLS_LINKS
+    .map(([href, label]) => `<a href="${href}" target="_blank" rel="noreferrer noopener">${label}</a>`)
+    .join('');
+}
+
+function watchlistNavButton() {
+  return `
+    <a class="watchlist-nav" href="${withBase('watchlist.html')}" data-watchlist-nav aria-label="Watchlist" title="Watchlist">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      <span class="watchlist-count" data-watchlist-count hidden>0</span>
+    </a>
+  `;
+}
+
+function refreshWatchlistNav() {
+  const count = readWatchlist().length;
+  const label = count === 1 ? 'Watchlist (1 saved)' : `Watchlist (${count} saved)`;
+  document.querySelectorAll('a[data-watchlist-nav]').forEach((btn) => {
+    const badge = btn.querySelector('[data-watchlist-count]');
+    if (badge) {
+      // Guarded writes: the header is inside a MutationObserver, and an
+      // unconditional textContent/attribute write would queue itself again
+      // and spin the main thread forever.
+      if (badge.textContent !== String(count)) badge.textContent = String(count);
+      if (badge.hidden === (count === 0)) {
+        // already correct
+      } else {
+        badge.hidden = count === 0;
+      }
+    }
+    if (btn.getAttribute('aria-label') !== label) {
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
+    }
+  });
+}
+
 function header(active = '') {
   const links = [
     ['', 'Home'],
@@ -168,9 +217,7 @@ function header(active = '') {
     ['upcoming.html', 'Upcoming'],
     ['preview.html', 'Preview'],
     ['blog/', 'Blog'],
-    ['archive.html', 'Ended'],
-    ['watchlist.html', 'Watchlist'],
-    ['submit.html', 'Submit a Project']
+    ['archive.html', 'Archive']
   ];
 
   return `
@@ -196,36 +243,27 @@ function header(active = '') {
             <details class="tools-menu">
               <summary>Tools</summary>
               <div class="tools-list">
-                <a href="http://pnpfinder.com" target="_blank" rel="noreferrer noopener">PnPFinder</a>
-                <a href="https://pnptools.gonzhome.us" target="_blank" rel="noreferrer noopener">PnPTools</a>
-                <a href="https://prototyper.gonzhome.us" target="_blank" rel="noreferrer noopener">Prototyper</a>
-                <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
-                <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
+                ${toolsLinksHtml()}
               </div>
             </details>
           </nav>
+          ${watchlistNavButton()}
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">
             <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
             <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           </button>
         </div>
+        <a class="nav-cta" href="${withBase('submit.html')}"${active === 'Submit a Project' ? ' aria-current="page"' : ''}>Submit a Project</a>
       </div>
     </header>
   `;
 }
 
 function footer() {
-  const tools = [
-    ['http://pnpfinder.com', 'PnPFinder'],
-    ['https://pnptools.gonzhome.us', 'PnPTools'],
-    ['https://prototyper.gonzhome.us', 'Prototyper'],
-    ['https://formatter.gonzhome.us', 'Card Formatter'],
-    ['https://extractor.gonzhome.us', 'Card Extractor']
-  ];
   return `
     <footer class="footer">
       <nav class="footer-tools" aria-label="Tools">
-        ${tools.map(([href, label]) => `<a href="${href}" target="_blank" rel="noreferrer noopener">${label}</a>`).join('')}
+        ${toolsLinksHtml()}
       </nav>
       <hr />
       <div class="footer-pnpseeker-credit">
@@ -433,6 +471,7 @@ function refreshWatchButtons(slug = '') {
     const buttonSlug = String(button.getAttribute('data-watch-slug') || '');
     applyWatchState(button, slugs.has(buttonSlug));
   });
+  refreshWatchlistNav();
 }
 
 function projectCard(p, options = {}) {
@@ -683,7 +722,10 @@ function initSiteHeaderObserver() {
   if (window.__pnplHeaderObserverInitialized) return;
   window.__pnplHeaderObserverInitialized = true;
 
-  const rerun = () => initSiteHeader(document);
+  const rerun = () => {
+    initSiteHeader(document);
+    refreshWatchlistNav();
+  };
   rerun();
 
   const observer = new MutationObserver(() => rerun());
@@ -881,6 +923,7 @@ window.PNPL = {
   getWatchlistSlugs,
   clearWatchlist,
   refreshWatchButtons,
+  refreshWatchlistNav,
   getViewMode,
   setViewMode,
   getSortMode,

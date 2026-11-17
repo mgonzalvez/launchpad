@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
     <link rel="shortcut icon" href="assets/logo.svg" />
-    <title>Ended | PnP Launchpad</title>
+    <title>Archive | PnP Launchpad</title>
     <script>
       (function () {
         try {
@@ -103,10 +103,10 @@
         const { html: gridHtml, hasMore: initialHasMore, total: totalCount } = renderGrid();
 
         el.innerHTML = `
-          ${PNPL.header('Ended')}
+          ${PNPL.header('Archive')}
           <main>
             <section class="hero">
-              <h1>Ended Projects</h1>
+              <h1>Archived Projects</h1>
               <p>Projects automatically move here after their campaign or promo end date. Projects with late pledges and pre-orders are shown first by default.</p>
               <div class="archive-controls">
                 ${sortSelect}

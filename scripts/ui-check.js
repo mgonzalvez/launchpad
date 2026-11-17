@@ -135,6 +135,37 @@ check('JS: click delegation on data-theme-toggle', /closest\('button\[data-theme
 check('JS: persists choice to localStorage', /localStorage\.setItem\(THEME_STORAGE_KEY/.test(appJs));
 check('JS: updates aria-label on toggle', /Switch to light theme/.test(appJs) && /Switch to dark theme/.test(appJs));
 
+// ── 5. Stage 3: header/nav streamlining ───────────────────────
+
+check('JS: no "Submit a Project" nav pill', !appJs.includes("['submit.html', 'Submit a Project']"));
+check('JS: no "Watchlist" nav pill', !appJs.includes("['watchlist.html', 'Watchlist']"));
+check('JS: Archive nav label', appJs.includes("['archive.html', 'Archive']"));
+check('JS: no legacy "Ended" nav label', !appJs.includes("['archive.html', 'Ended']"));
+check('JS: header renders primary CTA button', appJs.includes('class="nav-cta"') && appJs.includes("withBase('submit.html')"));
+check('JS: watchlist icon button with count badge', appJs.includes('data-watchlist-nav') && appJs.includes('data-watchlist-count'));
+check('JS: refreshWatchlistNav keeps badge in sync', appJs.includes('function refreshWatchlistNav') && /refreshWatchlistNav\(\);\n\}/.test(appJs));
+check('JS: tools list includes BoardSplitter', appJs.includes('https://boardsplitter.gonzhome.us'));
+check('JS: tools list includes TokenMaker', appJs.includes('https://tokenmaker.gonzhome.us'));
+check('JS: tools list includes DiceMaker', appJs.includes('https://dicemaker.gonzhome.us'));
+check('JS: footer reuses shared tools list', /function footer\(\)[\s\S]{0,200}toolsLinksHtml\(\)/.test(appJs));
+
+check('CSS: nav CTA button styles present', /\.nav-cta\s*{/.test(css) && /\.nav-cta\[aria-current="page"\]/.test(css));
+check('CSS: watchlist icon button styles present', /\.watchlist-nav\s*{/.test(css));
+check('CSS: watchlist count badge styles present', /\.watchlist-count\s*{/.test(css));
+
+const archiveHtml = reads('archive.html');
+check('HTML archive.html: title renamed to Archive', archiveHtml.includes('<title>Archive | PnP Launchpad</title>'));
+check('HTML archive.html: header active label is Archive', archiveHtml.includes("PNPL.header('Archive')"));
+check('HTML archive.html: no legacy "Ended" header label', !archiveHtml.includes("PNPL.header('Ended')"));
+
+const submitHtml = reads('submit.html');
+check('HTML submit.html: CTA button with aria-current', /class="nav-cta"[^>]*aria-current="page"/.test(submitHtml));
+check('HTML submit.html: watchlist icon button present', submitHtml.includes('data-watchlist-nav'));
+check('HTML submit.html: theme toggle present', submitHtml.includes('data-theme-toggle'));
+check('HTML submit.html: renamed Archive link', submitHtml.includes('<a href="archive.html">Archive</a>'));
+check('HTML submit.html: no legacy "Ended" nav link', !submitHtml.includes('<a href="archive.html">Ended</a>'));
+check('HTML submit.html: tools list includes new tools', submitHtml.includes('boardsplitter.gonzhome.us') && submitHtml.includes('tokenmaker.gonzhome.us') && submitHtml.includes('dicemaker.gonzhome.us'));
+
 // ── Report ──────────────────────────────────────────────────────
 
 let failed = 0;

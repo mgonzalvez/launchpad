@@ -50,15 +50,31 @@ carousel, tile strip, search overlay, forms all render cleanly.
 Manual: toggle both themes on home, live, archive, submit, blog; check badge
 contrast, search overlay, forms, carousel. Reload persists choice.
 
-## Stage 3 — Header/nav streamlining
+## Stage 3 — Header/nav streamlining (DONE)
 
 - `submit.html` link → primary CTA button in header (drop duplication with
-  the hero CTA); remove from pill nav.
+  the hero CTA); remove from pill nav. CTA renders in `.inner` (stays
+  visible on mobile next to the hamburger) and gets `aria-current="page"`
+  on the submit page itself.
 - Watchlist → icon button with live count badge (data already in
-  `pnpl_watchlist_v1`).
+  `pnpl_watchlist_v1`). `refreshWatchlistNav()` syncs the badge on watch
+  toggles and `storage` events. Gotcha found here: the writes must be
+  guarded — the header sits inside a MutationObserver, and an unconditional
+  `textContent` write re-queues itself and spins the main thread forever
+  (caught via CDP smoke test).
 - Rename "Ended" → "Archive" (nav + page title + `aria-current`).
 - Tools menu (header + footer) is stale: add BoardSplitter, TokenMaker,
-  DiceMaker; verify all gonzhome links resolve.
+  DiceMaker; verify all gonzhome links resolve. All 8 tool URLs verified
+  HTTP 200 on 2026-11-16.
+- Also fixed `submit.html`'s static header (it had no theme toggle, no
+  watchlist button, and a stale tools list).
+- Verification: `node scripts/ui-check.js` (static: CTA, watch badge,
+  Archive label, tools-list assertions) + `node scripts/ui-smoke.js`
+  (headless CDP: CTA renders, badge hidden at 0, badge live-updates on
+  storage event, header + footer tools in sync).
+- Smoke-test hardening: uses a throwaway `--user-data-dir` (a running user
+  Chromium holds its profile's singleton lock and hung the test for 30+
+  minutes), plus a 15s per-command CDP timeout and a 120s global watchdog.
 
 ## Stage 4 — Home page tightening
 

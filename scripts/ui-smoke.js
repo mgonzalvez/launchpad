@@ -11,6 +11,7 @@
  */
 
 const { spawn, spawnSync } = require('child_process');
+const os = require('os');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -69,12 +70,22 @@ const check = (name, ok) => {
 
 (async () => {
   await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
+  // Throwaway profile: never touch the user's real Chromium profile (a running
+  // browser holds its singleton lock and a shared-profile launch would hang).
+  const profileDir = fs.mkdtempSync(path.join(os.tmpdir(), 'pnpl-smoke-'));
   const chromium = spawn(
     browser,
     ['--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
+     `--user-data-dir=${profileDir}`,
      `--remote-debugging-port=${cdpPort}`, '--window-size=1280,900', pageUrl],
     { stdio: 'ignore' }
   );
+  // Global watchdog: a page that spins the main thread (e.g. a mutation
+  // feedback loop) must never hang the test suite.
+  const watchdog = setTimeout(() => {
+    console.error('\x1b[31msmoke test global timeout (120s)\x1b[0m');
+    process.exit(1);
+  }, 120000);
 
   try {
     let target = null;
@@ -95,7 +106,16 @@ const check = (name, ok) => {
     const pending = new Map();
     const send = (method, params = {}) => new Promise((resolve, reject) => {
       const id = ++msgId;
-      pending.set(id, { resolve, reject });
+      const timer = setTimeout(() => {
+        if (pending.has(id)) {
+          pending.delete(id);
+          reject(new Error(`CDP ${method} timed out after 15s`));
+        }
+      }, 15000);
+      pending.set(id, {
+        resolve: (v) => { clearTimeout(timer); resolve(v); },
+        reject: (e) => { clearTimeout(timer); reject(e); }
+      });
       ws.send(JSON.stringify({ id, method, params }));
     });
     ws.onmessage = (ev) => {
@@ -155,10 +175,30 @@ const check = (name, ok) => {
     check('second click restores theme', (await evalJs(`document.documentElement.getAttribute('data-theme')`)) === initialTheme);
     check('aria-label reflects current state', /Switch to (light|dark) theme/.test(await evalJs(`document.querySelector('button[data-theme-toggle]').getAttribute('aria-label')`)));
 
+    // ── Stage 3: header/nav streamlining ───────────────────────────
+    const navLabels = JSON.parse(await evalJs(
+      `JSON.stringify(Array.from(document.querySelectorAll('.site-header .nav > a')).map((a) => a.textContent.trim()))`
+    ));
+    check('stage3: CTA button in header', await evalJs(`!!document.querySelector('.site-header .nav-cta')`));
+    check('stage3: CTA links to submit.html', (await evalJs(`document.querySelector('.site-header .nav-cta')?.getAttribute('href')`)).includes('submit.html'));
+    check('stage3: no Submit/Watchlist nav pills', !navLabels.includes('Submit a Project') && !navLabels.includes('Watchlist'));
+    check('stage3: Archive pill present', navLabels.includes('Archive'));
+    check('stage3: watchlist icon button present', await evalJs(`!!document.querySelector('.site-header .watchlist-nav')`));
+    const badgeSel = `document.querySelector('.watchlist-nav [data-watchlist-count]')`;
+    check('stage3: watch badge hidden at count 0', await evalJs(`${badgeSel}.hidden === true`));
+    await evalJs(`localStorage.setItem('pnpl_watchlist_v1', JSON.stringify(['x'])); window.dispatchEvent(new StorageEvent('storage', { key: 'pnpl_watchlist_v1' })); true`);
+    check('stage3: watch badge updates on storage event', await evalJs(`${badgeSel}.textContent === '1' && !${badgeSel}.hidden`));
+    await evalJs(`document.querySelector('.tools-menu')?.setAttribute('open', ''); true`);
+    const toolLabels = JSON.parse(await evalJs(`JSON.stringify(Array.from(document.querySelectorAll('.site-header .tools-list a')).map((a) => a.textContent.trim()))`));
+    check('stage3: tools list includes BoardSplitter/TokenMaker/DiceMaker', ['BoardSplitter', 'TokenMaker', 'DiceMaker'].every((t) => toolLabels.includes(t)));
+    check('stage3: footer tools list in sync', (await evalJs(`document.querySelectorAll('.footer-tools a').length`)) === toolLabels.length);
+
     ws.close();
   } finally {
+    clearTimeout(watchdog);
     chromium.kill('SIGKILL');
     server.close();
+    try { fs.rmSync(profileDir, { recursive: true, force: true }); } catch (_err) { /* best effort */ }
   }
 
   console.log('');

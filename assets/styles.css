@@ -302,6 +302,7 @@ a:hover { color: var(--accent-hover); }
 .nav-panel {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .nav { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -808,7 +809,15 @@ small { color: var(--muted); }
   }
 
   .site-header.nav-open .nav-panel {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .watchlist-nav,
+  .theme-toggle {
+    align-self: flex-start;
   }
 
   .nav {
@@ -1762,3 +1771,82 @@ body.search-open {
 html[data-theme="dark"] .theme-toggle .sun-icon { display: none; }
 
 html[data-theme="dark"] .theme-toggle .moon-icon { display: block; }
+
+/* ── Header CTA + watchlist shortcut ─────────────────────────── */
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.nav-cta:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+}
+
+.nav-cta[aria-current="page"] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.watchlist-nav {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink-secondary);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.watchlist-nav:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.watchlist-nav svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+}
+
+.watchlist-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.watchlist-count[hidden] { display: none; }

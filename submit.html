@@ -43,9 +43,7 @@
               <a href="upcoming.html">Upcoming</a>
               <a href="preview.html">Preview</a>
               <a href="blog/">Blog</a>
-              <a href="archive.html">Ended</a>
-              <a href="watchlist.html">Watchlist</a>
-              <a href="submit.html" aria-current="page">Submit a Project</a>
+              <a href="archive.html">Archive</a>
               <details class="tools-menu">
                 <summary>Tools</summary>
                 <div class="tools-list">
@@ -54,10 +52,22 @@
                   <a href="https://prototyper.gonzhome.us" target="_blank" rel="noreferrer noopener">Prototyper</a>
                   <a href="https://formatter.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Formatter</a>
                   <a href="https://extractor.gonzhome.us" target="_blank" rel="noreferrer noopener">Card Extractor</a>
+                  <a href="https://boardsplitter.gonzhome.us" target="_blank" rel="noreferrer noopener">BoardSplitter</a>
+                  <a href="https://tokenmaker.gonzhome.us" target="_blank" rel="noreferrer noopener">TokenMaker</a>
+                  <a href="https://dicemaker.gonzhome.us" target="_blank" rel="noreferrer noopener">DiceMaker</a>
                 </div>
               </details>
             </nav>
+            <a class="watchlist-nav" href="watchlist.html" data-watchlist-nav aria-label="Watchlist" title="Watchlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <span class="watchlist-count" data-watchlist-count hidden>0</span>
+            </a>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
           </div>
+          <a class="nav-cta" href="submit.html" aria-current="page">Submit a Project</a>
         </div>
       </header>
       <main>
@@ -177,6 +187,9 @@
       (function () {
         if (window.PNPL && typeof window.PNPL.initSiteHeader === 'function') {
           window.PNPL.initSiteHeader(document);
+          if (typeof window.PNPL.refreshWatchlistNav === 'function') {
+            window.PNPL.refreshWatchlistNav();
+          }
         }
 
         // Optional: set this to your deployed Google Apps Script Web App URL
