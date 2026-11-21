@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "slug": "the-kings-charter",
+      "title": "The King's Charter",
+      "summary": "Strategic polyomino roll-and-write medieval city builder for 1 to 4+ players with 9 asymmetric player roles and a 4-week solo campaign.",
+      "image": "/uploads/the-kings-charter.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/1501566901/the-kings-charter",
+      "publisher": "OnePage Creations",
+      "promoDetails": ""
+    },
+    {
       "slug": "pirate-meowster",
       "title": "Pirate Meowster: A Solo Sea Adventure Game",
       "summary": "Recruit pirate cats, sail the Mana Seas, and hunt legendary treasures in this pirate Print-and-Play adventure!",
@@ -5184,6 +5197,12 @@
     {
       "slug": "msm-gameworks",
       "name": "MSM Gameworks",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "onepage-creations",
+      "name": "OnePage Creations",
       "bggUrl": "",
       "bio": ""
     }
