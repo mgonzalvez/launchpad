@@ -73,11 +73,15 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 
 ## Scripts
 - `node scripts/validate-content.js` — validates `content.json`. Exit 0 = valid, 1 = errors. Run before every commit.
-- `node scripts/ui-check.js` — static checks for the shared design system + dark mode (tokens, legacy colors, per-page theme bootstrap, toggle wiring). Exit 0 = pass.
-- `node scripts/ui-smoke.js` — headless chromium CDP smoke test (renders a page, toggles theme, verifies persistence). Skips gracefully if chromium is absent.
+- `node scripts/ui-check.js` — static checks for the shared design system + dark mode (tokens, legacy colors, per-page theme bootstrap, toggle wiring, carousel aria, meta/OG coverage). Exit 0 = pass.
+- `node scripts/ui-smoke.js` — headless chromium CDP smoke test (renders a page, toggles theme, verifies persistence, checks carousel pause/reduced-motion, search focus trap, tap-target sizes, and that no project image 404s). Skips gracefully if chromium is absent.
+- `node scripts/contrast-check.js` — WCAG contrast ratios for every text/surface token pair in both themes. Exit 0 = all ≥ 4.5:1.
+- `node scripts/optimize-images.js` — re-encodes oversized uploads (opaque PNG → JPEG, transparent PNG → WebP, big JPEG → re-encoded JPEG, 1600px cap, quality 82) and rewrites every reference. Flags: `--dry-run`, `--verbose`, `--min-size=150000`, `--keep-original`, `--report-unused`.
+- `node scripts/localize-images.js` — downloads hotlinked (signed, expiring) project art for all non-archived projects into `uploads/` and rewrites `image` to the local path. Flags: `--dry-run`, `--all`, `--concurrency=6`, `--verbose`. `git add uploads/` afterwards.
 - `node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...` — safe CLI for adding projects.
   - **Limitation:** platform list in this script is `Kickstarter, Indiegogo, Backerkit, Store, Patreon, Other` — it will reject `Gamefound`, `Itch.io`, `Crowdfunding`, `Promo`. For those, edit `content.json` directly.
 - `node scripts/kicktraq-check.js [--fix] [--verbose]` — cross-references statuses against Kicktraq.
+- `node scripts/add-meta-tags.js [--posts] [--force]` — inserts the meta description / Open Graph / theme-color / canonical block into pages that lack it (safety net for hand-written blog posts).
 - Pre-commit hook: `cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit`
 
 ## Pi Agent Workflow

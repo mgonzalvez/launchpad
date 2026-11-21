@@ -21,3 +21,10 @@ voice-samples/
 
 # Local dev folder
 new/
+
+# Agent scratch / local tool state
+.code-graph/
+.memory/
+.nanocoder/
+.qwen/
+.smallcode/
