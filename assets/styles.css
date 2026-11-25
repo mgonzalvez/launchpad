@@ -347,7 +347,11 @@ a:hover { color: var(--accent-hover); }
   gap: 10px;
 }
 
-.nav { display: flex; gap: 10px; flex-wrap: wrap; }
+/* The header inner box is capped at 1180px, so the nav has to fit inside that
+   budget on every wide screen — tighten the pills as the base state rather
+   than waiting for a viewport breakpoint (a 1600px window still has a 1180px
+   header, and Tools would drop below Home). */
+.nav { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .header-actions {
   display: flex;
@@ -377,11 +381,11 @@ a:hover { color: var(--accent-hover); }
 .nav a {
   text-decoration: none;
   color: var(--ink);
-  padding: 7px 11px;
+  padding: 6px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--panel);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .nav a[aria-current="page"] {
@@ -397,11 +401,11 @@ a:hover { color: var(--accent-hover); }
   list-style: none;
   cursor: pointer;
   color: var(--ink);
-  padding: 7px 11px;
+  padding: 6px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--panel);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .tools-menu summary::-webkit-details-marker {

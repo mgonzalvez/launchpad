@@ -380,11 +380,15 @@ const check = (name, ok, detail = '') => {
       const row = document.querySelector('.card-badges');
       if (!row) return null;
       const kids = Array.from(row.children).filter((k) => k.offsetParent !== null);
-      const centers = kids.map((k) => {
+      // Badges and countdown chips are different heights, so comparing raw
+      // tops counts one tidy row as three. Group by vertical centre instead.
+      const bands = [];
+      kids.forEach((k) => {
         const r = k.getBoundingClientRect();
-        return Math.round(r.top + r.height / 2);
+        const center = r.top + r.height / 2;
+        if (!bands.some((b) => Math.abs(b - center) <= 8)) bands.push(center);
       });
-      return JSON.stringify({ rows: new Set(kids.map((k) => Math.round(k.getBoundingClientRect().top))).size, count: kids.length });
+      return JSON.stringify({ rows: bands.length, count: kids.length });
     })()`));
     check('stage10: badge row wraps into at most two tidy rows', badgeRow && badgeRow.rows <= 2, JSON.stringify(badgeRow));
     const linkBox = JSON.parse(await evalJs(`(function () { const a = document.querySelector('.card-link'); if (!a) return null; const r = a.getBoundingClientRect(); const cs = getComputedStyle(a); return JSON.stringify({ h: Math.round(r.height), border: cs.borderRadius }); })()`));
