@@ -4,6 +4,8 @@
 
 All project data lives in `data/content.json`. To add a new project, add an object to the `projects[]` array. The site computes project status automatically from dates — no manual status field is needed.
 
+Before you start, gather the campaign details. Kickstarter, Gamefound, BoardGameGeek and Reddit are Cloudflare-challenged from this machine, so plain `curl` returns 403. Use `node scripts/lookup-project.js <url>`, or save the page from a browser into `upstream/` and run `node scripts/ingest-upstream.js`. Full details in `docs/project-lookup.md`.
+
 ## Step-by-Step
 
 ### 1. Prepare the Project Object
@@ -219,4 +221,5 @@ Blog posts live in `blog/` as static HTML files (tracked in git). Naming convent
 
 - `AGENTS.md` — full project architecture and code reference
 - `README.md` — site overview and features
+- `docs/project-lookup.md` — fetching campaign details from a URL, and the `upstream/` bulk-ingest workflow
 - `docs/create-collage.md` — creating 3x3 image collages for blog posts

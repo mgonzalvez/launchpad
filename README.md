@@ -38,6 +38,17 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
   - Includes preview and late-pledge options
 - Client-side search:
   - Search icon in site header opens a top dropdown panel
+
+## Tooling (no build step — helper scripts in `scripts/`)
+
+- `node scripts/validate-content.js` — validates `data/content.json` (run before every commit; also a pre-commit hook).
+- `node scripts/lookup-project.js <url>` — extracts campaign details when Kickstarter/Gamefound/BGG block this machine (reader-proxy and Wayback fallbacks). See `docs/project-lookup.md`.
+- `node scripts/ingest-upstream.js` — bulk-adds browser-saved campaign pages from `upstream/` into `content.json`, localising hero images into `uploads/` (`--dry-run`, `--cleanup`, `--no-images`).
+- `node scripts/add-project.js` — CLI for adding a single project.
+- `node scripts/kicktraq-check.js [--fix]` — cross-checks statuses against Kicktraq.
+- `node scripts/localize-images.js` / `optimize-images.js` — download hotlinked art into `uploads/` / re-encode oversized uploads.
+- `node scripts/ui-check.js`, `ui-smoke.js`, `contrast-check.js` — design-system, headless-render and WCAG contrast checks.
+- `git add uploads/...` is required for any new image; untracked uploads 404 on the live site.
   - Real-time filtering as you type (150ms debounce)
   - Searches project titles, summaries, designers, publishers, platforms
   - Results grouped by status: Live Now, Upcoming, Preview, Ended

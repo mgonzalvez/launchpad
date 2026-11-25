@@ -2,7 +2,7 @@
 
 ## Git
 - Branch: `main`, remote: `origin/main`
-- `.gitignore` excludes: `AGENTS.md`, `CONTEXT.md`, `.pi/`, `voice-samples/`, `new/`. `blog/` is **not ignored** (the `# blog/` line is commented out — blog posts are tracked in git).
+- `.gitignore` excludes: `AGENTS.md`, `CONTEXT.md`, `.pi/`, `voice-samples/`, `new/`, `upstream/` (browser-saved campaign pages used as scraping input — ~20 MB, would bloat the Pages artifact) and agent scratch dirs (`.code-graph/`, `.memory/`, `.nanocoder/`, `.qwen/`, `.smallcode/`). `blog/` is **not ignored** (the `# blog/` line is commented out — blog posts are tracked in git).
 - `uploads/` is tracked, but the `pre-commit` hook only validates `content.json` — it does **not** auto-stage `uploads/`. Always `git add` new/changed image files explicitly, commit them, and push to remote — otherwise images will 404 on the live site.
 
 ## Project Overview
@@ -81,17 +81,20 @@ All content in `data/content.json`: `{ projects[], designers[], publishers[] }`.
 - `node scripts/add-project.js --title "..." --designer "..." --publisher "..." --platform Kickstarter --launchDate YYYY-MM-DD --endDate YYYY-MM-DD --image /uploads/file.jpg --primaryUrl https://...` — safe CLI for adding projects.
   - **Limitation:** platform list in this script is `Kickstarter, Indiegogo, Backerkit, Store, Patreon, Other` — it will reject `Gamefound`, `Itch.io`, `Crowdfunding`, `Promo`. For those, edit `content.json` directly.
 - `node scripts/kicktraq-check.js [--fix] [--verbose]` — cross-references statuses against Kicktraq.
+- `node scripts/lookup-project.js <url>` — extracts title, designer, dates, platform and hero image from a campaign page when Kickstarter/Gamefound/BGG/Reddit are bot-blocked from this machine. Flags: `--file saved.html`, `--save-wayback`, `--out project.json`. Falls back to r.jina.ai / a `LOOKUP_PROXY` worker / Wayback because the corporate egress IP gets a Cloudflare 403. See `docs/project-lookup.md`.
+- `node scripts/ingest-upstream.js` — bulk-adds every campaign page saved in `upstream/` (browser → Save Page As…) that is not already in `content.json`, localising hero images into `uploads/`. Flags: `--dry-run`, `--verbose`, `--no-images`, `--dir=new`, `--cleanup` (deletes the ingested saved pages and their orphan `_files` folders). `git add uploads/` afterwards — see `docs/project-lookup.md`.
 - `node scripts/add-meta-tags.js [--posts] [--force]` — inserts the meta description / Open Graph / theme-color / canonical block into pages that lack it (safety net for hand-written blog posts).
 - Pre-commit hook: `cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit`
 
 ## Pi Agent Workflow
-When modifying `content.json`:
-1. Run `node scripts/validate-content.js` before committing.
-2. Pre-commit hook runs validation automatically (if installed).
-3. Verify image URLs match the project — cross-check project URL against image URL.
-4. Check for duplicate slugs — update existing entries, don't add duplicates.
-5. Verify the project appears in the correct status section by checking dates.
-6. **SOP: Any new image added to `uploads/` must be `git add`'d, committed, and pushed to remote in the same commit as `content.json`. Untracked upload files will 404 on the live site.**
+When adding a new campaign:
+1. Get the details from the campaign URL with `node scripts/lookup-project.js <url>`. If it is blocked, save the page from a browser into `upstream/` and run `node scripts/ingest-upstream.js` (or `lookup-project.js --file saved.html`). Do **not** expect plain `curl` to work — see `docs/project-lookup.md`.
+2. Run `node scripts/validate-content.js` before committing.
+3. Pre-commit hook runs validation automatically (if installed).
+4. Verify image URLs match the project — cross-check project URL against image URL.
+5. Check for duplicate slugs — update existing entries, don't add duplicates.
+6. Verify the project appears in the correct status section by checking dates.
+7. **SOP: Any new image added to `uploads/` must be `git add`'d, committed, and pushed to remote in the same commit as `content.json`. Untracked upload files will 404 on the live site.**
 
 When creating blog posts:
 1. Gather project data from `data/content.json` (title, designer, platform, dates, `primaryUrl`).
@@ -103,7 +106,9 @@ When creating blog posts:
 
 ## Other Useful Docs
 - `docs/adding-projects.md` — step-by-step guide for adding projects
+- `docs/project-lookup.md` — getting campaign details from a URL when the sites are bot-blocked, plus the `upstream/` bulk-ingest workflow
 - `docs/create-collage.md` — 3x3 image collage instructions
+- `docs/ui-improvement-plan.md` — staged design-system work (stages 1–10, all done) and the verification scripts behind them
 - `docs/blog-workflow.md` — blog post types, structure, HTML template
 - `VOICE.md` — writing voice and tone guide
 
