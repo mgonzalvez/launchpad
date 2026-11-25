@@ -2941,9 +2941,9 @@
       "platform": "Kickstarter",
       "designer": "Martin van Rossum",
       "publisher": "Rolling Rhino Games",
-      "isPreview": true,
-      "launchDate": "",
-      "endDate": "",
+      "isPreview": false,
+      "launchDate": "2026-11-24",
+      "endDate": "2026-12-17",
       "primaryUrl": "https://www.kickstarter.com/projects/rollingrhinogames/hollandchateau"
     },
     {
