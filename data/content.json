@@ -3271,6 +3271,94 @@
       "designer": "Daniel Rocchi",
       "publisher": "Daniel Rocchi",
       "promoDetails": ""
+    },
+    {
+      "slug": "drafting-through-the-snow-print-and-play-board-game",
+      "title": "Drafting Through The Snow Print and Play Board Game",
+      "summary": "Help save the Holiday for the Orphanage in this Card Drafting Roll and Write Print and Play Game!",
+      "image": "/uploads/drafting-through-the-snow-print-and-play-board-game.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-23",
+      "endDate": "2026-12-10",
+      "endTime": "17:00",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/spielmill/drafting-through-the-snow-print-and-play-board-game",
+      "designer": "SpielMill",
+      "publisher": "SpielMill",
+      "promoDetails": ""
+    },
+    {
+      "slug": "project-cyro-protocol-print-and-play",
+      "title": "Project: CYRO/[Protocol] Print & Play",
+      "summary": "Action RPG, Co-Op, Print & Play, Digital.",
+      "image": "/uploads/project-cyro-protocol-print-and-play.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/jonassfernandez/project-cyro-protocol-print-and-play",
+      "designer": "Jonas S Fernandez",
+      "publisher": "Jonas S Fernandez",
+      "promoDetails": ""
+    },
+    {
+      "slug": "roughshod-rally-a-simple-and-fun-car-race-combat-board-game",
+      "title": "Roughshod Rally, a simple and fun car race/combat board game",
+      "summary": "This game is a quick paced, action packed vehicular combat race that provides playful competition: you can byo die cast cars to play!",
+      "image": "/uploads/roughshod-rally-a-simple-and-fun-car-race-combat-board-game.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-15",
+      "endDate": "2026-12-15",
+      "endTime": "14:22",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/roughshodrally/roughshod-rally-a-simple-and-fun-car-race-combat-board-game",
+      "designer": "John Eddy",
+      "publisher": "John Eddy",
+      "promoDetails": ""
+    },
+    {
+      "slug": "the-perfect-fire-0",
+      "title": "The Perfect Fire",
+      "summary": "A cozy print-and-play board game. Keep the fire alive, stash a die in the stocking for your next turn, and watch for mischief.",
+      "image": "/uploads/the-perfect-fire-0.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "",
+      "endDate": "",
+      "isPreview": true,
+      "primaryUrl": "https://www.kickstarter.com/projects/pantheonboardgames/the-perfect-fire-0",
+      "designer": "Pantheon Games",
+      "publisher": "Pantheon Games",
+      "promoDetails": ""
+    },
+    {
+      "slug": "the-troubadeck-songwriting-cards-lyrics-and-chords-decks",
+      "title": "The Troubadeck Songwriting Cards: Lyrics & Chords Decks",
+      "summary": "Two playing-card decks to inspire songwriting: one with chord templates, one to inspire lyrics. Used at MIT and Berklee.",
+      "image": "/uploads/the-troubadeck-songwriting-cards-lyrics-and-chords-decks.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-17",
+      "endDate": "2026-12-10",
+      "endTime": "18:00",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/charliemccarron/the-troubadeck-songwriting-cards-lyrics-and-chords-decks",
+      "designer": "Charlie McCarron",
+      "publisher": "Charlie McCarron",
+      "promoDetails": ""
+    },
+    {
+      "slug": "zig-0",
+      "title": "Zig!_",
+      "summary": "The Print & Play cycling game. Choose your distance. Trust your eye. Dare to check!",
+      "image": "/uploads/zig-0.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-24",
+      "endDate": "2026-12-11",
+      "endTime": "03:00",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/dadu/zig-0",
+      "designer": "Dade",
+      "publisher": "Dade",
+      "promoDetails": ""
     }
   ],
   "designers": [
@@ -4327,6 +4415,54 @@
       "name": "Daniel Rocchi",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "spielmill",
+      "name": "SpielMill",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jonas-s-fernandez",
+      "name": "Jonas S Fernandez",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "john-eddy",
+      "name": "John Eddy",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "charlie-mccarron",
+      "name": "Charlie McCarron",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "molly-johnson-robert-melvin-shawn-stankewich",
+      "name": "Molly Johnson, Robert Melvin, Shawn Stankewich",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "galen-mccown-stefan-barkow-evan-wilcock-jonathan-carnehl-ryan-sromek-chris-backe",
+      "name": "Galen McCown, Stefan Barkow, Evan Wilcock, Jonathan Carnehl, Ryan Sromek, Chris Backe",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "leslie-kolke-jered-byford",
+      "name": "Leslie Kolke, Jered Byford",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "pantheon-games",
+      "name": "Pantheon Games",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -5245,6 +5381,30 @@
     {
       "slug": "daniel-rocchi",
       "name": "Daniel Rocchi",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "spielmill",
+      "name": "SpielMill",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "jonas-s-fernandez",
+      "name": "Jonas S Fernandez",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "john-eddy",
+      "name": "John Eddy",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "charlie-mccarron",
+      "name": "Charlie McCarron",
       "bggUrl": "",
       "bio": ""
     }
