@@ -22,6 +22,9 @@ voice-samples/
 # Local dev folder
 new/
 
+# Saved campaign pages used as scraping input (20 MB, would bloat the Pages artifact)
+upstream/
+
 # Agent scratch / local tool state
 .code-graph/
 .memory/
