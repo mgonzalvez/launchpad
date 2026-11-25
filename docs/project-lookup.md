@@ -93,6 +93,7 @@ node scripts/ingest-upstream.js --dry-run       # show what it would add, write 
 node scripts/ingest-upstream.js --verbose       # per-project detail
 node scripts/ingest-upstream.js --no-images     # keep remote image URLs instead of localising
 node scripts/ingest-upstream.js --dir=new       # any folder of saved .html files
+node scripts/ingest-upstream.js --cleanup       # delete the saved pages (and their _files folders) once ingested
 ```
 
 It is idempotent (already-known projects are skipped by `primaryUrl` or slug),

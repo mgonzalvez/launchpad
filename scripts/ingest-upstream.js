@@ -8,6 +8,7 @@
  *   node scripts/ingest-upstream.js --verbose            # per-project detail
  *   node scripts/ingest-upstream.js --dir=upstream
  *   node scripts/ingest-upstream.js --no-images         # skip art download
+ *   node scripts/ingest-upstream.js --cleanup           # delete saved pages once ingested
  *
  * What it does, in one pass:
  *   1. parses each saved page (og: meta + Kickstarter's inline project_* data)
@@ -28,6 +29,7 @@ const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
 const verbose = args.includes("--verbose");
 const noImages = args.includes("--no-images");
+const cleanup = args.includes("--cleanup");
 const dirArg = args.find((a) => a.startsWith("--dir=")) ? args.find((a) => a.startsWith("--dir=")).split("=")[1] : "upstream";
 const dir = path.isAbsolute(dirArg) ? dirArg : path.join(ROOT, dirArg);
 const DATA = path.join(ROOT, "data", "content.json");
@@ -129,6 +131,8 @@ async function saveImage(imageUrl, slug, dryRun = false) {
 
   const added = [];
   const skipped = [];
+  const cleaned = [];
+  const kept = [];
 
   for (const file of pages) {
     const html = fs.readFileSync(path.join(dir, file), "utf8");
@@ -136,15 +140,18 @@ async function saveImage(imageUrl, slug, dryRun = false) {
     const title = jsonField(html, "project_name") || meta(html, "og:title");
     if (!title) {
       skipped.push(`${file} — could not read a campaign title`);
+      kept.push(file);
       continue;
     }
     const slug = slugOf(url);
     if (!slug) {
       skipped.push(`${file} — no canonical URL`);
+      kept.push(file);
       continue;
     }
     if (urls.has(url) || slugs.has(slug)) {
       skipped.push(`${slug} — already in content.json`);
+      if (cleanup && !dryRun) cleaned.push(file);
       continue;
     }
 
@@ -174,6 +181,7 @@ async function saveImage(imageUrl, slug, dryRun = false) {
     };
 
     added.push({ entry, imageNote: image.note, bytes: image.bytes, creator });
+    if (cleanup && !dryRun) cleaned.push(file);
 
     if (verbose) {
       log(`\n${title}  (${slug})`, "cyan");
@@ -212,18 +220,48 @@ async function saveImage(imageUrl, slug, dryRun = false) {
     log(`${skipped.length} skipped:`, "dim");
     skipped.forEach((s) => log(`  ${s}`, "dim"));
   }
+  if (kept.length) log(`Kept for a human (unparseable): ${kept.join(", ")}`, "yellow");
+
+  function runCleanup() {
+    if (!cleanup || dryRun || !cleaned.length) return 0;
+    let freed = 0;
+    for (const file of cleaned) {
+      const p = path.join(dir, file);
+      freed += fs.statSync(p).size;
+      fs.unlinkSync(p);
+      // a browser-save leaves a sibling "<name>_files" asset folder; it is spent once ingested
+      const stem = file.replace(/\.html$/i, "");
+      const assets = path.join(dir, `${stem}_files`);
+      if (fs.existsSync(assets) && fs.statSync(assets).isDirectory()) {
+        for (const a of fs.readdirSync(assets)) freed += fs.statSync(path.join(assets, a)).size;
+        fs.rmSync(assets, { recursive: true, force: true });
+      }
+    }
+    // orphaned asset folders left by a browser save with no matching page
+    for (const entry of fs.readdirSync(dir)) {
+      const assets = path.join(dir, entry);
+      if (entry.toLowerCase().endsWith("_files") && fs.existsSync(assets) && fs.statSync(assets).isDirectory()) {
+        for (const a of fs.readdirSync(assets)) freed += fs.statSync(path.join(assets, a)).size;
+        fs.rmSync(assets, { recursive: true, force: true });
+      }
+    }
+    log(`Cleaned ${cleaned.length} saved page(s) from ${dir}/ (${(freed / 1048576).toFixed(1)} MB freed).`, "cyan");
+    return freed;
+  }
 
   if (!added.length) {
     log("Nothing to add — upstream/ is already ingested.", "yellow");
+    runCleanup();
     process.exit(0);
   }
 
   if (dryRun) {
-    log("Dry run: content.json untouched.", "yellow");
+    log("Dry run: content.json untouched, nothing deleted.", "yellow");
     process.exit(0);
   }
 
   fs.writeFileSync(DATA, JSON.stringify(data, null, 2) + "\n");
   log(`Wrote ${added.length} project(s) to data/content.json.`, "green");
+  runCleanup();
   log("Next: node scripts/validate-content.js && node scripts/ui-smoke.js, then git add data/content.json uploads/ && git commit", "cyan");
 })();
