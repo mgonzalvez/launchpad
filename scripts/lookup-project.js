@@ -140,6 +140,10 @@ function strip(html) {
 // ── Extraction ────────────────────────────────────────────────────────────────
 
 function extract(html, url) {
+  if (!url) {
+    const og = html.match(/property="og:url" content="([^"]+)"/i);
+    if (og) url = og[1];
+  }
   const d = { primaryUrl: url };
   const meta = (key) => {
     const m =
@@ -163,8 +167,9 @@ function extract(html, url) {
     return m ? Number(m[1]) : null;
   };
 
-  const deadline = iso("deadline") || iso("endDate") || iso("end_date");
-  const launched = iso("launched_at") || iso("startDate") || iso("start_date");
+  // Kickstarter nests its campaign data as "project_deadline" / "project_launched_at"
+  const deadline = iso("project_deadline") || iso("deadline") || iso("endDate") || iso("end_date");
+  const launched = iso("project_launched_at") || iso("launched_at") || iso("startDate") || iso("start_date");
   if (deadline) d.endDate = deadline.slice(0, 10);
   if (launched) d.launchDate = launched.slice(0, 10);
   d.goal = num("goal");
@@ -184,8 +189,10 @@ function extract(html, url) {
   // Creator / publisher
   const by = html.match(/(?:Campaign by|Created by|by)\s*<[^>]*>([^<]{3,60})</i);
   if (by) d.publisher = strip(by[1]);
-  const creatorJson = html.match(/"creator"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"/i);
+  const creatorJson = html.match(/"creator"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"/i) || html.match(/"project_creator_name"\s*:\s*"([^"]+)"/i);
   if (creatorJson) d.publisher = creatorJson[1];
+  const country = (html.match(/"project_country"\s*:\s*"([^"]+)"/i) || [])[1];
+  if (country) d._country = country;
 
   // og:title on both platforms is "<Project> by <Creator>"
   if (d.title) {
@@ -194,7 +201,7 @@ function extract(html, url) {
   }
 
   d.platform = /kickstarter\.com/i.test(url) ? "Kickstarter" : /gamefound\.com/i.test(url) ? "Gamefound" : /backerkit\.com/i.test(url) ? "Backerkit" : "Crowdfunding";
-  d.slug = (url.split("/").filter(Boolean).slice(-1)[0] || "").replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+  d.slug = d.slug || (url.split("/").filter(Boolean).slice(-1)[0] || "").replace(/[^a-z0-9]+/gi, "-").toLowerCase();
   return d;
 }
 

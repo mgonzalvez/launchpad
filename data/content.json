@@ -3256,6 +3256,21 @@
       "designer": "Soppalco Games",
       "publisher": "Soppalco Games",
       "promoDetails": ""
+    },
+    {
+      "slug": "deck-hand-games-wave-3",
+      "title": "Deck Hand Games: Wave 3",
+      "summary": "Two new 18-card games you play with any standard deck of cards — the third wave of Deck Hand Games from Canadian designer Daniel Rocchi.",
+      "image": "/uploads/deck-hand-games-wave-3.jpg",
+      "platform": "Kickstarter",
+      "launchDate": "2026-11-24",
+      "endDate": "2026-12-08",
+      "endTime": "06:59",
+      "isPreview": false,
+      "primaryUrl": "https://www.kickstarter.com/projects/dhg2/deck-hand-games-wave-3",
+      "designer": "Daniel Rocchi",
+      "publisher": "Daniel Rocchi",
+      "promoDetails": ""
     }
   ],
   "designers": [
@@ -4306,6 +4321,12 @@
       "name": "Soppalco Games",
       "bggUrl": "",
       "bio": ""
+    },
+    {
+      "slug": "daniel-rocchi",
+      "name": "Daniel Rocchi",
+      "bggUrl": "",
+      "bio": ""
     }
   ],
   "publishers": [
@@ -5218,6 +5239,12 @@
     {
       "slug": "soppalco-games",
       "name": "Soppalco Games",
+      "bggUrl": "",
+      "bio": ""
+    },
+    {
+      "slug": "daniel-rocchi",
+      "name": "Daniel Rocchi",
       "bggUrl": "",
       "bio": ""
     }
