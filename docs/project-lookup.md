@@ -82,6 +82,26 @@ node scripts/lookup-project.js "https://www.kickstarter.com/projects/..."
 Free tier is 100k requests/day. Whether Kickstarter answers it is a
  coin flip — test it once before relying on it.
 
+## Ingesting saved pages in bulk
+
+If you save campaign pages into `upstream/` (browser → Save Page As…), the bulk
+version of the lookup is:
+
+```bash
+node scripts/ingest-upstream.js                 # add every page not already in content.json
+node scripts/ingest-upstream.js --dry-run       # show what it would add, write nothing
+node scripts/ingest-upstream.js --verbose       # per-project detail
+node scripts/ingest-upstream.js --no-images     # keep remote image URLs instead of localising
+node scripts/ingest-upstream.js --dir=new       # any folder of saved .html files
+```
+
+It is idempotent (already-known projects are skipped by `primaryUrl` or slug),
+converts the campaign's own launch/deadline timestamps to Pacific time, downloads
+and re-encodes hero art into `uploads/<slug>.jpg` (≤1600px, q82) — the image CDN
+`i.kickstarter.com` is not bot-blocked even though `www.kickstarter.com` is — and
+creates missing designer/publisher profile entries. Run `validate-content.js`
+afterwards and commit `data/content.json` together with the new `uploads/` files.
+
 ## Other realistic routes
 
 - **Free r.jina.ai API key.** Anonymous jina queries are blocked by reputation;
