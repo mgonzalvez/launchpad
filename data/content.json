@@ -6,9 +6,9 @@
       "summary": "Strategic polyomino roll-and-write medieval city builder for 1 to 4+ players with 9 asymmetric player roles and a 4-week solo campaign.",
       "image": "/uploads/the-kings-charter.jpg",
       "platform": "Kickstarter",
-      "launchDate": "",
-      "endDate": "",
-      "isPreview": true,
+      "launchDate": "2026-11-23",
+      "endDate": "2026-12-14",
+      "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/1501566901/the-kings-charter",
       "publisher": "OnePage Creations",
       "promoDetails": ""
@@ -2984,7 +2984,7 @@
       "primaryUrl": "https://www.kickstarter.com/projects/grammesedition/one-page-quest",
       "isPreview": false,
       "launchDate": "2026-11-03",
-      "endDate": ""
+      "endDate": "2026-11-24"
     },
     {
       "slug": "depth-print-and-play",
@@ -3030,9 +3030,9 @@
       "platform": "Kickstarter",
       "publisher": "Rolling Elephant",
       "primaryUrl": "https://www.kickstarter.com/projects/dmgame/kardums-fate",
-      "isPreview": true,
-      "launchDate": "",
-      "endDate": ""
+      "isPreview": false,
+      "launchDate": "2026-11-20",
+      "endDate": "2026-12-04"
     },
     {
       "slug": "castletowne",
@@ -3249,7 +3249,7 @@
       "image": "/uploads/the-pirate-king-card-game.jpg",
       "platform": "Kickstarter",
       "launchDate": "2026-11-17",
-      "endDate": "2026-12-06",
+      "endDate": "2026-12-07",
       "endTime": "22:07",
       "isPreview": false,
       "primaryUrl": "https://www.kickstarter.com/projects/25719074/the-pirate-king-card-game",

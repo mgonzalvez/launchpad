@@ -46,6 +46,7 @@ Static HTML/CSS/JS site for curated print-and-play crowdfunding, promo, preview,
 - `node scripts/ingest-upstream.js` — bulk-adds browser-saved campaign pages from `upstream/` into `content.json`, localising hero images into `uploads/` (`--dry-run`, `--cleanup`, `--no-images`).
 - `node scripts/add-project.js` — CLI for adding a single project.
 - `node scripts/kicktraq-check.js [--fix]` — cross-checks statuses against Kicktraq.
+- `node scripts/status-check.js [--fix]` — audits live/upcoming/preview projects against the real campaign pages (Kicktraq → direct → Wayback) and corrects dates/status. See `docs/status-check.md`.
 - `node scripts/localize-images.js` / `optimize-images.js` — download hotlinked art into `uploads/` / re-encode oversized uploads.
 - `node scripts/ui-check.js`, `ui-smoke.js`, `contrast-check.js` — design-system, headless-render and WCAG contrast checks.
 - `git add uploads/...` is required for any new image; untracked uploads 404 on the live site.

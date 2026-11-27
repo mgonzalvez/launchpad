@@ -31,3 +31,4 @@ upstream/
 .nanocoder/
 .qwen/
 .smallcode/
+.cache/
